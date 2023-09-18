@@ -29,9 +29,12 @@ main{
 	display: flex;
 	flex-direction: row;
 }
+
 #nav{
 	width: 100px;
+	margin-right: 10px;
 }
+
 #main_page{
 	width: auto;
 }
