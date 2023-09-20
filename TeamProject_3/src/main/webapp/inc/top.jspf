@@ -12,6 +12,6 @@
 <body>
 <header>
 <div id="title">
-	<a href="/smhrd">title</a>
+	<a href="/smhrd"><img src="<%= request.getContextPath() %>/img/title.png"></a>
 </div>
 </header>

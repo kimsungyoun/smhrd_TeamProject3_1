@@ -14,4 +14,5 @@
 <div id="main_page" style="background-color: #225577;">
 	main
 </div>
+
 </main>
