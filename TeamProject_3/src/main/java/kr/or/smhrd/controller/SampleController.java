@@ -28,14 +28,13 @@ public class SampleController {
 		
 		return mav;
 	}
-	// 글 내용 보기
 	@GetMapping("/sampleView")
 	public ModelAndView boardView(int no, PagingDTO pDTO) {
 		service.hitCount(no);
 				
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("dto", service.getView(no));
-		mav.addObject("pDTO", pDTO);	// 페이지 정보를 추가
+		mav.addObject("pDTO", pDTO);	// �럹�씠吏� �젙蹂대�� 異붽�
 				
 		mav.setViewName("notice/noticeView");
 				

@@ -5,33 +5,34 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.or.smhrd.dao.NewsDAO;
 import kr.or.smhrd.dao.SampleDAO;
+import kr.or.smhrd.dto.NewsDTO;
 import kr.or.smhrd.dto.PagingDTO;
 import kr.or.smhrd.dto.SampleDTO;
 
 @Service
-public class SampleServiceImpl implements SampleService {
+public class NewsServiceImpl implements NewsService {
 	@Autowired
-	SampleDAO dao;
-	
+	NewsDAO dao;
+
 	@Override
-	public List<SampleDTO> getList() {
-		return dao.getList();
+	public List<NewsDTO> getList() {
+		return null;
 	}
 
 	@Override
-	public int totalRecord(PagingDTO pDTO) {
-		return dao.totalRecord(pDTO);
+	public int totalRecord(NewsDTO pDTO) {
+		return 0;
 	}
 
 	@Override
-	public void hitCount(int no) {
-		dao.hitCount(no);
+	public void hitCount(int n_no) {
+		
 	}
 
 	@Override
-	public SampleDTO getView(int no) {
-		return dao.getView(no);
+	public NewsDTO getView(int n_no) {
+		return dao.getView(n_no);
 	}
-
 }
