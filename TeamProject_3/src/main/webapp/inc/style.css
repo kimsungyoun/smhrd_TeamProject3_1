@@ -10,9 +10,10 @@ header{
 	align-content: center;
 }
 main{
-	height:	2000px;
+	/* height:	1000px; */
 	display: flex;
 	flex-direction: row;
+	padding-left: 250px;
 }
 
 footer{
@@ -20,30 +21,15 @@ footer{
 	align-items: center;
 }
 
-#title{
-		
-}
 
 nav > ul, li{
 	list-style: none;
-}
-
-/* 네비게이션 바 */
-nav{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 }
 
 
 a:link, a:visited, a:hover{
 	text-decoration: none;
 	color:black;
-}
-
-#nav{
-	width: 100px;
-	margin-right: 10px;
 }
 
 #main_page{
