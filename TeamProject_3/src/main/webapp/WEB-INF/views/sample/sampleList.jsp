@@ -6,7 +6,7 @@
 	<nav>
 		<a href="/smhrd/sample/sampleList"><button>소개글</button></a>
 		<a href="/smhrd/sample/sampleList"><button>분석하기</button></a>
-		<a href="/smhrd/sample/sampleList"><button>최신뉴스</button></a>
+		<a href="/smhrd/news"><button>최신뉴스</button></a>
 	</nav>
 </div>
 <div id="main_page">
