@@ -4,14 +4,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>main</title>
-<link rel="stylesheet" href="/smhrd/inc/style.css" type="text/css">
+	<meta charset="UTF-8">
+	<title>main</title>
+	<link rel="stylesheet" href="/smhrd/inc/style.css" type="text/css">
 </head>
+<style>
+    #viewport {
+        padding-left: 250px;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
 
+    #content {
+        width: 100%;
+        position: relative;
+        margin-right: 0;
+    }
+
+    /* Sidebar Styles */
+
+    #sidebar {
+        z-index: 1000;
+        position: fixed;
+        left: 250px;
+        width: 150px;
+        height: 100%;
+        margin-left: -250px;
+        overflow-y: auto;
+        background: #CEBEE1;
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+
+    #sidebar .nav a:hover{
+        background: none;
+        color: #ECEFF1;
+    }
+
+    #sidebar .nav a i{
+        margin-right: 16px;
+    }
+
+    /* .resized-image {
+        width: 150px;
+        height: 100px;
+    } */
+    
+
+</style>
 <body>
-<header>
-<div id="title">
-	<a href="/smhrd"><img src="<%= request.getContextPath() %>/img/title.png"></a>
+
+
+<div id="viewport">
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div id="title">
+			<a href="/smhrd"><img src="<%= request.getContextPath() %>/img/title.png" width="150"></a>
+		</div>
+        <ul class="nav">
+        	<!-- 로그인상태 -->
+        	<%-- <c:if test="${logStatus == 'Y'}"> --%>
+	            <li>
+	                <a href="/smhrd/user/mypage">
+	                    <img src="<%= request.getContextPath() %>/img/mypage.png" width="50">
+	                    <br/>마이페이지
+	                </a>
+	            </li><br/>
+	        <%-- </c:if> --%>
+	        
+	        <!-- 로그인x -->
+	        <%-- <c:if test="${logStatus != 'Y'}"> --%>
+	        	<li>
+	                <a href="/smhrd/user/login">
+	                    <img src="<%= request.getContextPath() %>/img/login.png" width="50">
+	                    <br/>로그인
+	                </a>
+	            </li><br/>
+	        <%-- </c:if> --%>
+            
+            <li>
+                <a href="/smhrd">
+                    <img src="<%= request.getContextPath() %>/img/chart.png" width="50">
+                    <br/>분석차트
+                </a>
+            </li><br/>
+            <li>
+                <a href="/smhrd/news/newsList">
+                    <img src="<%= request.getContextPath() %>/img/news.png" width="50">
+                    <br/>뉴스게시판
+                </a>
+            </li><br/>
+            <li>
+                <a href="/smhrd">
+                    <img src="<%= request.getContextPath() %>/img/chat.png" width="50">
+                    <br/>채팅
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
-</header>
+
+
