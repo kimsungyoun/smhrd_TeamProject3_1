@@ -1,40 +1,37 @@
 @charset "UTF-8";
-
-#title{
+body{
+	display: flex;
+	flex-direction: column;
+}
+header{
 	
 }
+#title{
+	align-content: center;
+}
+main{
+	/* height:	1000px; */
+	display: flex;
+	flex-direction: row;
+	padding-left: 250px;
+}
+
+footer{
+	height: 300px;
+	align-items: center;
+}
+
 
 nav > ul, li{
 	list-style: none;
 }
 
-/* 네비게이션 바 */
-nav{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-nav button{
-	width: 100px;
-	height: 100px;
-}
 
 a:link, a:visited, a:hover{
 	text-decoration: none;
 	color:black;
 }
 
-main{
-	display: flex;
-	flex-direction: row;
-}
-
-#nav{
-	width: 100px;
-	margin-right: 10px;
-}
-
 #main_page{
-	width: auto;
+	width: 1500px;
 }

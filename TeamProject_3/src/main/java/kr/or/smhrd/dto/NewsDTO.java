@@ -1,7 +1,5 @@
 package kr.or.smhrd.dto;
 
-import java.sql.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,22 +7,12 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class NewsDTO {
-    // ´º½º ÀÏ·Ã¹øÈ£ 
-    private Double n_no;
-    // ±â»ç Á¦¸ñ 
-    private String n_title;
-    // ±â»ç ÀÛ¼ºÀÚ 
-    private String n_reporter;
-    // ÀÛ¼ºÀÏÀÚ 
-    private Date created_at;
-    // ±â»ç ³»¿ë 
-    private String n_content;
-    // ±â»ç Á¶È¸¼ö 
-    private Double n_views;
-    // ´º½º Ä«Å×°í¸® 
-    private String n_category;
-    // ±â»ç ÀÌ¹ÌÁö 
-    private String n_img;
+	private int n_no;             //ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·Ã¹ï¿½È£
+	private String n_title;       //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private String n_reporter;    //ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½
+	private String n_writedate;   //ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private String n_content;     //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private int n_hit;            //ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½
+	private String n_source;      //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã³
 }
