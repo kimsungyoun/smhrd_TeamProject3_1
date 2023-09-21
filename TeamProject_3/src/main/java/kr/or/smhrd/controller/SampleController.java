@@ -28,27 +28,15 @@ public class SampleController {
 		
 		return mav;
 	}
-	// 
+	// Í∏Ä ÎÇ¥Ïö© Î≥¥Í∏∞
 	@GetMapping("/sampleView")
 	public ModelAndView boardView(int no, PagingDTO pDTO) {
 		service.hitCount(no);
 				
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("dto", service.getView(no));
-		mav.addObject("pDTO", pDTO);	
+		mav.addObject("pDTO", pDTO);	// ÌéòÏù¥ÏßÄ Ï†ïÎ≥¥Î•º Ï∂îÍ∞Ä
 				
-		mav.setViewName("notice/noticeView");
-				
-		return mav;
-	}
-	// ¥∫Ω∫∆‰¿Ã¡ˆ∑Œ ¿Ãµø
-	@GetMapping("/news")
-	public ModelAndView newsView(int no, PagingDTO pDTO) {
-		service.hitCount(no);
-				
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("dto", service.getView(no));
-		mav.addObject("pDTO", pDTO);	//  
 		mav.setViewName("notice/noticeView");
 				
 		return mav;
