@@ -1,8 +1,6 @@
 package kr.or.smhrd.dto;
-
 import java.sql.Blob;
 import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +19,4 @@ public class UserDTO {
     private Blob uPhoto; // u_photo (BLOB)
     private Date uJoinDate; // u_joindate
     private String uType; // u_type
-
 }

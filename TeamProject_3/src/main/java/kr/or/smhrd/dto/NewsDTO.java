@@ -1,10 +1,9 @@
 package kr.or.smhrd.dto;
-
 import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -17,6 +16,5 @@ public class NewsDTO {
     private String nContent; // n_content (CLOB)
     private String nHit; // n_hit
     private String nSource; // n_source
+}
 
-
-   }

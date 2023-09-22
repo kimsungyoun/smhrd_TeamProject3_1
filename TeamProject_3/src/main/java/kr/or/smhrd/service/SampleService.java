@@ -7,7 +7,7 @@ import kr.or.smhrd.dto.SampleDTO;
 
 public interface SampleService {
 
-	public List <SampleDTO> getList();
+	public List <SampleDTO> getList();    
 
 	public int totalRecord(PagingDTO pDTO);
 

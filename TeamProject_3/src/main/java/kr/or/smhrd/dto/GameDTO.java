@@ -1,6 +1,12 @@
 package kr.or.smhrd.dto;
-
 import java.util.Date;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class GameDTO {
     private String gNo; // g_no

@@ -1,5 +1,4 @@
 package kr.or.smhrd.dto;
-
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -17,6 +16,4 @@ public class SubscriptionDTO {
     private String nContent; // n_content (CLOB)
     private String nHit; // n_hit
     private String nSource; // n_source
-
-
    }
