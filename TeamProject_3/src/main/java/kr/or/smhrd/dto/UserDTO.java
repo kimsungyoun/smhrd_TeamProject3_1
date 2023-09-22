@@ -9,14 +9,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO {
-    private String uId; // u_id
-    private String uPw; // u_pw
-    private String uName; // u_name
-    private String uEmail; // u_email
-    private String uPhone; // u_phone
-    private Date uBirthdate; // u_birthdate
-    private String uGender; // u_gender
-    private Blob uPhoto; // u_photo (BLOB)
-    private Date uJoinDate; // u_joindate
-    private String uType; // u_type
+	private String u_id;       
+	private String u_pw;       
+	private String u_name;     
+	private String u_email;    
+	private String u_phone;    
+	private String u_birthdate;
+	private String u_gender;   
+	private byte[] u_photo;    
+	private String u_joindate; 
+	private String u_type;     
+	private String u_photo_base64;
 }

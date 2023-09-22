@@ -1,5 +1,5 @@
-package kr.or.smhrd.service;
 
+package kr.or.smhrd.service;
 import kr.or.smhrd.dto.UserDTO;
 
 public interface UserService {
@@ -11,3 +11,4 @@ public interface UserService {
 	
 	public UserDTO pwSearch(UserDTO dto);   // 비밀번호 찾기  
 }
+

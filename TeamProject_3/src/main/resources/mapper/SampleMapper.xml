@@ -17,5 +17,6 @@
 		UPDATE table SET hit=hit+1 WHERE num=${param1}
 	</update>
 	 -->
+    
 	 
 </mapper>

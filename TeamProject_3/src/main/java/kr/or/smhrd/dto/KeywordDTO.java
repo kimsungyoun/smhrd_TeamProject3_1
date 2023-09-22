@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 public class KeywordDTO {
-    private int kNo; // k_no
-    private int gNo; // g_no
-    private String gKeyword; // g_keyword
+    private int k_no; // k_no
+    private int g_no; // g_no
+    private String g_keyword; // g_keyword
 }

@@ -1,8 +1,8 @@
+
+
 package kr.or.smhrd.service;
 
 import java.util.List;
-
-import kr.or.smhrd.dto.GameDTO;
 import kr.or.smhrd.dto.NewsDTO;
 
 public interface NewsService {

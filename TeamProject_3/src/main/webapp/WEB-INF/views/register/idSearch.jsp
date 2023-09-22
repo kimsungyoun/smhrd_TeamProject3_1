@@ -1,16 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user07
-  Date: 2023-09-20
-  Time: 오전 9:23
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Find Username</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
     <style>
         .find-username-wrapper {
             width: 400px;
@@ -20,7 +9,7 @@
         }
         .find-username-wrapper > h2 {
             font-size: 24px;
-            color: #6A24FE;
+            color: #CEBEE1;
             margin-bottom: 20px;
         }
         #find-username-form > input {
@@ -38,22 +27,19 @@
         #find-username-form > input[type="submit"] {
             color: #fff;
             font-size: 16px;
-            background-color: #6A24FE;
+            background-color: #CEBEE1;
             margin-top: 20px;
         }
     </style>
-</head>
-<body>
+<main>
+	<div class="find-username-wrapper">
+	    <h2>Find Username</h2>
+	    <form method="post" action="ServerURL" id="find-username-form">
+	        <input type="text" name="username" placeholder="username">
+	        <input type="text" name="birth" placeholder="birthday">
+	        <input type="submit" value="Find Username">
+	    </form>
+	</div>
 
-<div class="find-username-wrapper">
-    <h2>Find Username</h2>
-    <form method="post" action="ServerURL" id="find-username-form">
-        <input type="text" name="username" placeholder="username">
-        <input type="text" name="birth" placeholder="birthday">
-        <input type="submit" value="Find Username">
-    </form>
-</div>
-
-</body>
-</html>
+</main>
 

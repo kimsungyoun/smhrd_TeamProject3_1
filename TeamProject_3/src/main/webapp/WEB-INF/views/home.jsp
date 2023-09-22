@@ -3,16 +3,31 @@
 
 <main>
 
-<div id="nav">
-	<nav>
-		<a href="/smhrd/sample/sampleList"><button>소개글</button></a>
-		<a href="/smhrd/sample/sampleList"><button>분석하기</button></a>
-		<a href="/smhrd/sample/sampleList"><button>최신뉴스</button></a>
-	</nav>
-</div>
-
-<div id="main_page" style="background-color: #225577;">
-	main
+<div>
+	<table>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>작성일</th>
+			<th>조회수</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%-- 
+		<c:forEach var="news" items="${news}">
+			<tr> 
+				<td>${news.n_no}</td>
+				<td><a href="/smhrd/news/newsView/${new.n_no}">${news.n_title }</a></td>
+				<td>${news.n_reporter }</td>
+				<td>${news.n_writedate}</td>
+				<td>${news.n_hit}</td>
+			</tr>
+		</c:forEach> 
+		--%>
+	</tbody>
+	</table>
 </div>
 
 </main>

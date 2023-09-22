@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SubscriptionDTO {
-    private String nNo; // n_no
-    private String nTitle; // n_title
-    private String nReporter; // n_reporter
-    private Date nWriteDate; // n_writedate
-    private String nContent; // n_content (CLOB)
-    private String nHit; // n_hit
-    private String nSource; // n_source
+    private String n_no; 
+    private String n_title; 
+    private String n_reporter; 
+    private Date n_writedate; 
+    private String n_content; 
+    private String n_hit;
+    private String n_source; 
    }
