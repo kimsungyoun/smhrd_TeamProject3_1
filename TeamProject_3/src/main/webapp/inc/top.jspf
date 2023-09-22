@@ -8,9 +8,11 @@
 	<title>main</title>
 	<link rel="stylesheet" href="/smhrd/inc/style.css" type="text/css">
 </head>
+
 <style>
     #viewport {
-        padding-left: 250px;
+    padding-right:50px;
+        padding-left: 100px;
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;

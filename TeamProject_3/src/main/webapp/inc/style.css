@@ -1,7 +1,7 @@
 @charset "UTF-8";
 body{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 header{
 	
@@ -9,7 +9,10 @@ header{
 
 main{
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	margin-left: 150px;
+	align-items: center;
+	padding:auto;
 }
 
 nav > ul, li{
