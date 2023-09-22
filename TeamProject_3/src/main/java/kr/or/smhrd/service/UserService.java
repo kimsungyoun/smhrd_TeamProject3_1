@@ -10,4 +10,6 @@ public interface UserService {
 	public UserDTO idSearch(UserDTO dto);  // 아이디 찾기  
 	
 	public UserDTO pwSearch(UserDTO dto);   // 비밀번호 찾기  
+
+	public UserDTO loginOk(String mem_id, String mem_password);
 }
