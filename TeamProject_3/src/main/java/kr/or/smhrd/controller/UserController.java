@@ -5,48 +5,48 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/register")
 public class UserController {
-	//¸¶ÀÌÆäÀÌÁö
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@GetMapping("/mypage")
 	String mypage() {
-		return "/user/mypage";
+		return "/register/mypage";
 	}
 	
-	//³» Á¤º¸¼öÁ¤
+	//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@GetMapping("/userEdit")
 	String userEdit() {
-		return "/user/userEdit";
+		return "/register/userEdit";
 	}
 	
-	//È¸¿øÅ»Åð
-	@GetMapping("/userWithdrawal")
+	//È¸ï¿½ï¿½Å»ï¿½ï¿½
+	@GetMapping("/userResign")
 	String userWithdrawal() {
-		return "/user/userWithdrawal";
+		return "/register/userResign";
 	}
 	
-	//·Î±×ÀÎ
+	//ï¿½Î±ï¿½ï¿½ï¿½
 	@GetMapping("/login")
 	String login() {
-		return "/user/login";
+		return "/register/login";
 	}
 	
-	//·Î±×ÀÎ
+	//ï¿½Î±ï¿½ï¿½ï¿½
 	@GetMapping("/idSearch")
 	String idSearch() {
-		return "/user/idSearch";
+		return "/register/idSearch";
 	}
 	
-	//·Î±×ÀÎ
+	//ï¿½Î±ï¿½ï¿½ï¿½
 	@GetMapping("/pwSearch")
 	String pwSearch() {
-		return "/user/pwSearch";
+		return "/register/pwSearch";
 	}
 	
-	//·Î±×ÀÎ
+	//ï¿½Î±ï¿½ï¿½ï¿½
 	@GetMapping("/signUp")
 	String signUp() {
-		return "/user/signUp";
+		return "/register/signUp";
 	}
 		
 		

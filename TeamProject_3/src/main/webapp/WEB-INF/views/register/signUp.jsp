@@ -8,6 +8,7 @@
         }
         
     </style>
+    
 <main>
 	<h2>회원가입 폼</h2>
 	<form action="회원가입_처리_URL" method="POST">

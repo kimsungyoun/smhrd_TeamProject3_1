@@ -6,21 +6,11 @@ body{
 header{
 	
 }
-#title{
-	align-content: center;
-}
+
 main{
-	/* height:	1000px; */
 	display: flex;
 	flex-direction: row;
-	padding-left: 250px;
 }
-
-footer{
-	height: 300px;
-	align-items: center;
-}
-
 
 nav > ul, li{
 	list-style: none;
