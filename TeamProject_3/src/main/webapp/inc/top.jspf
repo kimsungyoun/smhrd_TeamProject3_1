@@ -63,7 +63,6 @@
 
 
 <div id="viewport">
-    <!-- Sidebar -->
     <div id="sidebar">
         <div id="title">
 			<a href="/smhrd"><img src="<%= request.getContextPath() %>/img/title.png" width="150"></a>

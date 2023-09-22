@@ -59,6 +59,7 @@ public class UserController {
 	}
 		
 	// 로그인 확인
+	/*
 	public ModelAndView loginOk(String mem_id, String mem_password, HttpSession session) {
 		UserDTO dto = service.loginOk(mem_id, mem_password);
 		
@@ -75,4 +76,5 @@ public class UserController {
 		}
 		return mav;
 	}
+	*/
 }
