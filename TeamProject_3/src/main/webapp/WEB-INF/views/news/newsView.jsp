@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
   <style>
-    .container {
+    /* .container {
       max-width: 800px;
       margin: auto;
       padding: 20px;
@@ -38,28 +38,34 @@
     }
     .author-align {
       text-align: right;
-    }
+    } */
   </style>
+  
 <main>
 	<div class="container">
 	  <h1>뉴스 기사 상세 페이지</h1>
 	  <ul class="board-list">
 	    <li class="date-recommend">
-	      <strong>작성일: <span>2023-09-20</span></strong>
-	      <div><strong>추천수:</strong> <span>150</span></div>
+	      <strong>작성일: <span>${dto.n_writedate }</span></strong>
+	      <div><strong>조회수:</strong> <span>${dto.n_hit }</span></div>
 	    </li>
 	    <li>
-	      <h2 style="text-align: center;">제목</h2>
+	      <h2 style="text-align: center;">${dto.n_title }</h2>
 	    </li>
 	    <li class="author-align">
-	      <strong>작성자:</strong> <span>작성자 이름</span>
+	      <strong>기사 작성자:</strong> <span>${dto.n_reporter }</span>
 	    </li>
 	    <li>
-	      <strong>글내용</strong><br/>
+	      <strong>글내용</strong>
+	      <br/>
 	      <div class="content">
 	        <!-- 글 내용 -->
+	        <span>${dto.n_content}</span>
 	      </div>
 	    </li>
 	  </ul>
+	  <a href='/smhrd/news/newsList?nowPage=${pDTO.nowPage}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>
+	  <button>목록</button>
+	  </a>
 	</div>
 </main>

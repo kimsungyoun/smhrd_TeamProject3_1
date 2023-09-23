@@ -17,24 +17,59 @@ public class NewsServiceImpl implements NewsService {
 	NewsDAO dao;
 
 	@Override
+<<<<<<< HEAD
 	public void hitCount(int n_no) {
 		
+=======
+	public List<NewsDTO> getList(PagingDTO pDTO) {
+		// TODO Auto-generated method stub
+		return dao.getList(pDTO);
+>>>>>>> 98b3fe192415e159ad9a3dcc210511efbe244beb
 	}
 
 	@Override
 	public NewsDTO getView(int n_no) {
+<<<<<<< HEAD
+=======
+		// TODO Auto-generated method stub
+>>>>>>> 98b3fe192415e159ad9a3dcc210511efbe244beb
 		return dao.getView(n_no);
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<NewsDTO> getList(PagingDTO pDTO) {
 		// TODO Auto-generated method stub
 		return null;
+=======
+	public int NewsDel(int n_no) {
+		// TODO Auto-generated method stub
+		return dao.NewsDel(n_no);
+>>>>>>> 98b3fe192415e159ad9a3dcc210511efbe244beb
 	}
 
 	@Override
 	public int totalRecord(PagingDTO pDTO) {
 		// TODO Auto-generated method stub
+<<<<<<< HEAD
 		return 0;
 	}
 }
+=======
+		return dao.totalRecord(pDTO);
+	}
+
+	@Override
+	public void hitCount(int n_no) {
+		// TODO Auto-generated method stub
+		dao.hitCount(n_no);
+	}
+
+	@Override
+	public List<NewsDTO> bestList() {
+		// TODO Auto-generated method stub
+		return dao.bestList();
+	}
+
+}
+>>>>>>> 98b3fe192415e159ad9a3dcc210511efbe244beb

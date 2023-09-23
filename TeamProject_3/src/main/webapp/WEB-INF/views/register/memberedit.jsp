@@ -5,12 +5,12 @@
   Time: 오전 10:37
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%-- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>비번확인창</title>
+    <title>비번확인창</title> --%>
     <style>
         .delete-account-wrapper {
             width: 500px;
@@ -30,9 +30,11 @@
             margin-top: 20px;
         }
     </style>
-</head>
+<!-- </head>
 <body>
-
+ -->
+ <main>
+ 
 <div class="delete-account-wrapper">
     <h2>{아이디}님 회원 정보 수정</h2>
     <form method="post" action="ServerURL" id="delete-account-form" onsubmit="return validatePassword();">
@@ -41,6 +43,7 @@
         <a href="/useredit">회원정보 수정 페이지가기</a>
     </form>
 </div>
+</main>
 
 <script>
     function validatePassword() {
@@ -61,6 +64,6 @@
 </script>
 
 
-</body>
+<!-- </body>
 </html>
-
+ -->

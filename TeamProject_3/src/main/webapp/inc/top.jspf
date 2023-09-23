@@ -8,9 +8,11 @@
 	<title>main</title>
 	<link rel="stylesheet" href="/smhrd/inc/style.css" type="text/css">
 </head>
+
 <style>
     #viewport {
-        padding-left: 250px;
+    padding-right:50px;
+        padding-left: 100px;
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
@@ -61,44 +63,45 @@
 
 
 <div id="viewport">
-    <!-- Sidebar -->
     <div id="sidebar">
         <div id="title">
 			<a href="/smhrd"><img src="<%= request.getContextPath() %>/img/title.png" width="150"></a>
 		</div>
         <ul class="nav">
         	<!-- 로그인상태 -->
-        	<%-- <c:if test="${logStatus == 'Y'}"> --%>
+        	<c:if test="${logStatus == 'Y'}">
 	            <li>
-	                <a href="/smhrd/user/mypage">
+	                <a href="/smhrd/register/mypage">
 	                    <img src="<%= request.getContextPath() %>/img/mypage.png" width="50">
 	                    <br/>마이페이지
 	                </a>
-	            </li><br/>
-	        <%-- </c:if> --%>
+	            </li>
+	        </c:if>
 	        
 	        <!-- 로그인x -->
-	        <%-- <c:if test="${logStatus != 'Y'}"> --%>
+	        <c:if test="${logStatus != 'Y'}">
 	        	<li>
-	                <a href="/smhrd/user/login">
+	                <a href="/smhrd/register/login">
 	                    <img src="<%= request.getContextPath() %>/img/login.png" width="50">
 	                    <br/>로그인
 	                </a>
-	            </li><br/>
-	        <%-- </c:if> --%>
+	            </li>
+	        </c:if>
             
             <li>
                 <a href="/smhrd">
                     <img src="<%= request.getContextPath() %>/img/chart.png" width="50">
                     <br/>분석차트
                 </a>
-            </li><br/>
+            </li>
+            
             <li>
                 <a href="/smhrd/news/newsList">
                     <img src="<%= request.getContextPath() %>/img/news.png" width="50">
                     <br/>뉴스게시판
                 </a>
-            </li><br/>
+            </li>
+            
             <li>
                 <a href="/smhrd">
                     <img src="<%= request.getContextPath() %>/img/chat.png" width="50">

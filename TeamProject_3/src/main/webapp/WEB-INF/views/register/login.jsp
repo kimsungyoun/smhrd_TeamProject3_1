@@ -5,8 +5,8 @@
   Time: 오후 5:36
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html xmlns:th="http://www.thymeleaf.org">
+<%-- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+ --%><!-- <html xmlns:th="http://www.thymeleaf.org"> -->
 <style>
     .login-wrapper{
         width: 400px;
@@ -57,18 +57,12 @@
         background-size: contain;
     }
 </style>
-<head>
-    <meta charset="UTF-8">
-    <title>Insert title here</title>
-</head>
-<body>
 
 
-
-
+<main>
 <div class="login-wrapper">
     <h2>Login</h2>
-    <form method="post" action="서버의url" id="login-form">
+    <form method="post" action="login.jsp" id="login-form">
         <input type="text" name="userName" placeholder="Email">
         <input type="password" name="userPassword" placeholder="Password">
         <label for="remember-check">
@@ -95,11 +89,45 @@
             <span>카카오 로그아웃</span>
         </a>
     </li>
-    <a href="/sidebar">sidebar</a>
-    <a href="/news">news</a>
-    <a href="/mypage">mypage</a>
-    <a href="/newsviews">newsviews</a>
+    
+    <li><a href="/sidebar">sidebar</a></li>
+    <li><a href="/news">news</a></li>
+    <li><a href="/mypage">mypage</a></li>
+    <li><a href="/newsviews">newsviews</a></li>
+    <li><a href="/payment">payment</a></li>
+    <li><a href="/chart">chart</a></li>
+    <li><a href="/radarchart">radarchart</a></li>
+    <li><a href="/subscription">subscription</a></li>
+    <li><a href="/paymentdetail">paymentdetail</a></li>
+    <li><a href="/word">word</a></li>
+
+	<%--구글 api--%>
+    <li>
+    <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
+    </li>
+    
+    <li>
+    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+    </li>
 </ul>
+<script>
+    function handleCredentialResponse(response) {
+        console.log("Encoded JWT ID token: " + response.credential);
+    }
+    window.onload = function () {
+        google.accounts.id.initialize({
+            client_id: "509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+        });
+        google.accounts.id.renderButton(
+            document.getElementById("buttonDiv"),
+            { theme: "outline", size: "large" }  // customization attributes
+        );
+        google.accounts.id.prompt(); // also display the One Tap dialog
+    }
+</script>
+<%--ㅇㅇ--%>
+
 <!-- 카카오 스크립트 -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
@@ -140,6 +168,24 @@
         }
     }
 </script>
+<%--구글 로그인 api--%>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<%--네이버 로그인 api--%>
+<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<!-- 네이버 로그인 버튼 노출 영역 -->
+<div id="naver_id_login"></div>
+<!-- //네이버 로그인 버튼 노출 영역 -->
+</main>
 
+<script type="text/javascript">
+    var naver_id_login = new naver_id_login("mF0_mZLB199s6Uv8BSyM", "http://localhost:8080/auth/naver/login/callback");
+    var state = naver_id_login.getUniqState();
+    naver_id_login.setButton("white", 2,40);
+    naver_id_login.setDomain("/login");
+    naver_id_login.setState(state);
+    naver_id_login.setPopup();
+    naver_id_login.init_naver_id_login();
+</script>
 </body>
 </html>

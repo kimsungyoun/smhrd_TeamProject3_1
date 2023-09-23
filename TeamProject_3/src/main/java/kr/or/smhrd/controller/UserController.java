@@ -1,53 +1,80 @@
 package kr.or.smhrd.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import kr.or.smhrd.dto.UserDTO;
+import kr.or.smhrd.service.UserService;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/register")
 public class UserController {
-	//¸¶ÀÌÆäÀÌÁö
+	@Autowired
+	UserService service;
+	
+	
+	//ë§ˆì´í˜ì´ì§€ë¡œ ì´ë™
 	@GetMapping("/mypage")
 	String mypage() {
-		return "/user/mypage";
+		return "/register/mypage";
 	}
 	
-	//³» Á¤º¸¼öÁ¤
+	//íšŒì›ì •ë³´ ìˆ˜ì •í¼ìœ¼ë¡œ ì´ë™
 	@GetMapping("/userEdit")
 	String userEdit() {
-		return "/user/userEdit";
+		return "/register/userEdit";
 	}
 	
-	//È¸¿øÅ»Åğ
-	@GetMapping("/userWithdrawal")
+	//íšŒì›íƒˆí‡´ í¼ìœ¼ë¡œ ì´ë™
+	@GetMapping("/userResign")
 	String userWithdrawal() {
-		return "/user/userWithdrawal";
+		return "/register/userResign";
 	}
 	
-	//·Î±×ÀÎ
+	//ë¡œê·¸ì¸ í¼ìœ¼ë¡œ ì´ë™
 	@GetMapping("/login")
 	String login() {
-		return "/user/login";
+		return "/register/login";
 	}
 	
-	//·Î±×ÀÎ
+	//ì•„ì´ë”” ì°¾ê¸° í¼ìœ¼ë¡œ ì´ë™
 	@GetMapping("/idSearch")
 	String idSearch() {
-		return "/user/idSearch";
+		return "/register/idSearch";
 	}
 	
-	//·Î±×ÀÎ
+	//íŒ¨ìŠ¤ì›Œë“œ ì°¾ê¸° í¼ìœ¼ë¡œ ì´ë™
 	@GetMapping("/pwSearch")
 	String pwSearch() {
-		return "/user/pwSearch";
+		return "/register/pwSearch";
 	}
 	
-	//·Î±×ÀÎ
+	//íšŒì›ê°€ì… í¼ìœ¼ë¡œ ì´ë™
 	@GetMapping("/signUp")
 	String signUp() {
-		return "/user/signUp";
+		return "/register/signUp";
 	}
 		
+	// ë¡œê·¸ì¸ í™•ì¸
+	/*
+	public ModelAndView loginOk(String mem_id, String mem_password, HttpSession session) {
+		UserDTO dto = service.loginOk(mem_id, mem_password);
 		
+		ModelAndView mav = new ModelAndView();
+		
+		if(dto != null) {
+			session.setAttribute("logId", dto.getMem_id());
+			session.setAttribute("logType", dto.getMem_type());
+			session.setAttribute("logStatus", "Y");
+			
+			 mav.setViewName("redirect:/");
+		}else {
+			mav.setViewName("register/loginResult");
+		}
+		return mav;
+	}
+	*/
 }
