@@ -19,31 +19,43 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int UserInsert(UserDTO dto) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.UserInsert(dto);
 	}
 
 	@Override
-	public UserDTO loginOk(UserDTO dto) {
+	public int UserCheck(UserDTO dto) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.UserCheck(dto);
 	}
 
 	@Override
-	public UserDTO idSearch(UserDTO dto) {
+	public UserDTO loginOk(String u_id, String u_pw) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.loginOk(u_id, u_pw);
 	}
 
 	@Override
-	public UserDTO pwSearch(UserDTO dto) {
+	public UserDTO IdSearch(UserDTO dto) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.IdSearch(dto);
 	}
 
 	@Override
-	public UserDTO loginOk(String mem_id, String mem_password) {
+	public UserDTO PwSearch(UserDTO dto) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.PwSearch(dto);
 	}
-	
+
+	@Override
+	public int UserEdit(UserDTO dto) {
+		// TODO Auto-generated method stub
+		return dao.UserEdit(dto);
+	}
+
+	@Override
+	public int UserDel(String u_id, String u_pw) {
+		// TODO Auto-generated method stub
+		return dao.UserDel(u_id, u_pw);
+	}
+
 }

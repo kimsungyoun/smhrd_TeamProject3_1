@@ -5,17 +5,6 @@
   
 <mapper namespace="kr.or.smhrd.dao.UserDAO">
  	
- 	<!-- 
- 	<select id="totalRecord" resultType="int">
-		select count(num) cnt from table
-		<if test="searchWord != null">
-			where ${searchKey} like '%${searchWord}%'
-		</if>
-	</select>
-	
-	<update id="hitCount">
-		UPDATE table SET hit=hit+1 WHERE num=${param1}
-	</update>
-	 -->
+ 	
 	 
 </mapper>

@@ -5,8 +5,8 @@
   Time: 오후 5:36
   To change this template use File | Settings | File Templates.
 --%>
-<%-- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
- --%><!-- <html xmlns:th="http://www.thymeleaf.org"> -->
+ <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <style>
     .login-wrapper{
         width: 400px;
@@ -59,57 +59,63 @@
 </style>
 
 
+
 <main>
-<div class="login-wrapper">
-    <h2>Login</h2>
-    <form method="post" action="login.jsp" id="login-form">
-        <input type="text" name="userName" placeholder="Email">
-        <input type="password" name="userPassword" placeholder="Password">
-        <label for="remember-check">
-            <input type="checkbox" id="remember-check">아이디 저장하기
-        </label>
-        <div class="">
-            <a href="/idsearch">아이디찾기</a>
-            <a href="/pwsearch">비밀번호찾기</a>
-            <a href="/signup">회원가입</a>
-        </div>
-        <input type="submit" value="Login">
-    </form>
-</div>
+	<div class="login-wrapper">
+	    <h2>Login</h2>
+	    <form method="post" action="loginOk" id="login-form">
+	        <input type="text" name="u_id" placeholder="Email">
+	        <input type="password" name="u_pw" placeholder="Password">
+	        
+	        <label for="remember-check">
+	            <input type="checkbox" id="remember-check">아이디 저장하기
+	        </label>
+	        
+	        <div class="">
+	            <a href="/smhrd/register/idsearch"><button>아이디찾기</button></a>
+	            <a href="/smhrd/register/pwsearch"><button>비밀번호찾기</button></a>
+	            <a href="/smhrd/register/signup"><button>회원가입</button></a>
+	        </div>
+	        
+	        <input type="submit" value="Login">
+	    </form>
+	</div>
 
 
-<ul>
-    <li onclick="kakaoLogin();">
-        <a href="javascript:void(0)">
-            <img src="../../../images/kakao_login.png" alt="카카오 로그인">
-        </a>
-    </li>
-    <li onclick="kakaoLogout();">
-        <a href="javascript:void(0)">
-            <span>카카오 로그아웃</span>
-        </a>
-    </li>
-    
-    <li><a href="/sidebar">sidebar</a></li>
-    <li><a href="/news">news</a></li>
-    <li><a href="/mypage">mypage</a></li>
-    <li><a href="/newsviews">newsviews</a></li>
-    <li><a href="/payment">payment</a></li>
-    <li><a href="/chart">chart</a></li>
-    <li><a href="/radarchart">radarchart</a></li>
-    <li><a href="/subscription">subscription</a></li>
-    <li><a href="/paymentdetail">paymentdetail</a></li>
-    <li><a href="/word">word</a></li>
+	<ul>
+	    <li onclick="kakaoLogin();">
+	        <a href="javascript:void(0)">
+	            <img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인">
+	        </a>
+	    </li>
+	    <li onclick="kakaoLogout();">
+	        <a href="javascript:void(0)">
+	            <span>카카오 로그아웃</span>
+	        </a>
+	    </li>
+	    
+	    <li><a href="/smhrd/views/sidebar">sidebar</a></li>
+	    <li><a href="/smhrd/views/news">news</a></li>
+	    <li><a href="/smhrd/views/mypage">mypage</a></li>
+	    <li><a href="/smhrd/views/newsviews">newsviews</a></li>
+	    <li><a href="/smhrd/views/payment">payment</a></li>
+	    <li><a href="/smhrd/views/chart">chart</a></li>
+	    <li><a href="/smhrd/views/radarchart">radarchart</a></li>
+	    <li><a href="/smhrd/views/subscription">subscription</a></li>
+	    <li><a href="/smhrd/views/paymentdetail">paymentdetail</a></li>
+	    <li><a href="/smhrd/views/word">word</a></li>
+	
+		<%--구글 api--%>
+	    <li>
+	    <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
+	    </li>
+	    
+	    <li>
+	    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+	    </li>
+	</ul>
+</main>
 
-	<%--구글 api--%>
-    <li>
-    <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
-    </li>
-    
-    <li>
-    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
-    </li>
-</ul>
 <script>
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
@@ -126,7 +132,6 @@
         google.accounts.id.prompt(); // also display the One Tap dialog
     }
 </script>
-<%--ㅇㅇ--%>
 
 <!-- 카카오 스크립트 -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
@@ -168,16 +173,18 @@
         }
     }
 </script>
+
 <%--구글 로그인 api--%>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
+
 <%--네이버 로그인 api--%>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
 <!-- 네이버 로그인 버튼 노출 영역 -->
 <div id="naver_id_login"></div>
-<!-- //네이버 로그인 버튼 노출 영역 -->
-</main>
 
+<!-- //네이버 로그인 버튼 노출 영역 -->
 <script type="text/javascript">
     var naver_id_login = new naver_id_login("mF0_mZLB199s6Uv8BSyM", "http://localhost:8080/auth/naver/login/callback");
     var state = naver_id_login.getUniqState();
@@ -187,5 +194,3 @@
     naver_id_login.setPopup();
     naver_id_login.init_naver_id_login();
 </script>
-</body>
-</html>
