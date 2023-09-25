@@ -18,6 +18,9 @@ public interface UserService {
 	// 비밀번호 찾기
 	public UserDTO PwSearch(UserDTO dto);
 	
+	// 회원정보
+	public UserDTO UserSelect(String u_id);
+		
 	// 회원정보 수정
 	public int UserEdit(UserDTO dto);
 	

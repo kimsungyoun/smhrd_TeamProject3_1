@@ -58,4 +58,10 @@ public class UserServiceImpl implements UserService {
 		return dao.UserDel(u_id, u_pw);
 	}
 
+	@Override
+	public UserDTO UserSelect(String u_id) {
+		// TODO Auto-generated method stub
+		return dao.UserSelect(u_id);
+	}
+
 }

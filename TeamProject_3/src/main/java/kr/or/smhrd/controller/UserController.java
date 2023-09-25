@@ -1,5 +1,6 @@
 package kr.or.smhrd.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,10 @@ public class UserController {
 	
 	//회원정보 수정폼으로 이동
 	@GetMapping("/userEdit")
-	public ModelAndView userEdit(String u_id) {
+	public ModelAndView userEdit(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("dto", u_id);
+		UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
+		mav.addObject("dto", dto);
 		mav.setViewName("register/userEdit");
 		return mav;
 	}
@@ -72,12 +74,42 @@ public class UserController {
 		
 		if(dto != null) {
 			session.setAttribute("logId", dto.getU_id());
+			session.setAttribute("logName", dto.getU_name());
 			session.setAttribute("logStatus", "Y");
 			
-			 mav.setViewName("redirect:/");
+			mav.setViewName("redirect:/");
 		}else {
 			mav.setViewName("register/loginResult");
 		}
 		return mav;
 	}
+	
+	// 로그아웃
+	@GetMapping("/logOut")
+	public ModelAndView logOut(HttpSession session) {
+		session.invalidate();
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("redirect:/");
+		return mav;
+	}
+	
+	// 회원정보 수정
+	@PostMapping("/UserEdit")
+	public ModelAndView UserEdit(UserDTO dto, HttpServletRequest request, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		try {
+			int result = service.UserEdit(dto);
+			mav.setViewName("redirect: /");
+		}catch(Exception e){
+			e.printStackTrace();
+			mav.setViewName("register/UserEditResult");
+		}		
+		
+		return mav;
+	}
+	
+	// 아이디 찾기
+	
+	// 비밀번호 찾기
+	
 }
