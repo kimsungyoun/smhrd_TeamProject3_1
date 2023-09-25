@@ -21,8 +21,13 @@ public class UserController {
 	
 	//마이페이지로 이동
 	@GetMapping("/mypage")
-	public String mypage() {
-		return "/register/mypage";
+	public ModelAndView mypage(HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		UserDTO dto = service.UserSelect((String) session.getAttribute("logId"));
+		mav.addObject("dto", dto);
+		mav.setViewName("register/mypage");
+		
+		return mav;
 	}
 	
 	//회원정보 수정폼으로 이동
@@ -37,8 +42,13 @@ public class UserController {
 	
 	//회원탈퇴 폼으로 이동
 	@GetMapping("/userResign")
-	public String userResign() {
-		return "/register/userResign";
+	public ModelAndView userResign(HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
+		mav.addObject("dto", dto);
+		mav.setViewName("register/userResign");
+		
+		return mav;
 	}
 	
 	//로그인 폼으로 이동
@@ -95,11 +105,12 @@ public class UserController {
 	
 	// 회원정보 수정
 	@PostMapping("/UserEdit")
-	public ModelAndView UserEdit(UserDTO dto, HttpServletRequest request, HttpSession session) {
+	public ModelAndView UserEdit(UserDTO dto) {
 		ModelAndView mav = new ModelAndView();
 		try {
 			int result = service.UserEdit(dto);
-			mav.setViewName("redirect: /");
+			
+			mav.setViewName("redirect: mypage");
 		}catch(Exception e){
 			e.printStackTrace();
 			mav.setViewName("register/UserEditResult");
@@ -111,5 +122,21 @@ public class UserController {
 	// 아이디 찾기
 	
 	// 비밀번호 찾기
+	
+	// 회원탈퇴
+	@PostMapping("/UserDel")
+	public ModelAndView UserDel(String u_id, String u_pw) {
+		ModelAndView mav = new ModelAndView();
+		int result = service.UserDel(u_id, u_pw);
+		
+		if(result > 0) {
+			mav.setViewName("/smhrd");
+		}else {
+			mav.addObject("dto",u_id);
+			mav.setViewName("redirect: ");
+		}
+		
+		return mav;
+	}
 	
 }

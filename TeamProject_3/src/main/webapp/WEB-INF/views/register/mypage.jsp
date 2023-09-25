@@ -34,27 +34,37 @@
 	<div class="my-page-wrapper">
 	    <div class="profile-section">
 	        <div class="profile-img"></div>
-	        <button class="profile-btn">구독 여부</button>
+	        <a href="">
+	        	<button class="profile-btn">구독 여부</button>
+	        </a>
 	    </div>
 	
 	    <div class="info-section">
-	        <span>Re:Source </span>
+	        <span>${dto.u_name} 님 </span>
 	    </div>
 	
 	    <div class="info-section">
-	        <button><a href="/smhrd/user/userEdit">내 정보수정</a></button>
+	        <a href="/smhrd/register/userEdit">
+	        <button>내 정보수정</button>
+	        </a>
 	    </div>
 	
 	    <div class="info-section">
-	        <button>구독 관리</button>
+	        <a href="/smhrd">
+	       		<button>구독 관리</button>
+	        </a>
 	    </div>
 	
 	    <div class="info-section">
-	        <button>로그아웃</button>
+	        <a href="/smhrd/register/logOut">
+	        	<button>로그아웃</button>
+	        </a>
 	    </div>
 	
 	    <div class="info-section">
-	        <button><a href="/smhrd/user/userWithdrawal">회원탈퇴</a></button>
+	        <a href="/smhrd/register/userResign">
+	        	<button>회원탈퇴</button>
+	        </a>
 	    </div>
 	</div>
 </main>
