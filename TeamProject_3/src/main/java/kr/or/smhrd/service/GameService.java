@@ -11,6 +11,6 @@ public interface GameService {
 	
 //	public int totalRecord(PagingDTO pDTO);
 	
-	public GameDTO getView(int gNo);   // 게임 상세보기 
+	public GameDTO getView(int g_no);   // 게임 상세보기 
 	
 }

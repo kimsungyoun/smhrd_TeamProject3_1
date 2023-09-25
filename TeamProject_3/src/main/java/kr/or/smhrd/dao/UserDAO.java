@@ -7,7 +7,7 @@ public interface UserDAO {
 	public int UserInsert(UserDTO dto);
 	
 	// 아이디 중복 체크
-	public int UserCheck(UserDTO dto);
+	public int UserCheck(String u_id);
 	
 	// 로그인
 	public UserDTO loginOk(String u_id, String u_pw);

@@ -18,8 +18,6 @@ public class NewsServiceImpl implements NewsService {
 	NewsDAO dao;
 
 	@Override
-	public void hitCount(int n_no) {
-		
 	public List<NewsDTO> getList(PagingDTO pDTO) {
 		// TODO Auto-generated method stub
 		return dao.getList(pDTO);
@@ -32,10 +30,6 @@ public class NewsServiceImpl implements NewsService {
 	}
 
 	@Override
-	public List<NewsDTO> getList(PagingDTO pDTO) {
-		// TODO Auto-generated method stub
-		return null;
-
 	public int NewsDel(int n_no) {
 		// TODO Auto-generated method stub
 		return dao.NewsDel(n_no);
@@ -44,9 +38,6 @@ public class NewsServiceImpl implements NewsService {
 	@Override
 	public int totalRecord(PagingDTO pDTO) {
 		// TODO Auto-generated method stub
-		return 0;
-	}
-}
 		return dao.totalRecord(pDTO);
 	}
 
@@ -61,5 +52,7 @@ public class NewsServiceImpl implements NewsService {
 		// TODO Auto-generated method stub
 		return dao.bestList();
 	}
+
+	
 
 }

@@ -64,13 +64,13 @@
 	<div class="login-wrapper">
 	    <h2>Login</h2>
 	    <form method="post" action="loginOk" id="login-form">
-	        <input type="text" name="u_id" placeholder="Email">
-	        <input type="password" name="u_pw" placeholder="Password">
+	        <input type="text" name="u_id" id="u_id" placeholder="Email">
+	        <input type="password" name="u_pw" id="u_pw" placeholder="Password">
 	        
 	        <label for="remember-check">
 	            <input type="checkbox" id="remember-check">아이디 저장하기
 	        </label>
-	        
+		        
 	        <div class="">
 	            <a href="/smhrd/register/idsearch"><button>아이디찾기</button></a>
 	            <a href="/smhrd/register/pwsearch"><button>비밀번호찾기</button></a>

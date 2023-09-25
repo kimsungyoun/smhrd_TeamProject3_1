@@ -4,6 +4,13 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.or.smhrd.dao.GameDAO">
+ 	<!-- 상세보기 -->
+ 	<select id="getView"  resultType="kr.or.smhrd.dto.GameDTO">
+ 		select g_no, g_rank, g_name, g_star, g_version, g_released, g_company, g_info
+ 		from game
+ 		where g_no =#{param1}
+ 		 
+ 	</select>
  	
  	<!-- 
  	<select id="totalRecord" resultType="int">

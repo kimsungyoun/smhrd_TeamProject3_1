@@ -23,9 +23,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int UserCheck(UserDTO dto) {
+	public int UserCheck(String u_id) {
 		// TODO Auto-generated method stub
-		return dao.UserCheck(dto);
+		return dao.UserCheck(u_id);
 	}
 
 	@Override

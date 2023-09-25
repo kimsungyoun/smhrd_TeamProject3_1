@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.or.smhrd.dto.UserDTO;
@@ -62,7 +64,14 @@ public class UserController {
 	public String signUp() {
 		return "/register/signUp";
 	}
-		
+	
+	// 중복아이디 체크
+	@PostMapping("/UserCheck")
+	@ResponseBody
+	public int UserCheck(@RequestParam("u_id") String u_id) {
+		return service.UserCheck(u_id);
+	}
+	
 	// 로그인
 	@PostMapping("/loginOk")
 	public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
