@@ -33,5 +33,6 @@ public class GameServiceImpl implements GameService {
 		// TODO Auto-generated method stub
 		return dao.getView(g_no);
 	}
-	
+
+
 }

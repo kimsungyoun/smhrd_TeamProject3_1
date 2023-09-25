@@ -17,10 +17,11 @@
 <hr>
 
 ## 사용 기술 스택
-- java
-- Spring Boot
+- Java
+- Python
+- Spring Framework
 - Oracle DB
-- Apache Tomcat
+- Apache Tomcat 9.0
 
 ## 주요 기능 상세 설명
 > 분석 데이터 시각화

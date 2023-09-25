@@ -18,7 +18,10 @@ public interface UserService {
 	// 鍮꾨�踰덊샇 李얘린
 	public UserDTO PwSearch(UserDTO dto);
 	
-	// �쉶�썝�젙蹂� �닔�젙
+	// 회원정보
+	public UserDTO UserSelect(String u_id);
+		
+	// 회원정보 수정
 	public int UserEdit(UserDTO dto);
 	
 	// �쉶�썝�깉�눜

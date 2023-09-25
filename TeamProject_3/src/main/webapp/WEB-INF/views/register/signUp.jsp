@@ -13,7 +13,7 @@
 	<h2>회원가입 폼</h2>
 	<form action="회원가입_처리_URL" method="POST">
 	    <label for="username">아이디:</label>
-	    <input type="text" id="username" name="username" required>
+	    <input type="text" id="id" name="userid" required>
 	
 	    <label for="password">비밀번호:</label>
 	    <input type="password" id="password" name="password" required>

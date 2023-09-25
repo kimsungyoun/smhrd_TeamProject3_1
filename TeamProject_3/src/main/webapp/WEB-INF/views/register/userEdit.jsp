@@ -45,6 +45,7 @@
 	    <h2>회원정보 수정</h2>
 	    <form method="post" action="ServerURL" id="edit-profile-form" enctype="multipart/form-data">
 	        <div class="profile-img"></div>
+	        <input type="hidden" name="u_id" value="${dto.u_id}">
 	        <input type="file" id="profile-image-upload" name="profileImage" accept="image/*">
 	        <input type="text" name="userName" placeholder="Username">
 	        <input type="email" name="userEmail" placeholder="Email">
