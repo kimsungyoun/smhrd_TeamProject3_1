@@ -41,8 +41,17 @@
             <h2>게임 순위 TOP 10</h2>
         </div>
         
-        <div>        
-        <ul>
+        <div>  
+        <table>
+        	<c:forEach var="dto" items="${game}">
+        		<tr>
+        			<td>${dto.g_rank}등</td>
+        			<td>${dto.g_name}</td>
+        			<td><a href="/smhrd/game/gameDetail?g_no=${dto.g_no}"><img src="<%= request.getContextPath() %>/img/chart.png" alt=""></a></td>
+        		</tr>
+        	</c:forEach>
+        </table>      
+        <%-- <ul>
 	       	<c:forEach var="dto" items="${game}">
 	       		<li>
 	       		<span>${dto.g_rank}등</span>
@@ -52,21 +61,8 @@
 					<img src="<%= request.getContextPath() %>/img/chart.png" alt=""></a>
 				</span>
 	       	</c:forEach>
-        </ul>
+        </ul> --%>
         </div>
-            <!-- 
-            <ul>
-            <li><span>1. 게임 A</span><span><a href="/smhrd/views/views/chart.jsp"><img src="/img/chart.png" alt=""></a></span></li>
-            <li><span>2. 게임 B</span><span>9.4/10</span></li>
-            <li><span>3. 게임 C</span><span>9.3/10</span></li>
-            <li><span>4. 게임 D</span><span>9.2/10</span></li>
-            <li><span>5. 게임 E</span><span>9.1/10</span></li>
-            <li><span>6. 게임 F</span><span>9.0/10</span></li>
-            <li><span>7. 게임 G</span><span>8.9/10</span></li>
-            <li><span>8. 게임 H</span><span>8.8/10</span></li>
-            <li><span>9. 게임 I</span><span>8.7/10</span></li>
-            <li><span>10. 게임 J</span><span>8.6/10</span></li>
-        	</ul> -->
     </div>
 	
 </div>
