@@ -4,18 +4,17 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.or.smhrd.dao.GameDAO">
+ 	<!-- 게임 리스트 -->
+ 	<select id="getList" resultType="kr.or.smhrd.dto.GameDTO">
+ 		SELECT g_no, g_rank, g_name, g_star ,g_img
+ 		FROM game
+ 		ORDER BY g_rank
+ 	</select>
  	
- 	<!-- 
- 	<select id="totalRecord" resultType="int">
-		select count(num) cnt from table
-		<if test="searchWord != null">
-			where ${searchKey} like '%${searchWord}%'
-		</if>
-	</select>
-	
-	<update id="hitCount">
-		UPDATE table SET hit=hit+1 WHERE num=${param1}
-	</update>
-	 -->
-	 
+ 	<!-- 게임 상세보기 -->
+	<select id="getView" resultType="kr.or.smhrd.dto.GameDTO">
+		SELECT g_no, g_name, g_star, g_version, g_released, g_company, g_rank, g_info
+		FROM game
+		WHERE g_no=#{param1}
+	</select> 
 </mapper>

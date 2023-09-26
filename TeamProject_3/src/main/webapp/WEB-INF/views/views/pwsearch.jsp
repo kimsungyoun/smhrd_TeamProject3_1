@@ -47,8 +47,8 @@
 
 <div class="find-password-wrapper">
     <h2>Find Password</h2>
-    <form method="post" action="ServerURL" id="find-password-form">
-        <input type="text" name="userName" placeholder="Username">
+    <form method="post" action="####" id="find-password-form">
+        <input type="text" name="userid" placeholder="Userid">
         <input type="email" name="userEmail" placeholder="Email">
         <input type="submit" value="Find Password">
     </form>

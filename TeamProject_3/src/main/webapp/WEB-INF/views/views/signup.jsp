@@ -19,32 +19,32 @@
 </head>
 <body>
 <h2>회원가입 폼</h2>
-<form action="회원가입_처리_URL" method="POST">
+<form action="UserInsert" method="POST">
     <label for="username">아이디:</label>
-    <input type="text" id="username" name="username" required>
+    <input type="text" id="u_id" name="u_id" required>
 
     <label for="password">비밀번호:</label>
-    <input type="password" id="password" name="password" required>
+    <input type="password" id="u_pw" name="u_pw" required>
 
     <label for="confirm_password">비밀번호 확인:</label>
     <input type="password" id="confirm_password" name="confirm_password" required>
 
     <label for="email">이메일:</label>
-    <input type="email" id="email" name="email" required>
+    <input type="email" id="u_email" name="u_email" required>
 
     <label for="phone">휴대폰 번호:</label>
-    <input type="tel" id="phone" name="phone" required>
+    <input type="tel" id="u_phone" name="phone" required>
 
     <label for="name">이름:</label>
-    <input type="text" id="name" name="name" required>
+    <input type="text" id="u_name" name="u_name" required>
 
     <label for="birthdate">생년월일:</label>
-    <input type="text" id="birthdate" name="birthdate" placeholder="YYYY-MM-DD" required>
+    <input type="text" id="u_birthdate" name="u_birthdate" placeholder="YYYY-MM-DD" required>
 
     <label>성별:</label>
-    <input type="radio" id="male" name="gender" value="male">
+    <input type="radio" id="male" name="u_gender" value="male">
     <label for="male">남성</label>
-    <input type="radio" id="female" name="gender" value="female">
+    <input type="radio" id="female" name="u_gender" value="female">
     <label for="female">여성</label>
 
     <button type="submit">가입하기</button>
