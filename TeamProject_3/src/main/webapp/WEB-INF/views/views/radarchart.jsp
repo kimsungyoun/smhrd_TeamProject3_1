@@ -1,7 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Multiple Analyses in Radar Chart</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <style>
         /* 부모 div의 크기를 설정 */
         #radarContainer{
@@ -13,19 +10,19 @@
             height: 400px;
         }
     </style>
-</head>
 
-<body>
-<!-- 레이더 차트 -->
-<div id="radarContainer">
-    <canvas id="sentimentRadarChart"></canvas>
-</div>
-<%-- 라인 차트--%>
-<div id="lineContainer">
-    <canvas id="lineChart"></canvas>
-</div>
+<main>
+	<!-- 레이더 차트 -->
+	<div id="radarContainer">
+	    <canvas id="sentimentRadarChart"></canvas>
+	</div>
+	<%-- 라인 차트--%>
+	<div id="lineContainer">
+	    <canvas id="lineChart"></canvas>
+	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</main>
 
 <script>
     // 레이더 차트
@@ -112,6 +109,3 @@
         }
     });
 </script>
-
-</body>
-</html>

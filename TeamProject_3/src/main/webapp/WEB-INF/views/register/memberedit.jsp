@@ -1,11 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- 
-
-<head>
-    <meta charset="UTF-8">
-    <title>비번확인창</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <style>
         .delete-account-wrapper {
             width: 500px;
@@ -25,11 +19,12 @@
             margin-top: 20px;
         }
     </style>
-<main>
+
+ <main>
  
 <div class="delete-account-wrapper">
-    <h2>${username}님 회원 정보 수정</h2>
-    <form method="post" action="ServerURL" id="delete-account-form" onsubmit="return validatePassword();">
+    <h2>{아이디}님 회원 정보 수정</h2>
+    <form method="Get" action="userEdit" id="delete-account-form" onsubmit="return validatePassword();">
         <input type="password" id="userPassword" name="userPassword" placeholder="비밀번호">
         <input type="submit" value="비밀번호 확인">
     </form>
@@ -57,10 +52,5 @@ function validatePassword() {
         error: function() {
             alert('서버와의 통신 중 오류가 발생했습니다.');
         }
-    });
-    
-    return false;  // 폼 제출을 막습니다.
-}
-
+    }
 </script>
-

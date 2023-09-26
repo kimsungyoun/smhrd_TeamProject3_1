@@ -1,7 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Positive and Negative Sentiment Charts</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <style>
         /* 부모 div의 크기를 설정 */
         #doughnutContainer, #barContainer {
@@ -9,9 +6,8 @@
             height: 400px;
         }
     </style>
-</head>
 
-<body>
+<main>
 <!-- 도넛 차트 -->
 <div id="doughnutContainer">
     <canvas id="sentimentDoughnutChart"></canvas>
@@ -21,6 +17,7 @@
 <div id="barContainer">
     <canvas id="sentimentBarChart"></canvas>
 </div>
+</main>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -68,5 +65,3 @@
         }
     });
 </script>
-</body>
-</html>
