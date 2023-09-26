@@ -1,24 +1,10 @@
-<<<<<<< HEAD
+
 
 package kr.or.smhrd.service;
 import kr.or.smhrd.dto.UserDTO;
 
-public interface UserService {
-	public int UserInsert(UserDTO dto);  // 회원가입
-	
-	public UserDTO loginOk(UserDTO dto);  // 로그인 확인(회원 일치여부 검사)    
-	
-	public UserDTO idSearch(UserDTO dto);  // 아이디 찾기  
-	
-	public UserDTO pwSearch(UserDTO dto);
 
-	public UserDTO UserSelect(String attribute);   // 비밀번호 찾기  
-}
 
-=======
-package kr.or.smhrd.service;
-
-import kr.or.smhrd.dto.UserDTO;
 
 public interface UserService {
 	// 회원가입
@@ -46,4 +32,4 @@ public interface UserService {
 	public int UserDel(String u_id, String u_pw);
 	
 }
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
+

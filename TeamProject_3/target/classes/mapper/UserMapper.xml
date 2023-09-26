@@ -35,7 +35,7 @@
 	<select id="PWSearch" resultType="kr.or.smhrd.dto.UserDTO">
 		SELECT u_id, u_name, u_email, u_password
 		FROM USERS
-		WHERE u_id=#{userid} AND u_email=#{u_email}
+		WHERE u_id=#{u_id} AND u_email=#{u_email}
 	</select>
 	
 	<!-- 회원정보 -->
