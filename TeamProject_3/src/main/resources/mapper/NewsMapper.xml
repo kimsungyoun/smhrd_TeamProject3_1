@@ -4,11 +4,20 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.or.smhrd.dao.NewsDAO">
-  <!-- 데이터 가져오는 쿼리에 대한 매핑 -->
+  <!-- 데이터 가져오는 쿼리에 대한 매핑 
   <select id="getNewsList" resultType="kr.or.smhrd.dto.NewsDTO">
     select n_no, n_title, n_reporter, n_writedate, n_content, n_hit, n_email
     from News
-  </select>
-
+  </select> 
+  -->
+  <select id="totalRecord" resultType="int">
+      select count(n_no) cnt from News
+      where 1=1
+      <if test="searchWord != null">
+         and ${searchKey} like '%${searchWord}%'
+      </if>
+            
+      </select>
+	
 
 </mapper>
