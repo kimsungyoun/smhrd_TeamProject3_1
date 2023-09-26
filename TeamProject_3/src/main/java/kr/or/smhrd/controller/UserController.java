@@ -75,11 +75,17 @@ public class UserController {
 		return "/register/signUp";
 	}
 		
+	//구독관리 폼으로 이동
+	
+	
+	// -----------------------------------------------------------------------------------------------------
 	// 회원가입
 	@PostMapping("/UserInsert")
 	public ModelAndView UserInsert(UserDTO dto) {
 		ModelAndView mav = new ModelAndView();
+		
 		int result = 0;
+		
 		try {			
 			result = service.UserInsert(dto);
 		}catch(Exception e) {
@@ -87,9 +93,9 @@ public class UserController {
 		}
 		
 		if(result > 0) {
-			mav.setViewName("redirect: /");
+			mav.setViewName("redirect: login");
 		}else {
-			mav.setViewName("register/registerResult");
+			mav.setViewName("register/signupFail");
 		}
 		
 		return mav;
@@ -132,15 +138,27 @@ public class UserController {
 			mav.setViewName("redirect: mypage");
 		}catch(Exception e){
 			e.printStackTrace();
-			mav.setViewName("register/UserEditResult");
+			mav.setViewName("register/userEditResult");
 		}		
 		
 		return mav;
 	}
 	
 	// 아이디 찾기
+	@PostMapping("/IdSearchOk")
+	public ModelAndView IdSearchOk() {
+		ModelAndView mav = new ModelAndView();
+		
+		return mav;
+	}
 	
 	// 비밀번호 찾기
+	@PostMapping("/PWSearchOk")
+	public ModelAndView PWSearchOk() {
+		ModelAndView mav = new ModelAndView();
+		
+		return mav;
+	}
 	
 	// 회원탈퇴
 	@PostMapping("/UserDel")
@@ -158,4 +176,5 @@ public class UserController {
 		return mav;
 	}
 	
+	// 구독관리 
 }

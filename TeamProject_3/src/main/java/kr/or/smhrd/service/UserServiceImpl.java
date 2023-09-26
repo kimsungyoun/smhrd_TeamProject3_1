@@ -5,10 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.or.smhrd.dao.SampleDAO;
 import kr.or.smhrd.dao.UserDAO;
 import kr.or.smhrd.dto.PagingDTO;
-import kr.or.smhrd.dto.SampleDTO;
 import kr.or.smhrd.dto.UserDTO;
 
 @Service
