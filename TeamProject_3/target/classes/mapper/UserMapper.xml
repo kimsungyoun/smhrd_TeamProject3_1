@@ -7,7 +7,7 @@
 	<!-- 회원등록 -->
 	<insert id="UserInsert">
 		INSERT INTO USERS (u_id, u_pw, u_name, u_email, u_phone, u_birthdate, u_gender)
-		values (#{id},#{password}, #{name},#{email}, #{phone}, #{birthdate},#{gender})
+		values (#{u_id},#{u_pw}, #{u_name},#{u_email}, #{u_phone}, #{u_birthdate},#{u_gender})
 	</insert> 	
  	
 	<!-- 아이디 중복 체크 -->
@@ -23,19 +23,20 @@
 		FROM users
 		WHERE u_id=#{param1} AND u_pw=#{param2}
 	</select>
+	
 	<!-- 아이디 찾기 -->
-	<!-- <select id="IdSearch" resultType="kr.or.smhrd.dto.UserDTO">
+	<select id="IdSearch" resultType="kr.or.smhrd.dto.UserDTO">
 		SELECT u_id, u_name
 		FROM USERS
-		WHERE u_name=#{username} AND u_birthdate=#{birth}
-	</select> -->
+		WHERE u_name=#{u_name} AND u_birthdate=#{u_birthdate}
+	</select> 
 	
 	<!-- 비밀번호 찾기 -->
-	<!-- <select id="PWSearch" resultType="kr.or.smhrd.dto.UserDTO">
+	<select id="PWSearch" resultType="kr.or.smhrd.dto.UserDTO">
 		SELECT u_id, u_name, u_email, u_password
 		FROM USERS
 		WHERE u_id=#{userid} AND u_email=#{u_email}
-	</select> -->
+	</select>
 	
 	<!-- 회원정보 -->
 	<select id="UserSelect" resultType="kr.or.smhrd.dto.UserDTO">
@@ -44,16 +45,15 @@
 		WHERE u_id=#{u_id}
 	</select>
 	
-	
 	<!-- 회원정보 수정 -->
 	<update id="UserEdit">
 		UPDATE USERS 
-		SET u_name=#{userName}, u_email=#{userEmail}, u_password=#{userPassword}, u_phone=#{userPhone}
+		SET u_name=#{u_name}, u_email=#{u_email}, u_pw=#{u_pw}, u_phone=#{u_phone}
 		WHERE u_id=#{u_id}
 	</update>
 	
 	<!-- 회원탈퇴 -->
-	<delete id="UserDel">
-		
+	<delete id="UserDel" >
+		DELETE FROM USERS WHERE u_id=#{param1} AND u_pw=#{param2}
 	</delete>
 </mapper>

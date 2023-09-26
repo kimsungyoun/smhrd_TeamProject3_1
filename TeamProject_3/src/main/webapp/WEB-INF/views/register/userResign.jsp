@@ -25,12 +25,13 @@
   </style>
 <main>
 	<div class="delete-account-wrapper">
-	  <h2>회원탈퇴</h2>
+	  <h2>${dto.u_name}님 회원탈퇴를 진행하시겠습니까?</h2>
 	  <div class="warning-text">
 	    주의: 회원탈퇴를 진행하면 모든 정보가 삭제됩니다.
 	  </div>
-	  <form method="post" action="ServerURL" id="delete-account-form">
-	    <input type="password" name="userPassword" placeholder="비밀번호입력">
+	  <form method="post" action="UserDel" id="delete-account-form">
+	    <input type="hidden" name="u_id" value="${dto.u_id}">
+	    <input type="password" name="u_pw" placeholder="비밀번호입력">
 	    <input type="submit" value="탈퇴하기">
 	  </form>
 	</div>

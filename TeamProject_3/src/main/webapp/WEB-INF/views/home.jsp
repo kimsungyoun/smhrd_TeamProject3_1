@@ -46,22 +46,12 @@
         	<c:forEach var="dto" items="${game}">
         		<tr>
         			<td>${dto.g_rank}등</td>
-        			<td>${dto.g_name}</td>
+        			<td>${dto.g_name} </td>
+        			<td><img src="${dto.g_img }"></td>
         			<td><a href="/smhrd/game/gameDetail?g_no=${dto.g_no}"><img src="<%= request.getContextPath() %>/img/chart.png" alt=""></a></td>
         		</tr>
         	</c:forEach>
-        </table>      
-        <%-- <ul>
-	       	<c:forEach var="dto" items="${game}">
-	       		<li>
-	       		<span>${dto.g_rank}등</span>
-				<span>${dto.g_name}</span>
-				<span>
-					<a href="/smhrd/game/gameDetail?g_no=${dto.g_no}">
-					<img src="<%= request.getContextPath() %>/img/chart.png" alt=""></a>
-				</span>
-	       	</c:forEach>
-        </ul> --%>
+        </table>    
         </div>
     </div>
 	
