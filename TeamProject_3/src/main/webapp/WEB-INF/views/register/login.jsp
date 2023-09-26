@@ -79,7 +79,7 @@
 
 	<div>
 		<a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
-		<a href="javascript:void(0)"onclick="kakaoLogout();"><span>카카오 로그아웃</span></a>
+		<a href="javascript:void(0)" onclick="kakaoLogout();"><span>카카오 로그아웃</span></a>
 	</div>
 	
 	<%--구글 api--%>

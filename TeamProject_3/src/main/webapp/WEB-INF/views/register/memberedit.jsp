@@ -24,10 +24,9 @@
  
 <div class="delete-account-wrapper">
     <h2>{아이디}님 회원 정보 수정</h2>
-    <form method="post" action="ServerURL" id="delete-account-form" onsubmit="return validatePassword();">
+    <form method="Get" action="userEdit" id="delete-account-form" onsubmit="return validatePassword();">
         <input type="password" id="userPassword" name="userPassword" placeholder="비밀번호">
         <input type="submit" value="비밀번호 확인">
-        <a href="/useredit">회원정보 수정 페이지가기</a>
     </form>
 </div>
 </main>
