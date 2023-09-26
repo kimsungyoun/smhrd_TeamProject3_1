@@ -12,9 +12,6 @@
     <meta charset="UTF-8">
     <title>Payment History</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
         .container {
             max-width: 800px;
             margin: auto;
