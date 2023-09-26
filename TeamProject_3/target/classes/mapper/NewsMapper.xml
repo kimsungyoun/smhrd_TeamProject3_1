@@ -4,18 +4,63 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.or.smhrd.dao.NewsDAO">
+<<<<<<< HEAD
  	
  	<!-- 
  	<select id="totalRecord" resultType="int">
 		select count(num) cnt from table
+=======
+	<select id="getList" resultType="kr.or.smhrd.dto.NewsDTO">		
+		SELECT * FROM
+		(SELECT * FROM 
+		(SELECT n_no, n_title, n_content, n_reporter, n_hit, to_char(n_writedate,'MM-DD HH:MI') n_writedate FROM news 
+		<if test="searchWord != null">
+			where ${searchKey} like '%${searchWord}%'
+		</if>		
+		ORDER BY n_no desc) 
+		WHERE <![CDATA[rownum<=${nowPage*onePageRecord}]]> order by n_no asc) 
+		WHERE <![CDATA[rownum<=${lastPageRecord}]]> order by n_no desc
+	</select>
+
+	<select id="bestList" resultType="kr.or.smhrd.dto.NewsDTO">		
+		SELECT n_no, n_title, n_content, n_reporter, n_hit, to_char(n_writedate,'MM-DD HH:MI') n_writedate
+		from (		
+			SELECT n_no, n_title, n_content, n_reporter, n_hit, n_writedate 
+			FROM news 
+			<!-- 조회수가 0 초과한 값만 -->
+			where n_hit &gt; 0
+			order by n_hit desc, n_no desc
+		)
+		<!-- 10개의 항목까지만 출력 -->
+		where rownum &lt; 10
+	</select>
+
+	<select id="getView" resultType="kr.or.smhrd.dto.NewsDTO">
+		SELECT n_no, n_title, n_reporter, n_content, n_writedate, n_hit
+		FROM news
+		WHERE n_no=${param1}
+	</select>
+
+	<delete id="NewsDel">
+		DELETE FROM news WHERE n_no=${param1}
+	</delete>
+
+ 	<select id="totalRecord" resultType="int">
+		select count(n_no) cnt from news
+>>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 		<if test="searchWord != null">
 			where ${searchKey} like '%${searchWord}%'
 		</if>
 	</select>
 	
 	<update id="hitCount">
+<<<<<<< HEAD
 		UPDATE table SET hit=hit+1 WHERE num=${param1}
 	</update>
 	 -->
+=======
+		UPDATE news SET n_hit=n_hit+1 WHERE n_no=${param1}
+	</update>
+>>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 	 
 </mapper>
