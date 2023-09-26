@@ -15,10 +15,10 @@
          <td>${dto.g_name }</td>
       </tr>
             
-      <%-- <tr>
+      <tr>
          <td>평점</td>
          <td>${dto.g_star }</td>
-      </tr> --%>
+      </tr> 
       
       <tr>
          <td>버전</td>

@@ -69,51 +69,55 @@
 	        
 	        <label for="remember-check">
 	            <input type="checkbox" id="remember-check">아이디 저장하기
+<<<<<<< HEAD
 	        </label>
 		        
+=======
+	        </label>	        
+	        <input type="submit" value="Login">
+	    </form>
+>>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 	        <div class="">
 	            <a href="/smhrd/register/idsearch"><button>아이디찾기</button></a>
 	            <a href="/smhrd/register/pwsearch"><button>비밀번호찾기</button></a>
-	            <a href="/smhrd/register/signup"><button>회원가입</button></a>
+	            <a href="/smhrd/register/signUp"><button>회원가입</button></a>
 	        </div>
-	        
-	        <input type="submit" value="Login">
-	    </form>
 	</div>
 
-
-	<ul>
-	    <li onclick="kakaoLogin();">
-	        <a href="javascript:void(0)">
-	            <img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인">
-	        </a>
-	    </li>
-	    <li onclick="kakaoLogout();">
-	        <a href="javascript:void(0)">
-	            <span>카카오 로그아웃</span>
-	        </a>
-	    </li>
-	    
-	    <li><a href="/smhrd/views/sidebar">sidebar</a></li>
-	    <li><a href="/smhrd/views/news">news</a></li>
-	    <li><a href="/smhrd/views/mypage">mypage</a></li>
-	    <li><a href="/smhrd/views/newsviews">newsviews</a></li>
-	    <li><a href="/smhrd/views/payment">payment</a></li>
-	    <li><a href="/smhrd/views/chart">chart</a></li>
-	    <li><a href="/smhrd/views/radarchart">radarchart</a></li>
-	    <li><a href="/smhrd/views/subscription">subscription</a></li>
-	    <li><a href="/smhrd/views/paymentdetail">paymentdetail</a></li>
-	    <li><a href="/smhrd/views/word">word</a></li>
-	
-		<%--구글 api--%>
-	    <li>
-	    <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
-	    </li>
-	    
-	    <li>
-	    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
-	    </li>
-	</ul>
+	<div>
+		<ul>
+		    <li onclick="kakaoLogin();">
+		        <a href="javascript:void(0)">
+		            <img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인">
+		        </a>
+		    </li>
+		    <li onclick="kakaoLogout();">
+		        <a href="javascript:void(0)">
+		            <span>카카오 로그아웃</span>
+		        </a>
+		    </li>
+		    
+		    <li><a href="/smhrd/views/sidebar">sidebar</a></li>
+		    <li><a href="/smhrd/views/news">news</a></li>
+		    <li><a href="/smhrd/views/mypage">mypage</a></li>
+		    <li><a href="/smhrd/views/newsviews">newsviews</a></li>
+		    <li><a href="/smhrd/views/payment">payment</a></li>
+		    <li><a href="/smhrd/views/chart">chart</a></li>
+		    <li><a href="/smhrd/views/radarchart">radarchart</a></li>
+		    <li><a href="/smhrd/views/subscription">subscription</a></li>
+		    <li><a href="/smhrd/views/paymentdetail">paymentdetail</a></li>
+		    <li><a href="/smhrd/views/word">word</a></li>
+		
+			<%--구글 api--%>
+		    <li>
+		    <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
+		    </li>
+		    
+		    <li>
+		    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+		    </li>
+		</ul>
+	</div>
 </main>
 
 <script>

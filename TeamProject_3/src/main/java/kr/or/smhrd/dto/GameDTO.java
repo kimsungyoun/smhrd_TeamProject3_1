@@ -1,5 +1,7 @@
 package kr.or.smhrd.dto;
 
+import java.sql.Blob;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +23,6 @@ public class GameDTO {
 	private String g_company;      
 	private String g_updated;
 	private int g_rank;
-	private String g_info;     
+	private String g_info;    
+	private Blob g_img;
 }
