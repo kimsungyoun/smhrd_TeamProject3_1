@@ -75,6 +75,25 @@ public class UserController {
 		return "/register/signUp";
 	}
 		
+	// 회원가입
+	@PostMapping("/UserInsert")
+	public ModelAndView UserInsert(UserDTO dto) {
+		ModelAndView mav = new ModelAndView();
+		int result = 0;
+		try {			
+			result = service.UserInsert(dto);
+		}catch(Exception e) {
+			System.out.println("error >> "+e);
+		}
+		
+		if(result > 0) {
+			mav.setViewName("redirect: /");
+		}else {
+			mav.setViewName("register/registerResult");
+		}
+		
+		return mav;
+	}
 	// 로그인
 	@PostMapping("/loginOk")
 	public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
@@ -130,10 +149,10 @@ public class UserController {
 		int result = service.UserDel(u_id, u_pw);
 		
 		if(result > 0) {
-			mav.setViewName("/smhrd");
+			mav.setViewName("redirect: /");
 		}else {
 			mav.addObject("dto",u_id);
-			mav.setViewName("redirect: ");
+			mav.setViewName("redirect: mypage");
 		}
 		
 		return mav;

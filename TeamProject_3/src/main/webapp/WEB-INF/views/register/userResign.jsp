@@ -25,7 +25,7 @@
   </style>
 <main>
 	<div class="delete-account-wrapper">
-	  <h2>회원탈퇴</h2>
+	  <h2>${dto.u_name}님 회원탈퇴를 진행하시겠습니까?</h2>
 	  <div class="warning-text">
 	    주의: 회원탈퇴를 진행하면 모든 정보가 삭제됩니다.
 	  </div>
