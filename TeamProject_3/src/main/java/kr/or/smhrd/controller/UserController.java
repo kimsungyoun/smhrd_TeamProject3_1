@@ -87,7 +87,7 @@ public class UserController {
 		}
 		
 		if(result > 0) {
-			mav.setViewName("redirect: /");
+			mav.setViewName("redirect: /smhrd");
 		}else {
 			mav.setViewName("register/registerResult");
 		}

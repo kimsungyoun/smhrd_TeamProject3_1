@@ -1,16 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user07
-  Date: 2023-09-20
-  Time: 오전 10:37
-  To change this template use File | Settings | File Templates.
---%>
-<%-- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>비번확인창</title> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <style>
         .delete-account-wrapper {
             width: 500px;
@@ -30,9 +19,7 @@
             margin-top: 20px;
         }
     </style>
-<!-- </head>
-<body>
- -->
+
  <main>
  
 <div class="delete-account-wrapper">
@@ -62,8 +49,3 @@
         }
     }
 </script>
-
-
-<!-- </body>
-</html>
- -->

@@ -1,7 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-  <title>뉴스 기사 상세 페이지</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
   <style>
     .container {
       max-width: 800px;
@@ -42,8 +40,8 @@
       text-align: right;
     }
   </style>
-</head>
-<body>
+  
+<main>
 <div class="container">
   <h1>뉴스 기사 상세 페이지</h1>
   <ul class="board-list">
@@ -65,5 +63,4 @@
     </li>
   </ul>
 </div>
-</body>
-</html>
+</main>

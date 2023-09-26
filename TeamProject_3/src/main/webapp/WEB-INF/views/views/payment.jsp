@@ -1,15 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user07
-  Date: 2023-09-20
-  Time: 오후 2:23
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Subscription Payment</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
   <style>
     /* Container styling */
     .payment-container {
@@ -28,9 +17,8 @@
       align-items: center;
     }
   </style>
-</head>
-<body>
 
+<main>
 <div class="payment-container">
   <div>
     <span>구독 정기결제</span>
@@ -41,6 +29,4 @@
     <button onclick="alert('결제가 완료되었습니다.')">결제하기</button>
   </div>
 </div>
-
-</body>
-</html>
+</main>

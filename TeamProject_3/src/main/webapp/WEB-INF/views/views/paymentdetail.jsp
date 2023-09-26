@@ -1,16 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user07
-  Date: 2023-09-21
-  Time: 오후 12:15
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Payment History</title>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,9 +28,8 @@
             margin-bottom: 10px;
         }
     </style>
-</head>
-<body>
 
+<main>
 <div class="container">
     <div class="header">결제 내역</div>
 
@@ -77,6 +64,4 @@
     </div>
 
 </div>
-
-</body>
-</html>
+</main>
