@@ -5,10 +5,13 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+
 
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.UserService;
@@ -161,6 +164,7 @@ public class UserController {
 	}
 	
 	// 회원탈퇴
+
 	@PostMapping("/UserDel")
 	public ModelAndView UserDel(String u_id, String u_pw) {
 		ModelAndView mav = new ModelAndView();
@@ -177,4 +181,23 @@ public class UserController {
 	}
 	
 	// 구독관리 
+	 // 네이버로그인 
+	
+	
+	
+	  @RequestMapping("/NaverLogin") 
+	 public String userLogin(Model model,HttpSession session) { 
+		 System.out.println("userLogin"); 
+		 String naverAuthUrl = naverloginbo.getAuthorizationUrl(session);
+	  model.addAttribute("naverUrl", naverAuthUrl); 
+	  return "user/userLogin"; 
+	  }
+	
+	 // 소셜로그인 정보 DB에 있는지 없는지 
+	 @GetMapping("/IsUser")
+	 public String CheckUser(소셜로그인으로 들어온 유저정보) {
+		 System.out.println("db에 소셜로그인 회원의 정보가 있는지"); 
+	 }
+	
+	
 }
