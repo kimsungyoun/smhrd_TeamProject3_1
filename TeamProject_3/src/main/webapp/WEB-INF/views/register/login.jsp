@@ -69,14 +69,11 @@
 	        
 	        <label for="remember-check">
 	            <input type="checkbox" id="remember-check">아이디 저장하기
-<<<<<<< HEAD
 	        </label>
 		        
-=======
 	        </label>	        
 	        <input type="submit" value="Login">
 	    </form>
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 	        <div class="">
 	            <a href="/smhrd/register/idsearch"><button>아이디찾기</button></a>
 	            <a href="/smhrd/register/pwsearch"><button>비밀번호찾기</button></a>
@@ -89,7 +86,7 @@
 		    <li onclick="kakaoLogin();">
 		        <a href="javascript:void(0)">
 		            <img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인">
-		        </a>
+		        </a>s
 		    </li>
 		    <li onclick="kakaoLogout();">
 		        <a href="javascript:void(0)">

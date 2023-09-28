@@ -50,7 +50,7 @@
 	    </div>
 	
 	    <div class="info-section">
-	        <a href="/smhrd">
+	        <a href="/smhrd/subscription/detail?u_id"+>
 	       		<button>구독 관리</button>
 	        </a>
 	    </div>

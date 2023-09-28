@@ -76,7 +76,6 @@ public class UserController {
 	public String signUp() {
 		return "/register/signUp";
 	}
-<<<<<<< HEAD
 	
 	// 중복아이디 체크
 	@PostMapping("/UserCheck")
@@ -85,7 +84,6 @@ public class UserController {
 		return service.UserCheck(u_id);
 	}
 	
-=======
 		
 	// 회원가입
 	@PostMapping("/UserInsert")
@@ -106,7 +104,6 @@ public class UserController {
 		
 		return mav;
 	}
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 	// 로그인
 	@PostMapping("/loginOk")
 	public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
