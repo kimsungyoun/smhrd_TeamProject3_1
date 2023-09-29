@@ -1,16 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user07
-  Date: 2023-09-20
-  Time: 오전 10:37
-  To change this template use File | Settings | File Templates.
---%>
-<%-- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>비번확인창</title> --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <style>
         .delete-account-wrapper {
             width: 500px;
@@ -30,17 +19,15 @@
             margin-top: 20px;
         }
     </style>
-<!-- </head>
-<body>
- -->
+
  <main>
  
 <div class="delete-account-wrapper">
-    <h2>{아이디}님 회원 정보 수정</h2>
-    <form method="post" action="ServerURL" id="delete-account-form" onsubmit="return validatePassword();">
+    <h2>{아이디}님</h2>
+    <h2>비밀번호 확인</h2>
+    <form method="Get" action="#" id="delete-account-form" onsubmit="return validatePassword();">
         <input type="password" id="userPassword" name="userPassword" placeholder="비밀번호">
         <input type="submit" value="비밀번호 확인">
-        <a href="/useredit">회원정보 수정 페이지가기</a>
     </form>
 </div>
 </main>
@@ -62,8 +49,3 @@
         }
     }
 </script>
-
-
-<!-- </body>
-</html>
- -->

@@ -8,6 +8,14 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <style>
+
+	.social-login{
+		margin-top:30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
     .login-wrapper{
         width: 400px;
         height: 350px;
@@ -56,9 +64,7 @@
         background-repeat: no-repeat;
         background-size: contain;
     }
-</style>
-
-
+</style> 
 
 <main>
 	<div class="login-wrapper">
@@ -72,15 +78,16 @@
 	        </label>
 		        
 	        </label>	        
-	        <input type="submit" value="Login">
+	        <input type="submit" value="로그인">
 	    </form>
 	        <div class="">
-	            <a href="/smhrd/register/idsearch"><button>아이디찾기</button></a>
-	            <a href="/smhrd/register/pwsearch"><button>비밀번호찾기</button></a>
+	            <a href="/smhrd/register/idSearch"><button>아이디찾기</button></a>
+	            <a href="/smhrd/register/pwSearch"><button>비밀번호찾기</button></a>
 	            <a href="/smhrd/register/signUp"><button>회원가입</button></a>
 	        </div>
 	</div>
 
+<<<<<<< HEAD
 	<div>
 		<ul>
 		    <li onclick="kakaoLogin();">
@@ -114,7 +121,29 @@
 		    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
 		    </li>
 		</ul>
+=======
+	<div class="social-login">
+		<a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
+		<a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a>
+>>>>>>> a2475a162a6cfbc88c52258173b00a08a0b338e4
 	</div>
+	
+	<%--구글 api--%>
+	<div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
+	<div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+	
+	<div>
+		<a href="/smhrd/views/sidebar">sidebar</a>
+		<a href="/smhrd/views/payment">payment</a>
+		<a href="/smhrd/views/chart">chart</a>
+		<a href="/smhrd/views/radarchart">radarchart</a>
+		<a href="/smhrd/views/subscription">subscription</a>
+		<a href="/smhrd/views/paymentdetail">paymentdetail</a>
+		<a href="/smhrd/views/word">word</a>
+	</div>
+	
+	<!-- 네이버 로그인 버튼 노출 영역 -->
+	<div id="naver_id_login"></div>
 </main>
 
 <script>
@@ -182,8 +211,6 @@
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<!-- 네이버 로그인 버튼 노출 영역 -->
-<div id="naver_id_login"></div>
 
 <!-- //네이버 로그인 버튼 노출 영역 -->
 <script type="text/javascript">
