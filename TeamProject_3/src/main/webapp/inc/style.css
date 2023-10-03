@@ -1,7 +1,22 @@
 @charset "UTF-8";
 body{
 	display: flex;
+<<<<<<< HEAD
+=======
+	flex-direction: column;
+}
+header{
+	
+}
+#title{
+	align-content: center;
+}
+main{
+	/* height:	1000px; */
+	display: flex;
+>>>>>>> 1bd8b9c50f67c400f9846cca0e36f179eb7505fb
 	flex-direction: row;
+	padding-left: 250px;
 }
 
 main{
@@ -9,8 +24,13 @@ main{
 	flex-direction: column;
 	margin-left: 150px;
 	align-items: center;
+<<<<<<< HEAD
 	padding:auto;
 }
+=======
+}
+
+>>>>>>> 1bd8b9c50f67c400f9846cca0e36f179eb7505fb
 
 nav > ul, li{
 	list-style: none;
