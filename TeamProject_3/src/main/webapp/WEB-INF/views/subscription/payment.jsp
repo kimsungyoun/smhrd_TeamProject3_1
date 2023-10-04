@@ -1,22 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-  <style>
-    /* Container styling */
-    .payment-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border: 1px solid #ccc;
-      padding: 20px;
-      width: 80%;
-      margin: auto;
-    }
 
-    /* Payment info styling */
-    .payment-info {
-      display: flex;
-      align-items: center;
-    }
-  </style>
+<link rel=stylesheet href=../inc/payMent.css>
 
 <main>
 <div class="payment-container">

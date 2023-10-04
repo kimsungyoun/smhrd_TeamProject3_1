@@ -1,34 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
-	<style>
-        .my-page-wrapper {
-            width: 400px;
-            margin: auto;
-        }
-        .profile-section {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .profile-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background-color: grey;
-        }
-        .profile-btn {
-            margin-top: 10px;
-        }
-        .info-section {
-            padding: 10px 0;
-            border-bottom: 1px solid #ccc;
-        }
-        .info-section:last-child {
-            border-bottom: none;
-        }
-        .info-section > span {
-            font-weight: bold;
-        }
-    </style>
+
+<link rel=stylesheet href=../inc/myPage.css>
 
 <main>
 	<div class="my-page-wrapper">
@@ -50,7 +23,11 @@
 	    </div>
 	
 	    <div class="info-section">
+<<<<<<< HEAD
 	        <a href="/smhrd/subscription/detail?u_id=${dto.u_id}" >
+=======
+	        <a href="/smhrd/register/memberedit">
+>>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
 	       		<button>구독 관리</button>
 	        </a>
 	    </div>

@@ -1,0 +1,17 @@
+@charset "EUC-KR";
+/* Container styling */
+.payment-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+}
+
+/* Payment info styling */
+.payment-info {
+  display: flex;
+  align-items: center;
+}
