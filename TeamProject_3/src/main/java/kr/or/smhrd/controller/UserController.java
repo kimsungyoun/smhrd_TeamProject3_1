@@ -162,12 +162,13 @@ public class UserController {
 	
 	// 회원탈퇴
 	@PostMapping("/UserDel")
-	public ModelAndView UserDel(String u_id, String u_pw) {
+	public ModelAndView UserDel(String u_id, String u_pw, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		int result = service.UserDel(u_id, u_pw);
 		
 		if(result > 0) {
-			mav.setViewName("redirect: /");
+			session.invalidate();
+			mav.setViewName("redirect:/");
 		}else {
 			mav.addObject("dto",u_id);
 			mav.setViewName("redirect: mypage");
