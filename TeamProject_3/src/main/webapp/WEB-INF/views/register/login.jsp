@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 <%--
   Created by IntelliJ IDEA.
@@ -7,7 +6,7 @@
   Time: 오후 5:36
   To change this template use File | Settings | File Templates.
 --%>
- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+ <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
 <style>
     .login-wrapper{
@@ -180,7 +179,7 @@
     naver_id_login.init_naver_id_login();
 </script>
 
-=======
+
 <%--
   Created by IntelliJ IDEA.
   User: user07
@@ -309,4 +308,4 @@
     naver_id_login.setPopup();
     naver_id_login.init_naver_id_login();
 </script>
->>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
+

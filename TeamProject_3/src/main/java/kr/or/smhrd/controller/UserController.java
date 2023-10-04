@@ -151,16 +151,8 @@ public class UserController {
 		return mav;
 	}
 	
-	// �븘�씠�뵒 李얘린
-	
-	// 鍮꾨�踰덊샇 李얘린
-	
-<<<<<<< HEAD
-	// 회원탈퇴
 
-=======
-	// �쉶�썝�깉�눜
->>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
+
 	@PostMapping("/UserDel")
 	public ModelAndView UserDel(String u_id, String u_pw, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -176,28 +168,13 @@ public class UserController {
 		
 		return mav;
 	}
-	
-<<<<<<< HEAD
+
 	// 구독관리 
 	 // 네이버로그인 
 	
-	
-	
-	  @RequestMapping("/NaverLogin") 
-	 public String userLogin(Model model,HttpSession session) { 
-		 System.out.println("userLogin"); 
-		 String naverAuthUrl = naverloginbo.getAuthorizationUrl(session);
-	  model.addAttribute("naverUrl", naverAuthUrl); 
-	  return "user/userLogin"; 
-	  }
-	
-	 // 소셜로그인 정보 DB에 있는지 없는지 
-	 @GetMapping("/IsUser")
-	 public String CheckUser(소셜로그인으로 들어온 유저정보) {
-		 System.out.println("db에 소셜로그인 회원의 정보가 있는지"); 
-	 }
-	
-=======
->>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
+
+
+
+
 	
 }
