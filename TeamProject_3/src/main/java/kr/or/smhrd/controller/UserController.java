@@ -22,71 +22,66 @@ import kr.or.smhrd.service.UserService;
 @RequestMapping("/register")
 public class UserController {
 	@Autowired
-	UserService service;
+	UserService u_service;
 	
-	//留덉씠�럹�씠吏�濡� �씠�룞
+	//@Autowired
+	
+	
 	@GetMapping("/mypage")
 	public ModelAndView mypage(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		UserDTO dto = service.UserSelect((String) session.getAttribute("logId"));
+		UserDTO dto = u_service.UserSelect((String) session.getAttribute("logId"));
 		mav.addObject("dto", dto);
 		mav.setViewName("register/mypage");
 		
 		return mav;
 	}
 	
-	//�쉶�썝�젙蹂� �닔�젙�뤌�쑝濡� �씠�룞
 	@GetMapping("/userEdit")
 	public ModelAndView userEdit(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
+		UserDTO dto = u_service.UserSelect((String)session.getAttribute("logId"));
 		mav.addObject("dto", dto);
 		mav.setViewName("register/userEdit");
 		return mav;
 	}
 	
-	//�쉶�썝�깉�눜 �뤌�쑝濡� �씠�룞
 	@GetMapping("/userResign")
 	public ModelAndView userResign(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
+		UserDTO dto = u_service.UserSelect((String)session.getAttribute("logId"));
 		mav.addObject("dto", dto);
 		mav.setViewName("register/userResign");
 		
 		return mav;
 	}
 	
-	//濡쒓렇�씤 �뤌�쑝濡� �씠�룞
 	@GetMapping("/login")
 	public String login() {
 		return "/register/login";
 	}
 	
-	//�븘�씠�뵒 李얘린 �뤌�쑝濡� �씠�룞
 	@GetMapping("/idSearch")
 	public String idSearch() {
 		return "/register/idSearch";
 	}
 	
-	//�뙣�뒪�썙�뱶 李얘린 �뤌�쑝濡� �씠�룞
 	@GetMapping("/pwSearch")
 	public String pwSearch() {
 		return "/register/pwSearch";
 	}
 	
-	//�쉶�썝媛��엯 �뤌�쑝濡� �씠�룞
 	@GetMapping("/signUp")
 	public String signUp() {
 		return "/register/signUp";
 	}
 		
-	// �쉶�썝媛��엯
 	@PostMapping("/UserInsert")
 	public ModelAndView UserInsert(UserDTO dto) {
 		ModelAndView mav = new ModelAndView();
 		int result = 0;
 		try {			
-			result = service.UserInsert(dto);
+			result = u_service.UserInsert(dto);
 		}catch(Exception e) {
 			System.out.println("error >> "+e);
 		}
@@ -99,10 +94,10 @@ public class UserController {
 		
 		return mav;
 	}
-	// 濡쒓렇�씤
+	
 	@PostMapping("/loginOk")
 	public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
-		UserDTO dto = service.loginOk(u_id, u_pw);
+		UserDTO dto = u_service.loginOk(u_id, u_pw);
 		
 		ModelAndView mav = new ModelAndView();
 		
@@ -118,7 +113,6 @@ public class UserController {
 		return mav;
 	}
 	
-	// 濡쒓렇�븘�썐
 	@GetMapping("/logOut")
 	public ModelAndView logOut(HttpSession session) {
 		session.invalidate();
@@ -132,12 +126,11 @@ public class UserController {
 		return "/register/memberedit";
 	}
 	
-	// �쉶�썝�젙蹂� �닔�젙
 	@PostMapping("/UserEdit")
 	public ModelAndView UserEdit(UserDTO dto) {
 		ModelAndView mav = new ModelAndView();
 		try {
-			int result = service.UserEdit(dto);
+			int result = u_service.UserEdit(dto);
 			
 			mav.setViewName("redirect: mypage");
 		}catch(Exception e){
@@ -148,15 +141,10 @@ public class UserController {
 		return mav;
 	}
 	
-	// �븘�씠�뵒 李얘린
-	
-	// 鍮꾨�踰덊샇 李얘린
-	
-	// �쉶�썝�깉�눜
 	@PostMapping("/UserDel")
 	public ModelAndView UserDel(String u_id, String u_pw, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
-		int result = service.UserDel(u_id, u_pw);
+		int result = u_service.UserDel(u_id, u_pw);
 		
 		if(result > 0) {
 			session.invalidate();
