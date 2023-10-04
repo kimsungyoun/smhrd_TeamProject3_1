@@ -11,6 +11,7 @@ import kr.or.smhrd.dto.PagingDTO;
 
 @Service
 public class NewsServiceImpl implements NewsService {
+	
 	@Autowired
 	NewsDAO dao;
 
@@ -49,5 +50,7 @@ public class NewsServiceImpl implements NewsService {
 		// TODO Auto-generated method stub
 		return dao.bestList();
 	}
+
+	
 
 }

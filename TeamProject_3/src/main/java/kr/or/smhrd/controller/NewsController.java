@@ -21,7 +21,6 @@ public class NewsController {
 	@Autowired
 	NewsService service;
 	
-	// 뉴스게시판으로 이동
 	@GetMapping("/newsList")
 	public ModelAndView newsList(PagingDTO pDTO) {
 		pDTO.setTotalRecord(service.totalRecord(pDTO));
@@ -35,7 +34,6 @@ public class NewsController {
 		return mav;
 	}
 	
-	// 뉴스 상세보기
 	@GetMapping("/newsView")
 	public ModelAndView newsView(int n_no, PagingDTO pDTO) {
 		service.hitCount(n_no);
@@ -49,16 +47,16 @@ public class NewsController {
 		return mav;
 	}
 	
-	// 글 삭제
+	// 湲� �궘�젣
 	@GetMapping("/noticeDel")
 	public ModelAndView boardDel(int n_no, HttpSession session) {
 		int result = service.NewsDel(n_no);
 		ModelAndView mav = new ModelAndView();
 		if(result > 0) {
-			// 삭제 성공
+			// �궘�젣 �꽦怨�
 			mav.setViewName("redirect:newsList");
 		}else {
-			// 삭제 실패
+			// �궘�젣 �떎�뙣
 			mav.addObject("n_no", n_no);
 			mav.setViewName("redirect:newsView");
 		}
