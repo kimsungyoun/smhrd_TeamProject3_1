@@ -17,8 +17,6 @@
 	        
 	        <label for="remember-check">
 	            <input type="checkbox" id="remember-check">아이디 저장하기
-	        </label>
-		        
 	        </label>	        
 	        <input type="submit" value="로그인">
 	    </form>
@@ -29,7 +27,6 @@
 	        </div>
 	</div>
 
-<<<<<<< HEAD
 	<div>
 		<ul>
 		    <li onclick="kakaoLogin();">
@@ -63,11 +60,11 @@
 		    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
 		    </li>
 		</ul>
-=======
+	</div>
+	
 	<div class="social-login">
 		<a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
 		<a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a>
->>>>>>> a2475a162a6cfbc88c52258173b00a08a0b338e4
 	</div>
 	
 	<%--구글 api--%>

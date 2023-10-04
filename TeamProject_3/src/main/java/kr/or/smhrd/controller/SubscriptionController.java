@@ -16,7 +16,7 @@ public class SubscriptionController {
 	SubscriptionService service;
 
 	@GetMapping("/detail")
-	   public ModelAndView getView(String u_id) {
+	public ModelAndView getView(String u_id) {
 		ModelAndView mav = new ModelAndView();
 		
 	    mav.addObject("dto", service.getView(u_id));      

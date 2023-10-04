@@ -1,23 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <style>
-    	#signUp-form{
-    		display:flex;
-			flex-direction: column;    		
-    		align-items: center;
-    	}
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-    </style>
-=======
 
 <link rel=stylesheet href=../inc/signUp.css>
-
->>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
 
 <main>
 <div id="signUp-form">
