@@ -34,13 +34,13 @@
 	<div class="my-page-wrapper">
 	    <div class="profile-section">
 	        <div class="profile-img"></div>
-	        <a href="">
-	        	<button class="profile-btn">구독 여부</button>
-	        </a>
+
 	    </div>
 	
 	    <div class="info-section">
-	        <span>${dto.u_name} 님 </span>
+	        <span>${dto.u_name}님</span>
+	        <span>구독여부:${sdto.sub_status}</span>
+	        
 	    </div>
 	
 	    <div class="info-section">
@@ -50,7 +50,7 @@
 	    </div>
 	
 	    <div class="info-section">
-	        <a href="/smhrd/subscription/detail?u_id"+>
+	        <a href="/smhrd/subscription/detail?u_id=${dto.u_id}" >
 	       		<button>구독 관리</button>
 	        </a>
 	    </div>

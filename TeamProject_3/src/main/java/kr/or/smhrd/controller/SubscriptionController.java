@@ -21,7 +21,7 @@ public class SubscriptionController {
 		
 	    mav.addObject("dto", service.getView(u_id));      
 	   
-	    mav.setViewName("views/subscription");
+	    mav.setViewName("subscription/subscription");
 	    
 	    return mav;
 	}

@@ -11,7 +11,6 @@
             display: block;
             margin-bottom: 5px;
         }
-        
     </style>
 
 <main>
