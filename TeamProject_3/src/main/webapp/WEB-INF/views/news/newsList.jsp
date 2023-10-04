@@ -51,8 +51,8 @@
 				<c:if test="${p <= pDTO.totalPage}">
 					<!-- 선택한 페이지 번호 표시 -->
 					<c:if test="${p == pDTO.nowPage }">		
-						<li style="background: #00468C; border-radius: 50%; width:20px; height:20px;">
-							<a style="color: white;margin-left:1px;" href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
+						<li class="pgnum">
+							<a href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
 						</li>
 					</c:if>
 					

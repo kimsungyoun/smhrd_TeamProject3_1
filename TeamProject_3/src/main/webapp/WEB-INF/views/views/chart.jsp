@@ -74,7 +74,7 @@
 </main>
 
 <script>
-    // 도넛 차트
+    // 도넛 차트 
     const doughnutCtx = document.getElementById('sentimentDoughnutChart').getContext('2d');
     new Chart(doughnutCtx, {
         type: 'doughnut',

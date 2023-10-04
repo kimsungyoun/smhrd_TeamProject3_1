@@ -1,46 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!-- <style>
-        .ranking-container {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            width: 70%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .ranking-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #e1e1e1;
-        }
-        li:last-child {
-            border-bottom: none;
-        }
-        img{
-            width: 30px;
-            height: 30px;
-        }
-    </style> -->
-
+<link rel=stylesheet href=./inc/home.css>
 
 <main>
 <div>
 	<h2>게임 인기 순위</h2>
 	<div class="ranking-container">
-        <div class="ranking-header">
-            <h2>게임 순위 TOP 10</h2>
-        </div>
-        
         <div>  
         <table>
         	<c:forEach var="dto" items="${game}">
