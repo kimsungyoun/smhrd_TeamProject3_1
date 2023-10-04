@@ -5,67 +5,9 @@
   Time: 오후 5:36
   To change this template use File | Settings | File Templates.
 --%>
- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<style>
-
-	.social-login{
-		margin-top:30px;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-	
-    .login-wrapper{
-        width: 400px;
-        height: 350px;
-        padding: 40px;
-        box-sizing: border-box;
-    }
-
-    .login-wrapper > h2{
-        font-size: 24px;
-        color: #6A24FE;
-        margin-bottom: 20px;
-    }
-    #login-form > input{
-        width: 100%;
-        height: 48px;
-        padding: 0 10px;
-        box-sizing: border-box;
-        margin-bottom: 16px;
-        border-radius: 6px;
-        background-color: #F8F8F8;
-    }
-    #login-form > input::placeholder{
-        color: #D2D2D2;
-    }
-    #login-form > input[type="submit"]{
-        color: #fff;
-        font-size: 16px;
-        background-color: #6A24FE;
-        margin-top: 20px;
-    }
-    기존의 checkbox를 없애고 label를 이용하여  디자인 시안과 동일하게 변경시켜줍니다.
-
-    #login-form > input[type="checkbox"]{
-        display: none;
-    }
-    #login-form > label{
-        color: #999999;
-    }
-    #login-form input[type="checkbox"] + label{
-        cursor: pointer;
-        padding-left: 26px;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-    #login-form input[type="checkbox"]:checked + label{
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-</style> 
-
+<link rel=stylesheet href=../inc/login.css>
 <main>
 	<div class="login-wrapper">
 	    <h2>Login</h2>

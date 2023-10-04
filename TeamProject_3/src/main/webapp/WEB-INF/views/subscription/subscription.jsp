@@ -1,37 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-	rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
-/* Container */
-.container {
-	width: 80%;
-	margin: auto;
-	padding: 20px;
-}
-/* Card */
-.card {
-	border: 1px solid #ccc;
-	padding: 20px;
-	margin-top: 20px;
-}
-/* Card Body */
-.card-body {
-	padding: 10px;
-}
-/* Form Group */
-.form-group {
-	margin-bottom: 20px;
-}
-/* Buttons */
-button {
-	padding: 10px 20px;
-	margin-top: 10px;
-}
-</style>
+<link rel=stylesheet href=../inc/subScription.css>
 
 <main>
 	<div class="container">
