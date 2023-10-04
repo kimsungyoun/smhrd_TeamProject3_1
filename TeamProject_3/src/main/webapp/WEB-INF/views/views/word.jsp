@@ -1,29 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: user07
-  Date: 2023-09-21
-  Time: 오후 12:33
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Word Cloud Example</title>
-  <script src="https://d3js.org/d3.v4.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
-  <style>
-    svg {
-      border: 1px solid black;
-      border-radius: 50%;
-    }
-  </style>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
+<style>
+   svg {
+     border: 1px solid black;
+     border-radius: 50%;
+     width:500px; 
+     height:500px; 
+   }
+</style>
 
-<svg width="500" height="500" id="wordCloud1"></svg>
-<svg width="500" height="500" id="wordCloud2"></svg>
+<main>
+<svg id="wordCloud1"></svg>
+<svg id="wordCloud2"></svg>
+</main>
 
 <script>
   const wordData1 = [
@@ -67,6 +57,3 @@
   generateCloud("#wordCloud1", wordData1);
   generateCloud("#wordCloud2", wordData2);
 </script>
-
-</body>
-</html>

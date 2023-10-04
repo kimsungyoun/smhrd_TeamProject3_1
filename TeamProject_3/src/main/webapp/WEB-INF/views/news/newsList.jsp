@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<<<<<<< HEAD
 <style>
 <<<<<<< HEAD
 
@@ -148,6 +149,10 @@ a {
 	margin-right: 10px;
 }
 </style>
+=======
+
+<link rel=stylesheet href=../inc/newsList.css>
+>>>>>>> ac23047b4c26816ab7f3f4f18254a6dd25ba208b
 
 <main>
 <div>

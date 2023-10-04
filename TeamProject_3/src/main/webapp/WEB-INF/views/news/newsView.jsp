@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<<<<<<< HEAD
   <style>
 <<<<<<< HEAD
     .container {
@@ -50,6 +51,11 @@
   </style>
   
 >>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
+=======
+
+<link rel=stylesheet href=../inc/newsView.css>
+
+>>>>>>> ac23047b4c26816ab7f3f4f18254a6dd25ba208b
 <main>
 	<div class="container">
 	  <h1>뉴스 기사 상세 페이지</h1>

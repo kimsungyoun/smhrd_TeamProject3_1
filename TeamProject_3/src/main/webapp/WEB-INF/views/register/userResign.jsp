@@ -1,28 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
-  <style>
-    .delete-account-wrapper {
-      width: 500px;
-      margin: auto;
-      padding: 40px;
-      box-sizing: border-box;
-    }
-    .delete-account-wrapper > h2 {
-      font-size: 24px;
-      color: #CEBEE1;
-      margin-bottom: 20px;
-    }
-    .warning-text {
-      color: red;
-      margin-bottom: 20px;
-    }
-    #delete-account-form > input[type="submit"] {
-      color: #fff;
-      font-size: 16px;
-      background-color: #CEBEE1;
-      margin-top: 20px;
-    }
-  </style>
+
+<link rel=stylesheet href=../inc/userResign.css>
+
 <main>
 	<div class="delete-account-wrapper">
 	  <h2>${dto.u_name}님 회원탈퇴를 진행하시겠습니까?</h2>
