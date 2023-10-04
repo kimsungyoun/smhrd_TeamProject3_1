@@ -23,11 +23,9 @@
 	    </div>
 	
 	    <div class="info-section">
-<<<<<<< HEAD
+
 	        <a href="/smhrd/subscription/detail?u_id=${dto.u_id}" >
-=======
-	        <a href="/smhrd/register/memberedit">
->>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
+
 	       		<button>구독 관리</button>
 	        </a>
 	    </div>
