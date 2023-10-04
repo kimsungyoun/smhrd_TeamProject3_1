@@ -8,6 +8,14 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <style>
+
+	.social-login{
+		margin-top:30px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
     .login-wrapper{
         width: 400px;
         height: 350px;
@@ -77,9 +85,9 @@
 	        </div>
 	</div>
 
-	<div>
+	<div class="social-login">
 		<a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
-		<a href="javascript:void(0)" onclick="kakaoLogout();"><span>카카오 로그아웃</span></a>
+		<a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a>
 	</div>
 	
 	<%--구글 api--%>
