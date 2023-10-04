@@ -7,7 +7,7 @@ public interface UserService {
 	public int UserInsert(UserDTO dto);
 	
 	// �븘�씠�뵒 以묐났 泥댄겕
-	public int UserCheck(String u_id);
+	public int UserCheck(UserDTO dto);
 	
 	// 濡쒓렇�씤
 	public UserDTO loginOk(String u_id, String u_pw);

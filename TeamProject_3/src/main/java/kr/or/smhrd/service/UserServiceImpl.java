@@ -11,18 +11,10 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserDAO dao;
 
-<<<<<<< HEAD
-	@Override
-	public int UserCheck(String u_id) {
-		// TODO Auto-generated method stub
-		return dao.UserCheck(u_id);
-	}
-=======
     @Override
     public int UserInsert(UserDTO dto) {
         return dao.UserInsert(dto);
     }
->>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
 
     @Override
     public int UserCheck(UserDTO dto) {
