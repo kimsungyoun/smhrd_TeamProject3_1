@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<<<<<<< HEAD
 <style>
 
 /* table {
@@ -11,88 +12,10 @@
     border-radius: 5px;
     overflow: hidden;
 }
+=======
+>>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
 
-th {
-    text-align: left;
-}
-
-thead {
-    font-weight: bold;
-    color: #fff;
-    background: #CEBEE1;
-}
-
-td, th {
-    padding: 1em .5em;
-    vertical-align: middle;
-}
-
-td {
-    border-bottom: 1px solid rgba(0,0,0,.1);
-    background: #fff;
-}
-
-a {
-    color: #73685d;
-} */
-
-@media all and (max-width: 768px) {
-
-    table, thead, tbody, th, td, tr {
-        display: block;
-    }
-
-    th {
-        text-align: right;
-    }
-
-    table {
-        position: relative;
-        padding-bottom: 0;
-        border: none;
-        box-shadow: 0 0 10px rgba(0,0,0,.2);
-    }
-
-    thead {
-        float: left;
-        white-space: nowrap;
-    }
-
-    tbody {
-        overflow-x: auto;
-        overflow-y: hidden;
-        position: relative;
-        white-space: nowrap;
-    }
-
-    tr {
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    th {
-        border-bottom: 1px solid #a39485;
-    }
-
-    td {
-        border-bottom: 1px solid #e5e5e5;
-    }
-
-
-}
-
-.page > ul {
-	display: flex;
-	flex-direction: row;
-	padding:0px;
-	margin: 10px 0 10px 0px;
-}
-
-.page li{
-	padding:0px;
-	margin-right: 10px;
-}
-</style>
+<link rel=stylesheet href=../inc/newsList.css>
 
 <main>
 <div>

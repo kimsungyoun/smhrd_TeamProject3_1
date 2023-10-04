@@ -1,5 +1,8 @@
 package kr.or.smhrd.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -22,7 +27,7 @@ public class UserController {
 	@Autowired
 	UserService service;
 	
-	//마이페이지로 이동
+	//留덉씠�럹�씠吏�濡� �씠�룞
 	@GetMapping("/mypage")
 	public ModelAndView mypage(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -33,7 +38,7 @@ public class UserController {
 		return mav;
 	}
 	
-	//회원정보 수정폼으로 이동
+	//�쉶�썝�젙蹂� �닔�젙�뤌�쑝濡� �씠�룞
 	@GetMapping("/userEdit")
 	public ModelAndView userEdit(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -43,7 +48,7 @@ public class UserController {
 		return mav;
 	}
 	
-	//회원탈퇴 폼으로 이동
+	//�쉶�썝�깉�눜 �뤌�쑝濡� �씠�룞
 	@GetMapping("/userResign")
 	public ModelAndView userResign(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -54,41 +59,35 @@ public class UserController {
 		return mav;
 	}
 	
-	//로그인 폼으로 이동
+	//濡쒓렇�씤 �뤌�쑝濡� �씠�룞
 	@GetMapping("/login")
 	public String login() {
 		return "/register/login";
 	}
 	
-	//아이디 찾기 폼으로 이동
+	//�븘�씠�뵒 李얘린 �뤌�쑝濡� �씠�룞
 	@GetMapping("/idSearch")
 	public String idSearch() {
 		return "/register/idSearch";
 	}
 	
-	//패스워드 찾기 폼으로 이동
+	//�뙣�뒪�썙�뱶 李얘린 �뤌�쑝濡� �씠�룞
 	@GetMapping("/pwSearch")
 	public String pwSearch() {
 		return "/register/pwSearch";
 	}
 	
-	//회원가입 폼으로 이동
+	//�쉶�썝媛��엯 �뤌�쑝濡� �씠�룞
 	@GetMapping("/signUp")
 	public String signUp() {
 		return "/register/signUp";
 	}
 		
-	//구독관리 폼으로 이동
-	
-	
-	// -----------------------------------------------------------------------------------------------------
-	// 회원가입
+	// �쉶�썝媛��엯
 	@PostMapping("/UserInsert")
 	public ModelAndView UserInsert(UserDTO dto) {
 		ModelAndView mav = new ModelAndView();
-		
 		int result = 0;
-		
 		try {			
 			result = service.UserInsert(dto);
 		}catch(Exception e) {
@@ -98,12 +97,12 @@ public class UserController {
 		if(result > 0) {
 			mav.setViewName("redirect: login");
 		}else {
-			mav.setViewName("register/signupFail");
+			mav.setViewName("register/registerResult");
 		}
 		
 		return mav;
 	}
-	// 로그인
+	// 濡쒓렇�씤
 	@PostMapping("/loginOk")
 	public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
 		UserDTO dto = service.loginOk(u_id, u_pw);
@@ -122,7 +121,7 @@ public class UserController {
 		return mav;
 	}
 	
-	// 로그아웃
+	// 濡쒓렇�븘�썐
 	@GetMapping("/logOut")
 	public ModelAndView logOut(HttpSession session) {
 		session.invalidate();
@@ -131,7 +130,12 @@ public class UserController {
 		return mav;
 	}
 	
-	// 회원정보 수정
+	@GetMapping("/memberedit")
+	public String memberedit() {
+		return "/register/memberedit";
+	}
+	
+	// �쉶�썝�젙蹂� �닔�젙
 	@PostMapping("/UserEdit")
 	public ModelAndView UserEdit(UserDTO dto) {
 		ModelAndView mav = new ModelAndView();
@@ -141,37 +145,30 @@ public class UserController {
 			mav.setViewName("redirect: mypage");
 		}catch(Exception e){
 			e.printStackTrace();
-			mav.setViewName("register/userEditResult");
+			mav.setViewName("register/UserEditResult");
 		}		
 		
 		return mav;
 	}
 	
-	// 아이디 찾기
-	@PostMapping("/IdSearchOk")
-	public ModelAndView IdSearchOk() {
-		ModelAndView mav = new ModelAndView();
-		
-		return mav;
-	}
+	// �븘�씠�뵒 李얘린
 	
-	// 비밀번호 찾기
-	@PostMapping("/PWSearchOk")
-	public ModelAndView PWSearchOk() {
-		ModelAndView mav = new ModelAndView();
-		
-		return mav;
-	}
+	// 鍮꾨�踰덊샇 李얘린
 	
+<<<<<<< HEAD
 	// 회원탈퇴
 
+=======
+	// �쉶�썝�깉�눜
+>>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
 	@PostMapping("/UserDel")
-	public ModelAndView UserDel(String u_id, String u_pw) {
+	public ModelAndView UserDel(String u_id, String u_pw, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		int result = service.UserDel(u_id, u_pw);
 		
 		if(result > 0) {
-			mav.setViewName("redirect: /");
+			session.invalidate();
+			mav.setViewName("redirect:/");
 		}else {
 			mav.addObject("dto",u_id);
 			mav.setViewName("redirect: mypage");
@@ -180,6 +177,7 @@ public class UserController {
 		return mav;
 	}
 	
+<<<<<<< HEAD
 	// 구독관리 
 	 // 네이버로그인 
 	
@@ -199,5 +197,7 @@ public class UserController {
 		 System.out.println("db에 소셜로그인 회원의 정보가 있는지"); 
 	 }
 	
+=======
+>>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
 	
 }

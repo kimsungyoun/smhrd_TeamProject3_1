@@ -21,7 +21,7 @@ public class GameController {
    public ModelAndView gamedetail(int g_no) {
       ModelAndView mav = new ModelAndView();
       mav.addObject("dto", service.getView(g_no));      
-      mav.setViewName("views/gameDetail");
+      mav.setViewName("game/gameDetail");
       
       return mav;
    }

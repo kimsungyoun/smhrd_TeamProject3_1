@@ -7,7 +7,7 @@
 	<!-- 회원등록 -->
 	<insert id="UserInsert">
 		INSERT INTO USERS (u_id, u_pw, u_name, u_email, u_phone, u_birthdate, u_gender)
-		values (#{u_id},#{u_pw}, #{u_name},#{u_email}, #{u_phone}, #{u_birthdate},#{u_gender})
+		values (#{u_id},#{u_pw},#{u_name},#{u_email}, #{u_phone}, #{u_birthdate},#{u_gender})
 	</insert> 	
  	
 	<!-- 아이디 중복 체크 -->
