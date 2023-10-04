@@ -7,13 +7,11 @@
 	<div class="my-page-wrapper">
 	    <div class="profile-section">
 	        <div class="profile-img"></div>
-
 	    </div>
 	
 	    <div class="info-section">
-	        <span>${dto.u_name}님</span>
-	        <span>구독여부:${sdto.sub_status}</span>
-	        
+	        <p>${dto.u_name}님</p>
+	        <p>구독여부 : ${sdto.sub_status}</p>
 	    </div>
 	
 	    <div class="info-section">

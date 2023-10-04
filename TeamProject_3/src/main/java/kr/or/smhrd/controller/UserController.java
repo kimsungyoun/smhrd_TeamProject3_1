@@ -15,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.or.smhrd.dao.SubscriptionDAO;
+import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
+import kr.or.smhrd.service.SubscriptionService;
 import kr.or.smhrd.service.UserService;
 
 @Controller
@@ -24,11 +27,16 @@ public class UserController {
    @Autowired
    UserService service;
    
+   @Autowired
+   SubscriptionService s_service;
+   
    @GetMapping("/mypage")
    public ModelAndView mypage(HttpSession session) {
       ModelAndView mav = new ModelAndView();
       UserDTO dto = service.UserSelect((String) session.getAttribute("logId"));
+      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("logId"));
       mav.addObject("dto", dto);
+      mav.addObject("sdto", sdto);
       mav.setViewName("register/mypage");
       
       return mav;
@@ -74,11 +82,13 @@ public class UserController {
    }
       
    @PostMapping("/UserInsert")
-   public ModelAndView UserInsert(UserDTO dto) {
+   public ModelAndView UserInsert(UserDTO dto,SubscriptionDTO sDTO) {
       ModelAndView mav = new ModelAndView();
       int result = 0;
       try {         
          result = service.UserInsert(dto);
+         s_service.UserInsert(sDTO);
+         
       }catch(Exception e) {
          System.out.println("error >> "+e);
       }
