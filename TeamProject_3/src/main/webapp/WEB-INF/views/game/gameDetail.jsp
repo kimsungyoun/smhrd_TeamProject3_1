@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+<link rel=stylesheet href=../inc/gameDetail.css>
+
 <main>
 <div>
-   <h2>Detail page</h2>
+   <h2>${dto.g_name }</h2>
    <table border="1">
       <tr>
 	      <th>종류</th>

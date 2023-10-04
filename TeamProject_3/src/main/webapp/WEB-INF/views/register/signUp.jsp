@@ -1,18 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-    	#signUp-form{
-    		display:flex;
-			flex-direction: column;    		
-    		align-items: center;
-    	}
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        
-    </style>
+
+<link rel=stylesheet href=../inc/signUp.css>
+
 
 <main>
 <div id="signUp-form">
@@ -21,7 +12,7 @@
 	<form action="UserInsert" method="POST">
 	    <table>
 	    	<tr>
-	    		<td>아이디</td>
+	    		<td>아이디</td> 
 	    		<td><input type="text" id="u_id" name="u_id" required></td>
 	    	</tr>
 	    	
