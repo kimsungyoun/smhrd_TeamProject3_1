@@ -1,10 +1,4 @@
 @charset "UTF-8";
-.social-login{
-	margin-top:30px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
 	
 .login-wrapper{
     width: 400px;
@@ -53,4 +47,11 @@
 #login-form input[type="checkbox"]:checked + label{
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.social-login{
+	margin-top:30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }

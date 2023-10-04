@@ -11,6 +11,7 @@
 <main>
 	<div class="login-wrapper">
 	    <h2>Login</h2>
+	    <div>
 	    <form method="post" action="loginOk" id="login-form">
 	        <input type="text" name="u_id" id="u_id" placeholder="Email">
 	        <input type="password" name="u_pw" id="u_pw" placeholder="Password">
@@ -20,6 +21,7 @@
 	        </label>	        
 	        <input type="submit" value="로그인">
 	    </form>
+	    </div>
 	        <div class="">
 	            <a href="/smhrd/register/idSearch"><button>아이디찾기</button></a>
 	            <a href="/smhrd/register/pwSearch"><button>비밀번호찾기</button></a>
