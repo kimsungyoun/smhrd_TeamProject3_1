@@ -33,19 +33,25 @@
 </main>
 
 <script>
-    function validatePassword() {
-        var password = document.getElementById('userPassword').value;
-
-        // 비밀번호 검증 로직을 여기에 추가하세요.
-        // 예를 들어, 서버에 요청을 보내 비밀번호를 검증할 수 있습니다.
-        // 이 예시에서는 단순히 비밀번호가 '1234'인 경우를 올바른 것으로 가정합니다.
-
-        if (password === '1234') {
-            window.location.href = '/useredit.jsp';
-            return false; // 폼 제출을 막습니다.
-        } else {
-            alert('비밀번호가 잘못되었습니다.');
-            return false; // 폼 제출을 막습니다.
+function validatePassword() {
+    var password = $('#userPassword').val();
+    
+    $.ajax({
+        type: 'POST',
+        url: 'passwordValidationURL',  // 'passwordValidationURL'은 비밀번호를 검증하는 서버의 URL입니다.
+        data: {
+            password: password
+        },
+        dataType: 'json',
+        success: function(response) {
+            if (response.isValid) {
+                window.location.href = '/useredit.jsp';
+            } else {
+                alert('비밀번호가 잘못되었습니다.');
+            }
+        },
+        error: function() {
+            alert('서버와의 통신 중 오류가 발생했습니다.');
         }
     }
 </script>
