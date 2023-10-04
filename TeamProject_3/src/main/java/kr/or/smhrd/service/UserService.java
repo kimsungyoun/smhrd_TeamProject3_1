@@ -26,5 +26,4 @@ public interface UserService {
 	
 	// �쉶�썝�깉�눜
 	public int UserDel(String u_id, String u_pw);
-	
 }

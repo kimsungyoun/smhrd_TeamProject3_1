@@ -144,7 +144,6 @@ public class UserController {
          e.printStackTrace();
          mav.setViewName("register/UserEditResult");
       }      
-      
       return mav;
    }
 
@@ -160,8 +159,7 @@ public class UserController {
          mav.addObject("dto",u_id);
          mav.setViewName("redirect: mypage");
       }
-      
       return mav;
    }
-   
+
 }
