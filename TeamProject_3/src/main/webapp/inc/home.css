@@ -53,3 +53,19 @@ a {
 a:hover {
     color: #6A24FE;
 }
+/* "맨 위로" 버튼 스타일 */
+#myBtn {
+    display: none; /* 기본적으로는 보이지 않음 */
+    position: fixed; /* 스크롤과 상관없이 항상 같은 위치에 있음 */
+    bottom: 20px; /* 페이지 하단에서 20px 위에 위치 */
+    right: 20px; /* 페이지 우측에서 20px 왼쪽에 위치 */
+    border: none; 
+    outline: none; 
+    background-color: #CEBEE1; /* 버튼 배경색 */
+    color: white; /* 텍스트 색상 */
+    cursor: pointer; /* 마우스 오버 시 손가락 모양 커서로 변경 */
+    padding: 10px;
+    border-radius: 4px; /* 모서리 둥글게 */
+    font-size: 18px; /* 글자 크기 */
+    transition: background-color 0.3s; /* 배경색 변경 시 부드러운 전환 효과 */
+}

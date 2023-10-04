@@ -48,5 +48,24 @@
 	</tbody>
 	</table>
 </div>
+<!-- "맨 위로" 버튼 -->
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+//사용자가 스크롤을 20px 이상 내리면 "맨 위로" 버튼이 나타나게 함
+window.onscroll = function() {scrollFunction()};
 
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+}
+
+// 사용자가 버튼을 클릭하면 맨 위로 스크롤
+function topFunction() {
+  document.body.scrollTop = 0; // Safari 브라우저를 위한 스크롤
+  document.documentElement.scrollTop = 0; // 다른 브라우저를 위한 스크롤
+}
+</script>
 </main>
