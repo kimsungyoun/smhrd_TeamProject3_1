@@ -27,7 +27,7 @@
 	        </div>
 	</div>
 
-	<div>
+	<%-- <div>
 		<ul>
 		    <li onclick="kakaoLogin();">
 		        <a href="javascript:void(0)">
@@ -51,7 +51,7 @@
 		    <li><a href="/smhrd/views/paymentdetail">paymentdetail</a></li>
 		    <li><a href="/smhrd/views/word">word</a></li>
 		
-			<%--구글 api--%>
+			구글 api
 		    <li>
 		    <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
 		    </li>
@@ -60,7 +60,7 @@
 		    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
 		    </li>
 		</ul>
-	</div>
+	</div> --%>
 	
 	<div class="social-login">
 		<a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
