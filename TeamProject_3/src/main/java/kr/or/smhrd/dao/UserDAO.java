@@ -12,10 +12,10 @@ public interface UserDAO {
 	// 로그인
 	public UserDTO loginOk(String u_id, String u_pw);
 	
-	// 아이디 찾기 폼 이동
+	// 아이디 찾기
 	public UserDTO IdSearch(UserDTO dto);
 	
-	// 비밀번호 찾기 폼 이동
+	// 비밀번호 찾기
 	public UserDTO PwSearch(UserDTO dto);
 	
 	// 회원정보

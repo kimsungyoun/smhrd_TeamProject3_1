@@ -76,27 +76,43 @@ public class UserController {
       return "/register/pwSearch";
    }
    
+   @PostMapping("/IdSearchOk")
+   public ModelAndView IdSearchOk(UserDTO dto) {
+	   ModelAndView mav = new ModelAndView();
+	   try {
+		   service.IdSearch(dto);
+		   mav.addObject("dto", dto);
+		   mav.setViewName("");
+	   }catch (Exception e) {
+		   e.printStackTrace();
+		   mav.setViewName("");
+	   }
+	   
+	   return mav;
+   }
+   
    @GetMapping("/signUp")
    public String signUp() {
       return "/register/signUp";
    }
       
    @PostMapping("/UserInsert")
-   public ModelAndView UserInsert(UserDTO dto,SubscriptionDTO sDTO) {
+   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sDTO) {
       ModelAndView mav = new ModelAndView();
-      int result = 0;
-      try {         
-         result = service.UserInsert(dto);
-         s_service.UserInsert(sDTO);
-         
-      }catch(Exception e) {
-         System.out.println("error >> "+e);
-      }
+      int u_result = 0;
+      int s_result = 0;
+      try{
+    	  u_result = service.UserInsert(dto);
+    	  s_result = s_service.UserInsert(sDTO);
+      }catch (Exception e) {
+		// TODO: handle exception
+    	  System.out.println("회원가입 실패");
+    	  }
       
-      if(result > 0) {
-         mav.setViewName("redirect: login");
-      }else {
-         mav.setViewName("register/registerResult");
+      if(u_result > 0 && s_result > 0) {    	  
+    	  mav.setViewName("redirect: login");
+      }else {    	  
+    	  mav.setViewName("/register/signUpFail");
       }
       
       return mav;

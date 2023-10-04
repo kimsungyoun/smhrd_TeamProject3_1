@@ -12,7 +12,7 @@ public interface UserService {
 	// 濡쒓렇�씤
 	public UserDTO loginOk(String u_id, String u_pw);
 	
-	// �븘�씠�뵒 李얘린
+	// 아이디 찾기 폼으로 이동
 	public UserDTO IdSearch(UserDTO dto);
 	
 	// 鍮꾨�踰덊샇 李얘린
