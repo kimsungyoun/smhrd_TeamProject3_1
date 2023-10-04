@@ -27,7 +27,7 @@
 	    </li>
 	  </ul>
 	  <a href='/smhrd/news/newsList?nowPage=${pDTO.nowPage}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>
-	  <button>목록</button>
+	  <button class="button">목록</button>
 	  </a>
 	</div>
 </main>
