@@ -97,17 +97,17 @@ public class UserController {
       
    @PostMapping("/UserInsert")
    public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto) {
-      ModelAndView mav = new ModelAndView();      
-      
+      ModelAndView mav = new ModelAndView();
       try {			
-			service.UserInsert(dto);
-			s_service.UserInsert(sdto);
-
-			mav.setViewName("redirect: login");
-		}catch(Exception e) {
-			System.out.println("error >> " + e);
-			mav.setViewName("register/signupFail");
-		}
+    	  service.UserInsert(dto);
+    	  
+    	  s_service.UserInsert(sdto);
+    	  
+    	  mav.setViewName("redirect: login");
+      }catch(Exception e) {
+    	  System.out.println("error >> " + e);
+    	  mav.setViewName("register/signupFail");
+      }
       
       return mav;
    }
