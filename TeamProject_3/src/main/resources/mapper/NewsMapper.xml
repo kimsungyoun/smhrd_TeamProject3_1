@@ -3,7 +3,16 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="kr.or.smhrd.dao.NewsDAO">
+<mapper namespace="kr.or.smhrd.dao.NewsDAO">  
+  <select id="totalRecord" resultType="int">
+      select count(n_no) cnt from News
+      where 1=1
+      <if test="searchWord != null">
+         and ${searchKey} like '%${searchWord}%'
+      </if>
+            
+      </select>
+	
 	<select id="getList" resultType="kr.or.smhrd.dto.NewsDTO">		
 		SELECT * FROM
 		(SELECT * FROM 
@@ -39,15 +48,10 @@
 		DELETE FROM news WHERE n_no=${param1}
 	</delete>
 
- 	<select id="totalRecord" resultType="int">
-		select count(n_no) cnt from news
-		<if test="searchWord != null">
-			where ${searchKey} like '%${searchWord}%'
-		</if>
-	</select>
 	
 	<update id="hitCount">
 		UPDATE news SET n_hit=n_hit+1 WHERE n_no=${param1}
 	</update>
 	 
 </mapper>
+

@@ -28,13 +28,13 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDTO IdSearch(UserDTO dto) {
-        return dao.IdSearch(dto);
+    public UserDTO IdSearch(String u_name, String u_email) {
+        return dao.IdSearch(u_name, u_email);
     }
 
     @Override
-    public UserDTO PwSearch(UserDTO dto) {
-        return dao.PwSearch(dto);
+    public UserDTO PwSearch(String u_id, String u_email) {
+        return dao.PwSearch(u_id, u_email);
     }
 
     @Override

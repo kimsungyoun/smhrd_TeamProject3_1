@@ -10,5 +10,5 @@ import kr.or.smhrd.dto.UserDTO;
 public interface SubscriptionService {
 	public SubscriptionDTO getView(String u_id);
 	//public UserDTO UserSelect(String u_id);
-	public SubscriptionDTO UserInsert(SubscriptionDTO dto);
+	public int UserInsert(SubscriptionDTO dto);
 }

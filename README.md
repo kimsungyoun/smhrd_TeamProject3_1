@@ -17,11 +17,18 @@
 <hr>
 
 ## 사용 기술 스택
+<<<<<<< .merge_file_EBue8s
+- java
+- Spring Boot
+- Oracle DB
+- Apache Tomcat
+=======
 - Java
 - Python
 - Spring Framework
 - Oracle DB
 - Apache Tomcat 9.0
+>>>>>>> .merge_file_JewAQl
 
 ## 주요 기능 상세 설명
 > 분석 데이터 시각화

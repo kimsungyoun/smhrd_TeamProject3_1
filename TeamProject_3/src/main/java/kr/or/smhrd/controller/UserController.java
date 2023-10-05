@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ import kr.or.smhrd.service.UserService;
 @Controller
 @RequestMapping("/register")
 public class UserController {
+
    @Autowired
    UserService service;
    
@@ -90,27 +92,43 @@ public class UserController {
       return "/register/pwSearch";
    }
    
+   @PostMapping("/IdSearchOk")
+   public ModelAndView IdSearchOk(UserDTO dto) {
+	   ModelAndView mav = new ModelAndView();
+	   try {
+		   service.IdSearch(dto);
+		   mav.addObject("dto", dto);
+		   mav.setViewName("");
+	   }catch (Exception e) {
+		   e.printStackTrace();
+		   mav.setViewName("");
+	   }
+	   
+	   return mav;
+   }
+   
    @GetMapping("/signUp")
    public String signUp() {
       return "/register/signUp";
    }
       
    @PostMapping("/UserInsert")
-   public ModelAndView UserInsert(UserDTO dto,SubscriptionDTO sDTO) {
-      ModelAndView mav = new ModelAndView();
+   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sDTO) {
+      ModelAndView mav = new ModelAndView();      
+      
       int result = 0;
-      try {         
-         result = service.UserInsert(dto);
-         s_service.UserInsert(sDTO);
-         
-      }catch(Exception e) {
-         System.out.println("error >> "+e);
+      try{    	  
+    	  result = service.UserInsert(dto);
+    	  s_service.UserInsert(sDTO);
+    	  
+      }catch (Exception e) {
+    	  System.out.println("회원가입 실패 >> " + e);
       }
       
-      if(result > 0) {
-         mav.setViewName("redirect: login");
-      }else {
-         mav.setViewName("register/registerResult");
+      if(result > 0) {    	  
+    	  mav.setViewName("redirect: login");
+      }else {    	  
+    	  mav.setViewName("register/signupFail");
       }
       
       return mav;
@@ -158,7 +176,6 @@ public class UserController {
          e.printStackTrace();
          mav.setViewName("register/UserEditResult");
       }      
-      
       return mav;
    }
 
@@ -174,7 +191,6 @@ public class UserController {
          mav.addObject("dto",u_id);
          mav.setViewName("redirect: mypage");
       }
-      
       return mav;
    }
    
