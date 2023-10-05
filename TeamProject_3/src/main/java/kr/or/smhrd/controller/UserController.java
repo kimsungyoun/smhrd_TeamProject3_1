@@ -92,20 +92,22 @@ public class UserController {
       return "/register/pwSearch";
    }
    
-   @PostMapping("/IdSearchOk")
-   public ModelAndView IdSearchOk(UserDTO dto) {
-	   ModelAndView mav = new ModelAndView();
-	   try {
-		   service.IdSearch(dto);
-		   mav.addObject("dto", dto);
-		   mav.setViewName("");
-	   }catch (Exception e) {
-		   e.printStackTrace();
-		   mav.setViewName("");
-	   }
-	   
-	   return mav;
-   }
+   //
+  // @PostMapping("/IdSearchOk")
+ //  public ModelAndView IdSearchOk(UserDTO dto) {
+//	   ModelAndView mav = new ModelAndView();
+//	   try {
+//		   service.IdSearch(dto);
+//		   mav.addObject("dto", dto);
+//		   mav.setViewName("");
+//	   }catch (Exception e) {
+//		   e.printStackTrace();
+//		   mav.setViewName("");
+//	   }
+//	   
+//	   return mav;
+//  }
+ //
    
    @GetMapping("/signUp")
    public String signUp() {

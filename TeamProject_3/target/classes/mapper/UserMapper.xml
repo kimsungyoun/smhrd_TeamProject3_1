@@ -26,11 +26,7 @@
 	
 	<!-- 비밀번호 찾기 -->
 	<select id="PwSearch" resultType="kr.or.smhrd.dto.UserDTO">
-<<<<<<< HEAD
-		SELECT u_id, u_email, u_pw
-=======
 		SELECT u_id, u_name, u_email, u_password
->>>>>>> 9060f71afff174ee88be413e153574e4b2f596a4
 		FROM USERS
 		WHERE u_id=#{param1} AND u_email=#{param2}
 	</select>
