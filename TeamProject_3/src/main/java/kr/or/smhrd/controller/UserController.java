@@ -16,13 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-<<<<<<< HEAD
-
-
-=======
 import kr.or.smhrd.dao.SubscriptionDAO;
 import kr.or.smhrd.dto.SubscriptionDTO;
->>>>>>> 9060f71afff174ee88be413e153574e4b2f596a4
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
 import kr.or.smhrd.service.UserService;
@@ -30,11 +25,12 @@ import kr.or.smhrd.service.UserService;
 @Controller
 @RequestMapping("/register")
 public class UserController {
-<<<<<<< HEAD
 	@Autowired
 	UserService service;
-	
 
+	@Autowired
+	SubscriptionService s_service;
+	
 	@GetMapping("/mypage")
 	public ModelAndView mypage(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -92,21 +88,18 @@ public class UserController {
 		
 	// �쉶�썝媛��엯
 	@PostMapping("/UserInsert")
-	public ModelAndView UserInsert(UserDTO dto) {
+	public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto) {
 		ModelAndView mav = new ModelAndView();
-		int result = 0;
+		
 		try {			
-			result = service.UserInsert(dto);
+			service.UserInsert(dto);
+			s_service.UserInsert(sdto);
+
+			mav.setViewName("redirect: login");
 		}catch(Exception e) {
 			System.out.println("error >> "+e);
+			mav.setViewName("register/signupFail");
 		}
-		
-		if(result > 0) {
-			mav.setViewName("redirect: login");
-		}else {
-			mav.setViewName("register/registerResult");
-		}
-		
 		return mav;
 	}
 	// 濡쒓렇�씤
@@ -216,168 +209,5 @@ public class UserController {
 		return mav;
 	}
 
-	// 구독관리 
-	 // 네이버로그인 
-	
 
-
-
-
-	
-=======
-   @Autowired
-   UserService service;
-   
-   @Autowired
-   SubscriptionService s_service;
-   
-   @GetMapping("/mypage")
-   public ModelAndView mypage(HttpSession session) {
-      ModelAndView mav = new ModelAndView();
-      UserDTO dto = service.UserSelect((String) session.getAttribute("logId"));
-      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("logId"));
-      mav.addObject("dto", dto);
-      mav.addObject("sdto", sdto);
-      mav.setViewName("register/mypage");
-      
-      return mav;
-   }
-
-   @GetMapping("/userEdit")
-   public ModelAndView userEdit(HttpSession session) {
-      ModelAndView mav = new ModelAndView();
-      UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
-      mav.addObject("dto", dto);
-      mav.setViewName("register/userEdit");
-      return mav;
-   }
-   
-   @GetMapping("/userResign")
-   public ModelAndView userResign(HttpSession session) {
-      ModelAndView mav = new ModelAndView();
-      UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
-      mav.addObject("dto", dto);
-      mav.setViewName("register/userResign");
-      
-      return mav;
-   }
-   
-   @GetMapping("/login")
-   public String login() {
-      return "/register/login";
-   }
-   
-   @GetMapping("/idSearch")
-   public String idSearch() {
-      return "/register/idSearch";
-   }
-   
-   @GetMapping("/pwSearch")
-   public String pwSearch() {
-      return "/register/pwSearch";
-   }
-   
-   @PostMapping("/IdSearchOk")
-   public ModelAndView IdSearchOk(UserDTO dto) {
-	   ModelAndView mav = new ModelAndView();
-	   try {
-		   service.IdSearch(dto);
-		   mav.addObject("dto", dto);
-		   mav.setViewName("");
-	   }catch (Exception e) {
-		   e.printStackTrace();
-		   mav.setViewName("");
-	   }
-	   
-	   return mav;
-   }
-   
-   @GetMapping("/signUp")
-   public String signUp() {
-      return "/register/signUp";
-   }
-      
-   @PostMapping("/UserInsert")
-   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sDTO) {
-      ModelAndView mav = new ModelAndView();      
-      
-      int result = 0;
-      try{    	  
-    	  result = service.UserInsert(dto);
-    	  s_service.UserInsert(sDTO);
-    	  
-      }catch (Exception e) {
-    	  System.out.println("회원가입 실패 >> " + e);
-      }
-      
-      if(result > 0) {    	  
-    	  mav.setViewName("redirect: login");
-      }else {    	  
-    	  mav.setViewName("register/signupFail");
-      }
-      
-      return mav;
-   }
-
-   @PostMapping("/loginOk")
-   public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
-      UserDTO dto = service.loginOk(u_id, u_pw);
-      
-      ModelAndView mav = new ModelAndView();
-      
-      if(dto != null) {
-         session.setAttribute("logId", dto.getU_id());
-         session.setAttribute("logName", dto.getU_name());
-         session.setAttribute("logStatus", "Y");
-         
-         mav.setViewName("redirect:/");
-      }else {
-         mav.setViewName("register/loginResult");
-      }
-      return mav;
-   }
-   
-   @GetMapping("/logOut")
-   public ModelAndView logOut(HttpSession session) {
-      session.invalidate();
-      ModelAndView mav = new ModelAndView();
-      mav.setViewName("redirect:/");
-      return mav;
-   }
-   
-   @GetMapping("/memberedit")
-   public String memberedit() {
-      return "/register/memberedit";
-   }
-   
-   @PostMapping("/UserEdit")
-   public ModelAndView UserEdit(UserDTO dto) {
-      ModelAndView mav = new ModelAndView();
-      try {
-         int result = service.UserEdit(dto);
-         
-         mav.setViewName("redirect: mypage");
-      }catch(Exception e){
-         e.printStackTrace();
-         mav.setViewName("register/UserEditResult");
-      }      
-      return mav;
-   }
-
-   @PostMapping("/UserDel")
-   public ModelAndView UserDel(String u_id, String u_pw, HttpSession session) {
-      ModelAndView mav = new ModelAndView();
-      int result = service.UserDel(u_id, u_pw);
-      
-      if(result > 0) {
-    	 session.invalidate();
-         mav.setViewName("redirect:/");
-      }else {
-         mav.addObject("dto",u_id);
-         mav.setViewName("redirect: mypage");
-      }
-      return mav;
-   }
-
->>>>>>> 9060f71afff174ee88be413e153574e4b2f596a4
 }

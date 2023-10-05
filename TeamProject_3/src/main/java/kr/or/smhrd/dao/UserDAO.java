@@ -26,10 +26,5 @@ public interface UserDAO {
 	
 	// 회원탈퇴
 	public int UserDel(String u_id, String u_pw);
-<<<<<<< HEAD
 
-	
-
-=======
->>>>>>> 9060f71afff174ee88be413e153574e4b2f596a4
 }
