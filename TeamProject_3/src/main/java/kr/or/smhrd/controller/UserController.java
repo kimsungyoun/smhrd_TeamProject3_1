@@ -68,7 +68,6 @@ public class UserController {
       return "/register/login";
    }
    
-//////////////////////////////////////////////////////////
    @GetMapping("/payment") 
    public ModelAndView payment(HttpSession session) { 
       ModelAndView mav = new ModelAndView();
@@ -80,7 +79,6 @@ public class UserController {
       
       return mav;
    }
-//////////////////////////////////////////////////////////
    
    @GetMapping("/idSearch")
    public String idSearch() {
@@ -92,28 +90,13 @@ public class UserController {
       return "/register/pwSearch";
    }
    
-   @PostMapping("/IdSearchOk")
-   public ModelAndView IdSearchOk(UserDTO dto) {
-	   ModelAndView mav = new ModelAndView();
-	   try {
-		   service.IdSearch(dto);
-		   mav.addObject("dto", dto);
-		   mav.setViewName("");
-	   }catch (Exception e) {
-		   e.printStackTrace();
-		   mav.setViewName("");
-	   }
-	   
-	   return mav;
-   }
-   
    @GetMapping("/signUp")
    public String signUp() {
       return "/register/signUp";
    }
       
    @PostMapping("/UserInsert")
-   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sDTO) {
+   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto) {
       ModelAndView mav = new ModelAndView();      
       
       try {			
@@ -122,7 +105,7 @@ public class UserController {
 
 			mav.setViewName("redirect: login");
 		}catch(Exception e) {
-			System.out.println("error >> "+e);
+			System.out.println("error >> " + e);
 			mav.setViewName("register/signupFail");
 		}
       
@@ -155,16 +138,11 @@ public class UserController {
       return mav;
    }
    
-   @GetMapping("/memberedit")
-   public String memberedit() {
-      return "/register/memberedit";
-   }
-   
    @PostMapping("/UserEdit")
    public ModelAndView UserEdit(UserDTO dto) {
       ModelAndView mav = new ModelAndView();
       try {
-         int result = service.UserEdit(dto);
+         service.UserEdit(dto);
          
          mav.setViewName("redirect: mypage");
       }catch(Exception e){

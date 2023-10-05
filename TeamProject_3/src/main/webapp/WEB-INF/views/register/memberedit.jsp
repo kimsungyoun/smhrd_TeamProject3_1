@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <%--
   Created by IntelliJ IDEA.
   User: user07
