@@ -2,6 +2,7 @@ package kr.or.smhrd.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -25,4 +26,16 @@ public class SubscriptionController {
 	    
 	    return mav;
 	}
+
+	@GetMapping("/payment")
+	public ModelAndView payment(String u_id) {
+		ModelAndView mav = new ModelAndView();
+		
+	    mav.addObject("dto", service.getView(u_id));      
+	   
+	    mav.setViewName("subscription/payment");
+	    
+	    return mav;
+	}
+	
 }
