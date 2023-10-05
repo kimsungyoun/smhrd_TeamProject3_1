@@ -1,0 +1,16 @@
+/* pwShow.css */
+body {
+    font-family: Arial, sans-serif; /* 원하는 글꼴로 변경 */
+    background-color: #F8F8F8; /* 배경색 설정 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px; /* 원하는 폰트 크기로 변경 */
+    color: #333; /* 글자 색상 설정 */
+    margin-top: 20px;
+}
+
+/* 추가적인 스타일을 필요에 따라 설정할 수 있습니다. */

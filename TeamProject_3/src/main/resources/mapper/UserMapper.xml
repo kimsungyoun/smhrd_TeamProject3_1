@@ -19,16 +19,20 @@
 	
 	<!-- 아이디 찾기 -->
 	<select id="IdSearch" resultType="kr.or.smhrd.dto.UserDTO">
-		SELECT u_id, u_name
+		SELECT u_id, u_name, u_email
 		FROM USERS
-		WHERE u_name=#{u_name} AND u_birthdate=#{u_birthdate}
+		WHERE u_name=#{param1} AND u_email=#{param2}
 	</select> 
 	
 	<!-- 비밀번호 찾기 -->
 	<select id="PwSearch" resultType="kr.or.smhrd.dto.UserDTO">
+<<<<<<< HEAD
+		SELECT u_id, u_email, u_pw
+=======
 		SELECT u_id, u_name, u_email, u_password
+>>>>>>> 9060f71afff174ee88be413e153574e4b2f596a4
 		FROM USERS
-		WHERE u_id=#{userid} AND u_email=#{u_email}
+		WHERE u_id=#{param1} AND u_email=#{param2}
 	</select>
 	
 	<!-- 회원정보 -->
