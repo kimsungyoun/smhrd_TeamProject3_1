@@ -12,8 +12,8 @@
 	<div class="login-wrapper">
 	    <h2>Login</h2>
 	    <form method="post" action="loginOk" id="login-form">
-	        <input type="text" name="u_id" placeholder="Email">
-	        <input type="password" name="u_pw" placeholder="Password">
+	        <input type="text" name="u_id" id="u_id" placeholder="Email">
+	        <input type="password" name="u_pw" id="u_pw" placeholder="Password">
 	        
 	        <label for="remember-check">
 	            <input type="checkbox" id="remember-check">아이디 저장하기
@@ -27,6 +27,41 @@
 	        </div>
 	</div>
 
+	<%-- <div>
+		<ul>
+		    <li onclick="kakaoLogin();">
+		        <a href="javascript:void(0)">
+		            <img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인">
+		        </a>s
+		    </li>
+		    <li onclick="kakaoLogout();">
+		        <a href="javascript:void(0)">
+		            <span>카카오 로그아웃</span>
+		        </a>
+		    </li>
+		    
+		    <li><a href="/smhrd/views/sidebar">sidebar</a></li>
+		    <li><a href="/smhrd/views/news">news</a></li>
+		    <li><a href="/smhrd/views/mypage">mypage</a></li>
+		    <li><a href="/smhrd/views/newsviews">newsviews</a></li>
+		    <li><a href="/smhrd/views/payment">payment</a></li>
+		    <li><a href="/smhrd/views/chart">chart</a></li>
+		    <li><a href="/smhrd/views/radarchart">radarchart</a></li>
+		    <li><a href="/smhrd/views/subscription">subscription</a></li>
+		    <li><a href="/smhrd/views/paymentdetail">paymentdetail</a></li>
+		    <li><a href="/smhrd/views/word">word</a></li>
+		
+			구글 api
+		    <li>
+		    <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
+		    </li>
+		    
+		    <li>
+		    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+		    </li>
+		</ul>
+	</div> --%>
+	
 	<div class="social-login">
 		<a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
 		<a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a>
@@ -34,6 +69,7 @@
 	
 	<%--구글 api--%>
 	<div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
+	
 	<div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
 	
 	<div>

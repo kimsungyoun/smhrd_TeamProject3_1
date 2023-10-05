@@ -8,11 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class NewsDTO {
-	private int n_no;             //´º½º ÀÏ·Ã¹øÈ£
-	private String n_title;       //±â»ç Á¦¸ñ
-	private String n_reporter;    //±â»ç ÀÛ¼ºÀÚ
-	private String n_writedate;   //ÀÛ¼º ÀÏÀÚ
-	private String n_content;     //±â»ç ³»¿ë
-	private int n_hit;            //±â»ç Á¶È¸¼ö
-	private String n_source;      //´º½º ÃâÃ³
+	private int n_no;             //ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·Ã¹ï¿½È£
+	private String n_title;       //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private String n_reporter;    //ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½
+	private String n_writedate;   //ï¿½Û¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private String n_content;     //ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private int n_hit;            //ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½
+	private String n_source;      //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã³
 }
