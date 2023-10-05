@@ -12,9 +12,9 @@
 	</select>
 	 
 	 <!-- 구독등록 -->
-	<select id="UserInsert" resultType="kr.or.smhrd.dto.SubscriptionDTO">
+	<insert id="UserInsert">
 		INSERT INTO SUBSCRIPTION(sub_no, u_id) 
 		VALUES(SUBSCRIPTION_SEQ.nextval, #{u_id})
-	</select>
+	</insert>
 	 
 </mapper>
