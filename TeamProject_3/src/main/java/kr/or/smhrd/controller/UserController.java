@@ -178,9 +178,9 @@ public class UserController {
       return mav;
    }
    
-   @GetMapping("/faqList")
+   @GetMapping("/faq")
    public String faq() {
-      return "faq/faqList";
+      return "/faqList";
    }
    
 }

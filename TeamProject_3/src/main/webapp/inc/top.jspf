@@ -103,7 +103,7 @@
             </li>
             
             <li>
-                <a href="/smhrd/faqList">
+                <a href="/smhrd/faq/faqList">
                     <img src="<%= request.getContextPath() %>/img/chat.png" width="50">
                     <br/>FAQ
                 </a>

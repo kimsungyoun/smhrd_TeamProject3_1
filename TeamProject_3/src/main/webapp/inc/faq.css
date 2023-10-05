@@ -1,0 +1,49 @@
+@charset "UTF-8";
+    
+    body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #FFF;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 2em;
+    }
+
+    .faq-item {
+        margin-bottom: 20px;
+    }
+
+    .faq-question {
+        font-weight: bold;
+        cursor: pointer;
+        color: #555;
+        font-size: 1.1em;
+    }
+
+    .faq-answer {
+        margin-top: 10px;
+        display: none;
+        color: #000000;
+        font-size: 1.2em;
+        line-height: 1.5;
+        background-color: #fff4db; /* 배경색 추가 */
+        padding: 5px; /* 내부 여백 추가 */
+        border-radius: 10px; /* 모서리 둥글게 */
+    }
+
+    .active {
+        display: block;
+    }
+

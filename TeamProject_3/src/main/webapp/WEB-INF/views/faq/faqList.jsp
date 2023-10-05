@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 
-<link rel=stylesheet href=../inc/faqList.css>
+<link rel=stylesheet href=../inc/faq.css>
 
     <script>
         // JavaScript 코드를 추가하여 질문을 클릭하면 답변을 펼치고 숨기는 기능을 구현합니다.
