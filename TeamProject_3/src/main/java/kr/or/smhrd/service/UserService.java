@@ -2,8 +2,6 @@ package kr.or.smhrd.service;
 import kr.or.smhrd.dto.UserDTO;
 
 
-
-
 public interface UserService {
 	// 회원가입
 	public int UserInsert(UserDTO dto);
@@ -30,4 +28,3 @@ public interface UserService {
 	public int UserDel(String u_id, String u_pw);
 	
 }
-

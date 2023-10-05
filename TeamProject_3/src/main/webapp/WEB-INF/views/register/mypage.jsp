@@ -16,11 +16,16 @@
 	    <div class="info-section">
 	        <a href="/smhrd/register/userEdit"><button>내 정보수정</button></a>
 	    </div>
-	
-	    <div class="info-section">
-	        <a href="/smhrd/subscription/detail?u_id=${dto.u_id}" ><button>구독 관리</button></a>
-	    </div>
-	
+		<c:if test="${sdto.sub_status=='N'}">
+		    <div class="info-section">
+		        <a href="/smhrd/subscription/payment/?u_id=${dto.u_id}" ><button>결제 하기</button></a>
+		    </div>
+		</c:if>	
+		<c:if test="${sdto.sub_status=='Y'}">
+		    <div class="info-section">
+		        <a href="/smhrd/subscription/detail?u_id=${dto.u_id}" ><button>구독 관리</button></a>
+		    </div>
+		</c:if>
 	    <div class="info-section">
 	        <a href="/smhrd/register/logOut"><button>로그아웃</button></a>
 	    </div>
