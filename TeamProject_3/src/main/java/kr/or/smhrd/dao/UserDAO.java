@@ -16,7 +16,7 @@ public interface UserDAO {
 	public UserDTO IdSearch(String u_name, String u_email);
 	
 	// 비밀번호 찾기
-	public UserDTO PwSearch(UserDTO dto);
+	public UserDTO PwSearch(String u_id, String u_email);
 	
 	// 회원정보
 	public UserDTO UserSelect(String u_id);
@@ -26,6 +26,7 @@ public interface UserDAO {
 	
 	// 회원탈퇴
 	public int UserDel(String u_id, String u_pw);
+
 	
 
 }

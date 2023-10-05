@@ -20,7 +20,7 @@ public interface UserService {
 	public UserDTO IdSearch(String u_name, String u_email);
 	
 	// 비밀번호 찾기
-	public UserDTO PwSearch(UserDTO dto);
+	public UserDTO PwSearch(String u_id, String u_email);
 	
 	// 회원정보
 	public UserDTO UserSelect(String u_id);

@@ -169,17 +169,40 @@ public class UserController {
 		return mav;
 	}
 	
+	//아이디찾기
 	@PostMapping("/IdSearch")
 	public ModelAndView IdSearch(String u_name, String u_email) {
 		ModelAndView mav = new ModelAndView();
 		UserDTO result = service.IdSearch(u_name, u_email);
 		try {
+			String name = result.getU_name();
 			String id = result.getU_id();
 			mav.addObject("u_id", id);
+			mav.addObject("u_name", name);
 			mav.setViewName("register/idShow");
 	
 
 		} catch (Exception e) {
+			mav.addObject("errorMessage", "아이디가 없음");
+			mav.setViewName("register/idSearchResult");
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	@PostMapping("/PwSearch")
+	public ModelAndView PwSearch(String u_id, String u_email) {
+		ModelAndView mav = new ModelAndView();
+		UserDTO result = service.PwSearch(u_id, u_email);
+		try {
+			String id = result.getU_id();
+			String pw = result.getU_pw();
+			mav.addObject("u_id", id);
+			mav.addObject("u_pw", pw);
+			mav.setViewName("register/pwShow");
+
+		} catch (Exception e) {
+			
+			mav.addObject("errorMessage", "비밀번호가 없음");
 			mav.setViewName("register/idSearchResult");
 			e.printStackTrace();
 		}

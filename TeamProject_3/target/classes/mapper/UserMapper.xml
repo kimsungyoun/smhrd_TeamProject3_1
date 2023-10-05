@@ -32,10 +32,10 @@
 	</select> 
 	
 	<!-- 비밀번호 찾기 -->
-	<select id="PWSearch" resultType="kr.or.smhrd.dto.UserDTO">
-		SELECT u_id, u_name, u_email, u_password
+	<select id="PwSearch" resultType="kr.or.smhrd.dto.UserDTO">
+		SELECT u_id, u_email, u_pw
 		FROM USERS
-		WHERE u_id=#{u_id} AND u_email=#{u_email}
+		WHERE u_id=#{param1} AND u_email=#{param2}
 	</select>
 	
 	<!-- 회원정보 -->

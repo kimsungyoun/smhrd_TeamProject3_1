@@ -1,19 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<<<<<<< HEAD
-<style>
-
-/* table {
-    border: 1px #a39485 solid;
-    font-size: .9em;
-    box-shadow: 0 2px 5px rgba(0,0,0,.25);
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 5px;
-    overflow: hidden;
-}
-=======
->>>>>>> 58ca6704af2406f6b6b823e433b45c2e46d2346e
 
 <link rel=stylesheet href=../inc/newsList.css>
 
