@@ -10,7 +10,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9060f71afff174ee88be413e153574e4b2f596a4
 public class GameDTO {
 	private int g_no;          
 	private String g_name;     
