@@ -84,10 +84,39 @@ public class UserController {
    public String idSearch() {
       return "/register/idSearch";
    }
+
+   @PostMapping("/IdSearch")
+	public ModelAndView IdSearch(UserDTO dto) {
+	   UserDTO result = service.IdSearch(dto);
+	   ModelAndView mav = new ModelAndView();
+	   if(result != null) {
+		   mav.addObject("dto", result);
+		   mav.setViewName("register/idShow");
+	   }else {
+		   mav.setViewName("register/SearchResult");		   
+	   }
+	   
+	   return mav;
+	}
    
    @GetMapping("/pwSearch")
    public String pwSearch() {
       return "/register/pwSearch";
+   }
+   
+   @PostMapping("/PwSearch")
+	public ModelAndView PwSearch(UserDTO dto) {
+		ModelAndView mav = new ModelAndView();
+		UserDTO result = service.PwSearch(dto);
+		
+		if(result != null) {
+			mav.addObject("dto", result);
+			mav.setViewName("register/pwShow");
+		}else {
+			/* mav.addObject("errorMessage", "비밀번호가 없음"); */
+			mav.setViewName("register/SearchResult");		   
+		}
+		return mav;
    }
    
    @GetMapping("/signUp")
