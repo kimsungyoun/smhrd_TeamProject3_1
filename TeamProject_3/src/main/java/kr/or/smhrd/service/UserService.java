@@ -17,7 +17,7 @@ public interface UserService {
 	public UserDTO loginOk(String u_id, String u_pw);
 	
 	// 아이디 찾기
-	public UserDTO IdSearch(UserDTO dto);
+	public UserDTO IdSearch(String u_name, String u_email);
 	
 	// 비밀번호 찾기
 	public UserDTO PwSearch(UserDTO dto);

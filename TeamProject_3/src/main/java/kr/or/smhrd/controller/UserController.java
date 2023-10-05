@@ -27,7 +27,7 @@ public class UserController {
 	@Autowired
 	UserService service;
 	
-	//留덉씠�럹�씠吏�濡� �씠�룞
+
 	@GetMapping("/mypage")
 	public ModelAndView mypage(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -38,7 +38,7 @@ public class UserController {
 		return mav;
 	}
 	
-	//�쉶�썝�젙蹂� �닔�젙�뤌�쑝濡� �씠�룞
+
 	@GetMapping("/userEdit")
 	public ModelAndView userEdit(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -48,7 +48,7 @@ public class UserController {
 		return mav;
 	}
 	
-	//�쉶�썝�깉�눜 �뤌�쑝濡� �씠�룞
+
 	@GetMapping("/userResign")
 	public ModelAndView userResign(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
@@ -59,25 +59,25 @@ public class UserController {
 		return mav;
 	}
 	
-	//濡쒓렇�씤 �뤌�쑝濡� �씠�룞
+
 	@GetMapping("/login")
 	public String login() {
 		return "/register/login";
 	}
 	
-	//�븘�씠�뵒 李얘린 �뤌�쑝濡� �씠�룞
+
 	@GetMapping("/idSearch")
 	public String idSearch() {
 		return "/register/idSearch";
 	}
 	
-	//�뙣�뒪�썙�뱶 李얘린 �뤌�쑝濡� �씠�룞
+
 	@GetMapping("/pwSearch")
 	public String pwSearch() {
 		return "/register/pwSearch";
 	}
 	
-	//�쉶�썝媛��엯 �뤌�쑝濡� �씠�룞
+
 	@GetMapping("/signUp")
 	public String signUp() {
 		return "/register/signUp";
@@ -166,6 +166,23 @@ public class UserController {
 			mav.setViewName("redirect: mypage");
 		}
 		
+		return mav;
+	}
+	
+	@PostMapping("/IdSearch")
+	public ModelAndView IdSearch(String u_name, String u_email) {
+		ModelAndView mav = new ModelAndView();
+		UserDTO result = service.IdSearch(u_name, u_email);
+		try {
+			String id = result.getU_id();
+			mav.addObject("u_id", id);
+			mav.setViewName("register/idShow");
+	
+
+		} catch (Exception e) {
+			mav.setViewName("register/idSearchResult");
+			e.printStackTrace();
+		}
 		return mav;
 	}
 

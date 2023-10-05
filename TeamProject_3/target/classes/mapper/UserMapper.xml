@@ -26,9 +26,9 @@
 	
 	<!-- 아이디 찾기 -->
 	<select id="IdSearch" resultType="kr.or.smhrd.dto.UserDTO">
-		SELECT u_id, u_name
+		SELECT u_id, u_name, u_email
 		FROM USERS
-		WHERE u_name=#{u_name} AND u_birthdate=#{u_birthdate}
+		WHERE u_name=#{param1} AND u_email=#{param2}
 	</select> 
 	
 	<!-- 비밀번호 찾기 -->
