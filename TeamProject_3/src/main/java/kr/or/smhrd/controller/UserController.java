@@ -66,6 +66,20 @@ public class UserController {
       return "/register/login";
    }
    
+//////////////////////////////////////////////////////////
+   @GetMapping("/payment") 
+   public ModelAndView payment(HttpSession session) { 
+      ModelAndView mav = new ModelAndView();
+      UserDTO dto = service.UserSelect((String) session.getAttribute("pay"));
+      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("pay"));
+      mav.addObject("dto", dto);
+      mav.addObject("sdto", sdto);
+      mav.setViewName("subscription/payment");
+      
+      return mav;
+   }
+//////////////////////////////////////////////////////////
+   
    @GetMapping("/idSearch")
    public String idSearch() {
       return "/register/idSearch";
@@ -162,6 +176,11 @@ public class UserController {
       }
       
       return mav;
+   }
+   
+   @GetMapping("/faqList")
+   public String faq() {
+      return "faq/faqList";
    }
    
 }

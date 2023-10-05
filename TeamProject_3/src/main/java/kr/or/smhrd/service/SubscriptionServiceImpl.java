@@ -20,7 +20,6 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 
 	@Override
 	public SubscriptionDTO UserInsert(SubscriptionDTO dto) {
-		// TODO Auto-generated method stub
 		return dao.UserInsert(dto);
 	}
 
