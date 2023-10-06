@@ -4,12 +4,32 @@
 
 <link rel=stylesheet href=../inc/signUp.css>
 
+<script type="text/javascript">
+   function convertImageToBase64(event) {
+     const fileInput = event.target;
+     const file = fileInput.files[0];
+     const reader = new FileReader();
+
+     reader.onload = function (event) {
+       const base64 = event.target.result;
+       document.getElementById("u_photo_base64_input").value = base64;
+     };
+
+     reader.readAsDataURL(file);
+   }
+</script>
+
 <main>
 <div id="signUp-form">
 	<h2>회원가입 폼</h2>
 	
 	<form action="UserInsert" method="POST">
 	    <table>
+	    	<tr>
+				<td>프로필 이미지</td>
+				<td><input type="file" name="u_photo" id="u_photo" onchange="convertImageToBase64(event);" /></td>
+		        <td><input type="hidden" name="u_photo_base64" id="u_photo_base64_input" /></td>
+	    	</tr>
 	    	<tr>
 	    		<td>아이디</td> 
 	    		<td><input type="text" id="u_id" name="u_id" required></td>
@@ -37,7 +57,7 @@
 	    	
 	    	<tr>
 	    		<td>이름</td>
-	    		<td><input type="text" id="u_name" name="u_name" required></td>
+	    		<td><input type="text" id="u_name" name="u_name" placeholder="010-1234-5678" required></td>
 	    	</tr>
 	    	
 	    	<tr>

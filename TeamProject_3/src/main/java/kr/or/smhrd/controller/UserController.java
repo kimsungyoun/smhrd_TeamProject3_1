@@ -1,22 +1,17 @@
 package kr.or.smhrd.controller;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Base64;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.or.smhrd.dao.SubscriptionDAO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
@@ -37,6 +32,15 @@ public class UserController {
       ModelAndView mav = new ModelAndView();
       UserDTO dto = service.UserSelect((String) session.getAttribute("logId"));
       SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("logId"));
+      
+      byte[] imageData = dto.getU_photo();
+      if (imageData != null) {
+    	  String base64ImageData = Base64.getEncoder().encodeToString(imageData);
+    	  dto.setU_photo_base64(base64ImageData);
+      } else {
+    	  dto.setU_photo_base64("사진없음");
+      }
+      
       mav.addObject("dto", dto);
       mav.addObject("sdto", sdto);
       mav.setViewName("register/mypage");
@@ -48,6 +52,15 @@ public class UserController {
    public ModelAndView userEdit(HttpSession session) {
       ModelAndView mav = new ModelAndView();
       UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
+      
+      byte[] imageData = dto.getU_photo();
+      if (imageData != null) {
+    	  String base64ImageData = Base64.getEncoder().encodeToString(imageData);
+    	  dto.setU_photo_base64(base64ImageData);
+      } else {
+    	  dto.setU_photo_base64("사진없음");
+      }
+      
       mav.addObject("dto", dto);
       mav.setViewName("register/userEdit");
       return mav;
@@ -125,8 +138,11 @@ public class UserController {
    }
       
    @PostMapping("/UserInsert")
-   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto) {
-      ModelAndView mav = new ModelAndView();
+   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto, @RequestParam("u_photo_base64") String base64ImageData) {
+	  byte[] imageData = Base64.getDecoder().decode(base64ImageData.split(",")[1]);
+	  dto.setU_photo(imageData);
+	   
+	  ModelAndView mav = new ModelAndView();
       try {			
     	  service.UserInsert(dto);
     	  
@@ -168,8 +184,11 @@ public class UserController {
    }
    
    @PostMapping("/UserEdit")
-   public ModelAndView UserEdit(UserDTO dto) {
-      ModelAndView mav = new ModelAndView();
+   public ModelAndView UserEdit(UserDTO dto, @RequestParam("u_photo_base64") String base64ImageData) {
+	  byte[] imageData = Base64.getDecoder().decode(base64ImageData.split(",")[1]);
+	  dto.setU_photo(imageData);
+	  
+	  ModelAndView mav = new ModelAndView();
       try {
          service.UserEdit(dto);
          

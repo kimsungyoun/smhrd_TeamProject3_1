@@ -8,9 +8,29 @@
         }
         
     </style>
+    <script type="text/javascript">
+	   function convertImageToBase64(event) {
+	     const fileInput = event.target;
+	     const file = fileInput.files[0];
+	     const reader = new FileReader();
+	
+	     reader.onload = function (event) {
+	       const base64 = event.target.result;
+	       document.getElementById("u_photo_base64_input").value = base64;
+	     };
+	
+	     reader.readAsDataURL(file);
+	   }
+	</script>
 <main>
 	<h2>회원가입 폼</h2>
-	<form action="회원가입_처리_URL" method="POST">
+	<!-- <form action="/smhrd/register/UserInsert" method="POST"> -->
+		
+		<label for="u_photo">프로필 이미지:</label>
+		<input type="file" name="u_photo" id="u_photo" onchange="convertImageToBase64(event);" />
+        <input type="hidden" name="u_photo_base64" id="u_photo_base64_input" />
+             
+		
 	    <label for="username">아이디:</label>
 	    <input type="text" id="username" name="username" required>
 	
@@ -40,5 +60,4 @@
 	
 	    <button type="submit">가입하기</button>
 	</form>
-
 </main>
