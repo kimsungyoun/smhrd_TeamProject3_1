@@ -14,7 +14,7 @@
 	    		<td>아이디</td> 
 	    		<td><input type="text" id="u_id" name="u_id" required></td>
 	    		<td><span id="idStatus"></span></td> <!-- 중복 체크 결과 메시지 표시 -->
-                <td><button type="button" onclick="checkDuplicate();">중복 확인</button></td>
+                <td>&nbsp;<button type="button" onclick="checkDuplicate();">중복 확인</button></td>
 	    	</tr>
 	    	
 	    	<tr>
