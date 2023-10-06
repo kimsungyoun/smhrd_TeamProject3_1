@@ -31,6 +31,7 @@
 				<td>${news.n_hit}</td>
 			</tr>
 		</c:forEach> 
+
 	</tbody>
 	</table>
 </div>

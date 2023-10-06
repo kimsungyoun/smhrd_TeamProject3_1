@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ import kr.or.smhrd.service.UserService;
 @Controller
 @RequestMapping("/register")
 public class UserController {
+
    @Autowired
    UserService service;
    
@@ -66,29 +68,55 @@ public class UserController {
       return "/register/login";
    }
    
+   @GetMapping("/payment") 
+   public ModelAndView payment(HttpSession session) { 
+      ModelAndView mav = new ModelAndView();
+      UserDTO dto = service.UserSelect((String) session.getAttribute("pay"));
+      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("pay"));
+      mav.addObject("dto", dto);
+      mav.addObject("sdto", sdto);
+      mav.setViewName("subscription/payment");
+      
+      return mav;
+   }
+   
    @GetMapping("/idSearch")
    public String idSearch() {
       return "/register/idSearch";
    }
+
+   @PostMapping("/IdSearch")
+	public ModelAndView IdSearch(UserDTO dto) {
+	   UserDTO result = service.IdSearch(dto);
+	   ModelAndView mav = new ModelAndView();
+	   if(result != null) {
+		   mav.addObject("dto", result);
+		   mav.setViewName("register/idShow");
+	   }else {
+		   mav.setViewName("register/SearchResult");		   
+	   }
+	   
+	   return mav;
+	}
    
    @GetMapping("/pwSearch")
    public String pwSearch() {
       return "/register/pwSearch";
    }
    
-   @PostMapping("/IdSearchOk")
-   public ModelAndView IdSearchOk(UserDTO dto) {
-	   ModelAndView mav = new ModelAndView();
-	   try {
-		   service.IdSearch(dto);
-		   mav.addObject("dto", dto);
-		   mav.setViewName("");
-	   }catch (Exception e) {
-		   e.printStackTrace();
-		   mav.setViewName("");
-	   }
-	   
-	   return mav;
+   @PostMapping("/PwSearch")
+	public ModelAndView PwSearch(UserDTO dto) {
+		ModelAndView mav = new ModelAndView();
+		UserDTO result = service.PwSearch(dto);
+		
+		if(result != null) {
+			mav.addObject("dto", result);
+			mav.setViewName("register/pwShow");
+		}else {
+			/* mav.addObject("errorMessage", "비밀번호가 없음"); */
+			mav.setViewName("register/SearchResult");		   
+		}
+		return mav;
    }
    
    @GetMapping("/signUp")
@@ -97,21 +125,16 @@ public class UserController {
    }
       
    @PostMapping("/UserInsert")
-   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sDTO) {
-      ModelAndView mav = new ModelAndView();      
-      
-      int result = 0;
-      try{    	  
-    	  result = service.UserInsert(dto);
-    	  s_service.UserInsert(sDTO);
+   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto) {
+      ModelAndView mav = new ModelAndView();
+      try {			
+    	  service.UserInsert(dto);
     	  
-      }catch (Exception e) {
-    	  System.out.println("회원가입 실패 >> " + e);
-      }
-      
-      if(result > 0) {    	  
+    	  s_service.UserInsert(sdto);
+    	  
     	  mav.setViewName("redirect: login");
-      }else {    	  
+      }catch(Exception e) {
+    	  System.out.println("error >> " + e);
     	  mav.setViewName("register/signupFail");
       }
       
@@ -144,16 +167,11 @@ public class UserController {
       return mav;
    }
    
-   @GetMapping("/memberedit")
-   public String memberedit() {
-      return "/register/memberedit";
-   }
-   
    @PostMapping("/UserEdit")
    public ModelAndView UserEdit(UserDTO dto) {
       ModelAndView mav = new ModelAndView();
       try {
-         int result = service.UserEdit(dto);
+         service.UserEdit(dto);
          
          mav.setViewName("redirect: mypage");
       }catch(Exception e){
@@ -177,5 +195,10 @@ public class UserController {
       }
       return mav;
    }
-
+   
+   @GetMapping("/faq")
+   public String faq() {
+      return "/faqList";
+   }
+   
 }

@@ -5,11 +5,13 @@
 <main>
 <div class="payment-container">
   <div>
-    <span>구독 정기결제</span>
+    <span>구독 결제</span>
   </div>
   <div class="vertical-line"></div>
   <div class="payment-info">
     <span>10,900원    </span>
+    
+    
     <button onclick="alert('결제가 완료되었습니다.')">결제하기</button>
   </div>
 </div>

@@ -26,4 +26,6 @@ public interface UserDAO {
 	
 	// 회원탈퇴
 	public int UserDel(String u_id, String u_pw);
+
+
 }

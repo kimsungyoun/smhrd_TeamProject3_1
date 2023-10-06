@@ -1,5 +1,6 @@
 package kr.or.smhrd.dto;
-
+import java.sql.Blob;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,6 @@ public class UserDTO {
 	private String u_joindate;
 	private String u_type;    
 	private String sub_status;
-	
+
 	private String u_photo_base64;
 }

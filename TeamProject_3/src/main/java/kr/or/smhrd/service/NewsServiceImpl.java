@@ -51,6 +51,4 @@ public class NewsServiceImpl implements NewsService {
 		return dao.bestList();
 	}
 
-	
-
 }

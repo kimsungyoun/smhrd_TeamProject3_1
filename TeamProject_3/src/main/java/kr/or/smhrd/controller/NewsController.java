@@ -1,13 +1,16 @@
 package kr.or.smhrd.controller;
 
+
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.or.smhrd.dao.NewsDAO;
@@ -15,9 +18,15 @@ import kr.or.smhrd.dto.NewsDTO;
 import kr.or.smhrd.dto.PagingDTO;
 import kr.or.smhrd.service.NewsService;
 
+import kr.or.smhrd.dto.PagingDTO;
+import kr.or.smhrd.service.NewsService;
+	   
+	   
 @Controller
 @RequestMapping("/news")
 public class NewsController {
+
+
 	@Autowired
 	NewsService service;
 	
@@ -65,3 +74,4 @@ public class NewsController {
 	}
 	
 }
+
