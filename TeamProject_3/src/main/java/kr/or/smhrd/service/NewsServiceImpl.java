@@ -11,6 +11,7 @@ import kr.or.smhrd.dto.PagingDTO;
 
 @Service
 public class NewsServiceImpl implements NewsService {
+	
 	@Autowired
 	NewsDAO dao;
 

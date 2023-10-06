@@ -4,7 +4,6 @@
 
 <link rel=stylesheet href=../inc/signUp.css>
 
-
 <main>
 <div id="signUp-form">
 	<h2>회원가입 폼</h2>

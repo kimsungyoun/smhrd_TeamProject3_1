@@ -1,14 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<<<<<<< HEAD
 <style>
-<<<<<<< HEAD
 
 
 table {
-=======
-/* table {
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
     border: 1px #a39485 solid;
     font-size: .9em;
     box-shadow: 0 2px 5px rgba(0,0,0,.25);
@@ -40,11 +35,7 @@ td {
 
 a {
     color: #73685d;
-<<<<<<< HEAD
 }
-=======
-} */
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 
 @media all and (max-width: 768px) {
 
@@ -90,52 +81,6 @@ a {
 
 
 }
-<<<<<<< HEAD
-</style>
-
-<main>
-	<table>
-	    <thead>
-	    <tr>
-	        <th>번호</th>
-	        <th>제목</th>
-	        <th>작성자</th>
-	        <th>작성일</th>
-	        <th>조회수</th>
-	    </tr>
-	    </thead>
-	    <tbody>
-	    <tr>
-	        <td>1</td>
-	        <td><a href="/smhrd/news/newsView">리소스</a></td>
-	        <td>작성자</td>
-	        <td>01/13/1979</td>
-	        <td>5,000</td>
-	    </tr>
-	    <tr>
-	        <td>Johnny</td>
-	        <td>Smith</td>
-	        <td>(713) 584-9614</td>
-	        <td>2</td>
-	        <td>06/09/1971</td>
-	    </tr>
-	    <tr>
-	        <td>Susan</td>
-	        <td>Johnson</td>
-	        <td>(713) 847-1124</td>
-	        <td>3</td>
-	        <td>08/25/1965</td>
-	    </tr>
-	    <tr>
-	        <td>Tracy</td>
-	        <td>Richardson</td>
-	        <td>(713) 245-4821</td>
-	        <td>4</td>
-	        <td>03/13/1980</td>
-	    </tr>
-	    </tbody>
-	</table>
-=======
 
 .page > ul {
 	display: flex;
@@ -149,10 +94,9 @@ a {
 	margin-right: 10px;
 }
 </style>
-=======
+
 
 <link rel=stylesheet href=../inc/newsList.css>
->>>>>>> ac23047b4c26816ab7f3f4f18254a6dd25ba208b
 
 <main>
 <div>
@@ -182,6 +126,7 @@ a {
 				<td>${news.n_hit}</td>
 			</tr>
 		</c:forEach> 
+
 	</tbody>
 	</table>
 </div>
@@ -202,8 +147,8 @@ a {
 				<c:if test="${p <= pDTO.totalPage}">
 					<!-- 선택한 페이지 번호 표시 -->
 					<c:if test="${p == pDTO.nowPage }">		
-						<li style="background: #00468C; border-radius: 50%; width:20px; height:20px;">
-							<a style="color: white;margin-left:1px;" href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
+						<li class="pgnum">
+							<a href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
 						</li>
 					</c:if>
 					
@@ -235,5 +180,4 @@ a {
 			<input type="submit" value="Search" class="searchBtn"/>
 		</form>
 	</div>
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 </main>

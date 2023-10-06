@@ -12,6 +12,7 @@ import kr.or.smhrd.service.GameService;
 @Controller
 @RequestMapping("/game")
 public class GameController {
+	
    @Autowired
    GameService service;
    

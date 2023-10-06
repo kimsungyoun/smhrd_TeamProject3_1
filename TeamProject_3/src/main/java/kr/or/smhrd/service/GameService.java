@@ -1,8 +1,11 @@
+
 package kr.or.smhrd.service;
 
 import java.util.List;
 
 import kr.or.smhrd.dto.GameDTO;
+
+
 
 
 public interface GameService {
@@ -11,3 +14,4 @@ public interface GameService {
 	public GameDTO getView(int g_no);   // 게임 상세보기  
 	
 }
+

@@ -112,9 +112,9 @@
             </li>
             
             <li>
-                <a href="/smhrd">
+                <a href="/smhrd/faq/faqList">
                     <img src="<%= request.getContextPath() %>/img/chat.png" width="50">
-                    <br/>채팅
+                    <br/>FAQ
                 </a>
             </li>
         </ul>
