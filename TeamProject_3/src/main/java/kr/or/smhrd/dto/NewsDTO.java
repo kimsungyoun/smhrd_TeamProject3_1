@@ -14,9 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class NewsDTO {
-
-	private int n_no;        
-	private String n_title;      
+	private int n_no;             
+	private String n_title;       
 	private String n_reporter;    
 	private String n_writedate;   
 	private String n_content;     
