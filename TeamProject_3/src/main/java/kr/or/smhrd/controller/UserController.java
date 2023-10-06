@@ -127,7 +127,8 @@ public class UserController {
    @PostMapping("/UserInsert")
    public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto) {
       ModelAndView mav = new ModelAndView();
-      try {			
+      try {	
+    	  
     	  service.UserInsert(dto);
     	  
     	  s_service.UserInsert(sdto);
@@ -139,7 +140,16 @@ public class UserController {
       }
       
       return mav;
+      
    }
+   
+   @PostMapping("/CheckId")
+   @ResponseBody
+   public String checkId(String u_id) {
+       String id = service.CheckId(u_id);
+       return id;
+   }
+
 
    @PostMapping("/loginOk")
    public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {

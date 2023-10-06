@@ -4,6 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.or.smhrd.dao.UserDAO">
+	
 	<!-- 회원등록 -->
 	<insert id="UserInsert">
 		INSERT INTO USERS(u_id, u_pw, u_name, u_email, u_phone, u_birthdate, u_gender)
@@ -49,4 +50,9 @@
 	<delete id="UserDel" >
 		DELETE FROM USERS WHERE u_id=#{param1} AND u_pw=#{param2}
 	</delete>
+	
+	<!-- 아이디 중복체크 -->
+	<select id="CheckId" resultType="String">
+		SELECT u_id FROM USERS WHERE u_id=#{param1}
+	</select>
 </mapper>
