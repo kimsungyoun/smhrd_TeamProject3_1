@@ -1,10 +1,8 @@
 package kr.or.smhrd.controller;
 
-<<<<<<< HEAD
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-=======
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -19,24 +17,10 @@ import kr.or.smhrd.dao.NewsDAO;
 import kr.or.smhrd.dto.NewsDTO;
 import kr.or.smhrd.dto.PagingDTO;
 import kr.or.smhrd.service.NewsService;
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 
 @Controller
 @RequestMapping("/news")
 public class NewsController {
-<<<<<<< HEAD
-	//뉴스 리스트
-	@GetMapping("/newsList")
-	String newsList() {
-		return "/news/newsList";
-	}
-	
-	//뉴스 상세보기
-	@GetMapping("/newsView")
-	String newsView() {
-		return "/news/newsView";
-	}
-=======
 	@Autowired
 	NewsService service;
 	
@@ -85,5 +69,4 @@ public class NewsController {
 		return mav;
 	}
 	
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 }

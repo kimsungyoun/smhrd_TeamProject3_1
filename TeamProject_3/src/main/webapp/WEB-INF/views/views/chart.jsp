@@ -16,7 +16,7 @@
 		margin-bottom:100px;
 	} 
 	
-	#radarContainer{
+	#radarContainer, #radarContainer2{
 		width: 400px;
 		height: 400px;
 		margin-bottom:100px;
@@ -37,11 +37,16 @@
 </style>
 
 <main>
+
+
+
 <div id="chart" align="center">
 	<!-- 도넛 차트 -->
 	<div id="doughnutContainer">
 	    <h2>도넛차트</h2>
 	    <canvas id="sentimentDoughnutChart"></canvas>
+	    <input type="hidden" id="doughnutPos" value="${dto.pos_sum}">
+	    <input type="hidden" id="doughnutNeg" value="${dto.neg_sum}">
 	</div>
 	
 	<!-- 막대 차트 -->
@@ -52,8 +57,18 @@
 
 	<!-- 레이더 차트 -->
 	<div id="radarContainer">
-	    <h2>레이더차트</h2>
+	    <h2>긍정 레이더차트</h2>
 	    <canvas id="sentimentRadarChart"></canvas>
+	    <input type="hidden" id="radarPosKey" value="${dto.pos_key}">
+	    <input type="hidden" id="radarNegKey" value="${dto.neg_key}">
+	    <input type="hidden" id="radarPosValue" value="${dto.pos_value}">
+	    <input type="hidden" id="radarNegValue" value="${dto.neg_value}">
+	    <input type="hidden" id="radarPTopValue" value="${dto.p_top_value}">
+	    <input type="hidden" id="radarNTopValue" value="${dto.n_top_value}">
+	</div>
+	<div id="radarContainer2">
+	    <h2>부정 레이더차트</h2>
+	    <canvas id="sentimentRadarChart2"></canvas>
 	</div>
 	
 	<!-- 라인 차트-->
@@ -68,6 +83,10 @@
 		<svg id="wordCloud1"></svg>
 		<h2>부정 키워드</h2>
 		<svg id="wordCloud2"></svg>
+		<input type="hidden" id="wordPosKey" value="${dto.word_poskey}">
+	    <input type="hidden" id="wordPosValue" value="${dto.word_posval}">
+	    <input type="hidden" id="wordNegKey" value="${dto.word_negkey}">
+	    <input type="hidden" id="wordNegValue" value="${dto.word_negval}">
 	</div>
 </div>
 	
@@ -76,14 +95,17 @@
 <script>
     // 도넛 차트
     const doughnutCtx = document.getElementById('sentimentDoughnutChart').getContext('2d');
+    var sumPos = document.getElementById('doughnutPos').value;
+    var sumNeg = document.getElementById('doughnutNeg').value;
+    console.log(sumPos, sumNeg);
     new Chart(doughnutCtx, {
         type: 'doughnut',
         data: {
-            labels: ['긍정', '보통','부정'],
+            labels: ['긍정','부정'],
             datasets: [{
-                data: [40, 25 ,35],
-                backgroundColor: ['rgba(0, 255, 0, 0.5)','rgba(0, 0, 255, 1)' ,'rgba(255, 0, 0, 0.5)'],
-                borderColor: ['rgba(0, 255, 0, 1)', 'rgba(0, 0, 255, 1)', 'rgba(255, 0, 0, 1)'],
+                data: [sumPos, sumNeg],
+                backgroundColor: ['rgba(0, 0, 255, 1)' ,'rgba(255, 0, 0, 0.5)'],
+                borderColor: ['rgba(0, 0, 255, 1)', 'rgba(255, 0, 0, 1)'],
                 borderWidth: 1
             }]
         },
@@ -95,12 +117,16 @@
     
     // 막대 차트
     const barCtx = document.getElementById('sentimentBarChart').getContext('2d');
+    var keyPos = document.getElementById('radarPosKey').value.split(',');
+    var keyNeg = document.getElementById('radarNegKey').value.split(',');
+    var valuePos = document.getElementById('radarPosValue').value.split(',').map(Number);
+    var valueNeg = document.getElementById('radarPosValue').value.split(',').map(Number);
     new Chart(barCtx, {
         type: 'bar',
         data: {
-            labels: ['게임', '좀','잘','만','들','어봐'],
+            labels: keyPos.slice(0,3).concat(keyNeg.slice(0,3)),//['게임', '좀','잘','만','들','어봐'],
             datasets: [{
-                data: [70, 30, 50, 80, 40, 60],
+                data: valuePos.slice(0,3).concat(valueNeg.slice(0,3)),//[70, 30, 50, 80, 40, 60],
                 backgroundColor: ['rgba(0, 128, 255, 0.5)', 'rgba(255, 128, 0, 0.5)', 'rgba(128, 128, 255, 0.5)', 'rgba(255, 128, 128, 0.5)', 'rgba(128, 128, 128, 0.5)','rgba(255, 128, 0, 128)'],
                 borderColor: ['rgba(0, 128, 255, 0.5)', 'rgba(255, 128, 0, 0.5)', 'rgba(128, 128, 255, 0.5)', 'rgba(255, 128, 128, 0.5)', 'rgba(128, 128, 128, 0.5)','rgba(255, 128, 0, 128)'],
                 borderWidth: 1
@@ -119,21 +145,59 @@
     
     // 레이더 차트
     const radarCtx = document.getElementById('sentimentRadarChart').getContext('2d');
+    const radarCtx2 = document.getElementById('sentimentRadarChart2').getContext('2d');
+    var valueTopPos = document.getElementById('radarPTopValue').value.split(',').map(Number);
+    var valueTopNeg = document.getElementById('radarNTopValue').value.split(',').map(Number);
+    console.log(keyPos);
+    console.log(valuePos);
+    
     new Chart(radarCtx, {
         type: 'radar',
         data: {
-            labels: ['버그', '밸런스', '현질유도', '광고', '디자인', '스토리'],
+            labels: keyPos, //['버그', '밸런스', '현질유도', '광고', '디자인', '스토리'],
             datasets: [
                 {
-                    label: 'Analysis 1',
-                    data: [60, 30, 10, 80, 100, 50],
+                    label: '현재 게임 ',
+                    data: valuePos, //[60, 30, 10, 80, 100, 50],
                     backgroundColor: 'rgba(0, 128, 255, 0.2)',
                     borderColor: 'rgba(0, 128, 255, 1)',
                     borderWidth: 1
                 },
                 {
-                    label: 'Analysis 2',
-                    data: [50, 80, 100, 20, 10, 30],
+                    label: 'Top10 게임',
+                    data: valueTopPos, //[50, 80, 100, 20, 10, 30],
+                    backgroundColor: 'rgba(128, 128, 255, 0.2)',
+                    borderColor: 'rgba(128, 128, 255, 1)',
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    
+    new Chart(radarCtx2, {
+        type: 'radar',
+        data: {
+            labels: keyNeg, //['버그', '밸런스', '현질유도', '광고', '디자인', '스토리'],
+            datasets: [
+                {
+                    label: '현재 게임 ',
+                    data: valueNeg, //[60, 30, 10, 80, 100, 50],
+                    backgroundColor: 'rgba(0, 128, 255, 0.2)',
+                    borderColor: 'rgba(0, 128, 255, 1)',
+                    borderWidth: 1
+                },
+                {
+                    label: 'Top10 게임',
+                    data: valueTopNeg, //[50, 80, 100, 20, 10, 30],
                     backgroundColor: 'rgba(128, 128, 255, 0.2)',
                     borderColor: 'rgba(128, 128, 255, 1)',
                     borderWidth: 1
@@ -199,19 +263,25 @@
         }
     });
     
-    const wordData1 = [
-        {text: 'Hello', size: 30},
-        {text: 'World', size: 20},
-        {text: 'D3', size: 50},
-        // Add more words here
-      ];
-
-      const wordData2 = [
-        {text: 'Another', size: 40},
-        {text: 'Cloud', size: 20},
-        {text: 'Example', size: 60},
-        // Add more words here
-      ];
+    //워드클라우드
+    var keyPos = document.getElementById('wordPosKey').value.split(',');
+    var keyNeg = document.getElementById('wordNegKey').value.split(',');
+    var valuePos = document.getElementById('wordPosValue').value.split(',').map(Number);
+    var valueNeg = document.getElementById('wordNegValue').value.split(',').map(Number);
+   
+    const wordData1 = [];
+   	for (var i = 0; i < keyPos.length; i++) {
+   	    var key = keyPos[i].replace('\'', '').replace('\'', '');
+   	    var value = valuePos[i]*5;
+   	 	wordData1.push({text: key, size: value},)
+   	};
+       
+      const wordData2 = [];
+      for (var i = 0; i < keyNeg.length; i++) {
+     	    var key = keyNeg[i].replace('\'', '').replace('\'', '');
+     	    var value = valueNeg[i]*5;
+     	   wordData2.push({text: key, size: value},)
+     	};
 
       function generateCloud(selector, words) {
         d3.layout.cloud().size([500, 500])

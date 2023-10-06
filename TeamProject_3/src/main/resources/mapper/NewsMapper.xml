@@ -4,12 +4,6 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.or.smhrd.dao.NewsDAO">
-<<<<<<< HEAD
- 	
- 	<!-- 
- 	<select id="totalRecord" resultType="int">
-		select count(num) cnt from table
-=======
 	<select id="getList" resultType="kr.or.smhrd.dto.NewsDTO">		
 		SELECT * FROM
 		(SELECT * FROM 
@@ -47,20 +41,13 @@
 
  	<select id="totalRecord" resultType="int">
 		select count(n_no) cnt from news
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 		<if test="searchWord != null">
 			where ${searchKey} like '%${searchWord}%'
 		</if>
 	</select>
 	
 	<update id="hitCount">
-<<<<<<< HEAD
-		UPDATE table SET hit=hit+1 WHERE num=${param1}
-	</update>
-	 -->
-=======
 		UPDATE news SET n_hit=n_hit+1 WHERE n_no=${param1}
 	</update>
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 	 
 </mapper>

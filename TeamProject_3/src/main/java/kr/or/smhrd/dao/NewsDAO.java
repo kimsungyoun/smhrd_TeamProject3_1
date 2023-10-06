@@ -1,9 +1,5 @@
 package kr.or.smhrd.dao;
 
-<<<<<<< HEAD
-public interface NewsDAO {
-
-=======
 import java.util.List;
 
 import kr.or.smhrd.dto.NewsDTO;
@@ -17,5 +13,4 @@ public interface NewsDAO {
 	public int totalRecord(PagingDTO pDTO);
 	public void hitCount(int n_no);
 	public List<NewsDTO> bestList();
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 }

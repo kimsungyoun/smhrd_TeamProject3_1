@@ -1,10 +1,4 @@
 package kr.or.smhrd.controller;
-
-<<<<<<< HEAD
-public class GameController {
-
-}
-=======
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,4 +24,3 @@ public class GameController {
       return mav;
    }
 }
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047

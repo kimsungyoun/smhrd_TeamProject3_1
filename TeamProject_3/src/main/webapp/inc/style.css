@@ -1,38 +1,20 @@
 @charset "UTF-8";
 body{
 	display: flex;
-<<<<<<< HEAD
-	flex-direction: column;
-}
-header{
-	
-}
-#title{
-	align-content: center;
-}
-main{
-	/* height:	1000px; */
-	display: flex;
-=======
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 	flex-direction: row;
 	padding-left: 250px;
 }
 
 footer{
 	height: 300px;
+}
 main{
 	display: flex;
 	flex-direction: column;
 	margin-left: 150px;
 	align-items: center;
-<<<<<<< HEAD
-}
-
-=======
 	padding:auto;
 }
->>>>>>> 2935cad225b7fccc32d774c77f40cea00ee8c047
 
 nav > ul, li{
 	list-style: none;
