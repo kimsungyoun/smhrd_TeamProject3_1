@@ -89,10 +89,12 @@ public class UserController {
 	public ModelAndView IdSearch(UserDTO dto) {
 	   UserDTO result = service.IdSearch(dto);
 	   ModelAndView mav = new ModelAndView();
+	   
 	   if(result != null) {
 		   mav.addObject("dto", result);
 		   mav.setViewName("register/idShow");
 	   }else {
+		   mav.addObject("errorMessage", "아이디가 없음");
 		   mav.setViewName("register/SearchResult");		   
 	   }
 	   
@@ -113,7 +115,7 @@ public class UserController {
 			mav.addObject("dto", result);
 			mav.setViewName("register/pwShow");
 		}else {
-			/* mav.addObject("errorMessage", "비밀번호가 없음"); */
+			mav.addObject("errorMessage", "비밀번호가 없음");
 			mav.setViewName("register/SearchResult");		   
 		}
 		return mav;
