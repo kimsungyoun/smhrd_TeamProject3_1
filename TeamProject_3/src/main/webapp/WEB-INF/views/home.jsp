@@ -13,7 +13,7 @@
         		<tr>
         			<td>${dto.g_rank}등</td>
         			<td>${dto.g_name} </td>
-        			<td><img src="${dto.g_img }"></td>
+        			<td><img src="data:image/jpeg;base64,${dto.g_img_base64}" alt="Product Image" /></td> <!-- 게임 이미지 추가 - 민지 -->
         			<td><a href="/smhrd/game/gameDetail?g_no=${dto.g_no}"><img src="<%= request.getContextPath() %>/img/chart.png" alt=""></a></td>
         		</tr>
         	</c:forEach>
