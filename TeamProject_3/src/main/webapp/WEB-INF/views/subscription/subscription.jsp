@@ -8,7 +8,7 @@
 <main>
 	<div class="container">
 
-	    <h1>${dto.u_id }님 구독 관리</h1>
+	    <h1>${udto.u_name }님 구독 관리</h1>
 	    <div class="card">
 	        <div class="card-body">
 	            <h5>${dto.u_id }</h5>
@@ -28,7 +28,7 @@
 	                <input type="text" id="expiryDate" readonly value="${dto.sub_enddate }">
 	            </div>
 	
-	            <button onclick="window.location.href='/paymentdetail'">결제 내역 확인</button>
+	            <button onclick="window.location.href='/smhrd/subscription/paymentdetail'">결제 내역 확인</button>
 	        </div>
 	    </div>
 

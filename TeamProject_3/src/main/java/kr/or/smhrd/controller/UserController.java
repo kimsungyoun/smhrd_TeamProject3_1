@@ -5,13 +5,17 @@ import java.util.Base64;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.or.smhrd.dto.KakaoDTO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
@@ -81,17 +85,17 @@ public class UserController {
       return "/register/login";
    }
    
-   @GetMapping("/payment") 
-   public ModelAndView payment(HttpSession session) { 
-      ModelAndView mav = new ModelAndView();
-      UserDTO dto = service.UserSelect((String) session.getAttribute("pay"));
-      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("pay"));
-      mav.addObject("dto", dto);
-      mav.addObject("sdto", sdto);
-      mav.setViewName("subscription/payment");
-      
-      return mav;
-   }
+//   @GetMapping("/payment") 
+//   public ModelAndView payment(HttpSession session) { 
+//      ModelAndView mav = new ModelAndView();
+//      UserDTO dto = service.UserSelect((String) session.getAttribute("pay"));
+//      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("pay"));
+//      mav.addObject("dto", dto);
+//      mav.addObject("sdto", sdto);
+//      mav.setViewName("/smhrd/subscription/payment");
+//      
+//      return mav;
+//   }
    
    @GetMapping("/idSearch")
    public String idSearch() {
@@ -164,13 +168,19 @@ public class UserController {
       ModelAndView mav = new ModelAndView();
       
       if(dto != null) {
-         session.setAttribute("logId", dto.getU_id());
-         session.setAttribute("logName", dto.getU_name());
-         session.setAttribute("logStatus", "Y");
-         
-         mav.setViewName("redirect:/");
+    	  // 구독한 상태(구독상태가 'Y')인 경우, 구독 만료일이 넘었으면 'N'로 바꾸기 - 민지
+    	  SubscriptionDTO sdto = s_service.getView(dto.getU_id());
+    	  String status = sdto.getSub_status();
+    	  if ("Y".equals(status)) {
+    		  s_service.updateStatus(dto.getU_id());
+    	  }
+    	  session.setAttribute("logId", dto.getU_id());
+    	  session.setAttribute("logName", dto.getU_name());
+    	  session.setAttribute("logStatus", "Y");
+    	  
+    	  mav.setViewName("redirect:/");
       }else {
-         mav.setViewName("register/loginResult");
+    	  mav.setViewName("register/loginResult");
       }
       return mav;
    }
@@ -220,4 +230,12 @@ public class UserController {
       return "/faqList";
    }
    
+   //카카오 로그인
+   @PostMapping("/kakaoLogin")
+   public ModelAndView kakaoLogin(@RequestBody KakaoDTO kakaoData) {
+	   ModelAndView mav = new ModelAndView();
+	   mav.addObject("kakao", kakaoData);
+	   mav.setViewName("/register/kakao");
+	   return mav;
+   }
 }

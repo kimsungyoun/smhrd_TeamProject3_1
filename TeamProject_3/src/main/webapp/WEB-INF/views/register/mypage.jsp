@@ -22,7 +22,7 @@
 	    </div>
 		<c:if test="${sdto.sub_status=='N'}">
 		    <div class="info-section">
-		        <a href="/smhrd/subscription/payment/?u_id=${dto.u_id}" ><button>결제 하기</button></a>
+		        <a href="/smhrd/subscription/payment" ><button>결제 하기</button></a> <%-- ?u_id=${dto.u_id} --%>
 		    </div>
 		</c:if>	
 		<c:if test="${sdto.sub_status=='Y'}">

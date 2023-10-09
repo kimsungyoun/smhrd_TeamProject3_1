@@ -24,6 +24,16 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 		return dao.UserInsert(dto);
 	}
 
+	@Override
+	public int subUpdate(String u_id) { //-민지
+		return dao.subUpdate(u_id);
+	}
+
+	@Override
+	public int updateStatus(String u_id) { //-민지
+		return dao.updateStatus(u_id);
+	}
+
 
 
 	
