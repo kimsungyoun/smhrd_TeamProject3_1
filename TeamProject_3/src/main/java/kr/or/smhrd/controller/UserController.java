@@ -107,10 +107,7 @@ public class UserController {
       return mav;
    }
    
-   @GetMapping("/login")
-   public String login() {
-      return "/register/login";
-   }
+
    
    @GetMapping("/payment") 
    public ModelAndView payment(HttpSession session) { 
@@ -222,11 +219,16 @@ public class UserController {
       return mav;
    }
    
->>>>>>> 2b2be42dbf80fdb181417a9c60da4cbf751b15d1
+   @GetMapping("/login")
+   public String login() {
+      return "/register/login";
+   }
+   
+
    @PostMapping("/loginOk")
    public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
       UserDTO dto = service.loginOk(u_id, u_pw);
-      
+      System.out.println("loginOk 호출성공");
       ModelAndView mav = new ModelAndView();
       
       if(dto != null) {
@@ -239,6 +241,18 @@ public class UserController {
          mav.setViewName("register/loginResult");
       }
       return mav;
+   }
+   
+   @PostMapping("/KakaoLoginOk")
+   public ModelAndView KakaoLoginOk(HttpSession session) {
+      System.out.println("loginOk 호출성공");
+      ModelAndView mav = new ModelAndView();
+      session.setAttribute("logStatus", "Y");
+         return mav;
+			/* mav.setViewName("redirect:/"); */
+			/*
+			 * }else{ mav.setViewName("register/loginResult"); } return mav;
+			 */
    }
    
    @GetMapping("/logOut")
