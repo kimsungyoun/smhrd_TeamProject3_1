@@ -122,6 +122,17 @@ function checkpassword(){
 </script>
 
 <script>
+// 가입하기 비활성화
+function enableOrDisableSignUpButton() {
+    if (r2) { // 모든 체크 조건을 만족하면 버튼 활성화
+        enableSignUpButton();
+    } else { // 하나라도 만족하지 않으면 버튼 비활성화
+        disableSignUpButton();
+    }
+}
+</script> 
+
+<script>
 //버튼 활성화 함수
 function enableSignUpButton() {
     $('[type="submit"]').prop('disabled', false);
@@ -132,13 +143,3 @@ function disableSignUpButton() {
     $('[type="submit"]').prop('disabled', true);
 }
 </script>
-
-<script>
-function enableOrDisableSignUpButton() {
-    if (r2) { // 모든 체크 조건을 만족하면 버튼 활성화
-        enableSignUpButton();
-    } else { // 하나라도 만족하지 않으면 버튼 비활성화
-        disableSignUpButton();
-    }
-}
-</script> 
