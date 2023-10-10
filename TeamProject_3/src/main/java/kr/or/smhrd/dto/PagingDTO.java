@@ -39,11 +39,8 @@ public class PagingDTO {
    public void setTotalRecord(int totalRecord) {
       this.totalRecord = totalRecord;
    
-      // 총 페이지 수 계산하기
-      // ceil():올림, round():반올림, floor():내림
       totalPage = (int)Math.ceil((double)totalRecord / onePageRecord);
       
-      // 마지막 페이지의 남아있는 레코드 수 
       lastPageRecord = onePageRecord;
       if(totalPage == nowPage) {
          if(totalRecord % onePageRecord != 0) {

@@ -1,5 +1,4 @@
 package kr.or.smhrd.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +12,7 @@ import kr.or.smhrd.service.GameService;
 @Controller
 @RequestMapping("/game")
 public class GameController {
+	
    @Autowired
    GameService service;
    

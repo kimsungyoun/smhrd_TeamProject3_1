@@ -2,8 +2,10 @@ package kr.or.smhrd.dao;
 
 import java.util.List;
 
-import kr.or.smhrd.dto.NewsDTO;
+
 import kr.or.smhrd.dto.PagingDTO;
+import kr.or.smhrd.dto.NewsDTO;
+
 
 public interface NewsDAO {
 	public List <NewsDTO> getList(PagingDTO pDTO);  

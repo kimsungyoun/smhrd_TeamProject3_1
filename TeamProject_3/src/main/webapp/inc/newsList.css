@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+/* 기본 스타일 */
+main {
+    width: 80%;
+    margin: auto;
+    background-color: #FFFFFF;  /* Adding a white background to main content */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #CEBEE1;
+    color: #FFFFFF;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+    color: #6A24FE;
+}
+
+.page {
+    text-align: center;
+}
+
+.page ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+}
+
+.page li {
+    display: inline-block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border: 1px solid #CEBEE1;
+}
+
+.page li a {
+    color: #CEBEE1;
+}
+
+.page li a:hover {
+    color: #FFFFFF;
+}
+
+.search {
+    text-align: right;
+}
+
+.search select, .search input {
+    padding: 5px;
+}
+
+.searchBtn {
+    background-color: #CEBEE1;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.searchBtn:hover {
+    background-color: white;
+    color: #CEBEE1;
+    border: 1px solid #CEBEE1;
+}
+
+.pgnum {
+    background-color: #CEBEE1;
+    color: #FFFFFF;  
+}
+
+.pgnum a {
+    color: #FFFFFF; 
+}
+
+.pgnum:hover, .pgnum a:hover {
+    background-color: #6A24FE;
+    color: #FFFFFF;
+}

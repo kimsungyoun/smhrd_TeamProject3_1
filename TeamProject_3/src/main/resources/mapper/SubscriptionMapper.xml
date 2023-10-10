@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="kr.or.smhrd.dao.SubscriptionDAO">
+ 	
+ 	<select id="getView" resultType="kr.or.smhrd.dto.SubscriptionDTO">
+ 		select sub_no, u_id, sub_payment, sub_amoument, sub_status, to_char(sub_startdate, 'YYYY-MM-DD') sub_startdate, to_char(sub_enddate, 'YYYY-MM-DD') sub_enddate
+ 		from subscription 
+ 		where u_id=#{param1}
+	</select>
+	 
+	 <!-- 구독등록 -->
+	<insert id="UserInsert">
+		INSERT INTO SUBSCRIPTION(sub_no, u_id) 
+		VALUES(SUBSCRIPTION_SEQ.nextval, #{u_id})
+	</insert>
+	 
+	 <!-- 구독 결제 시, 구독 정보 업데이트 - 민지 -->
+	 <update id="subUpdate">
+	 	UPDATE subscription 
+	 	SET sub_payment=sysdate, sub_amoument=10900, sub_status='Y', sub_startdate=sysdate, sub_enddate=sysdate+30
+	 	WHERE u_id = #{param1}
+	 </update>
+	 
+	 <!-- 구독상태 업데이트 - 민지 -->
+	 <update id="updateStatus"> 
+	 	UPDATE subscription
+	 	SET sub_status='N', sub_payment=null, sub_amoument=0, sub_startdate=null, sub_enddate=null
+	 	WHERE u_id=#{param1} and <![CDATA[sub_enddate < sysdate]]>
+	 </update>
+</mapper>

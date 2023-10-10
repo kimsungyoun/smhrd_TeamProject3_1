@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.find-username-wrapper {
+    width: 400px;
+    height: 300px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+.find-username-wrapper > h2 {
+    font-size: 24px;
+    color: #CEBEE1;
+    margin-bottom: 20px;
+}
+#find-username-form > input {
+    width: 100%;
+    height: 48px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    background-color: #F8F8F8;
+}
+#find-username-form > input::placeholder {
+    color: #D2D2D2;
+}
+#find-username-form > input[type="submit"] {
+    color: #fff;
+    font-size: 16px;
+    background-color: #CEBEE1;
+    margin-top: 20px;
+}

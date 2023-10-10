@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <style>
-/* table {
+
+
+table {
     border: 1px #a39485 solid;
     font-size: .9em;
     box-shadow: 0 2px 5px rgba(0,0,0,.25);
@@ -33,7 +35,7 @@ td {
 
 a {
     color: #73685d;
-} */
+}
 
 @media all and (max-width: 768px) {
 
@@ -93,6 +95,9 @@ a {
 }
 </style>
 
+
+<link rel=stylesheet href=../inc/newsList.css>
+
 <main>
 <div>
 	<table>
@@ -121,6 +126,7 @@ a {
 				<td>${news.n_hit}</td>
 			</tr>
 		</c:forEach> 
+
 	</tbody>
 	</table>
 </div>
@@ -141,8 +147,8 @@ a {
 				<c:if test="${p <= pDTO.totalPage}">
 					<!-- 선택한 페이지 번호 표시 -->
 					<c:if test="${p == pDTO.nowPage }">		
-						<li style="background: #00468C; border-radius: 50%; width:20px; height:20px;">
-							<a style="color: white;margin-left:1px;" href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
+						<li class="pgnum">
+							<a href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
 						</li>
 					</c:if>
 					

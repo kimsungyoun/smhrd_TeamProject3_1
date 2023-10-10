@@ -71,6 +71,7 @@
 
 
 <div id="viewport">
+    <!-- Sidebar -->
     <div id="sidebar">
         <div id="title">
 			<a href="/smhrd"><img src="<%= request.getContextPath() %>/img/title.png" width="150"></a>
@@ -111,9 +112,9 @@
             </li>
             
             <li>
-                <a href="/smhrd">
+                <a href="/smhrd/faq/faqList">
                     <img src="<%= request.getContextPath() %>/img/chat.png" width="50">
-                    <br/>채팅
+                    <br/>FAQ
                 </a>
             </li>
         </ul>

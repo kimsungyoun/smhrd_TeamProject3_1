@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+.my-page-wrapper {
+    width: 400px;
+    margin: auto;
+}
+.profile-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.profile-img {
+	width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: grey;
+}
+.profile-img > img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 1px;
+    background-color: grey;
+}
+.profile-btn {
+    margin-top: 10px;
+}
+.info-section {
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.info-section:last-child {
+    border-bottom: none;
+}
+.info-section > span {
+    font-weight: bold;
+}

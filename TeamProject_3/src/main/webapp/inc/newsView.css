@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.board-list {
+  list-style: none;
+  padding: 0;
+}
+.board-list > li {
+  margin: 10px 0;
+  border-bottom: 1px solid #CEBEE1;
+  padding-bottom: 10px;
+}
+.board-list > li:last-child {
+  border-bottom: none;
+}
+.board-list > li > strong {
+  font-weight: bold;
+}
+.date-recommend {
+  display: flex;
+  justify-content: space-between;
+}
+.content {
+  white-space: pre-line;
+  margin-top: 10px;
+}
+.author-align {
+  text-align: right;
+} 
+
+.button {
+    background-color: #CEBEE1; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding around text */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* Remove underline from text */
+    display: inline-block; /* Inline-block level */
+    font-size: 16px; /* Text size */
+    margin: 4px 2px; /* Margin around button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background-color and transform properties */
+}
+
+.button:hover {
+    background-color: #CEBEE1; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly scale the size of the button up on hover */
+}

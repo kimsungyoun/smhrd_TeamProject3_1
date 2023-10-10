@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.delete-account-wrapper {
+  width: 500px;
+  margin: auto;
+  padding: 40px;
+  box-sizing: border-box;
+}
+.delete-account-wrapper > h2 {
+  font-size: 24px;
+  color: #CEBEE1;
+  margin-bottom: 20px;
+}
+.warning-text {
+  color: red;
+  margin-bottom: 20px;
+}
+#delete-account-form > input[type="submit"] {
+  color: #fff;
+  font-size: 16px;
+  background-color: #CEBEE1;
+  margin-top: 20px;
+}
