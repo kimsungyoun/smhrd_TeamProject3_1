@@ -14,7 +14,7 @@
         			<td>${dto.g_rank}등</td>
         			<td>${dto.g_name} </td>
         			<td><img src="${dto.g_img }"></td>
-        			<td><a href="/smhrd/game/gameDetail?g_no=${dto.g_no}"><img src="<%= request.getContextPath() %>/img/chart.png" alt=""></a></td>
+        			<td><a href="/smhrd/game/gameDetail?g_no=${dto.g_no}"><img src="<%= request.getContextPath() %>/img/chart.png" style="width: 20px;height: 20px"></a></td>
         		</tr>
         	</c:forEach>
         </table>    
