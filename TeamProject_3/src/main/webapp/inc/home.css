@@ -55,17 +55,62 @@ a:hover {
 }
 /* "맨 위로" 버튼 스타일 */
 #myBtn {
-    display: none; /* 기본적으로는 보이지 않음 */
-    position: fixed; /* 스크롤과 상관없이 항상 같은 위치에 있음 */
-    bottom: 20px; /* 페이지 하단에서 20px 위에 위치 */
-    right: 20px; /* 페이지 우측에서 20px 왼쪽에 위치 */
-    border: none; 
-    outline: none; 
-    background-color: #CEBEE1; /* 버튼 배경색 */
-    color: white; /* 텍스트 색상 */
-    cursor: pointer; /* 마우스 오버 시 손가락 모양 커서로 변경 */
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
     padding: 10px;
-    border-radius: 4px; /* 모서리 둥글게 */
-    font-size: 18px; /* 글자 크기 */
-    transition: background-color 0.3s; /* 배경색 변경 시 부드러운 전환 효과 */
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+/* 수정된 "btn-13" 클래스의 스타일 */
+.btn-13.custom-btn {
+    background-color: #CEBEE1;
+    background-image: -moz-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+    background-image: -o-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+    background-image: -webkit-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+    background-image: linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+    border: none;
+    z-index: 1;
+}
+
+.btn-13.custom-btn:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #CEBEE1;
+    background-image: -moz-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+    background-image: -o-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+    background-image: -webkit-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+    background-image: linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+.btn-13.custom-btn:hover {
+    color: #fff;
+}
+
+.btn-13.custom-btn:hover:after {
+    top: 0;
+    height: 100%;
+}
+
+.btn-13.custom-btn:active {
+    top: 2px;
 }

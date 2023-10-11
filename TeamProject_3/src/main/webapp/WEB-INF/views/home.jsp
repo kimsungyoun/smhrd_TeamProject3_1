@@ -6,6 +6,7 @@
 <main>
 <div>
 	<h2>게임 인기 순위</h2>
+	<a href="/smhrd/faq/GPT">GPT</a>
 	<div class="ranking-container">
         <div>  
         <table>
@@ -48,7 +49,7 @@
 	</table>
 </div>
 <!-- "맨 위로" 버튼 -->
-<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<button class="custom-btn btn-13" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <script>
 //사용자가 스크롤을 20px 이상 내리면 "맨 위로" 버튼이 나타나게 함
 window.onscroll = function() {scrollFunction()};

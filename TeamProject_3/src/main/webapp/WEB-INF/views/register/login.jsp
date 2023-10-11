@@ -19,13 +19,14 @@
            <label for="remember-check">
                <input type="checkbox" id="remember-check">아이디 저장하기
            </label>           
-           <input type="submit" value="로그인">
+           <!-- 로그인 버튼에 custom-btn 클래스 추가 -->
+           <input type="submit" value="로그인" class="custom-btn btn-13" id="login-button">
        </form>
-           <div class="">
-               <a href="/smhrd/register/idSearch"><button>아이디찾기</button></a>
-               <a href="/smhrd/register/pwSearch"><button>비밀번호찾기</button></a>
-               <a href="/smhrd/register/signUp"><button>회원가입</button></a>
-           </div>
+       <div>
+           <a href="/smhrd/register/idSearch"><button>아이디찾기</button></a>
+           <a href="/smhrd/register/pwSearch"><button>비밀번호찾기</button></a>
+           <a href="/smhrd/register/signUp"><button>회원가입</button></a>
+       </div>
    </div>
 
    <%-- <div>

@@ -57,7 +57,7 @@ a:hover {
 }
 
 .page li a:hover {
-    color: #FFFFFF;
+    color: #BAC7FB
 }
 
 .search {
@@ -89,15 +89,15 @@ a:hover {
 }
 
 .pgnum {
-    background-color: #CEBEE1;
-    color: #FFFFFF;  
+    background-color: #6A24FE;
+    color: #BAC7FB 
 }
 
 .pgnum a {
-    color: #FFFFFF; 
+    color: #BAC7FB
 }
 
 .pgnum:hover, .pgnum a:hover {
     background-color: #6A24FE;
-    color: #FFFFFF;
+    color: #BAC7FB
 }

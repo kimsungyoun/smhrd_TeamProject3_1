@@ -44,6 +44,8 @@
       </tr>
    </table>
    </div>
-   <a href="/smhrd"><button>메인페이지로 이동</button></a>
+   <div class="frame">
+   	<a href="/smhrd"><button class="custom-btn btn-13"><span>메인페이지로</span></button></a>
+   </div>
 </div>
 </main>
