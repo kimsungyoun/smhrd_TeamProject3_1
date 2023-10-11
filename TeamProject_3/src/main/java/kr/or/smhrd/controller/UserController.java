@@ -144,8 +144,13 @@ public class UserController {
    
    @PostMapping("/UserInsert")
    public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto, @RequestParam("u_photo_base64") String base64ImageData) {
-     byte[] imageData = Base64.getDecoder().decode(base64ImageData.split(",")[1]);
-     dto.setU_photo(imageData);
+      
+      byte[] imageData = null;
+       
+       if (base64ImageData != null && !base64ImageData.isEmpty()) {
+           imageData = Base64.getDecoder().decode(base64ImageData.split(",")[1]);
+       }
+       dto.setU_photo(imageData);
       
      ModelAndView mav = new ModelAndView();
       try {         
@@ -160,6 +165,7 @@ public class UserController {
       }
       
       return mav;
+      
    }
    
    @GetMapping("/login")
