@@ -6,10 +6,12 @@
 <div id="Accordion_wrap">
      <div class="que">
       <span>This is first question.</span>
+       <!-- 
        <div class="arrow-wrap">
          <span class="arrow-top">↑</span>
-        <span class="arrow-bottom">↓</span>
-       </div>
+         <span class="arrow-bottom">↓</span>
+       </div> 
+       -->
      </div>
      <div class="anw">
       <span>This is first answer.</span>
