@@ -24,6 +24,18 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 		return dao.UserInsert(dto);
 	}
 
+	@Override
+	public int subUpdate(String u_id) {
+		// TODO Auto-generated method stub
+		return dao.subUpdate(u_id);
+	}
+
+	@Override
+	public int updateStatus(String u_id) {
+		// TODO Auto-generated method stub
+		return dao.updateStatus(u_id);
+	}
+
 
 
 	
