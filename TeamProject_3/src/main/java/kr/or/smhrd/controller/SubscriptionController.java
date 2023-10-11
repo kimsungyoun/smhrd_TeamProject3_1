@@ -49,6 +49,7 @@ public class SubscriptionController {
 	   	public ModelAndView payCheck(HttpSession session) {
 	   		ModelAndView mav = new ModelAndView();
 	   		int result = service.subUpdate((String)session.getAttribute("logId"));
+	   		service.payInsert((String)session.getAttribute("logId"));
 	   		if (result > 0) {
 	   			mav.setViewName("redirect:/register/mypage");
 	   		} else {
@@ -62,7 +63,7 @@ public class SubscriptionController {
 	   public ModelAndView paymentdetail(HttpSession session) {
 	      ModelAndView mav = new ModelAndView();
 	      
-	      mav.addObject("dto", service.getView((String)session.getAttribute("logId")));
+	      mav.addObject("list", service.paySelect((String)session.getAttribute("logId")));
 	      mav.setViewName("subscription/paymentdetail");
 	      return mav;
 	   }
