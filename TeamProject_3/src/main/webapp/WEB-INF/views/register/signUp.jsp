@@ -54,7 +54,16 @@
           
           <tr>
              <td>비밀번호확인</td>
-             <td><input type="password" id="confirm_pw" name="confirm_pw" required></td>
+             <td>
+	             <input type="password" id="confirm_pw" name="confirm_pw" required>
+             </td>
+          </tr>
+          
+          <tr>
+          	<td	colspan="2" align="right">
+	             <span class="password_ok">사용가능한 비밀번호입니다.</span>
+	             <span class="password_dif">비밀번호가 다릅니다.</span>
+          	</td>
           </tr>
           
           <tr>
@@ -85,61 +94,23 @@
              </td>
           </tr>
        </table>
-       <!-- <label for="username">
-       아이디:
-       <input type="text" id="u_id" name="u_id" required>
-       </label>
-   
-       <label for="password">
-       비밀번호:
-       <input type="password" id="u_pw" name="u_pw" required>
-       </label>
-   
-       <label for="confirm_password">
-       비밀번호 확인:
-       <input type="password" id="confirm_pw" name="confirm_pw" required>
-       </label>
-      
-      
-       <label for="email">
-       이메일:
-       <input type="email" id="u_email" name="u_email" required>
-       </label>
-   
-       <label for="phone">
-       휴대폰 번호:
-       <input type="tel" id="u_phone" name="u_phone" required>
-       </label>
-   
-       <label for="name">
-       이름:
-       <input type="text" id="u_name" name="u_name" required>
-       </label>
-   
-       <label for="birthdate">
-       생년월일:
-       <input type="text" id="u_birthdate" name="u_birthdate" placeholder="YYYY-MM-DD" required>
-       </label>
-   
-       <label>성별</label>
-       
-      <label>남성<input type="radio" id="male" name="u_gender" value="M"></label>
-      <label>여성<input type="radio" id="female" name="u_gender" value="F"></label> -->
        <button type="submit">가입하기</button>
    </form>
 </div>
 </main>
+
 <script>
 var r2 = false;
 </script>
 
 <script>
-function checkpassword(){
+
+function checkpassword(){	
 	var password1 = $('#u_pw').val;
 	var password2 = $('#confirm_pw').val;
 	
 	if(password1 != password2){
-		$('.password_dif').css("display", "inline-block");
+		$('.password_dif').css("display","inline-block");
         $('.password_ok').css("display", "none");
 	}else{
 		$('.password_ok').css("display", "inline-block");
@@ -151,6 +122,17 @@ function checkpassword(){
 </script>
 
 <script>
+// 가입하기 비활성화
+function enableOrDisableSignUpButton() {
+    if (r2) { // 모든 체크 조건을 만족하면 버튼 활성화
+        enableSignUpButton();
+    } else { // 하나라도 만족하지 않으면 버튼 비활성화
+        disableSignUpButton();
+    }
+}
+</script> 
+
+<script>
 //버튼 활성화 함수
 function enableSignUpButton() {
     $('[type="submit"]').prop('disabled', false);
@@ -159,15 +141,5 @@ function enableSignUpButton() {
 // 버튼 비활성화 함수
 function disableSignUpButton() {
     $('[type="submit"]').prop('disabled', true);
-}
-</script>
-
-<script>
-function enableOrDisableSignUpButton() {
-    if (r2) { // 모든 체크 조건을 만족하면 버튼 활성화
-        enableSignUpButton();
-    } else { // 하나라도 만족하지 않으면 버튼 비활성화
-        disableSignUpButton();
-    }
 }
 </script>

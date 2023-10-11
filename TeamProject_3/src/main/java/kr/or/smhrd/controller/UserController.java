@@ -277,15 +277,9 @@ public class UserController {
     	 session.invalidate();
          mav.setViewName("redirect:/");
       }else {
-         mav.addObject("dto",u_id);
-         mav.setViewName("redirect: mypage");
+         mav.setViewName("register/userResignResult");
       }
       return mav;
-   }
-   
-   @GetMapping("/faq")
-   public String faq() {
-      return "/faqList";
    }
    
 }

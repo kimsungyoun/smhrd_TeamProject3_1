@@ -5,6 +5,7 @@
 <main>
 <div>
    <h2>${dto.g_name }</h2>
+   <div>
    <table border="1">
       <tr>
 	      <th>종류</th>
@@ -42,5 +43,7 @@
          <td>${dto.g_info }</td>
       </tr>
    </table>
+   </div>
+   <a href="/smhrd"><button>메인페이지로 이동</button></a>
 </div>
 </main>
