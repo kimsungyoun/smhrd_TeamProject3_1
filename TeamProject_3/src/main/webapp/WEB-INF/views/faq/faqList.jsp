@@ -2,24 +2,28 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 
 <link rel="stylesheet" href="../inc/faq.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <div id="Accordion_wrap">
-     <div class="que">
-      <span>서비스 이용은 어떻게 할 수 있나요?</span>
-       <div class="arrow-wrap">
-       </div>
-     </div>
-     <div class="anw">
-      <span>좌측 상단에 로그인 버튼을 이용하여 먼저 회원가입을 하신 후 필요하신 서비스를 이용하실 수 있습니다.</span>
-     </div>
-     
-      <div class="que">
-      <span>계정 관리는 어떻게 해야 하나요?</span>
-     </div>
-     <div class="anw">
-      <span>로그인 후 좌측 상단의 마이페이지에서 프로필 사진과 닉네임, 이메일, 비밀번호, 전화번호 를 바꿔 이용하실 수 있습니다 .</span>
-     </div>
-     
+    <div class="que">
+        <span>서비스 이용은 어떻게 할 수 있나요?</span>
+        <div class="arrow-wrap">
+        </div>
+    </div>
+    <div class="anw">
+        <span>좌측 상단에 로그인 버튼을 이용하여 먼저 회원가입을 하신 후 필요하신 서비스를 이용하실 수 있습니다.</span>
+    </div>
+
+    <div class="que">
+        <span>계정 관리는 어떻게 해야 하나요?</span>
+        <div class="arrow-wrap">
+        </div>
+    </div>
+    <div class="anw">
+        <span>로그인 후 좌측 상단의 마이페이지에서 프로필 사진과 닉네임, 이메일, 비밀번호, 전화번호 를 바꿔 이용하실 수 있습니다.</span>
+    </div>
+  
+  
       <div class="que">
       <span>한 번 결제 시 이용 기간은 얼마나 되나요?</span>
      </div>
@@ -47,7 +51,7 @@
      <div class="anw">
       <span>주로 인벤에서 게임과 관련 된 뉴스들을 확인 하실 수 있습니다.</span>
      </div>
-
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(".que").click(function() {

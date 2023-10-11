@@ -12,7 +12,7 @@
   </div>
     <span> 10,900원 </span>
 
-    <button onclick="requestPay()">결제하기</button>
+    <button class="custom-btn btn-13" onclick="requestPay()">결제하기</button>
 
 </div>
 </main>

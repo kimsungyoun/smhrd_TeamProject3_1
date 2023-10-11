@@ -23,9 +23,9 @@
            <input type="submit" value="로그인" class="custom-btn btn-13" id="login-button">
        </form>
        <div>
-           <a href="/smhrd/register/idSearch"><button>아이디찾기</button></a>
-           <a href="/smhrd/register/pwSearch"><button>비밀번호찾기</button></a>
-           <a href="/smhrd/register/signUp"><button>회원가입</button></a>
+           <a  href="/smhrd/register/idSearch"><button>아이디찾기</button></a>
+           <a  href="/smhrd/register/pwSearch"><button>비밀번호찾기</button></a>
+           <a  href="/smhrd/register/signUp"><button>회원가입</button></a>
        </div>
    </div>
 

@@ -37,7 +37,7 @@
            <input type="password" name="u_pw" id="u_pw" placeholder="Password" value="${dto.u_pw }">
            <input type="text" name="u_phone" id="u_phone" placeholder="Phone Number" value="${dto.u_phone }">
            
-           <input type="submit" value="수정하기">
+           <input class="custom-btn btn-13" type="submit" value="수정하기">
        </form>
    </div>
 

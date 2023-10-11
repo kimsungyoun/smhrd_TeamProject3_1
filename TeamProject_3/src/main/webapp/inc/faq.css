@@ -1,67 +1,79 @@
 @charset "UTF-8";
 
-*{
-  box-sizing: border-box; 
-}
-  
-.que:first-child{
-    border-top: 1px solid black;
-  }
-  
-.que{
-  position: relative;
-  padding: 17px 0;
-  cursor: pointer;
-  font-size: 14px;
-  border-bottom: 1px solid #dddddd;
-  
-}
-  
-.que::before{
-  display: inline-block;
-  content: 'Q';
-  font-size: 14px;
-  color: #006633;
-  margin: 0 5px;
+/* 전체 배경색 및 페이지 넓이 조정 */
+body {
+    background-color: #fff;
+    margin: 0;
 }
 
-.que.on>span{
-  font-weight: bold;
-  color: #006633; 
+#Accordion_wrap {
+    width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
-  
+
+/* 질문 항목 스타일 */
+.que {
+    position: relative;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-bottom: 1px solid #dddddd;
+    transition: background-color 0.2s;
+}
+
+.que:hover {
+    background-color: #EFEFEF;
+}
+
+.que::before {
+    display: inline-block;
+    content: 'Q';
+    font-size: 24px;
+    color: #C46FB2;
+    margin-right: 10px;
+}
+
+.que.on>span {
+    font-weight: bold;
+    color: #C46FB2;
+}
+
+/* 답변 항목 스타일 */
 .anw {
-  display: none;
+    display: none;
     overflow: hidden;
-  font-size: 14px;
-  background-color: #f4f4f2;
-  padding: 27px 0;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #f4f4f2;
 }
-  
+
 .anw::before {
-  display: inline-block;
-  content: 'A';
-  font-size: 14px;
-  font-weight: bold;
-  color: #666;
-  margin: 0 5px;
+    display: inline-block;
+    content: 'A';
+    font-size: 24px;
+    font-weight: bold;
+    color: #C46FB2;
+    margin-right: 10px;
 }
 
+/* 화살표 아이콘 스타일 */
 .arrow-wrap {
-  position: absolute;
-  top:50%; right: 10px;
-  transform: translate(0, -50%);
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #C46FB2;
+    cursor: pointer;
 }
 
-.que .arrow-top {
-  display: none;
+/* 활성화된 질문 스타일 */
+.que.active {
+    background-color: #EFEFEF;
 }
-.que .arrow-bottom {
-  display: block;
-}
-.que.on .arrow-bottom {
-  display: none;
-}
-.que.on .arrow-top {
-  display: block; 
+.que.active .arrow-wrap {
+    transform: translateY(-50%) rotate(90deg);
 }

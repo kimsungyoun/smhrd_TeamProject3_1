@@ -4,9 +4,10 @@
 main {
     width: 80%;
     margin: auto;
-    background-color: #FFFFFF;  /* Adding a white background to main content */
+    background-color: #fff;
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
 table {
@@ -17,26 +18,29 @@ table {
 
 th, td {
     border: 1px solid #ddd;
-    padding: 12px;
+    padding: 15px;
     text-align: left;
 }
 
 th {
-    background-color: #CEBEE1;
-    color: #FFFFFF;
+    background-color: #6A24FE;
+    color: #fff;
 }
 
 a {
     text-decoration: none;
-    color: #000000;
+    color: #6A24FE;
+    transition: color 0.3s ease-in-out;
 }
 
 a:hover {
-    color: #6A24FE;
+    color: #CEBEE1;
+    background-color: transparent;
 }
 
 .page {
     text-align: center;
+    margin-top: 20px;
 }
 
 .page ul {
@@ -49,16 +53,21 @@ a:hover {
     display: inline-block;
     margin-right: 5px;
     padding: 5px 10px;
-    border: 1px solid #CEBEE1;
+    background-color: #6A24FE;
+    border-radius: 30px;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .page li a {
-    color: #CEBEE1;
+    color: #fff;
+    text-decoration: none;
 }
 
-.page li a:hover {
-    color: #BAC7FB
+.page li:hover {
+    background-color: #CEBEE1;
 }
+
+
 
 .search {
     text-align: right;
@@ -66,38 +75,25 @@ a:hover {
 
 .search select, .search input {
     padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 5px;
 }
 
 .searchBtn {
-    background-color: #CEBEE1;
+    background-color: #6A24FE;
     border: none;
-    color: white;
+    color: #fff;
     padding: 6px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    border-radius: 5px;
     transition-duration: 0.4s;
     cursor: pointer;
 }
 
 .searchBtn:hover {
-    background-color: white;
-    color: #CEBEE1;
-    border: 1px solid #CEBEE1;
-}
-
-.pgnum {
-    background-color: #6A24FE;
-    color: #BAC7FB 
-}
-
-.pgnum a {
-    color: #BAC7FB
-}
-
-.pgnum:hover, .pgnum a:hover {
-    background-color: #6A24FE;
-    color: #BAC7FB
+    background-color: #CEBEE1;
 }
