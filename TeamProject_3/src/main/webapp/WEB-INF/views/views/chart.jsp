@@ -4,7 +4,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-   #doughnutContainer{
+	#doughnutContainer{
       width: 400px;
       height: 400px;
       margin-bottom:100px;
@@ -40,34 +40,28 @@
 <div id="chart" align="center">
    <!-- 도넛 차트 -->
    <div id="doughnutContainer">
-       <h2>도넛차트</h2>
-       <canvas id="sentimentDoughnutChart"></canvas>
+       <h2>도넛차트</h2><canvas id="sentimentDoughnutChart"></canvas>
    </div>
    
    <!-- 막대 차트 -->
-   <div id="barContainer">
-      <h2>막대차트</h2>
-       <canvas id="sentimentBarChart"></canvas>
-   </div>
+   <!-- <div id="barContainer">
+      <h2>막대차트</h2><canvas id="sentimentBarChart"></canvas>
+   </div> -->
 
    <!-- 레이더 차트 -->
    <div id="radarContainer">
-       <h2>레이더차트</h2>
-       <canvas id="sentimentRadarChart"></canvas>
+       <h2>레이더차트</h2><canvas id="sentimentRadarChart"></canvas>
    </div>
    
    <!-- 라인 차트-->
-   <div id="lineContainer">
-       <h2>라인차트</h2>
-       <canvas id="lineChart"></canvas>
-   </div>
+   <!-- <div id="lineContainer">
+       <h2>라인차트</h2><canvas id="lineChart"></canvas>
+   </div> -->
    
    <!-- 워드 클라우드 -->
    <div>
-      <h2>긍정 키워드</h2>
-      <svg id="wordCloud1"></svg>
-      <h2>부정 키워드</h2>
-      <svg id="wordCloud2"></svg>
+      <h2>긍정 키워드</h2><svg id="wordCloud1"></svg>
+      <h2>부정 키워드</h2><svg id="wordCloud2"></svg>
    </div>
 </div>
    
@@ -92,7 +86,8 @@
             maintainAspectRatio: false
         }
     });
-    
+</script>
+<script>
     // 막대 차트
     const barCtx = document.getElementById('sentimentBarChart').getContext('2d');
     new Chart(barCtx, {
@@ -116,7 +111,8 @@
             }
         }
     });
-    
+</script>
+<script>    
     // 레이더 차트
     const radarCtx = document.getElementById('sentimentRadarChart').getContext('2d');
     new Chart(radarCtx, {
@@ -150,7 +146,8 @@
             }
         }
     });
-
+</script>
+<script>
     // 꺽은선형 그래프
     const lineCtx = document.getElementById('lineChart').getContext('2d');
     new Chart(lineCtx, {
@@ -198,7 +195,8 @@
             }
         }
     });
-    
+</script>
+<script>    
     const wordData1 = [
         {text: 'Hello', size: 30},
         {text: 'World', size: 20},

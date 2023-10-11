@@ -73,7 +73,8 @@
    
    <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
    
-   <div>
+	<!--    
+	<div>
       <a href="/smhrd/views/sidebar">sidebar</a>
       <a href="/smhrd/views/payment">payment</a>
       <a href="/smhrd/views/chart">chart</a>
@@ -81,7 +82,8 @@
       <a href="/smhrd/views/subscription">subscription</a>
       <a href="/smhrd/views/paymentdetail">paymentdetail</a>
       <a href="/smhrd/views/word">word</a>
-   </div>
+   </div> 
+   -->
    
    <!-- 네이버 로그인 버튼 노출 영역 -->
    <div id="naver_id_login"></div>
