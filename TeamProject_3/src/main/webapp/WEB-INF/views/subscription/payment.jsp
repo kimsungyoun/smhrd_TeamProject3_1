@@ -13,9 +13,10 @@
     <span> 10,900원 </span>
 
     <button onclick="requestPay()">결제하기</button>
-    <button onclick="cancelPay()">환불하기</button>
+
 </div>
 </main>
+
 <script>
     var IMP = window.IMP;
     IMP.init("imp06441630");
@@ -26,7 +27,7 @@
             pg: "html5_inicis",
             pay_method: "card",
             merchant_uid: "merchant_" + new Date().getTime(),
-            name: "1개월 이용권",
+            name: "1개월 이용권 Test",
             amount: 10900,
             buyer_email: "mynilsh2002@naver.com",
             buyer_name: "이수현", 
@@ -50,6 +51,7 @@
                         //결제실패(웹서버측 실패)   
                         // 환불 코드(아직 구현 안함)  */
                         alert("결제에 성공하셨습니다.");  
+                        location.href = '/smhrd/subscription/payCheck';
                        /*  removePayAuth(pay_auth_id);// pay_auth 값 지우기 */
                     }else{
                         //결제성공(웹서버측 성공)
@@ -68,29 +70,8 @@
 }
 </script>
 
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
 <script>
-  function cancelPay() {
-    jQuery.ajax({
-      // 예: http://www.myservice.com/payments/cancel
-      "url": "{http://localhost:8080/smhrd/subscription/payment}", 
-      "type": "POST",
-      "contentType": "application/json",
-      "data": JSON.stringify({
-        "merchant_uid": "{merchant_" + new Date().getTime()}", // 예: ORD20180131-0000011
-        "cancel_request_amount": 20000, // 환불금액
-        "reason": "테스트 결제 환불" // 환불사유
-        // [가상계좌 환불시 필수입력] 환불 수령계좌 예금주
-        "refund_holder": "이수현", 
-        // [가상계좌 환불시 필수입력] 환불 수령계좌 은행코드(예: KG이니시스의 경우 신한은행은 88번)
-        "refund_bank": "92" 
-        // [가상계좌 환불시 필수입력] 환불 수령계좌 번호
-        "refund_account": "100022286505" 
-      }),
-      "dataType": "json"
-    });
-  }
+  	src="https://code.jquery.com/jquery-3.3.1.min.js"
+  	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  	crossorigin="anonymous">
 </script>

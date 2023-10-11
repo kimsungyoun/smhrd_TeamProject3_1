@@ -19,16 +19,11 @@
 	            </div>
 	
 	            <div class="form-group">
-	                <label for="autoRenewal">자동결제: </label>
-	                <input type="checkbox" id="autoRenewal">
-	            </div>
-	
-	            <div class="form-group">
 	                <label for="expiryDate">구독 만료일: </label>
 	                <input type="text" id="expiryDate" readonly value="${dto.sub_enddate }">
 	            </div>
 	
-	            <button onclick="window.location.href='/paymentdetail'">결제 내역 확인</button>
+	            <button onclick="window.location.href='/smhrd/subscription/paymentdetail'">결제 내역 확인</button>
 	        </div>
 	    </div>
 
