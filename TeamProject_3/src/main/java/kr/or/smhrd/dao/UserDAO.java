@@ -26,6 +26,8 @@ public interface UserDAO {
 	
 	// 회원탈퇴
 	public int UserDel(String u_id, String u_pw);
-
+	
+	// 아이디 중복체크
+	public String CheckId(String u_id);
 
 }
