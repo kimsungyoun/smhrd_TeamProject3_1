@@ -25,15 +25,12 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		List<GameDTO> list = gService.getList();
-		
 		// 게임 이미지 처리 - 민지
 		for (GameDTO dto : list) {
 	          byte[] imageData = dto.getG_img();
 	          String base64ImageData = Base64.getEncoder().encodeToString(imageData);
 	          dto.setG_img_base64(base64ImageData);
-	      }
-
-		
+	    }
 		model.addAttribute("game", list);
 		model.addAttribute("bestnews", nService.bestList());
 		

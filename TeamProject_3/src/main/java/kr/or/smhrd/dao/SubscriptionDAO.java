@@ -8,5 +8,4 @@ public interface SubscriptionDAO {
 	public int UserInsert(SubscriptionDTO dto);
 	public int subUpdate(String u_id); //구독 결제하면, 구독정보 업데이트
 	public int updateStatus(String u_id); // 구독 만료일 지나면, 구독상태 업데이트
-
 }

@@ -8,7 +8,7 @@
 <main>
 	<div class="container">
 
-	    <h1>${udto.u_name }님 구독 관리</h1>
+	    <h1>${dto.u_id }님 구독 관리</h1>
 	    <div class="card">
 	        <div class="card-body">
 	            <h5>${dto.u_id }</h5>
@@ -16,11 +16,6 @@
 	            <div class="form-group">
 	                <label for="startDate">구독 시작일:</label>
 	                <input type="text" id="startDate" readonly value="${dto.sub_startdate }">
-	            </div>
-	
-	            <div class="form-group">
-	                <label for="autoRenewal">자동결제: </label>
-	                <input type="checkbox" id="autoRenewal">
 	            </div>
 	
 	            <div class="form-group">
