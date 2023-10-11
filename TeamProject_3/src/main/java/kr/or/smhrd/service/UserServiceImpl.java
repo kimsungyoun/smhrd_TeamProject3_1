@@ -52,4 +52,12 @@ public class UserServiceImpl implements UserService {
         return dao.UserSelect(u_id);
     }
 
+	@Override
+	public String CheckId(String u_id) {
+		// TODO Auto-generated method stub
+		return dao.CheckId(u_id);
+	}
+    
+    
+
 }
