@@ -107,10 +107,7 @@ public class UserController {
       return mav;
    }
    
-   @GetMapping("/login")
-   public String login() {
-      return "/register/login";
-   }
+
    
    @GetMapping("/payment") 
    public ModelAndView payment(HttpSession session) { 
@@ -174,7 +171,8 @@ public class UserController {
    @PostMapping("/UserInsert")
    public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto) {
       ModelAndView mav = new ModelAndView();
-      try {			
+      try {	
+    	  
     	  service.UserInsert(dto);
     	  
     	  s_service.UserInsert(sdto);
@@ -186,7 +184,19 @@ public class UserController {
       }
       
       return mav;
+      
    }
+<<<<<<< HEAD
+   
+   @PostMapping("/CheckId")
+   @ResponseBody
+   public String checkId(String u_id) {
+       String id = service.CheckId(u_id);
+       return id;
+   }
+
+
+=======
 	*/
    
    @PostMapping("/UserInsert")
@@ -209,10 +219,16 @@ public class UserController {
       return mav;
    }
    
+   @GetMapping("/login")
+   public String login() {
+      return "/register/login";
+   }
+   
+
    @PostMapping("/loginOk")
    public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
       UserDTO dto = service.loginOk(u_id, u_pw);
-      
+      System.out.println("loginOk 호출성공");
       ModelAndView mav = new ModelAndView();
       
       if(dto != null) {
@@ -225,6 +241,18 @@ public class UserController {
          mav.setViewName("register/loginResult");
       }
       return mav;
+   }
+   
+   @PostMapping("/KakaoLoginOk")
+   public ModelAndView KakaoLoginOk(HttpSession session) {
+      System.out.println("loginOk 호출성공");
+      ModelAndView mav = new ModelAndView();
+      session.setAttribute("logStatus", "Y");
+         return mav;
+			/* mav.setViewName("redirect:/"); */
+			/*
+			 * }else{ mav.setViewName("register/loginResult"); } return mav;
+			 */
    }
    
    @GetMapping("/logOut")

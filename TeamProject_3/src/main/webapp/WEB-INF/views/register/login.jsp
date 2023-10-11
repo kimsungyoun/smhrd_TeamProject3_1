@@ -107,29 +107,49 @@
 </script>
 
 <!-- 카카오 스크립트 -->
+
+<!-- <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js" 
+integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH" 
+crossorigin="anonymous"></script> -->
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
-    Kakao.init('6a20bba2a1975a5c919ed9036f3180cc'); //발급받은 키 중 javascript키를 사용해준다.
+    Kakao.init('a1031eff7350ba4a1d45de246645149a'); //발급받은 키 중 javascript키를 사용해준다.
+    Kakao.isInitialized();
     console.log(Kakao.isInitialized()); // sdk초기화여부판단
     //카카오로그인
     function kakaoLogin() {
-        Kakao.Auth.login({
-            success: function (response) {
-                Kakao.API.request({
-                    url: '/v2/user/me',
-                    success: function (response) {
-                        console.log(response)
-                    },
-                    fail: function (error) {
-                        console.log(error)
-                    },
-                })
-            },
-            fail: function (error) {
-                console.log(error)
-            },
-        })
-    }
+    Kakao.Auth.login({
+        success: function (response) {
+            // Kakao API 
+            Kakao.API.request({ 
+            	url: '/v2/user/me',
+                success: function (response) {
+                 	window.location.href = '/smhrd';
+                 	  $.ajax({
+                		  // controller mapping
+                          url: 'KakaoLoginOk', 
+                          type: 'POST',
+                          success: function (data) {
+                              console.log(data); 
+                              // redirection
+                              window.location.href = '/smhrd';
+                          },
+                          error: function (error) {
+                              console.log(error);
+                          },
+                      });
+                },
+                fail: function (error) {
+                    console.log(error);
+                },
+            });
+        },
+        fail: function (error) {
+            console.log(error);
+        },
+    });
+}
+
     //카카오로그아웃
     function kakaoLogout() {
         if (Kakao.Auth.getAccessToken()) {
@@ -145,7 +165,7 @@
             Kakao.Auth.setAccessToken(undefined)
         }
     }
-</script>
+</script> 
 
 <%--구글 로그인 api--%>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
