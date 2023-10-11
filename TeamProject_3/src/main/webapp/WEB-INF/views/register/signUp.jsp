@@ -73,12 +73,12 @@
           
           <tr>
              <td>휴대폰 번호</td>
-             <td><input type="tel" id="u_phone" name="u_phone" required></td>
+             <td><input type="tel" id="u_phone" name="u_phone" placeholder="010-1234-5678" required></td>
           </tr>
           
           <tr>
              <td>이름</td>
-             <td><input type="text" id="u_name" name="u_name" placeholder="010-1234-5678" required></td>
+             <td><input type="text" id="u_name" name="u_name" required></td>
           </tr>
           
           <tr>
