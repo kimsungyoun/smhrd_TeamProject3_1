@@ -116,7 +116,8 @@
                 Kakao.API.request({
                     url: '/v2/user/me',
                     success: function (response) {
-                        console.log(response)
+                        console.log(response);
+                        sendDataToServer(response);
                     },
                     fail: function (error) {
                         console.log(error)
@@ -127,7 +128,22 @@
                 console.log(error)
             },
         })
-    }
+    };
+ 	// 서버로 데이터를 전송하는 함수 - 민지
+    function sendDataToServer(data) {
+        $.ajax({
+            url: '/register/kakaoLogin',
+            method: 'POST', // 데이터 전송 방식 (POST)
+            contentType: 'application/json', // 데이터 형식 (JSON)
+            data: JSON.stringify(data), // 데이터를 JSON 문자열로 변환
+            success: function(response) {
+                console.log('서버 응답:', response);
+            },
+            error: function(error) {
+                console.error('서버 요청 오류:', error);
+            }
+        });
+    };
     //카카오로그아웃
     function kakaoLogout() {
         if (Kakao.Auth.getAccessToken()) {

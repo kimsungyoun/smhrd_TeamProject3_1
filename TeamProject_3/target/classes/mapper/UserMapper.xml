@@ -6,8 +6,14 @@
 <mapper namespace="kr.or.smhrd.dao.UserDAO">
 	<!-- 회원등록 -->
 	<insert id="UserInsert">
-		INSERT INTO USERS(u_id, u_pw, u_name, u_email, u_phone, u_birthdate, u_gender, u_photo)
-		VALUES (#{u_id}, #{u_pw}, #{u_name}, #{u_email}, #{u_phone}, #{u_birthdate}, #{u_gender}, #{u_photo})
+		<if test="u_photo != null" >
+			INSERT INTO USERS(u_id, u_pw, u_name, u_email, u_phone, u_birthdate, u_gender, u_photo)
+			VALUES (#{u_id}, #{u_pw}, #{u_name}, #{u_email}, #{u_phone}, #{u_birthdate}, #{u_gender}, #{u_photo})
+		</if>
+		<if test="u_photo == null" >
+			INSERT INTO USERS(u_id, u_pw, u_name, u_email, u_phone, u_birthdate, u_gender)
+			VALUES (#{u_id}, #{u_pw}, #{u_name}, #{u_email}, #{u_phone}, #{u_birthdate}, #{u_gender})
+		</if>
 	</insert> 	
 
  	<!-- 로그인 -->

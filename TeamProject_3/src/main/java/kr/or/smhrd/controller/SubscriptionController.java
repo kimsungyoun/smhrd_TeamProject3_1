@@ -43,7 +43,7 @@ public class SubscriptionController {
 	    return mav;
 	}
 	
-	// 구독 정보 등록 - 민지
+	// 구독 정보 등록 
 	// 구독 결제 완료 시, 구독 정보 DB에 등록 -> 등록 성공하면 마이페이지로 이동, 실패하면 다시 결제정보 페이지
 	@GetMapping("/payCheck")
 	public ModelAndView payCheck(HttpSession session) {
