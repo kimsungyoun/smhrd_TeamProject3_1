@@ -177,7 +177,7 @@ public class UserController {
    @PostMapping("/loginOk")
    public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
       UserDTO dto = service.loginOk(u_id, u_pw);
-      System.out.println("loginOk 호출성공");
+//      System.out.println("loginOk 호출성공");
       ModelAndView mav = new ModelAndView();
       
       if(dto != null) {
@@ -197,7 +197,7 @@ public class UserController {
       System.out.println("loginOk 호출성공");
       ModelAndView mav = new ModelAndView();
       session.setAttribute("logStatus", "Y");
-         return mav;
+      return mav;
    }
    
    @GetMapping("/logOut")
