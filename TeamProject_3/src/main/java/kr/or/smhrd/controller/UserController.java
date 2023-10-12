@@ -239,4 +239,8 @@ public class UserController {
       return mav;
    }
    
+   @GetMapping("/loginInterceptor")
+   public String LoginInterceptor() {
+	   return "/register/loginInterceptor";
+   }
 }
