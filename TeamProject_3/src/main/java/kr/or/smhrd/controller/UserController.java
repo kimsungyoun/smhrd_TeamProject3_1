@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.or.smhrd.dto.KakaoDTO;
+//import kr.or.smhrd.dto.KakaoDTO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
