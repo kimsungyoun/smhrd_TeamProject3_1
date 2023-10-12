@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-main {
+/* main {
     width: 80%;
     margin: auto;
     background-color: #FFFFFF;  
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
+} */
 
 h2 {
     font-size: 1.5em;
@@ -16,25 +16,33 @@ h2 {
     padding-bottom: 5px;
 }
 
-.ranking-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.ranking-container img {
-    max-width: 100px;  /* Adjust according to your requirement */
-    max-height: 100px; /* Adjust according to your requirement */
+
+.table-container img {
+    max-width: 100px;  Adjust according to your requirement
+    max-height: 100px; Adjust according to your requirement
     margin-left: 10px;
 }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+ 
+.table-container {
+    display: flex;
+    justify-content: space-between; /* 테이블 간의 간격 조절 */
 }
 
-th, td {
+.rank-table, .news-table {
+    flex: 0.5;/* 테이블 간의 공간을 균등하게 분배 */
+    border: 1px solid #ccc; /* 테뷰 경계선 스타일 설정 */
+    margin: 5px; /* 테이블 간의 간격 조절 */
+}
+
+
+/* table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+} */
+
+/* th, td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
@@ -44,7 +52,7 @@ th {
     background-color: #CEBEE1;
     color: white;
 }
-
+ */
 a {
     text-decoration: none;
     color: #000000;

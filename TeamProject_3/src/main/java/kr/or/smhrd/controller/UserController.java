@@ -248,6 +248,7 @@ public class UserController {
       System.out.println("loginOk 호출성공");
       ModelAndView mav = new ModelAndView();
       session.setAttribute("logStatus", "Y");
+      System.out.println("logStatus:Y 등록성공");
          return mav;
 			/* mav.setViewName("redirect:/"); */
 			/*

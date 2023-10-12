@@ -33,99 +33,7 @@
 
 <main>
 <div id="signUp-form">
-<<<<<<< HEAD
-	<h2>회원가입 폼</h2>
-	
-	<form action="UserInsert" method="POST">
-	    <table>
-	    	<tr>
-	    		<td>아이디</td> 
-	    		<td><input type="text" id="u_id" name="u_id" required></td>
-	    		<td><span id="idStatus"></span></td> <!-- 중복 체크 결과 메시지 표시 -->
-                <td>&nbsp;<button type="button" onclick="checkDuplicate();">중복 확인</button></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td>비밀번호</td>
-	    		<td><input class = "password2_reg" type="password" id="u_pw" name="u_pw" required autocomplete="new-password"></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td>비밀번호확인</td>
-	    		<td><input class="password2_ok" type="password" id="confirm_pw" name="confirm_pw" required autocomplete="new-password"></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td>이메일</td>
-	    		<td><input type="email" id="u_email" name="u_email" required></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td>휴대폰 번호</td>
-	    		<td><input type="tel" id="u_phone" name="u_phone" required></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td>이름</td>
-	    		<td><input type="text" id="u_name" name="u_name" required></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td>생년월일</td>
-	    		<td><input type="text" id="u_birthdate" name="u_birthdate" placeholder="YYYY-MM-DD" required></td>
-	    	</tr>
-	    	
-	    	<tr>
-	    		<td>성별</td>
-	    		<td>
-		    		<input type="radio" id="male" name="u_gender" value="M"><span>남성</span>
-		    		<input type="radio" id="female" name="u_gender" value="F"><span>여성</span>
-	    		</td>
-	    	</tr>
-	    </table>
-	    <!-- <label for="username">
-	    아이디:
-	    <input type="text" id="u_id" name="u_id" required>
-	    </label>
-	
-	    <label for="password">
-	    비밀번호:
-	    <input type="password" id="u_pw" name="u_pw" required>
-	    </label>
-	
-	    <label for="confirm_password">
-	    비밀번호 확인:
-	    <input type="password" id="confirm_pw" name="confirm_pw" required>
-	    </label>
-		
-		
-	    <label for="email">
-	    이메일:
-	    <input type="email" id="u_email" name="u_email" required>
-	    </label>
-	
-	    <label for="phone">
-	    휴대폰 번호:
-	    <input type="tel" id="u_phone" name="u_phone" required>
-	    </label>
-	
-	    <label for="name">
-	    이름:
-	    <input type="text" id="u_name" name="u_name" required>
-	    </label>
-	
-	    <label for="birthdate">
-	    생년월일:
-	    <input type="text" id="u_birthdate" name="u_birthdate" placeholder="YYYY-MM-DD" required>
-	    </label>
-	
-	    <label>성별</label>
-	    
-		<label>남성<input type="radio" id="male" name="u_gender" value="M"></label>
-		<label>여성<input type="radio" id="female" name="u_gender" value="F"></label> -->
-	    <button type="submit" id="signUpButton">가입하기</button>
-	</form>
-=======
+
    <h2>회원가입 폼</h2>
    
    <form action="UserInsert" method="POST">
@@ -189,7 +97,7 @@
        </table>
        <button type="submit">가입하기</button>
    </form>
->>>>>>> 2b2be42dbf80fdb181417a9c60da4cbf751b15d1
+
 </div>
 <script>
 //플래그변수
