@@ -47,7 +47,7 @@
      <div class="anw">
       <span>주로 인벤에서 게임과 관련 된 뉴스들을 확인 하실 수 있습니다.</span>
      </div>
-
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(".que").click(function() {
