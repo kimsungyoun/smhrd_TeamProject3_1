@@ -19,7 +19,7 @@ public class NewsDTO {
 	private String n_reporter;    
 	private String n_writedate;   
 	private String n_content;     
-	private int n_hit;            
+	private int n_hit;        
 	private String n_source;      
 
 }

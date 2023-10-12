@@ -33,7 +33,10 @@
 
 <main>
 <div id="signUp-form">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 135c2be05eb6aff18678c241f2e53cc73d15caf2
    <h2>회원가입 폼</h2>
    
    <form action="UserInsert" method="POST">
@@ -74,12 +77,12 @@
           
           <tr>
              <td>휴대폰 번호</td>
-             <td><input type="tel" id="u_phone" name="u_phone" required></td>
+             <td><input type="tel" id="u_phone" name="u_phone" placeholder="010-1234-5678" required></td>
           </tr>
           
           <tr>
              <td>이름</td>
-             <td><input type="text" id="u_name" name="u_name" placeholder="010-1234-5678" required></td>
+             <td><input type="text" id="u_name" name="u_name" required></td>
           </tr>
           
           <tr>
@@ -97,7 +100,10 @@
        </table>
        <button type="submit">가입하기</button>
    </form>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 135c2be05eb6aff18678c241f2e53cc73d15caf2
 </div>
 <script>
 //플래그변수

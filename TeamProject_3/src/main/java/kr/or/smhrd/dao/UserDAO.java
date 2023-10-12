@@ -30,5 +30,4 @@ public interface UserDAO {
 	// 아이디 중복체크
 	public String CheckId(String u_id);
 
-
 }
