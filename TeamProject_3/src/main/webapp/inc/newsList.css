@@ -66,7 +66,9 @@ a:hover {
 .page li:hover {
     background-color: #CEBEE1;
 }
-
+.pgnum{
+	color: #fff;
+}
 
 
 .search {
@@ -97,3 +99,10 @@ a:hover {
 .searchBtn:hover {
     background-color: #CEBEE1;
 }
+
+/* 페이지 번호 스타일 */
+.page li.current-page {
+    background-color: #CEBEE1;
+    color: #fff;
+}
+
