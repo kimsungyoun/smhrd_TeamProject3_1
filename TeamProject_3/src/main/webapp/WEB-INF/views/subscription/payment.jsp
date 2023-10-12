@@ -27,7 +27,7 @@
             pg: "html5_inicis",
             pay_method: "card",
             merchant_uid: "merchant_" + new Date().getTime(),
-            name: "1개월 이용권 Test",
+            name: "분석차트 1개월 이용권",
             amount: 10900,
             buyer_email: "mynilsh2002@naver.com",
             buyer_name: "이수현", 
