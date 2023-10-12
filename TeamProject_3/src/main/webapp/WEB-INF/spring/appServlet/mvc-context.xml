@@ -9,7 +9,7 @@
 	
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="#"/>
+			<mvc:mapping path="/analyze/analyzeList"/>
 			<bean class="kr.or.smhrd.LoginInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>	

@@ -10,14 +10,13 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	@Override
-	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-			throws Exception {
+	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)throws Exception {
 		HttpSession session = request.getSession();
 		String userid = (String) session.getAttribute("logId");
 		String logStatus = (String) session.getAttribute("logStatus");
 
 		if (userid == null || logStatus == null || userid.equals("") || !logStatus.equals("Y")) {
-			response.sendRedirect("/login");
+			response.sendRedirect("/smhrd/register/loginInterceptor");
 			return false;
 		}
 		

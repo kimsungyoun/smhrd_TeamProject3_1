@@ -81,8 +81,8 @@
         	<c:if test="${logStatus == 'Y'}">
 	            <li>
 	                <a href="/smhrd/register/mypage">
-	                    <img src="<%= request.getContextPath() %>/img/mypage.png" width="50">
-	                    <br/>마이페이지
+	                    <img src="<%= request.getContextPath() %>/img/mypage.png" width="20">
+	                    <span>마이페이지</span>
 	                </a>
 	            </li>
 	        </c:if>
