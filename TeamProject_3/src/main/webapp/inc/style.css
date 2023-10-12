@@ -7,9 +7,6 @@ body{
 header{
 	
 }
-#title{
-	align-content: center;
-}
 main{
 	/* height:	1000px; */
 	display: flex;
@@ -18,9 +15,6 @@ main{
 	padding-left: 250px;
 }
 
-footer{
-	height: 300px;
-}
 main{
 	display: flex;
 	flex-direction: column;

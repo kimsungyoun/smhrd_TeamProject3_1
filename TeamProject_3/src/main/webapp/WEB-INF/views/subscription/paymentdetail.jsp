@@ -46,5 +46,5 @@
 	        <div class="bold">결제완료</div>
 	    </div>
     </c:forEach>
-
+</div>
 </main>
