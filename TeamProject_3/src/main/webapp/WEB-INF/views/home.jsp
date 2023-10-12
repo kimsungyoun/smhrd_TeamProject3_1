@@ -4,6 +4,9 @@
 <link rel=stylesheet href=./inc/home.css>
 
 <main>
+
+<a href="/smhrd/chat/chatbot">GPT</a>  <!-- ####gpt매핍주소  -->
+
 <div>
 	<h2>게임 인기 순위</h2>
 	<div class="ranking-container">
