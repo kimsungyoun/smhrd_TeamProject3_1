@@ -4,6 +4,9 @@
 <link rel=stylesheet href=./inc/home.css>
 
 <main>
+
+<a href="/smhrd/chat/chatbot">GPT</a>  <!-- ####gpt매핍주소  -->
+
 <div>
 	<h2>게임 인기 순위</h2>
 	<div class="ranking-container">
@@ -13,14 +16,13 @@
         		<tr>
         			<td>${dto.g_rank}등</td>
         			<td>${dto.g_name} </td>
-        			<td><img src="data:image/jpeg;base64,${dto.g_img_base64}" alt="Product Image" /></td> <!-- 게임 이미지 추가 - 민지 -->
-        			<td><a href="/smhrd/game/gameDetail?g_no=${dto.g_no}"><img src="<%= request.getContextPath() %>/img/chart.png" alt=""></a></td>
+        			<td><img src="data:image/jpeg;base64, ${dto.g_img_base64}"></td>
+        			<td><a href="/smhrd/game/gameDetail?g_no=${dto.g_no}"><img src="<%= request.getContextPath() %>/img/chart.png" style="width: 20px; height: 20px"></a></td>
         		</tr>
         	</c:forEach>
         </table>    
         </div>
     </div>
-	
 </div>
 
 <div>

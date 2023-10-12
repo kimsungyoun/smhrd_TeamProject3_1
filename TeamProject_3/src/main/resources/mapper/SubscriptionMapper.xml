@@ -17,17 +17,27 @@
 		VALUES(SUBSCRIPTION_SEQ.nextval, #{u_id})
 	</insert>
 	 
-	 <!-- 구독 결제 시, 구독 정보 업데이트 - 민지 -->
+	 <!-- 구독 결제 시, 구독 정보 업데이트 -->
 	 <update id="subUpdate">
 	 	UPDATE subscription 
 	 	SET sub_payment=sysdate, sub_amoument=10900, sub_status='Y', sub_startdate=sysdate, sub_enddate=sysdate+30
 	 	WHERE u_id = #{param1}
 	 </update>
 	 
-	 <!-- 구독상태 업데이트 - 민지 -->
+	 <!-- 구독상태 업데이트 -->
 	 <update id="updateStatus"> 
 	 	UPDATE subscription
 	 	SET sub_status='N', sub_payment=null, sub_amoument=0, sub_startdate=null, sub_enddate=null
 	 	WHERE u_id=#{param1} and <![CDATA[sub_enddate < sysdate]]>
 	 </update>
+	 
+	 <insert id="payInsert">
+	 	INSERT INTO pay (u_id, p_amount, p_date)
+	 	VALUES (#{param1}, 10900, sysdate)
+	 </insert>
+	 
+	 <select id="paySelect" resultType="kr.or.smhrd.dto.PayDTO">
+	 	SELECT * FROM pay
+	 	WHERE u_id = #{param1}
+	 </select>
 </mapper>

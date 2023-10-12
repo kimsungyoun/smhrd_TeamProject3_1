@@ -2,7 +2,6 @@ eclipse.preferences.version=1
 encoding//src/main/java/kr/or/smhrd/controller/FaqController.java=UTF-8
 encoding//src/main/java/kr/or/smhrd/controller/NewsController.java=UTF-8
 encoding//src/main/java/kr/or/smhrd/controller/SubscriptionController.java=UTF-8
-encoding//src/main/java/kr/or/smhrd/controller/TosspaymentController.java=UTF-8
 encoding//src/main/java/kr/or/smhrd/controller/UserController.java=UTF-8
 encoding//src/main/java/kr/or/smhrd/dao/UserDAO.java=UTF-8
 encoding//src/main/java/kr/or/smhrd/service/UserService.java=UTF-8
