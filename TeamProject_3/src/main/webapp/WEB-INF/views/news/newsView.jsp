@@ -1,5 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+  <style>
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .board-list {
+      list-style: none;
+      padding: 0;
+    }
+    .board-list > li {
+      margin: 10px 0;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .board-list > li:last-child {
+      border-bottom: none;
+    }
+    .board-list > li > strong {
+      font-weight: bold;
+    }
+    .date-recommend {
+      display: flex;
+      justify-content: space-between;
+    }
+    .content {
+      white-space: pre-line;
+      margin-top: 10px;
+    }
+    .author-align {
+      text-align: right;
+    }
+  </style>
+
 
 <link rel=stylesheet href=../inc/newsView.css>
 

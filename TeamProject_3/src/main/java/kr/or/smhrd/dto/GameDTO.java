@@ -13,7 +13,7 @@ public class GameDTO {
 	private int g_no;          
 	private String g_name;     
 	private String g_info;     
-	private float g_ratings;    
+	private float g_ratings;   
 	private int g_views;       
 	private int g_download;   
 	private String g_genre;   
@@ -28,6 +28,6 @@ public class GameDTO {
 	private int g_rank;
 
 	private byte[] g_img;
-	private String g_img_base64;
+	private String g_img_base64; //게임 이미지 바이트배열을 문자열로 처리하여 저장하는 필드 추가 -민지
 
 }

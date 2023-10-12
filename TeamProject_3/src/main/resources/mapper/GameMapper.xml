@@ -13,7 +13,7 @@
  	
  	<!-- 게임 상세보기 -->
 	<select id="getView" resultType="kr.or.smhrd.dto.GameDTO">
-		SELECT g_no, g_name, g_star, g_version, g_released, g_company, g_rank, g_info
+		SELECT g_no, g_name, g_star, g_version, g_released, g_company, g_rank, g_info, g_img <!-- 게임 이미지 필드 추가 - 민지 -->
 		FROM game
 		WHERE g_no=#{param1}
 	</select> 
