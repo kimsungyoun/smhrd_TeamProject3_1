@@ -15,6 +15,4 @@ public interface NewsDAO {
 	public int totalRecord(PagingDTO pDTO);
 	public void hitCount(int n_no);
 	public List<NewsDTO> bestList();
-	public List<NewsDTO> getList();
-
 }

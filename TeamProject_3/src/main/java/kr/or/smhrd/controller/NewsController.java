@@ -1,6 +1,5 @@
 package kr.or.smhrd.controller;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -25,8 +24,6 @@ import kr.or.smhrd.service.NewsService;
 @Controller
 @RequestMapping("/news")
 public class NewsController {
-
-
 	@Autowired
 	NewsService service;
 	

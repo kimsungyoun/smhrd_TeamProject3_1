@@ -5,7 +5,7 @@
         body {
             font-family: Arial, sans-serif;
         }
-        .contaier {
+        .container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
@@ -20,7 +20,7 @@
             margin-bottom: 10px;
             border-radius: 5px;
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        }n
+        }
         .bold {
             font-weight: bold;
         }
@@ -32,16 +32,19 @@
     </style>
 
 <main>
-<div class="header">결제 내역</div>
-   
-    <div class="payment-card">
-        <div class="bold">[1개월 구독]</div>
-        <div>1개월 구독</div>
-        <div class="separator"></div>
-        <div>결제일: ${dto.sub_payment }</div>
-        <div>금액: ${dto.sub_amoument    }</div>
-        <div class="separator"></div>
-        <div class="bold">결제완료</div>
-    </div>
+<div class="container">
+    <div class="header">결제 내역</div>
+	
+	<c:forEach var="dto" items="${list}">
+	    <div class="payment-card">
+	        <div class="bold">[1개월 구독]</div>
+	        <div>1개월 구독</div>
+	        <div class="separator"></div>
+	        <div>결제일: ${dto.p_date}</div>
+	        <div>금액: ${dto.p_amount}</div>
+	        <div class="separator"></div>
+	        <div class="bold">결제완료</div>
+	    </div>
+    </c:forEach>
 
 </main>

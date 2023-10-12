@@ -50,14 +50,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO UserSelect(String u_id) {
         return dao.UserSelect(u_id);
-    }
-
-	@Override
-	public String CheckId(String u_id) {
-		// TODO Auto-generated method stub
-		return dao.CheckId(u_id);
-	}
-    
-    
+    }  
 
 }
