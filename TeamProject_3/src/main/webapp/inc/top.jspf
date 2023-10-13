@@ -6,15 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 </head>
-<style>
-    #viewport {
-        padding-left: 250px;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-
+<link rel=stylesheet href=./inc/style.css>
 <style>
 
 /* WRAPPER */
@@ -258,8 +250,25 @@ sidebar {
 
 </style>
 
-
-<div id="viewport">
+<div class="wrapper">
+  <sidebar>
+    <div class="logo"><a href="/smhrd"><img src="<%= request.getContextPath() %>/img/logo.png" width="200"></a></div>
+    <div class="avatar">
+      <div class="avatar__img">
+      	<c:if test="${logStatus == 'Y'}">
+        <img src="https://picsum.photos/70" alt="avatar">
+        </c:if>
+        
+        <c:if test="${logStatus != 'Y'}">
+        <img src="https://picsum.photos/70" alt="avatar">
+        <span>로그인하세요</span>
+        </c:if>
+      </div>
+      <c:if test="${logStatus == 'Y'}">
+	      <div class="avatar__name">{닉네임}</div>
+	      <div class="avatar__name">{구독여부}</div>
+      </c:if>
+    </div>
     <nav class="menu">
      	<c:if test="${logStatus == 'Y'}">
       <a class="menu__item" href="/smhrd/register/mypage">
@@ -278,7 +287,6 @@ sidebar {
         <span class="menu__text">로그인</span>
       </a>
       </c:if>
-      
       <a class="menu__item menu__item--active" href="/smhrd/analyze/analyzeList">
         <i class="menu__icon fa fa-calendar"><img src="<%= request.getContextPath() %>/img/chart.png" width="15"></i>
         <span class="menu__text">분석차트</span>
@@ -291,7 +299,6 @@ sidebar {
         <i class="menu__icon fa fa-trophy"><img src="<%= request.getContextPath() %>/img/chat.png" width="15"></i>
         <span class="menu__text">FAQ</span>
       </a>
-      
       <c:if test="${logStatus == 'Y'}">
       <a class="menu__item" href="/smhrd/register/logOut">
         <i class="menu__icon fa fa-sliders"></i>
