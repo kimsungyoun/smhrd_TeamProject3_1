@@ -5,12 +5,13 @@
 
 <main>
 	<div class="my-page-wrapper">
-		<!-- 프로필 이미지 -->
-	    <div class="profile-img">
-		    <c:if test="${dto.u_photo_base64 ne '사진없음'}">
-		    	<img src="data:image/jpeg;base64,${dto.u_photo_base64}" alt="Product Image" />
-	        </c:if>
-        </div>
+	    <div class="profile-section">
+	        <div class="profile-img">
+	        	<c:if test="${dto.u_photo_base64 ne '사진없음'}">
+	        		<img src="data:image/jpeg;base64,${dto.u_photo_base64}" alt="Product Image" />
+	        	</c:if>
+	        </div>
+	    </div>
 	
 		<!-- 구독표시 -->
 	    <div class="info-section">

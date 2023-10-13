@@ -1,7 +1,18 @@
 @charset "UTF-8";
 body{
 	display: flex;
+
+	flex-direction: column;
+}
+header{
+	
+}
+main{
+	/* height:	1000px; */
+	display: flex;
+
 	flex-direction: row;
+	padding-left: 250px;
 }
 
 /* main{
@@ -9,8 +20,8 @@ body{
 	flex-direction: column;
 	margin-left: 150px;
 	align-items: center;
-	padding:auto;
-} */
+
+}
 
 nav > ul, li{
 	list-style: none;

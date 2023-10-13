@@ -2,8 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 
 <link rel="stylesheet" href="../inc/faq.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<main>
 <div id="Accordion_wrap">
     <div class="que">
         <span>서비스 이용은 어떻게 할 수 있나요?</span>
@@ -52,6 +51,7 @@
       <span>주로 인벤에서 게임과 관련 된 뉴스들을 확인 하실 수 있습니다.</span>
      </div>
 </div>
+</main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
 $(".que").click(function() {
