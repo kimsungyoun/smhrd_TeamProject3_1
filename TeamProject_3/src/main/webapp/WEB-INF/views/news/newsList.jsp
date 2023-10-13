@@ -96,7 +96,7 @@ a {
 </style>
 
 
-<link rel=stylesheet href=../inc/newsList.css>
+<link rel="stylesheet" href="../inc/newsList.css">
 
 <main>
 <div>
@@ -126,7 +126,6 @@ a {
 				<td>${news.n_hit}</td>
 			</tr>
 		</c:forEach> 
-
 	</tbody>
 	</table>
 </div>
@@ -144,20 +143,23 @@ a {
 			
 			<!-- forEach : 변수, 시작, 끝, 증가값(생략가능) -->
 			<c:forEach var="p" begin="${pDTO.startPageNum}" end="${pDTO.startPageNum + pDTO.onePageNumCount - 1}" step="1"> 
-				<c:if test="${p <= pDTO.totalPage}">
-					<!-- 선택한 페이지 번호 표시 -->
-					<c:if test="${p == pDTO.nowPage }">		
-						<li class="pgnum">
-							<a href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
-						</li>
-					</c:if>
-					
-					<!-- 선택되지 않은 페이지 번호들 표시x -->
-					<c:if test="${p != pDTO.nowPage }">		
-						<li><a href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a></li>
-					</c:if>					
-				</c:if>
+			    <c:if test="${p <= pDTO.totalPage}">
+			        <!-- 선택한 페이지 번호 표시 -->
+			        <c:if test="${p == pDTO.nowPage }">		
+			            <li class="pgnum current-page">
+			                <a href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
+			            </li>
+			        </c:if>
+			        
+			        <!-- 선택되지 않은 페이지 번호들 표시x -->
+			        <c:if test="${p != pDTO.nowPage }">		
+			            <li class="pgnum">
+			                <a href='/smhrd/news/newsList?nowPage=${p}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${p}</a>
+			            </li>
+			        </c:if>					
+			    </c:if>
 			</c:forEach>
+
 			
 			<c:if test="${pDTO.nowPage >= pDTO.totalPage }">
 				<li>next</li>
@@ -167,7 +169,6 @@ a {
 			</c:if>
 		</ul>
 	</div>
-
 
 	<div class="search">
 		<form action="/smhrd/news/newsList">

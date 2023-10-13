@@ -15,7 +15,7 @@ main{
 	padding-left: 250px;
 }
 
-main{
+/* main{
 	display: flex;
 	flex-direction: column;
 	margin-left: 150px;
@@ -31,8 +31,4 @@ nav > ul, li{
 a:link, a:visited, a:hover{
 	text-decoration: none;
 	color:black;
-}
-
-#main_page{
-	width: 1500px;
 }
