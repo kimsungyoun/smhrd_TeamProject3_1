@@ -4,9 +4,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+   <meta charset="UTF-8">
 </head>
-<link rel=stylesheet href=./inc/style.css>
+<link rel=stylesheet href="./inc/style.css">
 <style>
 
 /* WRAPPER */
@@ -255,7 +255,11 @@ sidebar {
     <div class="logo"><a href="/smhrd"><img src="<%= request.getContextPath() %>/img/logo.png" width="200"></a></div>
     <div class="avatar">
       <div class="avatar__img">
+<<<<<<< HEAD
       	<c:if test="${logStatus == 'Y'}">
+=======
+         <c:if test="${logStatus == 'Y'}">
+>>>>>>> 741f14ebe5a99735be3952e79de1b52238b4a45f
         <img src="https://picsum.photos/70" alt="avatar">
         </c:if>
         
@@ -265,12 +269,17 @@ sidebar {
         </c:if>
       </div>
       <c:if test="${logStatus == 'Y'}">
+<<<<<<< HEAD
 	      <div class="avatar__name">{닉네임}</div>
 	      <div class="avatar__name">{구독여부}</div>
+=======
+         <div class="avatar__name">${logName}</div>
+         <div class="avatar__name">{구독여부}</div>
+>>>>>>> 741f14ebe5a99735be3952e79de1b52238b4a45f
       </c:if>
     </div>
     <nav class="menu">
-     	<c:if test="${logStatus == 'Y'}">
+        <c:if test="${logStatus == 'Y'}">
       <a class="menu__item" href="/smhrd/register/mypage">
         <i class="menu__icon fa fa-home"><img src="<%= request.getContextPath() %>/img/mypage.png" width="15"></i>
         <span class="menu__text">마이페이지</span>
@@ -304,8 +313,7 @@ sidebar {
         <i class="menu__icon fa fa-sliders"></i>
         <span class="menu__text">로그아웃</span>
       </a>
-		</c:if>
+      </c:if>
     </nav>
-    <div class="copyright">copyright &copy; 2018</div>
   </sidebar>
 </div>
