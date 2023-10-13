@@ -7,8 +7,13 @@
  	<!-- 게임 리스트 -->
  	<select id="getList" resultType="kr.or.smhrd.dto.GameDTO">
  		SELECT g_no, g_rank, g_name, g_star ,g_img
- 		FROM game
- 		ORDER BY g_rank
+ 		FROM
+ 		(
+	 		SELECT g_no, g_rank, g_name, g_star ,g_img
+	 		FROM game
+	 		ORDER BY g_rank
+ 		)
+ 		WHERE rownum &lt; 11
  	</select>
  	
  	<!-- 게임 상세보기 -->

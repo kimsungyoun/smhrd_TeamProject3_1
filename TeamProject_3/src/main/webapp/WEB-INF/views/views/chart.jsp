@@ -34,61 +34,65 @@
 		width:500px; 
 		height:500px; 
 	}
+	
+	#wordCloud{
+		display: flex;
+		direction: row;
+	}
+	
+	#radarChart{
+		display: flex;
+		direction: row;
+	}
+	
 </style>
 
 <main>
-
-
-
-<div id="chart" align="center">
-	<!-- 도넛 차트 -->
-	<div id="doughnutContainer">
-	    <h2>도넛차트</h2>
-	    <canvas id="sentimentDoughnutChart"></canvas>
-	    <input type="hidden" id="doughnutPos" value="${dto.pos_sum}">
-	    <input type="hidden" id="doughnutNeg" value="${dto.neg_sum}">
-	</div>
+	<div id="chart" align="center">
+		<!-- 도넛 차트 -->
+		<div id="doughnutContainer">
+		    <h2>도넛차트</h2>
+		    <canvas id="sentimentDoughnutChart"></canvas>
+		    <input type="hidden" id="doughnutPos" value="${dto.pos_sum}">
+		    <input type="hidden" id="doughnutNeg" value="${dto.neg_sum}">
+		</div>
 	
-	<!-- 막대 차트 -->
-	<div id="barContainer">
-		<h2>막대차트</h2>
-	    <canvas id="sentimentBarChart"></canvas>
+		<!-- 레이더 차트 -->
+		<div id="radarChart">
+			<input type="hidden" id="radarPosKey" value="${dto.pos_key}">
+			<input type="hidden" id="radarNegKey" value="${dto.neg_key}">
+			<input type="hidden" id="radarPosValue" value="${dto.pos_value}">
+			<input type="hidden" id="radarNegValue" value="${dto.neg_value}">
+			<input type="hidden" id="radarPTopValue" value="${dto.p_top_value}">
+			<input type="hidden" id="radarNTopValue" value="${dto.n_top_value}"> 
+			    
+			<div id="radarContainer">
+			    <h2>긍정 레이더차트</h2>
+			    <canvas id="sentimentRadarChart"></canvas>
+			     
+			</div>
+			<div id="radarContainer2">
+			    <h2>부정 레이더차트</h2>
+			    <canvas id="sentimentRadarChart2"></canvas>
+			</div>
+		</div>
+		
+		<!-- 워드 클라우드 -->
+		<div id="wordCloud">
+			<input type="hidden" id="wordPosKey" value="${dto.word_poskey}">
+		    <input type="hidden" id="wordPosValue" value="${dto.word_posval}">
+		    <input type="hidden" id="wordNegKey" value="${dto.word_negkey}">
+		    <input type="hidden" id="wordNegValue" value="${dto.word_negval}"> 
+			<div>
+				<h2>긍정 키워드</h2>
+				<svg id="wordCloud1"></svg>
+			</div>
+			<div>
+				<h2>부정 키워드</h2>
+				<svg id="wordCloud2"></svg>		 
+			</div>			    
+		</div>
 	</div>
-
-	<!-- 레이더 차트 -->
-	<div id="radarContainer">
-	    <h2>긍정 레이더차트</h2>
-	    <canvas id="sentimentRadarChart"></canvas>
-	    <input type="hidden" id="radarPosKey" value="${dto.pos_key}">
-	    <input type="hidden" id="radarNegKey" value="${dto.neg_key}">
-	    <input type="hidden" id="radarPosValue" value="${dto.pos_value}">
-	    <input type="hidden" id="radarNegValue" value="${dto.neg_value}">
-	    <input type="hidden" id="radarPTopValue" value="${dto.p_top_value}">
-	    <input type="hidden" id="radarNTopValue" value="${dto.n_top_value}">
-	</div>
-	<div id="radarContainer2">
-	    <h2>부정 레이더차트</h2>
-	    <canvas id="sentimentRadarChart2"></canvas>
-	</div>
-	
-	<!-- 라인 차트-->
-	<div id="lineContainer">
-	    <h2>라인차트</h2>
-	    <canvas id="lineChart"></canvas>
-	</div>
-	
-	<!-- 워드 클라우드 -->
-	<div>
-		<h2>긍정 키워드</h2>
-		<svg id="wordCloud1"></svg>
-		<h2>부정 키워드</h2>
-		<svg id="wordCloud2"></svg>
-		<input type="hidden" id="wordPosKey" value="${dto.word_poskey}">
-	    <input type="hidden" id="wordPosValue" value="${dto.word_posval}">
-	    <input type="hidden" id="wordNegKey" value="${dto.word_negkey}">
-	    <input type="hidden" id="wordNegValue" value="${dto.word_negval}">
-	</div>
-</div>
 	
 </main>
 
@@ -114,13 +118,15 @@
             maintainAspectRatio: false
         }
     });
-    
+</script>
+
+<script>    
     // 막대 차트
-    const barCtx = document.getElementById('sentimentBarChart').getContext('2d');
     var keyPos = document.getElementById('radarPosKey').value.split(',');
     var keyNeg = document.getElementById('radarNegKey').value.split(',');
     var valuePos = document.getElementById('radarPosValue').value.split(',').map(Number);
     var valueNeg = document.getElementById('radarPosValue').value.split(',').map(Number);
+    const barCtx = document.getElementById('sentimentBarChart').getContext('2d');
     new Chart(barCtx, {
         type: 'bar',
         data: {
@@ -142,12 +148,19 @@
             }
         }
     });
+    </script>
     
+    <script>     
     // 레이더 차트
-    const radarCtx = document.getElementById('sentimentRadarChart').getContext('2d');
-    const radarCtx2 = document.getElementById('sentimentRadarChart2').getContext('2d');
+    var keyPos = document.getElementById('radarPosKey').value.split(',');
+    var keyNeg = document.getElementById('radarNegKey').value.split(',');
+    var valuePos = document.getElementById('radarPosValue').value.split(',').map(Number);
+    var valueNeg = document.getElementById('radarPosValue').value.split(',').map(Number);
     var valueTopPos = document.getElementById('radarPTopValue').value.split(',').map(Number);
     var valueTopNeg = document.getElementById('radarNTopValue').value.split(',').map(Number);
+    
+    const radarCtx = document.getElementById('sentimentRadarChart').getContext('2d');
+    const radarCtx2 = document.getElementById('sentimentRadarChart2').getContext('2d');
     console.log(keyPos);
     console.log(valuePos);
     
@@ -214,7 +227,9 @@
             }
         }
     });
-
+    </script>
+    
+    <script> 
     // 꺽은선형 그래프
     const lineCtx = document.getElementById('lineChart').getContext('2d');
     new Chart(lineCtx, {
@@ -262,7 +277,9 @@
             }
         }
     });
+    </script>
     
+    <script>     
     //워드클라우드
     var keyPos = document.getElementById('wordPosKey').value.split(',');
     var keyNeg = document.getElementById('wordNegKey').value.split(',');
@@ -309,4 +326,4 @@
 
       generateCloud("#wordCloud1", wordData1);
       generateCloud("#wordCloud2", wordData2);
-</script>
+     </script>
