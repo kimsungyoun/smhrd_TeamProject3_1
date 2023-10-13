@@ -41,6 +41,7 @@
             <td>프로필 이미지</td>
             <td><input type="file" name="u_photo" id="u_photo" onchange="convertImageToBase64(event);" /></td>
               <td><input type="hidden" name="u_photo_base64" id="u_photo_base64_input" /></td>
+              
           </tr>
           <tr>
              <td>아이디</td> 
@@ -94,7 +95,7 @@
              </td>
           </tr>
        </table>
-       <button type="submit">가입하기</button>
+       <button type="submit" class="custom-btn btn-13">가입하기</button>
    </form>
 </div>
 <script>

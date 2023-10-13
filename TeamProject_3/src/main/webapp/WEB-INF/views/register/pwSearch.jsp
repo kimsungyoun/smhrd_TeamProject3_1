@@ -9,7 +9,7 @@
 	    <form method="post" action="/smhrd/register/PwSearch" id="find-password-form">
 	        <input type="text" name="u_id" placeholder="아이디">
 	        <input type="email" name="u_email" placeholder="이메일">
-	        <input type="submit" value="비밀번호 찾기">
+	        <input type="submit" value="비밀번호 찾기" class="custom-btn btn-13">
 	    </form>
 	</div>
 

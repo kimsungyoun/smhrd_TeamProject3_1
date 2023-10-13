@@ -12,7 +12,7 @@
 	  <form method="post" action="UserDel" id="delete-account-form">
 	    <input type="hidden" name="u_id" value="${dto.u_id}">
 	    <input type="password" name="u_pw" placeholder="비밀번호입력">
-	    <input type="submit" value="탈퇴하기">
+	    <input class="custom-btn btn-13" type="submit" value="탈퇴하기">
 	  </form>
 	</div>
 

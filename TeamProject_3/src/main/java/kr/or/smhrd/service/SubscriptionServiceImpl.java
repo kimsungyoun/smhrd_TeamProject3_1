@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import kr.or.smhrd.dao.SubscriptionDAO;
 import kr.or.smhrd.dto.PagingDTO;
+import kr.or.smhrd.dto.PayDTO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 
 @Service
@@ -25,15 +26,23 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 	}
 
 	@Override
-	public int subUpdate(String u_id) {
-		// TODO Auto-generated method stub
+	public int subUpdate(String u_id) { //-민지
 		return dao.subUpdate(u_id);
 	}
 
 	@Override
-	public int updateStatus(String u_id) {
-		// TODO Auto-generated method stub
+	public int updateStatus(String u_id) { //-민지
 		return dao.updateStatus(u_id);
+	}
+
+	@Override
+	public int payInsert(String u_id) {
+		return dao.payInsert(u_id);
+	}
+
+	@Override
+	public List<PayDTO> paySelect(String u_id) {
+		return dao.paySelect(u_id);
 	}
 
 
