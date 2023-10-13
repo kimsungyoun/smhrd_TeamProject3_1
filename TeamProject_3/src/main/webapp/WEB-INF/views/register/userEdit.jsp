@@ -39,6 +39,7 @@
            
            <input class="custom-btn btn-13" type="submit" value="수정하기">
        </form>
+       <a><button class="custom-btn btn-13"></button></a>
    </div>
 
 </main>

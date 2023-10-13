@@ -2,33 +2,12 @@
 body{
 	display: flex;
 
-	flex-direction: column;
-}
-header{
-	
-}
-main{
-	/* height:	1000px; */
-	display: flex;
-
 	flex-direction: row;
-	padding-left: 250px;
 }
-
 /* main{
 	display: flex;
 	flex-direction: column;
 	margin-left: 150px;
 	align-items: center;
 
-}
-
-nav > ul, li{
-	list-style: none;
-}
-
-
-a:link, a:visited, a:hover{
-	text-decoration: none;
-	color:black;
-}
+} */
