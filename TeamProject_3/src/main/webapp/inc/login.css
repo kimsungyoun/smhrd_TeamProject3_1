@@ -1,6 +1,7 @@
 @charset "UTF-8";
-	
-.login-wrapper{
+
+/* 로그인 폼 스타일 */
+.login-wrapper {
     width: 500px;
     height: 450px;
     padding: 40px;
@@ -8,71 +9,51 @@
     margin-bottom: 10px;
 }
 
-.login-wrapper > h2{
+.login-wrapper > h2 {
     font-size: 24px;
-    color: #6A24FE;
+    color: #1E56A0; /* 텍스트 색상 변경 */
     margin-bottom: 20px;
 }
-#login-form > input{
+
+#login-form > input {
     width: 100%;
     height: 48px;
     padding: 0 10px;
     box-sizing: border-box;
     margin-bottom: 16px;
     border-radius: 6px;
-    background-color: #F8F8F8;
+    background-color: #D6E4F0; /* 입력 필드 배경색 변경 */
 }
-#login-form > input::placeholder{
+
+#login-form > input::placeholder {
     color: #D2D2D2;
 }
 
-#login-form > input[type="checkbox"]{
+#login-form > input[type="checkbox"] {
     display: none;
 }
-#login-form > label{
+
+#login-form > label {
     color: #999999;
 }
-#login-form input[type="checkbox"] + label{
+
+#login-form input[type="checkbox"] + label {
     cursor: pointer;
     padding-left: 26px;
     background-repeat: no-repeat;
     background-size: contain;
 }
-#login-form input[type="checkbox"]:checked + label{
+
+#login-form input[type="checkbox"]:checked + label {
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.social-login{
-	margin-top:30px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-div {
-	margin-bottom:10px;
-}
-
-
-
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
-  outline: none;
+.social-login {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .custom-btn {
@@ -96,11 +77,11 @@ div {
 
 /* 13 */
 .btn-13 {
-  background-color: #CEBEE1;
-background-image: -moz-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
-background-image: -o-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
-background-image: -webkit-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
-background-image: linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+  background-color: #D6E4F0;
+background-image: -moz-linear-gradient(315deg, #D6E4F0 0%, #1E56A0 74%);
+background-image: -o-linear-gradient(315deg, #D6E4F0 0%, #1E56A0 74%);
+background-image: -webkit-linear-gradient(315deg, #D6E4F0 0%, #1E56A0 74%);
+background-image: linear-gradient(315deg, #D6E4F0 0%, #1E56A0 74%);
   border: none;
   z-index: 1;
 }
@@ -113,11 +94,11 @@ background-image: linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
   left: 0;
   z-index: -1;
   border-radius: 5px;
-   background-color: #CEBEE1;
-background-image: -moz-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
-background-image: -o-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
-background-image: -webkit-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
-background-image: linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+   background-color: #D6E4F0;
+background-image: -moz-linear-gradient(315deg, #1E56A0 0%, #D6E4F0 74%);
+background-image: -o-linear-gradient(315deg, #1E56A0 0%, #D6E4F0 74%);
+background-image: -webkit-linear-gradient(315deg, #1E56A0 0%, #D6E4F0 74%);
+background-image: linear-gradient(315deg, #1E56A0 0%, #D6E4F0 74%);
   box-shadow:
    -7px -7px 20px 0px #fff9,
    -4px -4px 5px 0px #fff9,
@@ -136,51 +117,52 @@ background-image: linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
   top: 2px;
 }
 
+
+
 /* 아이디 찾기 버튼 스타일 */
 .id-search-button {
-  background-color: #007BFF; /* 배경색상 */
-  color: #fff; /* 글자색상 */
-  padding: 10px 10px; /* 패딩값 */
-  border: none; /* 테두리 없음 */
-  border-radius: 5px; /* 둥근 테두리 */
-  font-size: 8px; /* 글자 크기 */
-  cursor: pointer; /* 커서 스타일 변경 */
-  transition: background-color 0.3s; /* 배경색상 변경 시 부드럽게 전환 */
+    background-color: #769FCD; /* 배경색상 변경 */
+    color: #fff; /* 글자색상 변경 */
+    padding: 10px 10px; /* 패딩값 변경 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 둥근 테두리 */
+    font-size: 14px; /* 글자 크기 변경 */
+    cursor: pointer; /* 커서 스타일 변경 */
+    transition: background-color 0.3s; /* 배경색상 변경 시 부드럽게 전환 */
 }
 
 .id-search-button:hover {
-  background-color: #0056b3; /* 호버 상태 배경색상 변경 */
+    background-color: #D6E4F0; /* 호버 상태 배경색상 변경 */
 }
 
 /* 비밀번호 찾기 버튼 스타일 */
 .pw-search-button {
-  background-color: #28A745;
-  color: #fff;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    background-color: #769FCD; /* 배경색상 변경 */
+    color: #fff; /* 글자색상 변경 */
+    padding: 10px 10px; /* 패딩값 변경 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 둥근 테두리 */
+    font-size: 14px; /* 글자 크기 변경 */
+    cursor: pointer; /* 커서 스타일 변경 */
+    transition: background-color 0.3s; /* 배경색상 변경 시 부드럽게 전환 */
 }
 
 .pw-search-button:hover {
-  background-color: #1e8541;
+    background-color: #D6E4F0; /* 호버 상태 배경색상 변경 */
 }
 
 /* 회원가입 버튼 스타일 */
 .sign-up-button {
-  background-color: #FFC107;
-  color: #fff;
-  padding: 10px 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    background-color: #769FCD; /* 배경색상 변경 */
+    color: #fff; /* 글자색상 변경 */
+    padding: 10px 10px; /* 패딩값 변경 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 둥근 테두리 */
+    font-size: 14px; /* 글자 크기 변경 */
+    cursor: pointer; /* 커서 스타일 변경 */
+    transition: background-color 0.3s; /* 배경색상 변경 시 부드럽게 전환 */
 }
 
 .sign-up-button:hover {
-  background-color: #e0a800;
+    background-color: #D6E4F0; /* 호버 상태 배경색상 변경 */
 }
-

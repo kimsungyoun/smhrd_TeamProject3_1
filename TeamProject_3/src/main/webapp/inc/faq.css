@@ -25,20 +25,20 @@ body {
 }
 
 .que:hover {
-    background-color: #EFEFEF;
+    background-color: #D6E4F0;
 }
 
 .que::before {
     display: inline-block;
     content: 'Q';
     font-size: 24px;
-    color: #C46FB2;
+    color: #1E56A0;
     margin-right: 10px;
 }
 
 .que.on>span {
     font-weight: bold;
-    color: #C46FB2;
+    color: #1E56A0;
 }
 
 /* 답변 항목 스타일 */
@@ -47,7 +47,7 @@ body {
     overflow: hidden;
     font-size: 18px;
     padding: 20px;
-    background-color: #f4f4f2;
+    background-color: #F6F6F6;
 }
 
 .anw::before {
@@ -55,7 +55,7 @@ body {
     content: 'A';
     font-size: 24px;
     font-weight: bold;
-    color: #C46FB2;
+    color: #1E56A0;
     margin-right: 10px;
 }
 
@@ -66,7 +66,7 @@ body {
     right: 20px;
     transform: translateY(-50%);
     font-size: 24px;
-    color: #C46FB2;
+    color: #1E56A0;
     cursor: pointer;
 }
 

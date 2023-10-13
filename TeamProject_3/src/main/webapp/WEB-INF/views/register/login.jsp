@@ -1,49 +1,47 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <link rel=stylesheet href=../inc/login.css>
-<main>
 
-   <div class="login-wrapper">
-       <h2>Login</h2>
-       <form method="post" action="loginOk" id="login-form">
-           <input type="text" name="u_id" id="u_id" placeholder="ID">
-           <input type="password" name="u_pw" id="u_pw" placeholder="Password">
-           
-           <label for="remember-check">
-               <input type="checkbox" id="remember-check">아이디 저장하기
-           </label>           
-           <!-- 로그인 버튼에 custom-btn 클래스 추가 -->
-           <input type="submit" value="로그인" class="custom-btn btn-13" id="login-button">
-       </form>
-	<div>
-		<a href="/smhrd/register/idSearch">
-			<button class="custom-btn id-search-button">아이디 찾기</button>
-		</a>
-		<a href="/smhrd/register/pwSearch">
-			<button class="custom-btn pw-search-button">비밀번호 찾기</button>
-		</a>
-		<a href="/smhrd/register/signUp">
-			<button class="custom-btn sign-up-button">회원가입</button>
-		</a>
-	</div>
-	   <div class="social-login">
-	      <a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
-	      <a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a>
-	   </div>
-	      <%--구글 api--%>
-		   <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
-		   
-		   <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
-		
-		   <!-- 네이버 로그인 버튼 노출 영역 -->
-		   <div id="naver_id_login"></div>
-   </div>
-   
-
-   
-
-</main>
+    <div class="wrapper">
+        <main>
+            <!-- 로그인 화면 내용 -->
+            <div class="login-wrapper">
+                <h2>Login</h2>
+                <form method="post" action="loginOk" id="login-form">
+                    <!-- 로그인 폼 내용 -->
+                    <input type="text" name="u_id" id="u_id" placeholder="ID">
+                    <input type="password" name="u_pw" id="u_pw" placeholder="Password">
+                    <label for="remember-check">
+                        <input type="checkbox" id="remember-check">아이디 저장하기
+                    </label>
+                    <!-- 로그인 버튼에 custom-btn 클래스 추가 -->
+                    <input type="submit" value="로그인" class="custom-btn btn-13" id="login-button">
+                </form>
+                <div>
+                    <!-- 아이디 찾기, 비밀번호 찾기, 회원가입 버튼 등 -->
+                    <a href="/smhrd/register/idSearch">
+                        <button class="custom-btn id-search-button">아이디 찾기</button>
+                    </a>
+                    <a href="/smhrd/register/pwSearch">
+                        <button class="custom-btn pw-search-button">비밀번호 찾기</button>
+                    </a>
+                    <a href="/smhrd/register/signUp">
+                        <button class="custom-btn sign-up-button">회원가입</button>
+                    </a>
+                </div>
+                <div class="social-login">
+                    <a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
+                    <a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a>
+                </div>
+                <!-- 구글 로그인 api -->
+                <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
+                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+                <!-- 네이버 로그인 버튼 노출 영역 -->
+                <div id="naver_id_login"></div>
+            </div>
+        </main>
+    </div>
 
 <script>
     function handleCredentialResponse(response) {

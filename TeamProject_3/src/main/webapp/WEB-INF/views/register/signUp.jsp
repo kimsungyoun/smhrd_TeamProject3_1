@@ -42,11 +42,6 @@
             <td><input type="file" name="u_photo" id="u_photo" onchange="convertImageToBase64(event);" /></td>
               <td><input type="hidden" name="u_photo_base64" id="u_photo_base64_input" /></td>
               
-              <div class="filebox">
-			    <input class="upload-name" value="첨부파일" placeholder="첨부파일">
-			    <label for="file">파일찾기</label> 
-			    <input type="file" id="file">
-			</div>
           </tr>
           <tr>
              <td>아이디</td> 

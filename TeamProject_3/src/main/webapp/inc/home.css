@@ -1,58 +1,141 @@
 @charset "UTF-8";
 
-main {
-    width: 80%;
-    margin: auto;
-    background-color: #FFFFFF;  
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+/* 게임 인기 순위와 인기 뉴스 컨테이너 스타일 */
+.rankings-news {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
-h2 {
+/* 게임 인기 순위 스타일 */
+.rankings {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.rankings h2 {
     font-size: 1.5em;
-    color: #6A24FE;
-    border-bottom: 2px solid #CEBEE1;
+    color: #163172;
+    border-bottom: 2px solid #D6E4F0;
     margin-bottom: 15px;
     padding-bottom: 5px;
 }
 
-.ranking-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.ranking-container img {
-    max-width: 100px;  /* Adjust according to your requirement */
-    max-height: 100px; /* Adjust according to your requirement */
-    margin-left: 10px;
-}
-
-table {
+.rankings table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
+.rankings th,
+.rankings td {
+    border: 1px solid #D6E4F0;
+    padding: 10px;
     text-align: left;
 }
 
-th {
-    background-color: #CEBEE1;
+.rankings th {
+    background-color: #1E56A0;
     color: white;
+    white-space: nowrap; /* 글씨가 한 줄로만 표시되도록 설정 */
+    overflow: hidden; /* 넘치는 글씨를 숨김 */
+    text-overflow: ellipsis; /* 넘치는 글씨에 대한 말줄임 표시 (...) */
 }
 
-a {
+.rankings a {
     text-decoration: none;
     color: #000000;
 }
 
-a:hover {
-    color: #6A24FE;
+.rankings a:hover {
+    color: #1E56A0;
 }
+
+/* 인기 뉴스 스타일 */
+.news {
+    flex: 1;
+}
+
+.news h2 {
+    font-size: 1.5em;
+    color: #163172;
+    border-bottom: 2px solid #D6E4F0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.news table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.news th,
+.news td {
+    border: 1px solid #D6E4F0;
+    padding: 10px;
+    text-align: left;
+}
+
+.news th {
+    background-color: #1E56A0;
+    color: white;
+    white-space: nowrap; /* 글씨가 한 줄로만 표시되도록 설정 */
+    overflow: hidden; /* 넘치는 글씨를 숨김 */
+    text-overflow: ellipsis; /* 넘치는 글씨에 대한 말줄임 표시 (...) */
+}
+
+.news a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.news a:hover {
+    color: #1E56A0;
+}
+
+
+/* 요소의 크기 및 비율 설정 */
+.custom-container {
+    width: 80%; /* 너비 조정 */
+    margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+    display: flex; /* 컨테이너 내부 요소들을 가로로 배치하기 위해 Flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+/* 요소의 위치 설정 */
+.custom-container h2 {
+    margin-bottom: 15px; /* h2 태그의 하단 여백 설정 */
+}
+
+/* 요소의 크기 및 배치 설정 */
+.custom-container table {
+    width: 100%; /* 테이블 너비 100% 설정 */
+    border-collapse: collapse; /* 테이블 셀 경계 표시 제거 */
+    margin-bottom: 20px; /* 하단 여백 설정 */
+}
+
+.custom-container th, .custom-container td {
+    border: 1px solid #D6E4F0; /* 셀 테두리 스타일 설정 */
+    padding: 10px; /* 셀 안에 내용의 여백 설정 */
+    text-align: left; /* 텍스트 정렬 설정 */
+}
+
+.custom-container th {
+    background-color: #1E56A0; /* 테이블 헤더 배경색 설정 */
+    color: white; /* 테이블 헤더 텍스트 색상 설정 */
+}
+
+.custom-container a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: #000000; /* 링크 텍스트 색상 설정 */
+}
+
+.custom-container a:hover {
+    color: #1E56A0; /* 링크 호버 시 텍스트 색상 설정 */
+}
+
 /* "맨 위로" 버튼 스타일 */
 #myBtn {
     display: none;
@@ -71,11 +154,11 @@ a:hover {
 
 /* 수정된 "btn-13" 클래스의 스타일 */
 .btn-13.custom-btn {
-    background-color: #CEBEE1;
-    background-image: -moz-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
-    background-image: -o-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
-    background-image: -webkit-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
-    background-image: linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+  	background-color: #D6E4F0;
+	background-image: -moz-linear-gradient(315deg, #D6E4F0 0%, #1E56A0 74%);
+	background-image: -o-linear-gradient(315deg, #D6E4F0 0%, #1E56A0 74%);
+	background-image: -webkit-linear-gradient(315deg, #D6E4F0 0%, #1E56A0 74%);
+	background-image: linear-gradient(315deg, #D6E4F0 0%, #1E56A0 74%);
     border: none;
     z-index: 1;
 }
@@ -89,16 +172,16 @@ a:hover {
     left: 0;
     z-index: -1;
     border-radius: 5px;
-    background-color: #CEBEE1;
-    background-image: -moz-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
-    background-image: -o-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
-    background-image: -webkit-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
-    background-image: linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
-    box-shadow:
-        -7px -7px 20px 0px #fff9,
-        -4px -4px 5px 0px #fff9,
-        7px 7px 20px 0px #0002,
-        4px 4px 5px 0px #0001;
+   background-color: #D6E4F0;
+background-image: -moz-linear-gradient(315deg, #1E56A0 0%, #D6E4F0 74%);
+background-image: -o-linear-gradient(315deg, #1E56A0 0%, #D6E4F0 74%);
+background-image: -webkit-linear-gradient(315deg, #1E56A0 0%, #D6E4F0 74%);
+background-image: linear-gradient(315deg, #1E56A0 0%, #D6E4F0 74%);
+  box-shadow:
+   -7px -7px 20px 0px #fff9,
+   -4px -4px 5px 0px #fff9,
+   7px 7px 20px 0px #0002,
+   4px 4px 5px 0px #0001;
     transition: all 0.3s ease;
 }
 

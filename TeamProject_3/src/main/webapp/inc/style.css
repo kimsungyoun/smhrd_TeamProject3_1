@@ -4,13 +4,13 @@ body{
 	flex-direction: row;
 }
 
-main{
+/* main{
 	display: flex;
 	flex-direction: column;
 	margin-left: 150px;
 	align-items: center;
 	padding:auto;
-}
+} */
 
 nav > ul, li{
 	list-style: none;
@@ -20,8 +20,4 @@ nav > ul, li{
 a:link, a:visited, a:hover{
 	text-decoration: none;
 	color:black;
-}
-
-#main_page{
-	width: 1500px;
 }

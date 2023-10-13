@@ -35,7 +35,7 @@
 			order by n_hit desc, n_no desc
 		)
 		<!-- 10개의 항목까지만 출력 -->
-		where rownum &lt; 10
+		where rownum &lt; 11
 	</select>
 
 	<select id="getView" resultType="kr.or.smhrd.dto.NewsDTO">
