@@ -69,7 +69,6 @@
 			<div id="radarContainer">
 			    <h2>긍정 레이더차트</h2>
 			    <canvas id="sentimentRadarChart"></canvas>
-			     
 			</div>
 			<div id="radarContainer2">
 			    <h2>부정 레이더차트</h2>

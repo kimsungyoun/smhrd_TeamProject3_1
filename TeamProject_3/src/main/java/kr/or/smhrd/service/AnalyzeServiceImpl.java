@@ -18,11 +18,6 @@ public class AnalyzeServiceImpl implements AnalyzeService {
 	AnalyzeDAO dao;
 
 	@Override
-	public List<AnalyzeDTO> getList() {
-		return dao.getList();
-	}
-
-	@Override
 	public KeywordDTO keywordSelect(int no) {
 		return dao.keywordSelect(no);
 	}

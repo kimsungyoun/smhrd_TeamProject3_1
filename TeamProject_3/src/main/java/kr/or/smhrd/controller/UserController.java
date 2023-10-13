@@ -80,20 +80,6 @@ public class UserController {
       return mav;
    }
    
-
-   
-//   @GetMapping("/payment") 
-//   public ModelAndView payment(HttpSession session) { 
-//      ModelAndView mav = new ModelAndView();
-//      UserDTO dto = service.UserSelect((String) session.getAttribute("pay"));
-//      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("pay"));
-//      mav.addObject("dto", dto);
-//      mav.addObject("sdto", sdto);
-//      mav.setViewName("/smhrd/subscription/payment");
-//      
-//      return mav;
-//   }
-   
    @GetMapping("/idSearch")
    public String idSearch() {
       return "/register/idSearch";
@@ -189,6 +175,7 @@ public class UserController {
     	  session.setAttribute("logId", dto.getU_id());
     	  session.setAttribute("logName", dto.getU_name());
     	  session.setAttribute("logStatus", "Y");
+    	  session.setAttribute("SubScription", sdto.getSub_status());
     	  
     	  mav.setViewName("redirect:/");
       }else {

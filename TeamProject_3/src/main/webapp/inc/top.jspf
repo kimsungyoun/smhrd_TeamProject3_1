@@ -5,8 +5,8 @@
 <html>
 <head>
    <meta charset="UTF-8">
+	<link rel=stylesheet href="/smhrd/inc/style.css">
 </head>
-<link rel=stylesheet href="./inc/style.css">
 <style>
 
 /* WRAPPER */
@@ -266,45 +266,56 @@ sidebar {
       </div>
       <c:if test="${logStatus == 'Y'}">
          <div class="avatar__name">${logName}</div>
-         <div class="avatar__name">{구독여부}</div>
+         <c:if test="${SubScription == 'Y'}">
+         	<div class="avatar__name">구독중</div>
+         </c:if>
+         <c:if test="${SubScription == 'N'}">
+         	<div class="avatar__name">구독하세요</div>
+         </c:if>
       </c:if>
     </div>
+    
     <nav class="menu">
-        <c:if test="${logStatus == 'Y'}">
-      <a class="menu__item" href="/smhrd/register/mypage">
-        <i class="menu__icon fa fa-home"><img src="<%= request.getContextPath() %>/img/mypage.png" width="15"></i>
-        <span class="menu__text">마이페이지</span>
-      </a>
-      <a class="menu__item" href="/smhrd/subscription/payment/?u_id=${dto.u_id}">
-        <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
-        <span class="menu__text">결제하기</span>
-      </a>
-      </c:if>
-      
-      <c:if test="${logStatus != 'Y'}">
-      <a class="menu__item" href="/smhrd/register/login">
-        <i class="menu__icon fa fa-envelope"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
-        <span class="menu__text">로그인</span>
-      </a>
-      </c:if>
-      <a class="menu__item menu__item--active" href="/smhrd/analyze/analyzeList">
-        <i class="menu__icon fa fa-calendar"><img src="<%= request.getContextPath() %>/img/chart.png" width="15"></i>
-        <span class="menu__text">분석차트</span>
-      </a>
-      <a class="menu__item" href="/smhrd/news/newsList">
-        <i class="menu__icon fa fa-bar-chart"><img src="<%= request.getContextPath() %>/img/news.png" width="15"></i>
-        <span class="menu__text">뉴스</span>
-      </a>
-      <a class="menu__item" href="/smhrd/faq/faqList">
-        <i class="menu__icon fa fa-trophy"><img src="<%= request.getContextPath() %>/img/chat.png" width="15"></i>
-        <span class="menu__text">FAQ</span>
-      </a>
-      <c:if test="${logStatus == 'Y'}">
-      <a class="menu__item" href="/smhrd/register/logOut">
-        <i class="menu__icon fa fa-sliders"></i>
-        <span class="menu__text">로그아웃</span>
-      </a>
-      </c:if>
+    <c:if test="${logStatus == 'Y'}">
+    <a class="menu__item" href="/smhrd/register/mypage">
+	    <i class="menu__icon fa fa-home"><img src="<%= request.getContextPath() %>/img/mypage.png" width="15"></i>
+	    <span class="menu__text">마이페이지</span>
+    </a>
+    
+    <a class="menu__item" href="/smhrd/subscription/payment?u_id=${logId}">
+	    <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
+	    <span class="menu__text">결제하기</span>
+    </a>
+    </c:if>
+    
+    <c:if test="${logStatus != 'Y'}">
+	    <a class="menu__item" href="/smhrd/register/login">
+		    <i class="menu__icon fa fa-envelope"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
+		    <span class="menu__text">로그인</span>
+	    </a>
+    </c:if>
+    
+    <a class="menu__item menu__item--active" href="/smhrd/analyze/analyzeList">
+	    <i class="menu__icon fa fa-calendar"><img src="<%= request.getContextPath() %>/img/chart.png" width="15"></i>
+	    <span class="menu__text">분석차트</span>
+    </a>
+    
+    <a class="menu__item" href="/smhrd/news/newsList">
+	    <i class="menu__icon fa fa-bar-chart"><img src="<%= request.getContextPath() %>/img/news.png" width="15"></i>
+	    <span class="menu__text">뉴스</span>
+    </a>
+    
+    <a class="menu__item" href="/smhrd/faq/faqList">
+	    <i class="menu__icon fa fa-trophy"><img src="<%= request.getContextPath() %>/img/chat.png" width="15"></i>
+	    <span class="menu__text">FAQ</span>
+    </a>
+    
+    <c:if test="${logStatus == 'Y'}">
+	    <a class="menu__item" href="/smhrd/register/logOut">
+		    <i class="menu__icon fa fa-sliders"></i>
+		    <span class="menu__text">로그아웃</span>
+	    </a>
+    </c:if>
     </nav>
   </sidebar>
 </div>
