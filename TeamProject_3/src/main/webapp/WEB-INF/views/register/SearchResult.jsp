@@ -8,9 +8,4 @@
 	    alert("입력하신 정보와 일치하는 비밀번호가 없습니다");
 	}
 	history.back();
-
-	/*  
- 	alert("입력하신 정보와 일치하는 아이디가 없습니다.");
-	history.back(); 
-	*/
 </script>

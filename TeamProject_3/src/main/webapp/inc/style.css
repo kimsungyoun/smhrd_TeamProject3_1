@@ -1,4 +1,7 @@
 @charset "UTF-8";
+*{
+	font-size: 14px;
+}
 body{
 	display: flex;
 
@@ -11,3 +14,6 @@ body{
 	align-items: center;
 
 } */
+main{
+	margin-left:50px;
+}
