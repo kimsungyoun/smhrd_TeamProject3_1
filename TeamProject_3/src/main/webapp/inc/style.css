@@ -4,8 +4,8 @@
 }
 body{
 	display: flex;
-
 	flex-direction: row;
+	
 }
 /* main{
 	display: flex;
@@ -16,4 +16,6 @@ body{
 } */
 main{
 	margin-left:50px;
+	height: auto;
+	width: 1200px;
 }

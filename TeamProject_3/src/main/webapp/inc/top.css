@@ -4,10 +4,9 @@
   display: grid;
   grid-template-rows: 70px 1fr 70px;
   grid-template-columns: 1fr;
-  grid-template-areas: "sidebar"
-                       "content";
+  grid-template-areas: "sidebar" "content";
   width: 200px; /* unnecessary, but let's keep things consistent */
-  height: auto;
+  height: 1200px;
 }
 
 @media screen and (min-width: 850px) {
@@ -96,8 +95,8 @@ sidebar {
     border-radius: 50%;
   }
 }
-/* MAIN */
 
+/* MAIN */
 .toolbar{
   display: flex;
   justify-content: space-between;
@@ -125,19 +124,12 @@ sidebar {
 .calendar__day {
   padding: 16px;
 }
+
 /* COSMETIC STYLING */
-
-/* :root {
-  --red: #ED5454;
-} */
-
-
-
 sidebar {
   background-color: white;
   box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.2);
 }
-
 
 .avatar__name {
   font-size: 0.8rem;
@@ -165,7 +157,6 @@ sidebar {
   color: black;
 }
 
-
 .menu__icon {
   font-size: 1.3rem;
 }
@@ -179,11 +170,6 @@ sidebar {
     border-left: 4px solid var(--red);
     box-shadow: inset 10px 0px 17px -13px var(--red);
   }
-}
-
-.copyright {
-  font-size: 0.7rem;
-  font-weight: 400;
 }
 
 .calendar {

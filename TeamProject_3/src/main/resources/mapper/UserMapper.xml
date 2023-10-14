@@ -19,7 +19,7 @@
 
  	<!-- 로그인 -->
 	<select id="loginOk" resultType="kr.or.smhrd.dto.UserDTO">
-		SELECT u_id, u_name 
+		SELECT * 
 		FROM users
 		WHERE u_id=#{param1} AND u_pw=#{param2}
 	</select>
