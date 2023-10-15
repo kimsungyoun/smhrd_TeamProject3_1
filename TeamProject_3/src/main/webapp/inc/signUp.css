@@ -5,7 +5,7 @@ body {
 	padding: 0;
 }
 main {
-	width: 50%;
+	width: 400px;
 	margin: auto;
 	background: #fff;
 	padding: 30px;
@@ -50,6 +50,9 @@ input[type="radio"] {
    7px 7px 20px 0px rgba(0,0,0,.1),
    4px 4px 5px 0px rgba(0,0,0,.1);
   outline: none;
+  margin-top:20px;
+  margin-right: 20px;
+  margin-left:30px;
 }
 
 /* 13 */

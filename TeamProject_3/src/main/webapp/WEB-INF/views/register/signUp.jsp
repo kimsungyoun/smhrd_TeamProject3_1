@@ -2,15 +2,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<link rel=stylesheet href=../inc/signUp.css>
+<link rel=stylesheet href="/smhrd/inc/signUp.css">
 
 <style>
-.password_ok {
+#password_ok {
 	color:#6A24FE;
 	display: none;
 }
 
-.password_dif {
+#password_no {
 	color:#6A24FE;
 	display: none;
 }
@@ -41,32 +41,27 @@
             <td>프로필 이미지</td>
             <td><input type="file" name="u_photo" id="u_photo" onchange="convertImageToBase64(event);" /></td>
               <td><input type="hidden" name="u_photo_base64" id="u_photo_base64_input" /></td>
-              
           </tr>
           <tr>
              <td>아이디</td> 
              <td><input type="text" id="u_id" name="u_id" required></td>
           </tr>
-          
           <tr>
              <td>비밀번호</td>
              <td><input type="password" id="u_pw" name="u_pw" required></td>
           </tr>
-          
           <tr>
              <td>비밀번호확인</td>
              <td>
-	             <input type="password" id="confirm_pw" name="confirm_pw" required>
+	             <input type="password" id="confirm_pw" name="confirm_pw" onblur="checkPassword()"required>
              </td>
           </tr>
-          
           <tr>
-          	<td	colspan="2" align="right">
-	             <span class="password_ok">사용가능한 비밀번호입니다.</span>
-	             <span class="password_dif">비밀번호가 다릅니다.</span>
-          	</td>
-          </tr>
-          
+	          <td colspan="2" align="center" >
+	          	<span id="password_no">비밀번호가 일치하지 않습니다.</span>
+	          	<span id="password_ok">비밀번호가 일치합니다.</span>
+	          </td>
+          </tr>          
           <tr>
              <td>이메일</td>
              <td><input type="email" id="u_email" name="u_email" required></td>
@@ -95,48 +90,60 @@
              </td>
           </tr>
        </table>
-       <button type="submit" class="custom-btn btn-13">가입하기</button>
+       <button id="submit-btn" type="submit" class="custom-btn btn-13">가입하기</button>
        <a href="/smhrd/register/login"><input class="custom-btn btn-13" type="button" value="뒤로가기"></a>
    </form>
 </div>
+</main>
+
 <script>
 //플래그변수
 var r1 = false;
-var r2 = false;
-var r3 = false;
+</script>
 
+
+<script>
+// 비밀번호 확인
+function checkPassword() {
+	   var password = $('#u_pw').val();
+	   var password2 = $('#confirm_pw').val();
+
+	    if (password != password2) {
+	        $('#password_no').css("display", "inline-block");
+	        $('#password_ok').css("display", "none");
+	    } else {
+	        $('#password_ok').css("display", "inline-block");
+	        $('#password_no').css("display", "none");
+	        r1 = true;
+	    }
+	    enableOrDisableSignUpButton();
+	}
+</script>
+<script>
 function enableOrDisableSignUpButton() {
-    if (r1 && r2 && r3) { // 모든 체크 조건을 만족하면 버튼 활성화
+    if (r1) { // 모든 체크 조건을 만족하면 버튼 활성화
         enableSignUpButton();
     } else { // 하나라도 만족하지 않으면 버튼 비활성화
         disableSignUpButton();
     }
 }
+</script>
+
+<script>
 //버튼 활성화 함수
 function enableSignUpButton() {
-    $('input[type="submit"]').prop('disabled', false);
+    $('#submit-btn').prop('disabled', false);
 }
+</script>
 
+<script>
 // 버튼 비활성화 함수
 function disableSignUpButton() {
-    $('input[type="submit"]').prop('disabled', true);
+    $('#submit-btn').prop('disabled', true);
 }
-// 비밀번호 확인
-function checkPassword2() {
-	   var password = $('#u_pw').val();
-	    var password2 = $('#confirm_pw').val();
+</script>
 
-	    if (password != password2) {
-	        $('.password2_reg').css("display", "inline-block");
-	        $('.password2_ok').css("display", "none");
-	    } else {
-	        $('.password2_ok').css("display", "inline-block");
-	        $('.password2_reg').css("display", "none");
-	        r3 = true;
-	    }
-	    enableOrDisableSignUpButton();
-	}
-
+<script>
 // 아이디 유효성검사 및 중복 체크
 function checkDuplicate() {
 var signUpButton = document.getElementById("signUpButton"); 
@@ -178,51 +185,5 @@ var signUpButton = document.getElementById("signUpButton");
        // }
     });
     return false; // 폼 제출을 막기 위해 false 반환
-}
-</script>
-</main>
-
-<script>
-var r2 = false;
-</script>
-
-<script>
-
-function checkpassword(){	
-	var password1 = $('#u_pw').val;
-	var password2 = $('#confirm_pw').val;
-	
-	if(password1 != password2){
-		$('.password_dif').css("display","inline-block");
-        $('.password_ok').css("display", "none");
-	}else{
-		$('.password_ok').css("display", "inline-block");
-	    $('.password_dif').css("display", "none");
-	    r2 = true;
-	}
-	enableOrDisableSignUpButton();
-}
-</script>
-
-<script>
-// 가입하기 비활성화
-function enableOrDisableSignUpButton() {
-    if (r2) { // 모든 체크 조건을 만족하면 버튼 활성화
-        enableSignUpButton();
-    } else { // 하나라도 만족하지 않으면 버튼 비활성화
-        disableSignUpButton();
-    }
-}
-</script> 
-
-<script>
-//버튼 활성화 함수
-function enableSignUpButton() {
-    $('[type="submit"]').prop('disabled', false);
-}
-
-// 버튼 비활성화 함수
-function disableSignUpButton() {
-    $('[type="submit"]').prop('disabled', true);
 }
 </script>
