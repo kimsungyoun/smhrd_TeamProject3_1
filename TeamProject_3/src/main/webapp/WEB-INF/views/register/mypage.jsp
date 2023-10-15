@@ -33,11 +33,6 @@
 	    <div class="info-section">
 	        <a href="/smhrd/register/userEdit"><button class="custom-btn btn-13">내 정보수정</button></a>
 	    </div>
-	    
-	    <!-- 로그아웃 -->
-	    <div class="info-section">
-	        <a href="/smhrd/register/logOut"><button class="custom-btn btn-13">로그아웃</button></a>
-	    </div>
 
 		<!-- 회원탈퇴 -->	
 	    <div class="info-section">
