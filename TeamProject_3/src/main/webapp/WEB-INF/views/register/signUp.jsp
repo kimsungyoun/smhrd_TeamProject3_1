@@ -96,6 +96,7 @@
           </tr>
        </table>
        <button type="submit" class="custom-btn btn-13">가입하기</button>
+       <a href="/smhrd/register/login"><input class="custom-btn btn-13" type="button" value="뒤로가기"></a>
    </form>
 </div>
 <script>

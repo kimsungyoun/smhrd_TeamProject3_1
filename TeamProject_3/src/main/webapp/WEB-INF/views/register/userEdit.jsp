@@ -38,8 +38,8 @@
 	       <input type="text" name="u_phone" id="u_phone" placeholder="Phone Number" value="${dto.u_phone }">
 	           
 	       <input class="custom-btn btn-13" type="submit" value="수정하기">
+	       <a href="/smhrd/register/mypage"><input class="custom-btn btn-13" style="width:100%;" type="button" value="뒤로가기"></a>
        </form>
-	   <a href="/smhrd/register/mypage"><input class="custom-btn btn-13" style="width:100%;" type="button" value="뒤로가기"></a>
    </div>
 
 </main>
