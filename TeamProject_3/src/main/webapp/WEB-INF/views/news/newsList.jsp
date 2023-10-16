@@ -5,6 +5,7 @@
 
 <main>
 <div>
+<h2>인벤뉴스</h2>
 	<table>
 	<thead>
 		<tr>
