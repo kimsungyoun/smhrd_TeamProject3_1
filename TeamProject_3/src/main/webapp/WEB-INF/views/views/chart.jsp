@@ -111,7 +111,7 @@
 	
 	<!-- 라인 차트-->
 	<div id="lineContainer">
-	    <h2>라인차트</h2>
+	    <h2>시간에 따른 긍정/부정</h2>
 	    <canvas id="lineChart"></canvas>
 	</div>
 	
