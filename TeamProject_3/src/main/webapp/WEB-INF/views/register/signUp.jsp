@@ -33,12 +33,7 @@
 
 <main>
 <div id="signUp-form">
-<<<<<<< HEAD
-
-=======
->>>>>>> 135c2be05eb6aff18678c241f2e53cc73d15caf2
    <h2>회원가입 폼</h2>
-   
    <form action="UserInsert" method="POST">
        <table>
           <tr>
@@ -97,10 +92,6 @@
        <button id="submit-btn" type="submit" class="custom-btn btn-13">가입하기</button>
        <a href="/smhrd/register/login"><input class="custom-btn btn-13" type="button" value="뒤로가기"></a>
    </form>
-<<<<<<< HEAD
-
-=======
->>>>>>> 135c2be05eb6aff18678c241f2e53cc73d15caf2
 </div>
 </main>
 

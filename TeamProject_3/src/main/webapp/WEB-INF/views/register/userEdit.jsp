@@ -32,10 +32,12 @@
 	       <input type="hidden" name="u_id" value="${dto.u_id}">
 	       <input type="file" name="u_photo" id="u_photo" onchange="convertImageToBase64(event);" />
 	       <input type="hidden" name="u_photo_base64" id="u_photo_base64_input" />
-	       <input type="text" name="u_name" id="u_name" placeholder="Username" value="${dto.u_name }">
-	       <input type="email" name="u_email" id="u_email" placeholder="Email" value="${dto.u_email }">
-	       <input type="password" name="u_pw" id="u_pw" placeholder="Password" value="${dto.u_pw }">
-	       <input type="text" name="u_phone" id="u_phone" placeholder="Phone Number" value="${dto.u_phone }">
+	       <span>이름</span><input type="text" name="u_name" id="u_name" placeholder="Username" value="${dto.u_name }">
+	       <span>이메일</span><input type="email" name="u_email" id="u_email" placeholder="Email" value="${dto.u_email }">
+	       <span>생년월일</span><input type="text" name="u_birthdate" id="u_birthdate" value="${dto.u_birthdate }" readonly="readonly">
+	       <span>성별</span><input type="text" name="u_gender" id="u_gender" value="${dto.u_gender }" readonly="readonly">
+	       <span>비밀번호</span><input type="password" name="u_pw" id="u_pw" placeholder="Password" value="${dto.u_pw }">
+	       <span>전화번호</span><input type="text" name="u_phone" id="u_phone" placeholder="Phone Number" value="${dto.u_phone }">
 	           
 	       <input class="custom-btn btn-13" type="submit" value="수정하기">
 	       <a href="/smhrd/register/mypage"><input class="custom-btn btn-13" style="width:100%;" type="button" value="뒤로가기"></a>
