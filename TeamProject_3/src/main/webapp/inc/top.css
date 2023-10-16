@@ -6,7 +6,7 @@
   grid-template-columns: 1fr;
   grid-template-areas: "sidebar" "content";
   width: 200px; /* unnecessary, but let's keep things consistent */
-  height: 100vh;
+  height: auto;
 }
 
 @media screen and (min-width: 850px) {
@@ -19,6 +19,7 @@
 
 /* SIDEBAR */
 sidebar {
+  height:100%;
   grid-area: sidebar;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
