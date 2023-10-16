@@ -4,112 +4,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>main</title>
-	<link rel="stylesheet" href="/smhrd/inc/style.css" type="text/css">
+   <meta charset="UTF-8">
+   <link rel=stylesheet href="/smhrd/inc/style.css">
+   <link rel=stylesheet href="/smhrd/inc/top.css">
 </head>
 
-<style>
-    #viewport {
-    padding-right:50px;
-        padding-left: 100px;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
 
-    #content {
-        width: 100%;
-        position: relative;
-        margin-right: 0;
-    }
-
-    /* Sidebar Styles */
-
-    #sidebar {
-        z-index: 1000;
-        position: fixed;
-        left: 250px;
-        width: 150px;
-        height: 100%;
-        margin-left: -250px;
-        overflow-y: auto;
-        background: #CEBEE1;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-    }
-
-
-    #sidebar .nav a:hover{
-        background: none;
-        color: #ECEFF1;
-    }
-
-    #sidebar .nav a i{
-        margin-right: 16px;
-    }
-
-    /* .resized-image {
-        width: 150px;
-        height: 100px;
-    } */
-    
-
-</style>
-<body>
-
-
-<div id="viewport">
-    <div id="sidebar">
-        <div id="title">
-			<a href="/smhrd"><img src="<%= request.getContextPath() %>/img/title.png" width="150"></a>
-		</div>
-        <ul class="nav">
-        	<!-- 로그인상태 -->
-        	<c:if test="${logStatus == 'Y'}">
-	            <li>
-	                <a href="/smhrd/register/mypage">
-	                    <img src="<%= request.getContextPath() %>/img/mypage.png" width="50">
-	                    <br/>마이페이지
-	                </a>
-	            </li>
-	        </c:if>
-	        
-	        <!-- 로그인x -->
-	        <c:if test="${logStatus != 'Y'}">
-	        	<li>
-	                <a href="/smhrd/register/login">
-	                    <img src="<%= request.getContextPath() %>/img/login.png" width="50">
-	                    <br/>로그인
-	                </a>
-	            </li>
-	        </c:if>
-            
-            <li>
-                <a href="/smhrd/analyze/analyzeList">
-                    <img src="<%= request.getContextPath() %>/img/chart.png" width="50">
-                    <br/>분석차트
-                </a>
-            </li>
-            
-            <li>
-                <a href="/smhrd/news/newsList">
-                    <img src="<%= request.getContextPath() %>/img/news.png" width="50">
-                    <br/>뉴스게시판
-                </a>
-            </li>
-            
-            <li>
-                <a href="/smhrd/faq/faqList">
-                    <img src="<%= request.getContextPath() %>/img/chat.png" width="50">
-                    <br/>FAQ
-                </a>
-            </li>
-        </ul>
+<div class="wrapper">
+  <sidebar>
+    <div class="logo"><a href="/smhrd"><img src="<%= request.getContextPath() %>/img/logo.png" width="200"></a></div>
+    <div class="avatar">
+      <div class="avatar__img">
+        <c:if test="${logStatus == 'Y'}">
+       		<img src="https://picsum.photos/70" alt="avatar">
+        </c:if>
+        
+        <c:if test="${logStatus != 'Y'}">
+	        <img src="https://picsum.photos/70" alt="avatar">
+	        <p>로그인하세요</p>
+        </c:if>
+      </div>
+      
+      <c:if test="${logStatus == 'Y'}">
+         <div class="avatar__name">${logName}</div>
+         <c:if test="${SubScription == 'Y'}">
+         	<div class="avatar__name">구독중</div>
+         </c:if>
+         <c:if test="${SubScription == 'N'}">
+         	<div class="avatar__name">구독하세요</div>
+         </c:if>
+      </c:if>
     </div>
+    
+    <nav class="menu">
+    <c:if test="${logStatus == 'Y'}">
+    <a class="menu__item" href="/smhrd/register/mypage">
+	    <i class="menu__icon fa fa-home"><img src="<%= request.getContextPath() %>/img/mypage.png" width="15"></i>
+	    <span class="menu__text">마이페이지</span>
+    </a>
+    
+    <a class="menu__item" href="/smhrd/subscription/payment?u_id=${logId}">
+	    <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
+	    <span class="menu__text">결제하기</span>
+    </a>
+    </c:if>
+    
+    <c:if test="${logStatus != 'Y'}">
+	    <a class="menu__item" href="/smhrd/register/login">
+		    <i class="menu__icon fa fa-envelope"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
+		    <span class="menu__text">로그인</span>
+	    </a>
+    </c:if>
+    
+    <a class="menu__item menu__item--active" href="/smhrd/analyze/analyzeList">
+	    <i class="menu__icon fa fa-calendar"><img src="<%= request.getContextPath() %>/img/chart.png" width="15"></i>
+	    <span class="menu__text">분석차트</span>
+    </a>
+    
+    <a class="menu__item" href="/smhrd/news/newsList">
+	    <i class="menu__icon fa fa-bar-chart"><img src="<%= request.getContextPath() %>/img/news.png" width="15"></i>
+	    <span class="menu__text">뉴스</span>
+    </a>
+    
+    <a class="menu__item" href="/smhrd/faq/faqList">
+	    <i class="menu__icon fa fa-trophy"><img src="<%= request.getContextPath() %>/img/chat.png" width="15"></i>
+	    <span class="menu__text">FAQ</span>
+    </a>
+    
+    <c:if test="${logStatus == 'Y'}">
+	    <a class="menu__item" href="/smhrd/register/logOut">
+		    <i class="menu__icon fa fa-sliders"></i>
+		    <span class="menu__text">로그아웃</span>
+	    </a>
+    </c:if>
+    </nav>
+  </sidebar>
 </div>
-
-

@@ -1,23 +1,21 @@
 package kr.or.smhrd.controller;
 
 import java.util.Base64;
-import java.util.HashMap;
-import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.or.smhrd.dao.SubscriptionDAO;
+//import kr.or.smhrd.dto.KakaoDTO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
@@ -82,20 +80,6 @@ public class UserController {
       return mav;
    }
    
-
-   
-   @GetMapping("/payment") 
-   public ModelAndView payment(HttpSession session) { 
-      ModelAndView mav = new ModelAndView();
-      UserDTO dto = service.UserSelect((String) session.getAttribute("pay"));
-      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("pay"));
-      mav.addObject("dto", dto);
-      mav.addObject("sdto", sdto);
-      mav.setViewName("subscription/payment");
-      
-      return mav;
-   }
-   
    @GetMapping("/idSearch")
    public String idSearch() {
       return "/register/idSearch";
@@ -142,6 +126,7 @@ public class UserController {
       return "/register/signUp";
    }
    
+
    @PostMapping("/UserInsert")
    public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto, @RequestParam("u_photo_base64") String base64ImageData) {
       
@@ -177,17 +162,25 @@ public class UserController {
    @PostMapping("/loginOk")
    public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
       UserDTO dto = service.loginOk(u_id, u_pw);
-      System.out.println("loginOk 호출성공");
       ModelAndView mav = new ModelAndView();
       
       if(dto != null) {
-         session.setAttribute("logId", dto.getU_id());
-         session.setAttribute("logName", dto.getU_name());
-         session.setAttribute("logStatus", "Y");
-         
-         mav.setViewName("redirect:/");
+    	  // 구독한 상태(구독상태가 'Y')인 경우, 구독 만료일이 넘었으면 'N'로 바꾸기 - 민지
+    	  SubscriptionDTO sdto = s_service.getView(dto.getU_id());
+    	  String status = sdto.getSub_status();
+
+    	  if ("Y".equals(status)) {
+    		  s_service.updateStatus(dto.getU_id());
+    	  }
+    	  
+    	  session.setAttribute("logId", dto.getU_id());
+    	  session.setAttribute("logName", dto.getU_name());
+    	  session.setAttribute("logStatus", "Y");
+    	  session.setAttribute("SubScription", sdto.getSub_status());
+    	  
+    	  mav.setViewName("redirect:/");
       }else {
-         mav.setViewName("register/loginResult");
+    	  mav.setViewName("register/loginResult");
       }
       return mav;
    }
@@ -197,8 +190,8 @@ public class UserController {
       System.out.println("loginOk 호출성공");
       ModelAndView mav = new ModelAndView();
       session.setAttribute("logStatus", "Y");
-      System.out.println("logStatus:Y 등록성공");
-         return mav;
+      return mav;
+
    }
    
    @GetMapping("/logOut")

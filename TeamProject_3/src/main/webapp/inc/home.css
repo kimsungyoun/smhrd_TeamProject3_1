@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @charset "UTF-8";
 
 /* main {
@@ -7,15 +8,30 @@
     padding: 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 } */
+=======
+/* 게임 인기 순위와 인기 뉴스 컨테이너 스타일 */
+.rankings-news {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+>>>>>>> 8ffd112a060ecaeddd66f893d9c7892a9a6d3b00
 
-h2 {
+/* 게임 인기 순위 스타일 */
+.rankings {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.rankings h2 {
     font-size: 1.5em;
-    color: #6A24FE;
-    border-bottom: 2px solid #CEBEE1;
+    color: #163172;
+    border-bottom: 2px solid #D6E4F0;
     margin-bottom: 15px;
     padding-bottom: 5px;
 }
 
+<<<<<<< HEAD
 
 
 .table-container img {
@@ -45,35 +61,185 @@ h2 {
 /* th, td {
     border: 1px solid #ddd;
     padding: 12px;
-    text-align: left;
+=======
+.rankings table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-th {
-    background-color: #CEBEE1;
-    color: white;
+.rankings th,
+.rankings td {
+    border: 1px solid #D6E4F0;
+    padding: 10px;
+>>>>>>> 8ffd112a060ecaeddd66f893d9c7892a9a6d3b00
+    text-align: left;
+    width: 25%; /* 모든 td 요소의 너비를 동일하게 설정 */
 }
+
+.rankings th {
+    background-color: #1E56A0;
+    color: white;
+    white-space: nowrap; /* 글씨가 한 줄로만 표시되도록 설정 */
+    overflow: hidden; /* 넘치는 글씨를 숨김 */
+    text-overflow: ellipsis; /* 넘치는 글씨에 대한 말줄임 표시 (...) */
+}
+<<<<<<< HEAD
  */
 a {
+=======
+
+.rankings a {
+>>>>>>> 8ffd112a060ecaeddd66f893d9c7892a9a6d3b00
     text-decoration: none;
     color: #000000;
 }
 
-a:hover {
+.rankings a:hover {
     color: #6A24FE;
 }
+
+/* 인기 뉴스 스타일 */
+.news {
+    flex: 1;
+}
+
+.news h2 {
+    font-size: 1.5em;
+    color: #163172;
+    border-bottom: 2px solid #D6E4F0;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.news table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.news th,
+.news td {
+    border: 1px solid #D6E4F0;
+    padding: 10px;
+    text-align: left;
+    width: 25%; /* 모든 td 요소의 너비를 동일하게 설정 */
+}
+
+.news th {
+    background-color: #1E56A0;
+    color: white;
+    white-space: nowrap; /* 글씨가 한 줄로만 표시되도록 설정 */
+    overflow: hidden; /* 넘치는 글씨를 숨김 */
+    text-overflow: ellipsis; /* 넘치는 글씨에 대한 말줄임 표시 (...) */
+}
+
+.news a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.news a:hover {
+    color: #6A24FE;
+}
+.custom-container {
+    width: 80%; /* 너비 조정 */
+    margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+    display: flex; /* 컨테이너 내부 요소들을 가로로 배치하기 위해 Flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+/* 요소의 위치 설정 */
+.custom-container h2 {
+    margin-bottom: 15px; /* h2 태그의 하단 여백 설정 */
+}
+
+/* 요소의 크기 및 배치 설정 */
+.custom-container table {
+    width: 100%; /* 테이블 너비 100% 설정 */
+    border-collapse: collapse; /* 테이블 셀 경계 표시 제거 */
+    margin-bottom: 20px; /* 하단 여백 설정 */
+}
+
+.custom-container th, .custom-container td {
+    border: 1px solid #D6E4F0; /* 셀 테두리 스타일 설정 */
+    padding: 10px; /* 셀 안에 내용의 여백 설정 */
+    text-align: left; /* 텍스트 정렬 설정 */
+}
+
+.custom-container th {
+    background-color: #1E56A0; /* 테이블 헤더 배경색 설정 */
+    color: white; /* 테이블 헤더 텍스트 색상 설정 */
+}
+
+.custom-container a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: #000000; /* 링크 텍스트 색상 설정 */
+}
+
+.custom-container a:hover {
+    color: #6A24FE; /* 링크 호버 시 텍스트 색상 설정 */
+}
+
 /* "맨 위로" 버튼 스타일 */
 #myBtn {
-    display: none; /* 기본적으로는 보이지 않음 */
-    position: fixed; /* 스크롤과 상관없이 항상 같은 위치에 있음 */
-    bottom: 20px; /* 페이지 하단에서 20px 위에 위치 */
-    right: 20px; /* 페이지 우측에서 20px 왼쪽에 위치 */
-    border: none; 
-    outline: none; 
-    background-color: #CEBEE1; /* 버튼 배경색 */
-    color: white; /* 텍스트 색상 */
-    cursor: pointer; /* 마우스 오버 시 손가락 모양 커서로 변경 */
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
     padding: 10px;
-    border-radius: 4px; /* 모서리 둥글게 */
-    font-size: 18px; /* 글자 크기 */
-    transition: background-color 0.3s; /* 배경색 변경 시 부드러운 전환 효과 */
+    border-radius: 4px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+/* 수정된 "btn-13" 클래스의 스타일 */
+.btn-13.custom-btn {
+    background-color: #CEBEE1;
+    background-image: -moz-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+    background-image: -o-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+    background-image: -webkit-linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+    background-image: linear-gradient(315deg, #CEBEE1 0%, #03c8a8 74%);
+    border: none;
+    z-index: 1;
+}
+
+.btn-13.custom-btn:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: #CEBEE1;
+    background-image: -moz-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+    background-image: -o-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+    background-image: -webkit-linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+    background-image: linear-gradient(315deg, #4dccc6 0%, #CEBEE1 74%);
+    box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+    transition: all 0.3s ease;
+}
+
+.btn-13.custom-btn:hover {
+    color: #fff;
+}
+
+.btn-13.custom-btn:hover:after {
+    top: 0;
+    height: 100%;
+}
+
+.btn-13.custom-btn:active {
+    top: 2px;
 }
