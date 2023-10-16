@@ -43,11 +43,19 @@
 	    <i class="menu__icon fa fa-home"><img src="<%= request.getContextPath() %>/img/mypage.png" width="15"></i>
 	    <span class="menu__text">마이페이지</span>
     </a>
-    
-    <a class="menu__item" href="/smhrd/subscription/payment?u_id=${logId}">
-	    <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
-	    <span class="menu__text">결제하기</span>
-    </a>
+	    <c:if test="${SubScription == 'N'}">
+		    <a class="menu__item" href="/smhrd/subscription/payment?u_id=${logId}">
+			    <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/subscription.png" width="15"></i>
+			    <span class="menu__text">결제하기</span>
+		    </a>
+	    </c:if>
+	    
+	    <c:if test="${SubScription == 'Y'}">
+	    	<a class="menu__item" href="/smhrd/subscription/detail?u_id=${logId}">
+			    <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/sub_manage.png" width="15"></i>
+			    <span class="menu__text">구독관리</span>
+		    </a>
+	    </c:if>
     </c:if>
     
     <c:if test="${logStatus != 'Y'}">
@@ -74,7 +82,7 @@
     
     <c:if test="${logStatus == 'Y'}">
 	    <a class="menu__item" href="/smhrd/register/logOut">
-		    <i class="menu__icon fa fa-sliders"></i>
+		    <i class="menu__icon fa fa-sliders"><img src="<%= request.getContextPath() %>/img/logout.png" width="15"></i>
 		    <span class="menu__text">로그아웃</span>
 	    </a>
     </c:if>
