@@ -1,27 +1,66 @@
-@charset "UTF-8";
 
-/* Container */
+
 .container {
-	width: 80%;
-	margin: auto;
-	padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
 }
-/* Card */
-.card {
-	border: 1px solid #ccc;
-	padding: 20px;
-	margin-top: 20px;
+
+/* Custom Card */
+.custom-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
-/* Card Body */
-.card-body {
-	padding: 10px;
+
+.custom-card-header {
+    background-color: #1E56A0;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
-/* Form Group */
-.form-group {
-	margin-bottom: 20px;
+
+.custom-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
-/* Buttons */
-button {
-	padding: 10px 20px;
-	margin-top: 10px;
+
+.custom-card-body {
+    padding: 20px;
+}
+
+/* Custom Info */
+.custom-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.custom-label {
+    color: #1E56A0;
+    font-weight: bold;
+}
+
+.custom-value {
+    font-size: 18px;
+}
+
+/* Custom Button */
+.custom-btn {
+    background-color: #1E56A0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.custom-btn:hover {
+    background-color: #163172;
 }

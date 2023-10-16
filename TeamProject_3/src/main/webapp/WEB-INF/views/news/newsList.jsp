@@ -93,11 +93,11 @@ a {
 	padding:0px;
 	margin-right: 10px;
 }
+
 </style>
 
 
 <link rel="stylesheet" href="../inc/newsList.css">
-
 <main>
 <div>
 	<table>
