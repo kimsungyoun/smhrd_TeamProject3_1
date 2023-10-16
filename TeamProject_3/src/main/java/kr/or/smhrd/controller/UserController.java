@@ -192,6 +192,7 @@ public class UserController {
       }
       return mav;
    }
+
    @GetMapping("/logOut")
    public ModelAndView logOut(HttpSession session) {
       session.invalidate();

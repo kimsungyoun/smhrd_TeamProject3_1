@@ -24,7 +24,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		List<GameDTO> list = gService.getList();
+		List<GameDTO> list = gService.getBestList();
 		// 게임 이미지 처리 - 민지
 		for (GameDTO dto : list) {
 	          byte[] imageData = dto.getG_img();

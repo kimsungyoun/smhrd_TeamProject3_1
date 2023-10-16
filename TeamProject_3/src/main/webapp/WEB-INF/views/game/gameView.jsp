@@ -10,7 +10,6 @@
       <tr>
 	      <th>종류</th>
 	      <th>내용</th>
-      
       </tr>
       
       <tr>
@@ -45,7 +44,9 @@
    </table>
    </div>
    <div class="frame">
-   	<a href="/smhrd"><button class="custom-btn btn-13"><span>홈으로</span></button></a>
+   <a href='/smhrd/game/gameList?nowPage=${pDTO.nowPage}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>
+	   <button class="custom-btn btn-13"><span>목록</span></button>
+   </a>
    </div>
 </div>
 </main>

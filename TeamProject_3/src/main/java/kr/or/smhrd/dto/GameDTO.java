@@ -22,7 +22,7 @@ public class GameDTO {
 	private float g_star;   
 	private String g_version;
 	private int g_reviews;       
-	private int g_downloads;    
+	private String g_downloads;    
 	private String g_company;      
 	private String g_updated;
 	private int g_rank;

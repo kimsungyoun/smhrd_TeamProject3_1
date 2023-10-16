@@ -3,7 +3,7 @@
 .edit-profile-wrapper {
     width: 400px;
     margin: auto;
-    padding: 40px;
+    padding:  0px 40px;
     box-sizing: border-box;
 }
 .edit-profile-wrapper > h2 {
