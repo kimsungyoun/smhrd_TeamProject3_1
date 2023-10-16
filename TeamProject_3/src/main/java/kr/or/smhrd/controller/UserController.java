@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-//import kr.or.smhrd.dto.KakaoDTO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
@@ -184,15 +183,6 @@ public class UserController {
       }
       return mav;
    }
-   
-   @PostMapping("/KakaoLoginOk")
-   public ModelAndView KakaoLoginOk(HttpSession session) {
-      System.out.println("loginOk 호출성공");
-      ModelAndView mav = new ModelAndView();
-      session.setAttribute("logStatus", "Y");
-      return mav;
-   }
-   
    @GetMapping("/logOut")
    public ModelAndView logOut(HttpSession session) {
       session.invalidate();

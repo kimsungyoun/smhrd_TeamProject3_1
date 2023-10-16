@@ -2,7 +2,7 @@
 
 /* 기본 스타일 */
 main {
-    width: 80%;
+    /* width: 80%; */
     margin: auto;
     background-color: #F6F6F6; /* 배경색 변경 */
     padding: 20px;
