@@ -11,6 +11,7 @@ import kr.or.smhrd.dto.AnalyzeDTO;
 import kr.or.smhrd.dto.GameDTO;
 import kr.or.smhrd.dto.KeywordDTO;
 import kr.or.smhrd.dto.PagingDTO;
+import kr.or.smhrd.dto.ReviewDTO;
 
 @Service
 public class AnalyzeServiceImpl implements AnalyzeService {
@@ -18,13 +19,18 @@ public class AnalyzeServiceImpl implements AnalyzeService {
 	AnalyzeDAO dao;
 
 	@Override
-	public List<AnalyzeDTO> getList() {
-		return dao.getList();
+	public KeywordDTO keywordSelect(int no) {
+		return dao.keywordSelect(no);
 	}
 
 	@Override
-	public KeywordDTO keywordSelect(int no) {
-		return dao.keywordSelect(no);
+	public List<ReviewDTO> reviewsSelect(int no) {
+		return dao.reviewsSelect(no);
+	}
+
+	@Override
+	public int reviewsCount(int no) {
+		return dao.reviewsCount(no);
 	}
 
 }

@@ -29,7 +29,7 @@
 .rankings td {
     border: 1px solid #D6E4F0;
     padding: 10px;
-    text-align: left;
+    text-align: center;
     width: 25%; /* 모든 td 요소의 너비를 동일하게 설정 */
 }
 

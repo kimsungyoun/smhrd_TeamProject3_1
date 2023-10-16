@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-//import kr.or.smhrd.dto.KakaoDTO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
@@ -79,20 +78,6 @@ public class UserController {
       
       return mav;
    }
-   
-
-   
-//   @GetMapping("/payment") 
-//   public ModelAndView payment(HttpSession session) { 
-//      ModelAndView mav = new ModelAndView();
-//      UserDTO dto = service.UserSelect((String) session.getAttribute("pay"));
-//      SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("pay"));
-//      mav.addObject("dto", dto);
-//      mav.addObject("sdto", sdto);
-//      mav.setViewName("/smhrd/subscription/payment");
-//      
-//      return mav;
-//   }
    
    @GetMapping("/idSearch")
    public String idSearch() {
@@ -176,19 +161,30 @@ public class UserController {
    @PostMapping("/loginOk")
    public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
       UserDTO dto = service.loginOk(u_id, u_pw);
-//      System.out.println("loginOk 호출성공");
       ModelAndView mav = new ModelAndView();
       
       if(dto != null) {
     	  // 구독한 상태(구독상태가 'Y')인 경우, 구독 만료일이 넘었으면 'N'로 바꾸기 - 민지
     	  SubscriptionDTO sdto = s_service.getView(dto.getU_id());
     	  String status = sdto.getSub_status();
+    	  
+          byte[] imageData = dto.getU_photo();
+          if (imageData != null) {
+             String base64ImageData = Base64.getEncoder().encodeToString(imageData);
+             dto.setU_photo_base64(base64ImageData);
+          } else {
+             dto.setU_photo_base64("사진없음");
+          }
+    	 
     	  if ("Y".equals(status)) {
     		  s_service.updateStatus(dto.getU_id());
     	  }
+    	  
     	  session.setAttribute("logId", dto.getU_id());
     	  session.setAttribute("logName", dto.getU_name());
     	  session.setAttribute("logStatus", "Y");
+    	  session.setAttribute("SubScription", sdto.getSub_status());
+    	  session.setAttribute("logImg", dto.getU_photo_base64());
     	  
     	  mav.setViewName("redirect:/");
       }else {
@@ -196,15 +192,6 @@ public class UserController {
       }
       return mav;
    }
-   
-   @PostMapping("/KakaoLoginOk")
-   public ModelAndView KakaoLoginOk(HttpSession session) {
-      System.out.println("loginOk 호출성공");
-      ModelAndView mav = new ModelAndView();
-      session.setAttribute("logStatus", "Y");
-      return mav;
-   }
-   
    @GetMapping("/logOut")
    public ModelAndView logOut(HttpSession session) {
       session.invalidate();

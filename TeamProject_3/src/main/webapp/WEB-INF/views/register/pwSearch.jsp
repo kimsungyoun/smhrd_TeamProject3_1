@@ -10,6 +10,7 @@
 	        <input type="text" name="u_id" placeholder="아이디">
 	        <input type="email" name="u_email" placeholder="이메일">
 	        <input type="submit" value="비밀번호 찾기" class="custom-btn btn-13">
+		    <a href="/smhrd/register/login"><input class="custom-btn btn-13" style="width:100%;" type="button" value="뒤로가기"></a>
 	    </form>
 	</div>
 
