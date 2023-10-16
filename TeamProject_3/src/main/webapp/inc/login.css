@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* .wrapper{
-	display: flex;
-	flex-direction: column;
+   display: flex;
+   flex-direction: column;
 } */
 
 /* 로그인 폼 스타일 */
@@ -61,7 +61,7 @@
     align-items: center;
 }
 #kakao_id_login{
-	margin-right:20px;	
+   margin-right:20px;   
 }
 .custom-btn {
   width: 130px;
