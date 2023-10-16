@@ -34,7 +34,6 @@
 <main>
 <div id="signUp-form">
    <h2>회원가입 폼</h2>
-   
    <form action="UserInsert" method="POST">
        <table>
           <tr>
