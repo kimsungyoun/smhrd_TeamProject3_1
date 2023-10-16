@@ -9,7 +9,7 @@
     <title>구독 관리</title>
 </head>
 <body>
-    <main>
+    <main class="body">
         <div class="container">
             <div class="custom-card">
                 <div class="custom-card-header">
