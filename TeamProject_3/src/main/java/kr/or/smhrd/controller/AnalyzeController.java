@@ -1,6 +1,10 @@
 package kr.or.smhrd.controller;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -59,6 +63,7 @@ public class AnalyzeController {
 		
 		RestTemplate restTemplate = new RestTemplate();
 	    HttpHeaders headers = new HttpHeaders();
+	    
 		String url1 = "http://127.0.0.1:5000/wordcloud1?no=" + no;
 		String url2 = "http://127.0.0.1:5000/wordcloud2?no=" + no;
 	    HttpEntity<String> entity = new HttpEntity<>(headers);
@@ -74,7 +79,6 @@ public class AnalyzeController {
 	    String url3 = "http://127.0.0.1:5000/pie?no=" + no;
 	    HttpEntity<String> entity2 = new HttpEntity<>(headers);
 	    ResponseEntity<byte[]> response3 = restTemplate.exchange(url3, HttpMethod.GET, entity2, byte[].class);
-
 	    if (response3.getStatusCode().is2xxSuccessful()) {
 	        byte[] responseData = response3.getBody();
 	        String pieJson = new String(responseData);  // JSON 문자열로 변환
@@ -82,7 +86,14 @@ public class AnalyzeController {
 	        Map<String, Object> responseMap = mapper.readValue(pieJson, new TypeReference<Map<String, Object>>() {});
 	        mav.addObject("pie", responseMap);
 	    }
-
+	    
+	    String url4 = "http://127.0.0.1:5000/line?no=" + no;
+	    HttpEntity<String> entity3 = new HttpEntity<>(headers);
+	    ResponseEntity<String> response4 = restTemplate.exchange(url4, HttpMethod.GET, entity3, String.class);
+	    ObjectMapper mapper = new ObjectMapper();
+	    Map<String, Object> responseMap = mapper.readValue(response4.getBody(), new TypeReference<Map<String, Object>>() {});
+	    mav.addObject("line", responseMap);
+	    
 	    
 		mav.setViewName("views/chart");
 		return mav;
