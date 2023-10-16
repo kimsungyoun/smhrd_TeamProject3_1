@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.or.smhrd.dto.KakaoDTO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
@@ -183,7 +182,7 @@ public class UserController {
       return "/register/signUp";
    }
    
-   /*
+
    @PostMapping("/UserInsert")
    public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto, @RequestParam("u_photo_base64") String base64ImageData) {
 	   
@@ -209,39 +208,32 @@ public class UserController {
       return mav;
       
    }
-<<<<<<< HEAD
-   
-   @PostMapping("/CheckId")
-   @ResponseBody
-   public String checkId(String u_id) {
-       String id = service.CheckId(u_id);
-       return id;
-   }
 
+//   
+//   @PostMapping("/CheckId")
+//   @ResponseBody
+//   public String checkId(String u_id) {
+//       String id = service.CheckId(u_id);
+//       return id;
+//   }
 
-=======
-	*/
-   
-   @PostMapping("/UserInsert")
-   public ModelAndView UserInsert(UserDTO dto, SubscriptionDTO sdto, @RequestParam("u_photo_base64") String base64ImageData) {
-     byte[] imageData = Base64.getDecoder().decode(base64ImageData.split(",")[1]);
-     dto.setU_photo(imageData);
-      
-     ModelAndView mav = new ModelAndView();
-      try {         
-         service.UserInsert(dto);
-         
-         s_service.UserInsert(sdto);
-         
-         mav.setViewName("redirect: login");
-      }catch(Exception e) {
-         System.out.println("error >> " + e);
-         mav.setViewName("register/signupFail");
-      }
-      
-      return mav;
-   }
-   
+//	/*
+//	 * @PostMapping("/UserInsert") public ModelAndView UserInsert(UserDTO dto,
+//	 * SubscriptionDTO sdto, @RequestParam("u_photo_base64") String base64ImageData)
+//	 * { byte[] imageData =
+//	 * Base64.getDecoder().decode(base64ImageData.split(",")[1]);
+//	 * dto.setU_photo(imageData);
+//	 * 
+//	 * ModelAndView mav = new ModelAndView(); try { service.UserInsert(dto);
+//	 * 
+//	 * s_service.UserInsert(sdto);
+//	 * 
+//	 * mav.setViewName("redirect: login"); }catch(Exception e) {
+//	 * System.out.println("error >> " + e); mav.setViewName("register/signupFail");
+//	 * }
+//	 * 
+//	 * return mav; }
+//	 */
    @GetMapping("/login")
    public String login() {
       return "/register/login";
@@ -271,19 +263,7 @@ public class UserController {
       }
       return mav;
    }
-   
-   @PostMapping("/KakaoLoginOk")
-   public ModelAndView KakaoLoginOk(HttpSession session) {
-      System.out.println("loginOk 호출성공");
-      ModelAndView mav = new ModelAndView();
-      session.setAttribute("logStatus", "Y");
-         return mav;
-			/* mav.setViewName("redirect:/"); */
-			/*
-			 * }else{ mav.setViewName("register/loginResult"); } return mav;
-			 */
-   }
-   
+
    @GetMapping("/logOut")
    public ModelAndView logOut(HttpSession session) {
       session.invalidate();
