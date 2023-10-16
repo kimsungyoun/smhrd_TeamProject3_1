@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.or.smhrd.dto.KakaoDTO;
 import kr.or.smhrd.dto.SubscriptionDTO;
 import kr.or.smhrd.dto.UserDTO;
 import kr.or.smhrd.service.SubscriptionService;
@@ -30,8 +32,10 @@ public class UserController {
    @Autowired
    SubscriptionService s_service;
    
+   private HttpSession session;
+   
    @GetMapping("/mypage")
-   public ModelAndView mypage(HttpSession session) {
+   public ModelAndView mypage() {
       ModelAndView mav = new ModelAndView();
       UserDTO dto = service.UserSelect((String) session.getAttribute("logId"));
       SubscriptionDTO sdto = s_service.getView((String) session.getAttribute("logId"));
@@ -52,7 +56,7 @@ public class UserController {
    }
    
    @GetMapping("/userEdit")
-   public ModelAndView userEdit(HttpSession session) {
+   public ModelAndView userEdit() {
       ModelAndView mav = new ModelAndView();
       UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
       
@@ -70,7 +74,7 @@ public class UserController {
    }
    
    @GetMapping("/userResign")
-   public ModelAndView userResign(HttpSession session) {
+   public ModelAndView userResign() {
       ModelAndView mav = new ModelAndView();
       UserDTO dto = service.UserSelect((String)session.getAttribute("logId"));
       mav.addObject("dto", dto);
@@ -159,7 +163,7 @@ public class UserController {
    
 
    @PostMapping("/loginOk")
-   public ModelAndView loginOk(String u_id, String u_pw, HttpSession session) {
+   public ModelAndView loginOk(String u_id, String u_pw ) {
       UserDTO dto = service.loginOk(u_id, u_pw);
       ModelAndView mav = new ModelAndView();
       
@@ -194,7 +198,7 @@ public class UserController {
    }
 
    @GetMapping("/logOut")
-   public ModelAndView logOut(HttpSession session) {
+   public ModelAndView logOut() {
       session.invalidate();
       ModelAndView mav = new ModelAndView();
       mav.setViewName("redirect:/");
@@ -219,7 +223,7 @@ public class UserController {
    }
    
    @PostMapping("/UserDel")
-   public ModelAndView UserDel(String u_id, String u_pw, HttpSession session) {
+   public ModelAndView UserDel(String u_id, String u_pw ) {
       ModelAndView mav = new ModelAndView();
       int result = service.UserDel(u_id, u_pw);
       
@@ -236,4 +240,6 @@ public class UserController {
    public String LoginInterceptor() {
 	   return "/register/loginInterceptor";
    }
+
+   
 }

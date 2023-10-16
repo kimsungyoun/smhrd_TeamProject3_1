@@ -1,10 +1,14 @@
 package kr.or.smhrd.dao;
 
+import kr.or.smhrd.dto.KakaoDTO;
 import kr.or.smhrd.dto.UserDTO;
 
 public interface UserDAO {
 	// 회원가입
 	public int UserInsert(UserDTO dto);
+	
+	// 카카오 회원가입
+	public int KaKaoInsert(KakaoDTO dto);
 	
 	// 아이디 중복 체크
 	public int UserCheck(UserDTO dto);
@@ -26,4 +30,5 @@ public interface UserDAO {
 	
 	// 회원탈퇴
 	public int UserDel(String u_id, String u_pw);
+	
 }
