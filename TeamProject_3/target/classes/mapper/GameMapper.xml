@@ -4,8 +4,8 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.or.smhrd.dao.GameDAO">
- 	<!-- 게임 리스트 -->
- 	<select id="getList" resultType="kr.or.smhrd.dto.GameDTO">
+ 	<!-- 인기 게임 순위 -->
+ 	<select id="getBestList" resultType="kr.or.smhrd.dto.GameDTO">
  		SELECT g_no, g_rank, g_name, g_star ,g_img
  		FROM
  		(
@@ -22,4 +22,25 @@
 		FROM game
 		WHERE g_no=#{param1}
 	</select> 
+	
+	<select id="totalRecord" resultType="int">
+      select count(g_no) cnt from GAME
+      where 1=1
+      <if test="searchWord != null">
+         and ${searchKey} like '%${searchWord}%'
+      </if>
+    </select>
+	
+	<select id="getList" resultType="kr.or.smhrd.dto.GameDTO">		
+		SELECT * FROM
+		(SELECT * FROM 
+		(	SELECT g_no, g_name, g_star, g_version, g_released, g_company, g_rank, g_info, g_img,g_downloads 
+			FROM GAME 
+			<if test="searchWord != null">
+				where ${searchKey} like '%${searchWord}%'
+			</if>		
+			ORDER BY g_rank asc
+			) WHERE <![CDATA[rownum<=${nowPage*onePageRecord}]]> order by g_rank desc
+		) WHERE <![CDATA[rownum<=${lastPageRecord}]]> order by g_rank asc
+	</select>
 </mapper>

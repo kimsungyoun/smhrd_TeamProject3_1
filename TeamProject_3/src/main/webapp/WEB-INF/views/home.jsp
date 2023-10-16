@@ -11,10 +11,10 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>게임 순위</th>
-                            <th>게임 이름</th>
-                            <th>게임 이미지</th>
-                            <th>게임 상세 정보</th>
+                            <th>순위</th>
+                            <th>이름</th>
+                            <th>썸네일</th>
+                            <th>상세보기</th>
                         </tr>
                     </thead>
                     <tbody>

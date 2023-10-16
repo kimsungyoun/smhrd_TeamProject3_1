@@ -25,12 +25,16 @@
     margin-bottom: 20px;
 }
 
+.rankings td:nth-child(4n+2){
+	width: 55%
+}
+
 .rankings th,
 .rankings td {
     border: 1px solid #D6E4F0;
     padding: 10px;
     text-align: center;
-    width: 25%; /* 모든 td 요소의 너비를 동일하게 설정 */
+    width: 15%; /* 모든 td 요소의 너비를 동일하게 설정 */
 }
 
 .rankings th {
@@ -73,8 +77,12 @@
 .news td {
     border: 1px solid #D6E4F0;
     padding: 10px;
-    text-align: left;
-    width: 25%; /* 모든 td 요소의 너비를 동일하게 설정 */
+    text-align: center;
+    width: 15%; /* 모든 td 요소의 너비를 동일하게 설정 */
+}
+
+.news td:nth-child(4n+2){
+	width: 55%
 }
 
 .news th {

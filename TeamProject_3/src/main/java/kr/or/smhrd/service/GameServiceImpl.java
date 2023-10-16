@@ -15,21 +15,27 @@ public class GameServiceImpl implements GameService {
 	GameDAO dao;
 
 	@Override
-	public List<GameDTO> getList() {
+	public List<GameDTO> getBestList() {
 		// TODO Auto-generated method stub
-		return dao.getList();
-	}
-
-	@Override
-	public List<GameDTO> resetList() {
-		// TODO Auto-generated method stub
-		return dao.resetList();
+		return dao.getBestList();
 	}
 
 	@Override
 	public GameDTO getView(int g_no) {
 		// TODO Auto-generated method stub
 		return dao.getView(g_no);
+	}
+
+	@Override
+	public int totalRecord(PagingDTO pDTO) {
+		// TODO Auto-generated method stub
+		return dao.totalRecord(pDTO);
+	}
+
+	@Override
+	public List<GameDTO> getList(PagingDTO pDTO) {
+		// TODO Auto-generated method stub
+		return dao.getList(pDTO);
 	}
 
 
