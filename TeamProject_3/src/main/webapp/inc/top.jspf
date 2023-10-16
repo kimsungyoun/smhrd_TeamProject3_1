@@ -9,7 +9,7 @@
    <link rel=stylesheet href="/smhrd/inc/top.css">
 </head>
 
-
+<body>
 <div class="wrapper">
   <sidebar>
     <div class="logo"><a href="/smhrd"><img src="<%= request.getContextPath() %>/img/logo.png" width="200"></a></div>

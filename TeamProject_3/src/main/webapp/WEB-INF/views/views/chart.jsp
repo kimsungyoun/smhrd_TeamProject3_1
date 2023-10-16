@@ -48,7 +48,7 @@
 </style>
 
 <main>
-	<div id="chart" align="center">
+	<div id="chart" >
 		<!-- 도넛 차트 -->
 		<div id="doughnutContainer">
 		    <h2>도넛차트</h2>

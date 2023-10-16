@@ -23,7 +23,6 @@ public class AnalyzeController {
 		ModelAndView mav = new ModelAndView();
 		int no = 1;
 		KeywordDTO dto = service.keywordSelect(no);
-		System.out.println(dto.getPos_key());
 
 		mav.addObject("dto", dto);
 		mav.setViewName("views/chart");

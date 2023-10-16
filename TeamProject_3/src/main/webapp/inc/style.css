@@ -5,15 +5,7 @@
 body{
 	display: flex;
 	flex-direction: row;
-	
 }
-/* main{
-	display: flex;
-	flex-direction: column;
-	margin-left: 150px;
-	align-items: center;
-
-} */
 main{
 	margin-left:50px;
 	height: auto;

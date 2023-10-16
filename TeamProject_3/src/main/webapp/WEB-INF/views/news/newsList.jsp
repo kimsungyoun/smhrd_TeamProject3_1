@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<style>
 
-
+<!-- <style>
 table {
     border: 1px #a39485 solid;
     font-size: .9em;
@@ -93,10 +92,10 @@ a {
 	padding:0px;
 	margin-right: 10px;
 }
-</style>
+</style> -->
 
 
-<link rel="stylesheet" href="../inc/newsList.css">
+<link rel="stylesheet" href="/smhrd/inc/newsList.css">
 
 <main>
 <div>
