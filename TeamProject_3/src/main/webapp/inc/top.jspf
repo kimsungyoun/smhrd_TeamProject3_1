@@ -16,9 +16,10 @@
     <div class="avatar">
       <div class="avatar__img">
         <c:if test="${logStatus == 'Y'}">
-       		<img src="https://picsum.photos/70" alt="avatar">
+       		<c:if test="${logImg ne '사진없음'}">
+	        	<img src="data:image/jpeg;base64,${logImg}" alt="Log User Image" width="80px" />
+	        </c:if>
         </c:if>
-        
         <c:if test="${logStatus != 'Y'}">
 	        <img src="https://picsum.photos/70" alt="avatar">
 	        <p>로그인하세요</p>
