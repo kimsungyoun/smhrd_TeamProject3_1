@@ -35,6 +35,17 @@
 		height: 400px;
 		margin-bottom:100px;
 	}
+	
+	#wordCloud{
+		display: flex;
+		direction: row;
+	}
+	
+	#radarChart{
+		display: flex;
+		direction: row;
+	}
+	
 </style>
 
 <main>
@@ -139,7 +150,9 @@
             maintainAspectRatio: false
         }
     });
-    
+</script>
+
+<script>    
     // 막대 차트
 /*     const barCtx = document.getElementById('sentimentBarChart').getContext('2d');
  */    var keyPos = document.getElementById('radarPosKey').value.split(',');
@@ -168,11 +181,17 @@
         }
     }); */
     
+    <script>     
     // 레이더 차트
-    const radarCtx = document.getElementById('sentimentRadarChart').getContext('2d');
-    const radarCtx2 = document.getElementById('sentimentRadarChart2').getContext('2d');
+    var keyPos = document.getElementById('radarPosKey').value.split(',');
+    var keyNeg = document.getElementById('radarNegKey').value.split(',');
+    var valuePos = document.getElementById('radarPosValue').value.split(',').map(Number);
+    var valueNeg = document.getElementById('radarPosValue').value.split(',').map(Number);
     var valueTopPos = document.getElementById('radarPTopValue').value.split(',').map(Number);
     var valueTopNeg = document.getElementById('radarNTopValue').value.split(',').map(Number);
+    
+    const radarCtx = document.getElementById('sentimentRadarChart').getContext('2d');
+    const radarCtx2 = document.getElementById('sentimentRadarChart2').getContext('2d');
     console.log(keyPos);
     console.log(valuePos);
     
@@ -239,7 +258,9 @@
             }
         }
     });
-
+    </script>
+    
+    <script> 
     // 꺽은선형 그래프
     const lineCtx = document.getElementById('lineChart').getContext('2d');
     new Chart(lineCtx, {
@@ -287,6 +308,7 @@
             }
         }
     });
+    </script>
     
     //워드클라우드 
     /*var keyPos = document.getElementById('wordPosKey').value.split(',');

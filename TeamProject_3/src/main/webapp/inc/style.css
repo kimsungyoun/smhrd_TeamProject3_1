@@ -1,31 +1,13 @@
 @charset "UTF-8";
+*{
+	font-size: 14px;
+}
 body{
 	display: flex;
 	flex-direction: row;
-	padding-left: 250px;
-}
-
-footer{
-	height: 300px;
 }
 main{
-	display: flex;
-	flex-direction: column;
-	margin-left: 150px;
-	align-items: center;
-	padding:auto;
-}
-
-nav > ul, li{
-	list-style: none;
-}
-
-
-a:link, a:visited, a:hover{
-	text-decoration: none;
-	color:black;
-}
-
-#main_page{
-	width: 1500px;
+	margin-left:50px;
+	height: auto;
+	width: 1200px;
 }

@@ -24,8 +24,6 @@ import kr.or.smhrd.service.NewsService;
 @Controller
 @RequestMapping("/news")
 public class NewsController {
-
-
 	@Autowired
 	NewsService service;
 	
