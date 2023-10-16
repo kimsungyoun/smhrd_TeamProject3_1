@@ -1,47 +1,45 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: user07
+  Date: 2023-09-18
+  Time: 오후 5:36
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<link rel=stylesheet href=../inc/login.css>
-
+<link rel=stylesheet href="/smhrd/inc/login.css">
 <main>
-<!-- 로그인 화면 내용 -->
-	<div class="login-wrapper">
-		<h2>Login</h2>
-		
-		<!-- 로그인 폼 내용 -->
-		<form method="post" action="loginOk" id="login-form">
-			<input type="text" name="u_id" id="u_id" placeholder="ID">
-			<input type="password" name="u_pw" id="u_pw" placeholder="Password">
-			<label for="remember-check">
-				<input type="checkbox" id="remember-check">아이디 저장하기
-			</label>
-			<!-- 로그인 버튼에 custom-btn 클래스 추가 -->
-			<input type="submit" value="로그인" class="custom-btn btn-13" id="login-button">
-		</form>
-		
-		<!-- 아이디 찾기, 비밀번호 찾기, 회원가입 버튼 등 -->
-		<div>
-			<a href="/smhrd/register/idSearch"><button class="custom-btn id-search-button">아이디 찾기</button></a>
-			<a href="/smhrd/register/pwSearch"><button class="custom-btn pw-search-button">비밀번호 찾기</button></a>
-			<a href="/smhrd/register/signUp"><button class="custom-btn sign-up-button">회원가입</button></a>
-		</div>
-	
-		<div class="social-login">
-			<div id="kakao_id_login">
-				<a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
-				<!-- <a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a> -->
-			</div>
-			
-			<!-- 구글 로그인 api -->
-			<!-- 
-			<div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
-			<div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div> 
-			-->
-			
-			<!-- 네이버 로그인 버튼 노출 영역 -->
-			<div id="naver_id_login"></div>
-		</div>
-	</div>
+
+   <div class="login-wrapper">
+       <h2>Login</h2>
+       <form method="post" action="loginOk" id="login-form">
+           <input type="text" name="u_id" id="u_id" placeholder="Email">
+           <input type="password" name="u_pw" id="u_pw" placeholder="Password">
+           
+           <label for="remember-check">
+               <input type="checkbox" id="remember-check">아이디 저장하기
+           </label>           
+           <input type="submit" value="로그인">
+       </form>
+           <div class="">
+               <a href="/smhrd/register/idSearch"><button>아이디찾기</button></a>
+               <a href="/smhrd/register/pwSearch"><button>비밀번호찾기</button></a>
+               <a href="/smhrd/register/signUp"><button>회원가입</button></a>
+           </div>
+   </div>
+   
+   <div class="social-login">
+      <a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
+      <a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a>
+   </div>
+   
+   <%--구글 api--%>
+   <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
+   
+   <div class="g_id_signin" data-type="standard" data size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div>
+
+   <!-- 네이버 로그인 버튼 노출 영역 -->
+   <div id="naver_id_login"></div>
 </main>
 
 <script>
@@ -98,6 +96,19 @@ crossorigin="anonymous"></script> -->
                     console.log(error);
                 },
             });
+            /* 카카오 사용자계정 정보 받아오기 */
+            Kakao.API.request({
+        	  url: '/v2/user/me',
+        	  data: {// 가져올 사용자 정보 
+        	    property_keys: ['kakao_account.email', 'kakao_account.gender'],
+        	  },
+        	})
+        	  .then(function(response) {
+        	    console.log(response);
+        	  })
+        	  .catch(function(error) {
+        	    console.log(error);
+          	  });
         },
         fail: function (error) {
             console.log(error);
@@ -120,10 +131,11 @@ crossorigin="anonymous"></script> -->
             Kakao.Auth.setAccessToken(undefined)
         }
     }
+
 </script> 
 
 <%--구글 로그인 api--%>
-<!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
 
 <%--네이버 로그인 api--%>
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>

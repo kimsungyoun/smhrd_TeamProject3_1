@@ -192,19 +192,7 @@ public class UserController {
       }
       return mav;
    }
-<<<<<<< HEAD
-   
-   @PostMapping("/KakaoLoginOk")
-   public ModelAndView KakaoLoginOk(HttpSession session) {
-      System.out.println("loginOk 호출성공");
-      ModelAndView mav = new ModelAndView();
-      session.setAttribute("logStatus", "Y");
-      return mav;
 
-   }
-   
-=======
->>>>>>> 6458cf4327b7064f5fe6f38a3e7d20b100eb3539
    @GetMapping("/logOut")
    public ModelAndView logOut(HttpSession session) {
       session.invalidate();

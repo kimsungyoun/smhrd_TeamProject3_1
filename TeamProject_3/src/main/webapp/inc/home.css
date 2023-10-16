@@ -1,21 +1,9 @@
-<<<<<<< HEAD
-@charset "UTF-8";
-
-/* main {
-    width: 80%;
-    margin: auto;
-    background-color: #FFFFFF;  
-    padding: 20px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-} */
-=======
 /* 게임 인기 순위와 인기 뉴스 컨테이너 스타일 */
 .rankings-news {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
->>>>>>> 8ffd112a060ecaeddd66f893d9c7892a9a6d3b00
 
 /* 게임 인기 순위 스타일 */
 .rankings {
@@ -31,37 +19,6 @@
     padding-bottom: 5px;
 }
 
-<<<<<<< HEAD
-
-
-.table-container img {
-    max-width: 100px;  Adjust according to your requirement
-    max-height: 100px; Adjust according to your requirement
-    margin-left: 10px;
-}
- 
-.table-container {
-    display: flex;
-    justify-content: space-between; /* 테이블 간의 간격 조절 */
-}
-
-.rank-table, .news-table {
-    flex: 0.5;/* 테이블 간의 공간을 균등하게 분배 */
-    border: 1px solid #ccc; /* 테뷰 경계선 스타일 설정 */
-    margin: 5px; /* 테이블 간의 간격 조절 */
-}
-
-
-/* table {
-    width: 50%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-} */
-
-/* th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-=======
 .rankings table {
     width: 100%;
     border-collapse: collapse;
@@ -72,12 +29,7 @@
 .rankings td {
     border: 1px solid #D6E4F0;
     padding: 10px;
-<<<<<<< HEAD
->>>>>>> 8ffd112a060ecaeddd66f893d9c7892a9a6d3b00
-    text-align: left;
-=======
     text-align: center;
->>>>>>> 6458cf4327b7064f5fe6f38a3e7d20b100eb3539
     width: 25%; /* 모든 td 요소의 너비를 동일하게 설정 */
 }
 
@@ -88,13 +40,8 @@
     overflow: hidden; /* 넘치는 글씨를 숨김 */
     text-overflow: ellipsis; /* 넘치는 글씨에 대한 말줄임 표시 (...) */
 }
-<<<<<<< HEAD
- */
-a {
-=======
 
 .rankings a {
->>>>>>> 8ffd112a060ecaeddd66f893d9c7892a9a6d3b00
     text-decoration: none;
     color: #000000;
 }
