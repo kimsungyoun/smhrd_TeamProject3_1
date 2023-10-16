@@ -65,7 +65,7 @@
 	    </a>
     </c:if>
     
-    <a class="menu__item menu__item--active" href="/smhrd/analyze/analyzeList">
+    <a class="menu__item menu__item--active" href="/smhrd/analyze/analyzeList?no=1">
 	    <i class="menu__icon fa fa-calendar"><img src="<%= request.getContextPath() %>/img/chart.png" width="15"></i>
 	    <span class="menu__text">분석차트</span>
     </a>
