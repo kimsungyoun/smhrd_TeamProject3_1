@@ -255,11 +255,7 @@ sidebar {
     <div class="logo"><a href="/smhrd"><img src="<%= request.getContextPath() %>/img/logo.png" width="200"></a></div>
     <div class="avatar">
       <div class="avatar__img">
-<<<<<<< HEAD
-      	<c:if test="${logStatus == 'Y'}">
-=======
          <c:if test="${logStatus == 'Y'}">
->>>>>>> 741f14ebe5a99735be3952e79de1b52238b4a45f
         <img src="https://picsum.photos/70" alt="avatar">
         </c:if>
         
@@ -269,13 +265,8 @@ sidebar {
         </c:if>
       </div>
       <c:if test="${logStatus == 'Y'}">
-<<<<<<< HEAD
-	      <div class="avatar__name">{닉네임}</div>
-	      <div class="avatar__name">{구독여부}</div>
-=======
          <div class="avatar__name">${logName}</div>
          <div class="avatar__name">{구독여부}</div>
->>>>>>> 741f14ebe5a99735be3952e79de1b52238b4a45f
       </c:if>
     </div>
     <nav class="menu">
@@ -285,7 +276,7 @@ sidebar {
         <span class="menu__text">마이페이지</span>
       </a>
       <a class="menu__item" href="/smhrd/subscription/payment/?u_id=${dto.u_id}">
-        <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
+        <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/card.png" width="15"></i>
         <span class="menu__text">결제하기</span>
       </a>
       </c:if>

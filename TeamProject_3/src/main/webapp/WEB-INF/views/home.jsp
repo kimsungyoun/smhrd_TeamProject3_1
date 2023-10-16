@@ -4,8 +4,12 @@
 <link rel="stylesheet" href="./inc/home.css">
 
 <main>
+
+
     <div class="ranking-container">
+                <div class="spacer"></div> <!-- 공백 추가 -->
         <div class="rankings-news">
+        
             <div class="rankings">
                 <h2>게임 인기 순위</h2>
                 <table>
