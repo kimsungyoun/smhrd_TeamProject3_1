@@ -9,10 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReviewDTO {
-	private int r_no;            
-	private int g_no;           
-	private String r_user;       
-	private String r_writedate;  
-	private float r_ratings;     
-	private String r_content;    
+	private int r_no;             // 리뷰 번호     
+	private int g_rank;           // 게임 순위
+	private String r_user;        // 리뷰 작성자
+	private String r_writedate;   // 리뷰 작성일
+	private int r_ratings;        // 리뷰 평점
+	private String r_content;     // 리뷰 내용
+	private int r_utility;        // 리뷰 유용수
 }

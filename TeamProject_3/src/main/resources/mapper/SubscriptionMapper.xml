@@ -25,7 +25,7 @@
 	 </update>
 	 
 	 <!-- 구독상태 업데이트 -->
-	 <update id="updateStatus"> 
+	 <update id="updateStatus">
 	 	UPDATE subscription
 	 	SET sub_status='N', sub_payment=null, sub_amoument=0, sub_startdate=null, sub_enddate=null
 	 	WHERE u_id=#{param1} and <![CDATA[sub_enddate < sysdate]]>

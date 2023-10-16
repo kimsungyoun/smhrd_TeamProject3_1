@@ -37,7 +37,6 @@ public class SubscriptionController {
 	@GetMapping("/payment")
 	public ModelAndView payment() {  //String u_id
 		ModelAndView mav = new ModelAndView();
-	    //mav.addObject("dto", service.getView(u_id));      
 	    mav.setViewName("subscription/payment");
 	    
 	    return mav;

@@ -3,6 +3,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<link rel=stylesheet href=../inc/newsList.css>
+
 <style>
 	#doughnutContainer{
 		width: 400px;
@@ -28,33 +30,58 @@
 		margin-bottom:100px;
 	}
 	
-	svg {
-		border: 1px solid black;
-		border-radius: 50%;
-		width:500px; 
-		height:500px; 
+	#wordCloud1, #wordCloud2 {
+		width: 400px;
+		height: 400px;
+		margin-bottom:100px;
 	}
 </style>
 
 <main>
 
+<div>
+	<h2>다른 사용자들이 공감 많이 하는 리뷰 Top 10</h2>
+	<table>
+	<thead>
+		<tr>
+			<th>번호</th>
+			<th>작성자</th>
+			<th>내용</th>
+			<th>평점</th>
+			<th>유용수</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="Rdto" items="${list}">
+			<tr> 
+				<td>${Rdto.r_no}</td>
+				<td>${Rdto.r_user}</td>
+				<td>${Rdto.r_content}</td>
+				<td>${Rdto.r_ratings}</td>
+				<td>${Rdto.r_utility}</td>
+			</tr>
+		</c:forEach> 
 
+	</tbody>
+	</table>
+</div>
 
 <div id="chart" align="center">
 	<!-- 도넛 차트 -->
 	<div id="doughnutContainer">
 	    <h2>도넛차트</h2>
+	    <li>총 리뷰 수 : ${count}</li>
 	    <canvas id="sentimentDoughnutChart"></canvas>
-	    <input type="hidden" id="doughnutPos" value="${dto.pos_sum}">
-	    <input type="hidden" id="doughnutNeg" value="${dto.neg_sum}">
+	    <input type="hidden" id="doughnutPos" value="${pie.pos_count}">
+	    <input type="hidden" id="doughnutNeg" value="${pie.neg_count}">
 	</div>
 	
 	<!-- 막대 차트 -->
-	<div id="barContainer">
+<!-- 	<div id="barContainer">
 		<h2>막대차트</h2>
 	    <canvas id="sentimentBarChart"></canvas>
 	</div>
-
+ -->
 	<!-- 레이더 차트 -->
 	<div id="radarContainer">
 	    <h2>긍정 레이더차트</h2>
@@ -78,15 +105,13 @@
 	</div>
 	
 	<!-- 워드 클라우드 -->
-	<div>
+	<div id="wordCloud1">
 		<h2>긍정 키워드</h2>
-		<svg id="wordCloud1"></svg>
+		<div class="wordCloud"><img src="data:image/jpeg;base64,${pos_wordcloudImage}" alt="WordCloud" width="400px"/></div>
+	</div>
+	<div id="wordCloud2">
 		<h2>부정 키워드</h2>
-		<svg id="wordCloud2"></svg>
-		<input type="hidden" id="wordPosKey" value="${dto.word_poskey}">
-	    <input type="hidden" id="wordPosValue" value="${dto.word_posval}">
-	    <input type="hidden" id="wordNegKey" value="${dto.word_negkey}">
-	    <input type="hidden" id="wordNegValue" value="${dto.word_negval}">
+		<div class="wordCloud"><img src="data:image/jpeg;base64,${neg_wordcloudImage}" alt="WordCloud" width="400px"/></div>
 	</div>
 </div>
 	
@@ -116,12 +141,12 @@
     });
     
     // 막대 차트
-    const barCtx = document.getElementById('sentimentBarChart').getContext('2d');
-    var keyPos = document.getElementById('radarPosKey').value.split(',');
+/*     const barCtx = document.getElementById('sentimentBarChart').getContext('2d');
+ */    var keyPos = document.getElementById('radarPosKey').value.split(',');
     var keyNeg = document.getElementById('radarNegKey').value.split(',');
     var valuePos = document.getElementById('radarPosValue').value.split(',').map(Number);
     var valueNeg = document.getElementById('radarPosValue').value.split(',').map(Number);
-    new Chart(barCtx, {
+    /* new Chart(barCtx, {
         type: 'bar',
         data: {
             labels: keyPos.slice(0,3).concat(keyNeg.slice(0,3)),//['게임', '좀','잘','만','들','어봐'],
@@ -141,7 +166,7 @@
                 }
             }
         }
-    });
+    }); */
     
     // 레이더 차트
     const radarCtx = document.getElementById('sentimentRadarChart').getContext('2d');
@@ -263,8 +288,8 @@
         }
     });
     
-    //워드클라우드
-    var keyPos = document.getElementById('wordPosKey').value.split(',');
+    //워드클라우드 
+    /*var keyPos = document.getElementById('wordPosKey').value.split(',');
     var keyNeg = document.getElementById('wordNegKey').value.split(',');
     var valuePos = document.getElementById('wordPosValue').value.split(',').map(Number);
     var valueNeg = document.getElementById('wordNegValue').value.split(',').map(Number);
@@ -308,5 +333,5 @@
       };
 
       generateCloud("#wordCloud1", wordData1);
-      generateCloud("#wordCloud2", wordData2);
+      generateCloud("#wordCloud2", wordData2); */
 </script>

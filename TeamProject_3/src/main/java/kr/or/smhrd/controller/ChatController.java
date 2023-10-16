@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
@@ -35,7 +36,7 @@ public class ChatController {
 	}
 	
 	@PostMapping("/chatOk")
-	public ModelAndView chatOk(@RequestParam String userMessage) throws JsonProcessingException {
+	public ModelAndView chatOk(@RequestParam String userMessage) throws JsonProcessingException, JsonMappingException {
 		ModelAndView mav = new ModelAndView();
 		String url = "http://127.0.0.1:5000/ask";
 		
