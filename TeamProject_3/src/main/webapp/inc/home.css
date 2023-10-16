@@ -72,8 +72,12 @@
 .rankings td {
     border: 1px solid #D6E4F0;
     padding: 10px;
+<<<<<<< HEAD
 >>>>>>> 8ffd112a060ecaeddd66f893d9c7892a9a6d3b00
     text-align: left;
+=======
+    text-align: center;
+>>>>>>> 6458cf4327b7064f5fe6f38a3e7d20b100eb3539
     width: 25%; /* 모든 td 요소의 너비를 동일하게 설정 */
 }
 

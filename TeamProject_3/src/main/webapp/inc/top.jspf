@@ -9,16 +9,17 @@
    <link rel=stylesheet href="/smhrd/inc/top.css">
 </head>
 
-
+<body>
 <div class="wrapper">
   <sidebar>
     <div class="logo"><a href="/smhrd"><img src="<%= request.getContextPath() %>/img/logo.png" width="200"></a></div>
     <div class="avatar">
       <div class="avatar__img">
         <c:if test="${logStatus == 'Y'}">
-       		<img src="https://picsum.photos/70" alt="avatar">
+       		<c:if test="${logImg ne '사진없음'}">
+	        	<img src="data:image/jpeg;base64,${logImg}" alt="Log User Image" width="80px" />
+	        </c:if>
         </c:if>
-        
         <c:if test="${logStatus != 'Y'}">
 	        <img src="https://picsum.photos/70" alt="avatar">
 	        <p>로그인하세요</p>
@@ -42,11 +43,19 @@
 	    <i class="menu__icon fa fa-home"><img src="<%= request.getContextPath() %>/img/mypage.png" width="15"></i>
 	    <span class="menu__text">마이페이지</span>
     </a>
-    
-    <a class="menu__item" href="/smhrd/subscription/payment?u_id=${logId}">
-	    <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/login.png" width="15"></i>
-	    <span class="menu__text">결제하기</span>
-    </a>
+	    <c:if test="${SubScription == 'N'}">
+		    <a class="menu__item" href="/smhrd/subscription/payment?u_id=${logId}">
+			    <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/subscription.png" width="15"></i>
+			    <span class="menu__text">결제하기</span>
+		    </a>
+	    </c:if>
+	    
+	    <c:if test="${SubScription == 'Y'}">
+	    	<a class="menu__item" href="/smhrd/subscription/detail?u_id=${logId}">
+			    <i class="menu__icon fa fa-list"><img src="<%= request.getContextPath() %>/img/sub_manage.png" width="15"></i>
+			    <span class="menu__text">구독관리</span>
+		    </a>
+	    </c:if>
     </c:if>
     
     <c:if test="${logStatus != 'Y'}">
@@ -73,7 +82,7 @@
     
     <c:if test="${logStatus == 'Y'}">
 	    <a class="menu__item" href="/smhrd/register/logOut">
-		    <i class="menu__icon fa fa-sliders"></i>
+		    <i class="menu__icon fa fa-sliders"><img src="<%= request.getContextPath() %>/img/logout.png" width="15"></i>
 		    <span class="menu__text">로그아웃</span>
 	    </a>
     </c:if>

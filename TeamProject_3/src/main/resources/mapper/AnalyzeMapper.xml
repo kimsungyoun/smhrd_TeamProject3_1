@@ -8,4 +8,15 @@
  		select * from keyword
  		where g_no=#{param1}
  	</select>
+ 	
+ 	<select id="reviewsSelect" resultType="kr.or.smhrd.dto.ReviewDTO">
+ 		select *
+ 		from (select * from review
+ 			where g_rank=#{param1} order by r_utility desc)
+ 		where <![CDATA[ROWNUM <= 10]]>
+ 	</select>
+ 	
+ 	<select id="reviewsCount" resultType="int">
+ 		select count(*) from review where g_rank=#{param1}
+ 	</select>
 </mapper>

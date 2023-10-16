@@ -45,7 +45,7 @@
    </table>
    </div>
    <div class="frame">
-   	<a href="/smhrd"><button class="custom-btn btn-13"><span>메인페이지로</span></button></a>
+   	<a href="/smhrd"><button class="custom-btn btn-13"><span>홈으로</span></button></a>
    </div>
 </div>
 </main>
