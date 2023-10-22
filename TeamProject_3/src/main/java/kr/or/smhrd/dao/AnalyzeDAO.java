@@ -14,5 +14,6 @@ public interface AnalyzeDAO {
 	
 	public List<ReviewDTO> reviewsSelect(int no); // 해당 게임의 유용성 높은 리뷰 10개 보여주기
 	public int reviewsCount(int no); // 리뷰 총 개수 세기
+	public List<ReviewDTO> reviewKeySelect(int no, String key); // 클릭한 keyword가 포함된 리뷰 보여주기
 
 }

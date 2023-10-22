@@ -23,6 +23,10 @@
 <script>
     function askGPT() {
         const userMessage = document.querySelector("input[name='userMessage']").value;
+        const responseDiv = document.getElementById("response");
+        
+     	// 로딩 중 메시지 표시
+        responseDiv.innerHTML = "로딩 중...";
         
         // 플라스크 서버에 POST 요청을 보냅니다.
         fetch("http://127.0.0.1:5000/ask", {  // YOUR_FLASK_SERVER_ENDPOINT 부분을 실제 플라스크 서버 엔드포인트로 변경하세요.

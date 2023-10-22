@@ -33,4 +33,9 @@ public class AnalyzeServiceImpl implements AnalyzeService {
 		return dao.reviewsCount(no);
 	}
 
+	@Override
+	public List<ReviewDTO> reviewKeySelect(int no, String key) {
+		return dao.reviewKeySelect(no, key);
+	}
+
 }
