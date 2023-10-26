@@ -10,13 +10,36 @@
  	</select>
  	
  	<select id="reviewsSelect" resultType="kr.or.smhrd.dto.ReviewDTO">
- 		select *
- 		from (select * from review
- 			where g_rank=#{param1} order by r_utility desc)
+ 		select * from 
+ 		(
+ 			select * from review
+ 			where g_rank=#{param1} order by r_utility desc
+ 		)
  		where <![CDATA[ROWNUM <= 10]]>
  	</select>
  	
  	<select id="reviewsCount" resultType="int">
  		select count(*) from review where g_rank=#{param1}
  	</select>
+ 	
+ 	<!-- <select id="reviewKeySelect" resultType="kr.or.smhrd.dto.ReviewDTO">
+ 		select * from (
+ 			select * from review
+ 			where g_rank=#{param1} and r_content like <![CDATA['%]]>#{param2}<![CDATA[%']]>
+ 			order by r_utility desc
+ 		)
+ 		where <![CDATA[ROWNUM <= 5]]>
+ 	</select> -->
+ 	<select id="reviewKeySelect" resultType="kr.or.smhrd.dto.ReviewDTO">
+    <![CDATA[
+    select *
+    from (
+        select *
+        from review
+        where g_rank=#{param1} and r_content like '%' || #{param2} || '%'
+        order by r_utility desc
+    )
+    where ROWNUM <= 5
+    ]]>
+</select>
 </mapper>
