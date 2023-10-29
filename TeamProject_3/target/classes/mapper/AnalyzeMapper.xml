@@ -22,24 +22,24 @@
  		select count(*) from review where g_rank=#{param1}
  	</select>
  	
- 	<!-- <select id="reviewKeySelect" resultType="kr.or.smhrd.dto.ReviewDTO">
- 		select * from (
- 			select * from review
- 			where g_rank=#{param1} and r_content like <![CDATA['%]]>#{param2}<![CDATA[%']]>
- 			order by r_utility desc
- 		)
- 		where <![CDATA[ROWNUM <= 5]]>
- 	</select> -->
  	<select id="reviewKeySelect" resultType="kr.or.smhrd.dto.ReviewDTO">
     <![CDATA[
-    select *
-    from (
-        select *
-        from review
-        where g_rank=#{param1} and r_content like '%' || #{param2} || '%'
-        order by r_utility desc
-    )
-    where ROWNUM <= 5
-    ]]>
-</select>
+	    select *
+	    from (
+	        select *
+	        from review
+	        where g_rank=#{param1} and r_content like '%' || #{param2} || '%'
+	        order by r_utility desc
+	    )
+	    where ROWNUM <= 5
+	    ]]>
+	</select>
+	
+	<select id="gameNameSelect" resultType="kr.or.smhrd.dto.GameDTO">
+		SELECT g_name FROM game WHERE g_rank = #{param1}
+	</select>
+	
+	<select id="gameListSelect" resultType="kr.or.smhrd.dto.GameDTO">		
+		SELECT g_name, g_rank FROM game order by g_rank asc
+	</select>
 </mapper>

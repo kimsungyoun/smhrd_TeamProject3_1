@@ -22,6 +22,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import kr.or.smhrd.dto.GameDTO;
 import kr.or.smhrd.dto.KeywordDTO;
 import kr.or.smhrd.dto.ReviewDTO;
 import kr.or.smhrd.service.AnalyzeService;
@@ -51,6 +52,9 @@ public class AnalyzeController {
 		ModelAndView mav = new ModelAndView();
 		
 		mav.addObject("g_rank", no); // 해당 게임 순위
+		mav.addObject("g_name", (String)service.gameNameSelect(no).getG_name()); // 해당 게임 이름
+		List<GameDTO> gameList = service.gameListSelect();
+		mav.addObject("gameList", gameList); // 게임 리스트
 		
 		KeywordDTO Kdto = service.keywordSelect(no); // 키워드
 		mav.addObject("dto", Kdto);
@@ -96,44 +100,17 @@ public class AnalyzeController {
 	    
 	    String url5 = "http://127.0.0.1:5000/rader0?no=" + no;
 	    String url6 = "http://127.0.0.1:5000/rader1?no=" + no;
-//	    HttpEntity<String> entity4 = new HttpEntity<>(headers);
-	    ResponseEntity<ArrayList<List<Object>>> response5 = restTemplate.exchange(
-	    		url5,
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<ArrayList<List<Object>>>() {});
-
-        ArrayList<List<Object>> raderData0 = response5.getBody();
-        ResponseEntity<ArrayList<List<Object>>> response6 = restTemplate.exchange(
-	    		url6,
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<ArrayList<List<Object>>>() {});
-
-        ArrayList<List<Object>> raderData1 = response6.getBody();
-//    	ArrayList<List<Object>> responseMap2 = mapper.readValue(response5.getBody(), new TypeReference<ArrayList<List<Object>>>() {});
-//    	ArrayList<List<Object>> responseMap3 = mapper.readValue(response6.getBody(), new TypeReference<ArrayList<List<Object>>>() {});
-	    List<String> negKey = new ArrayList<String>();
-	    List<Integer> negValue = new ArrayList<Integer>();
-	    List<String> posKey = new ArrayList<String>();
-	    List<Integer> posValue = new ArrayList<Integer>();
-	    
-	    
-        for(int i=0; i<raderData0.size(); i++) {
-    		negKey.add((String)raderData0.get(i).get(0));
-    		negValue.add((Integer)raderData0.get(i).get(1));
-        	
-        }
-        for(int i=0; i<raderData1.size(); i++) {
-    		posKey.add((String)raderData1.get(i).get(0));
-    		posValue.add((Integer)raderData1.get(i).get(1));
-        }
-        
-        
-        mav.addObject("posKey", posKey);
-	    mav.addObject("posValue", posValue);
-	    mav.addObject("negKey", negKey);
-	    mav.addObject("negValue", negValue);
+	    HttpEntity<String> entity4 = new HttpEntity<>(headers);
+	    HttpEntity<String> entity5 = new HttpEntity<>(headers);
+	    ResponseEntity<String> response5 = restTemplate.exchange(url5, HttpMethod.GET, entity4, String.class);
+	    ResponseEntity<String> response6 = restTemplate.exchange(url6, HttpMethod.GET, entity5, String.class);
+	    ObjectMapper mapper2 = new ObjectMapper();
+	    ObjectMapper mapper3 = new ObjectMapper();
+	    Map<String, Object> responseMap2 = mapper2.readValue(response5.getBody(), new TypeReference<Map<String, Object>>() {});
+	    Map<String, Object> responseMap3 = mapper3.readValue(response6.getBody(), new TypeReference<Map<String, Object>>() {});
+	    mav.addObject("rader0", responseMap2);
+	    mav.addObject("rader1", responseMap3);
+	    System.out.println(responseMap2);
 
 	    
 		mav.setViewName("views/chart");
