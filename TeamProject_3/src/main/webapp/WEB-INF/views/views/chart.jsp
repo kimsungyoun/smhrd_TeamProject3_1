@@ -9,6 +9,8 @@
 <link rel=stylesheet href=../inc/newsList.css>
 
 <style>
+	h1 {font-size:50px;}
+	h2 {font-size:20px;}
 	#doughnutContainer{
 		width: 400px;
 		height: 400px;
@@ -62,6 +64,19 @@
 </style>
 
 <main>
+	<div>
+		<h1 align="center">캐주얼 게임 ${g_rank}위 : ${g_name}</h1>
+		<div align="right">
+		<form action="/smhrd/analyze/analyzeList" method="get">
+			<select style="height:25px;margin-right:5px;" id="no" name="no" size="1">
+				<c:forEach var="Gdto" items="${gameList}">
+					<option value="${Gdto.g_rank}">${Gdto.g_rank}위 : ${Gdto.g_name}</option>
+				</c:forEach>
+				<input style="height:25px" type="submit" value="선택"/>
+			</select>
+		</form>
+		</div>
+	</div>
 	<input type="hidden" id="game_rank" value="${g_rank}">
 	<!-- 유용수 높은 리뷰 10개 출력 -->
 	<div>
@@ -98,7 +113,7 @@
 	
 		<!-- 도넛 차트 -->
 		<div id="doughnutContainer">
-		    <h2>도넛차트</h2>
+		    <h2>긍정/부정 비율</h2>
 		    <p>총 리뷰 수 : ${count}</p>
 		    <canvas id="sentimentDoughnutChart"></canvas>
 		    <input type="hidden" id="doughnutPos" value="${pie.pos_count}">
@@ -137,45 +152,47 @@
 		<!-- 레이더 차트 -->
 		<div style="display:flex; direction:row;justify-content:center;">
 		
-		<div id="radarContainer">
-		    <h2>긍정 레이더차트</h2>
-		    <canvas id="sentimentRadarChart"></canvas>
-		    <input type="hidden" id="posKey" value="${posKey}">
-			<c:set var="posValue" value='${posValue}' />
-			<c:forEach var="Key" items="${posKey}">
-				<button class="Pos-key-button" value="${Key}">${Key}</button>
-			</c:forEach>
-		</div>
-		
-		<div id="radarContainer2">
-		    <h2>부정 레이더차트</h2>
-		    <canvas id="sentimentRadarChart2"></canvas>
-			<input type="hidden" id="negKey" value="${negKey}">
-			<c:set var="negValue" value='${negValue}' />
-			<c:forEach var="Key" items="${negKey}" >
-				<button class="Neg-key-button" value="${Key}">${Key}</button>
-			</c:forEach>
-		</div>
+			<div id="radarContainer">
+			    <h2>긍정 레이더차트</h2>
+			    <canvas id="sentimentRadarChart"></canvas>
+				<c:forEach var="Key" items="${rader1.key}">
+					<button class="Pos-key-button" value="${Key}">${Key}</button>
+				</c:forEach>
+				<input type="hidden" id="posKey" value="${rader1.key}" />
+				<input type="hidden" id="posValue" value="${rader1.value}" />
+				<input type="hidden" id="posTopValue" value="${rader1.value2}" />
+			</div>
+			
+			<div id="radarContainer2">
+			    <h2>부정 레이더차트</h2>
+			    <canvas id="sentimentRadarChart2"></canvas>
+				<c:forEach var="Key" items="${rader0.key}" >
+					<button class="Neg-key-button" value="${Key}">${Key}</button>
+				</c:forEach>
+				<input type="hidden" id="negKey" value="${rader0.key}" />
+				<input type="hidden" id="negValue" value="${rader0.value}" />
+				<input type="hidden" id="negTopValue" value="${rader0.value2}" />
+			</div>
 		</div>
 		<div>
-		<div id="pos_reviewList"></div>
-		<div id="neg_reviewList"></div>
+			<div id="pos_reviewList"></div>
+			<div id="neg_reviewList"></div>
 		</div>
 		
 		<script type="text/javascript">
-		var no = document.getElementById('game_rank').value;
-		var keyButtons = document.getElementsByClassName('Pos-key-button');
-		
-
-		for (var i = 0; i < keyButtons.length; i++) {
-		    keyButtons[i].addEventListener("click", function() {
-		    	var key = '';
-		    	key += this.value;
-		        PosReviewShow(no, key);
-		    });
-		}
-		
-		function PosReviewShow(no, key){
+			var no = document.getElementById('game_rank').value;
+			var keyButtons = document.getElementsByClassName('Pos-key-button');
+			
+	
+			for (var i = 0; i < keyButtons.length; i++) {
+			    keyButtons[i].addEventListener("click", function() {
+			    	var key = '';
+			    	key += this.value;
+			        PosReviewShow(no, key);
+			    });
+			}
+			
+			function PosReviewShow(no, key){
 				$.ajax({
 					url: '/smhrd/analyze/reviewShow',
 					data: {
@@ -203,19 +220,19 @@
 		</script>
 		
 		<script type="text/javascript">
-		var no = document.getElementById('game_rank').value;
-		var keyButtons = document.getElementsByClassName('Neg-key-button');
-		
-
-		for (var i = 0; i < keyButtons.length; i++) {
-		    keyButtons[i].addEventListener("click", function() {
-		    	var key = '';
-		    	key += this.value;
-		        NegReviewShow(no, key);
-		    });
-		}
-		
-		function NegReviewShow(no, key){
+			var no = document.getElementById('game_rank').value;
+			var keyButtons = document.getElementsByClassName('Neg-key-button');
+			
+	
+			for (var i = 0; i < keyButtons.length; i++) {
+			    keyButtons[i].addEventListener("click", function() {
+			    	var key = '';
+			    	key += this.value;
+			        NegReviewShow(no, key);
+			    });
+			}
+			
+			function NegReviewShow(no, key){
 				$.ajax({
 					url: '/smhrd/analyze/reviewShow',
 					data: {
@@ -246,9 +263,11 @@
 		<script>     
 		    // 레이더 차트
 		    var posKey = document.getElementById('posKey').value.replace(/\[|\]/g, '').split(',');
-		    var posValue = ${posValue};
+		    var posValue = document.getElementById('posValue').value.replace(/\[|\]/g, '').split(',').map(Number);
+		    var posTopValue = document.getElementById('posTopValue').value.replace(/\[|\]/g, '').split(',').map(Number);
 		    var negKey = document.getElementById('negKey').value.replace(/\[|\]/g, '').split(',');
-		    var negValue = ${negValue};
+		    var negValue = document.getElementById('negValue').value.replace(/\[|\]/g, '').split(',').map(Number);
+		    var negTopValue = document.getElementById('negTopValue').value.replace(/\[|\]/g, '').split(',').map(Number);
 		    
 		    console.log(posKey);
 		    console.log(posValue);
@@ -269,7 +288,7 @@
 		                },
 		                {
 		                    label: 'Top10 게임',
-		                    data: [50, 80, 100, 20, 10, 30],
+		                    data: posTopValue,//[50, 80, 100, 20, 10, 30],
 		                    backgroundColor: 'rgba(128, 128, 255, 0.2)',
 		                    borderColor: 'rgba(128, 128, 255, 1)',
 		                    borderWidth: 1
@@ -301,7 +320,7 @@
 		                },
 		                {
 		                    label: 'Top10 게임',
-		                    data: [50, 80, 100, 20, 10, 30],
+		                    data: negTopValue,//[50, 80, 100, 20, 10, 30],
 		                    backgroundColor: 'rgba(128, 128, 255, 0.2)',
 		                    borderColor: 'rgba(128, 128, 255, 1)',
 		                    borderWidth: 1
@@ -329,19 +348,29 @@
 		<div id="lineContainer">
 		    <h2>시간에 따른 긍정/부정 추세</h2>
 		    <canvas id="lineChart"></canvas>
-		    <c:forEach var="date" items="${line.date}">
+		    <%-- <c:forEach var="date" items="${line.date}">
 		    	<input type="hidden" class="lineDate" value="${date}">
-		    </c:forEach>
+		    </c:forEach> --%>
+		    <input type="hidden" id="lineDate" value="${line.date}">
 		    <input type="hidden" id="linePos" value="${line.pos}">
 		    <input type="hidden" id="lineNeg" value="${line.neg}">
-		    
+		</div>
+		<div id="lineContainer">
+		    <h2>시간에 따른 감정 변화 추이</h2>
+		    <canvas id="lineChart2"></canvas>
+		    <%-- 
+			    <c:forEach var="date" items="${line.date}">
+			    	<input type="hidden" class="lineDate" value="${date}">
+			    </c:forEach> 
+		    --%>
+		    <input type="hidden" id="lineScore" value="${line.score}">
 		</div>
 		
 		<script> 
 		    // 꺽은선형 그래프
 		    const lineCtx = document.getElementById('lineChart').getContext('2d');
 		    /////////////////// 날짜타입을 간단한 형식의 년-월-일 형태로 변환 작업 ///////////////////
-		    var formattedDateList = [];
+		    /* var formattedDateList = [];
 			var dateList = document.getElementsByClassName('lineDate');
 			for (var i = 0; i < dateList.length; i++) {
 			    var originalDate = dateList[i].value;
@@ -353,19 +382,21 @@
 			    
 			    var formattedDate = year + '-' + month + '-' + day;
 			    formattedDateList.push(formattedDate);
-			}
+			} */
 			//////////////////////// 변환 작업 끝 ///////////////////////////////////////////
-			/* var posList = [];
-			var negList = [];
-			for (var i=0; i < ) */
+			var date = document.getElementById('lineDate').value.replace(/\[|\]/g, '').split(',').map(String);
 		    var pos = document.getElementById('linePos').value.replace(/\[|\]/g, '').split(',').map(Number);
-			console.log(pos.length);
 		    var neg = document.getElementById('lineNeg').value.replace(/\[|\]/g, '').split(',').map(Number);
-		    console.log(neg.length);
+			
+		    console.log('date >> ', date);
+			console.log('pos.length >> ', pos.length);
+		    console.log('neg.length >> ', neg.length);
+		    </script>
+		    <script>
 		    new Chart(lineCtx, {
 		        type: 'line',
 		        data: {
-		            labels: formattedDateList,
+		            labels: date,//formattedDateList,
 		            datasets: [
 		                {
 		                    label: '긍정',
@@ -393,21 +424,83 @@
 		            }
 		        }
 		    });
-		</script>
+		    </script>
+		    
+		    <script>
+			 	// 꺽은선형 그래프
+			    const lineCtx2 = document.getElementById('lineChart2').getContext('2d');
+			    var score = document.getElementById('lineScore').value.replace(/\[|\]/g, '').split(',').map(Number);
+			    new Chart(lineCtx2, {
+			        type: 'line',
+			        data: {
+			            labels: date,//formattedDateList,
+			            datasets: [
+			                {
+			                    label: '감정 점수',
+			                    data: score,
+			                    borderColor: 'rgba(128, 128, 255, 1)',
+			                    fill: false,
+			                    borderWidth: 1
+			                }
+			            ]
+			        },
+			        options: {
+			            responsive: true,
+			            maintainAspectRatio: false,
+			            scales: {
+			                y: {
+			                    beginAtZero: true
+			                }
+			            }
+			        }
+			    });
+			    </script>
 		
 		
 		
 		<!-- 워드 클라우드 -->
 		<div style="display:flex; direction:row;justify-content:center;">
-		<div id="wordCloud1" style="margin-right:20px;">
-			<h2>긍정 키워드</h2>
-			<div class="wordCloud"><img src="data:image/jpeg;base64,${pos_wordcloudImage}" alt="WordCloud" width="400px"/></div>
-		</div>
-		<div id="wordCloud2">
-			<h2>부정 키워드</h2>
-			<div class="wordCloud"><img src="data:image/jpeg;base64,${neg_wordcloudImage}" alt="WordCloud" width="400px"/></div>
-		</div>
+			<div id="wordCloud1" style="margin-right:20px;">
+				<h2>긍정 키워드</h2>
+				<div class="wordCloud"><img src="data:image/jpeg;base64,${pos_wordcloudImage}" alt="WordCloud" width="400px"/></div>
+			</div>
+			<div id="wordCloud2">
+				<h2>부정 키워드</h2>
+				<div class="wordCloud"><img src="data:image/jpeg;base64,${neg_wordcloudImage}" alt="WordCloud" width="400px"/></div>
+			</div>
 		</div>
 	</div>
 	
+	
+	
+	<div>
+	    <h2>해석</h2>
+		<div id="response"></div>
+	</div>
+
+	<script>
+		$(document).ready(function() {	       
+			var no = document.getElementById('game_rank').value;
+			const responseDiv = document.getElementById("response");
+	     	// 로딩 중 메시지 표시
+	        responseDiv.innerHTML = "로딩 중...";
+	        console.log(no);
+	        // 플라스크 서버에 POST 요청을 보냅니다.
+	        fetch("http://127.0.0.1:5000/ask?no="+no, {  // YOUR_FLASK_SERVER_ENDPOINT 부분을 실제 플라스크 서버 엔드포인트로 변경하세요.
+	            method: 'GET',
+	        })
+	        .then(response => response.json()) 
+	        .then(data => {
+	        	/* var result = data.response.split('\n');
+	        	console.log(result);
+	        	var lastElement = result[result.length - 1];
+	        	console.log("lastEl >> ", lastElement); */
+	            // 응답을 div#response에 출력합니다.
+	            document.getElementById("response").innerHTML = data.response;
+	        })
+	        .catch(error => {
+	            console.error('Error:', error);
+	        });
+	    });
+	</script>
 </main>

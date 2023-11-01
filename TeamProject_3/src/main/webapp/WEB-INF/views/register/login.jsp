@@ -26,21 +26,19 @@
          <a href="/smhrd/register/signUp"><button class="custom-btn sign-up-button">회원가입</button></a>
       </div>
    
+      <!-- 
       <div class="social-login">
          <div id="kakao_id_login">
             <a href="javascript:void(0)" onclick="kakaoLogin();"><img src="<%= request.getContextPath() %>/img/kakao_login.png" alt="카카오 로그인"></a>
-            <!-- <a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a> -->
+            <a href="javascript:void(0)" onclick="kakaoLogout();"><button>카카오 로그아웃</button></a>
          </div>
          
-         <!-- 구글 로그인 api -->
-         <!-- 
          <div id="g_id_onload" data-client_id="509029365873-e1n6bo3edjb0h0brf50dl08hfpf2dj4s.apps.googleusercontent.com" data-login_uri="/index" data-auto_prompt="false"></div>
          <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"></div> 
-         -->
          
-         <!-- 네이버 로그인 버튼 노출 영역 -->
          <div id="naver_id_login"></div>
       </div>
+       -->
    </div>
 </main>
 
@@ -66,6 +64,8 @@
 <!-- <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.4.0/kakao.min.js" 
 integrity="sha384-mXVrIX2T/Kszp6Z0aEWaA8Nm7J6/ZeWXbL8UpGRjKwWe56Srd/iyNmWMBhcItAjH" 
 crossorigin="anonymous"></script> -->
+<!-- 
+
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script>
     Kakao.init('a1031eff7350ba4a1d45de246645149a'); //발급받은 키 중 javascript키를 사용해준다.
@@ -121,16 +121,20 @@ crossorigin="anonymous"></script> -->
         }
     }
 </script> 
+ -->
 
 <%--구글 로그인 api--%>
 <!-- <script src="https://accounts.google.com/gsi/client" async defer></script> -->
 
 <%--네이버 로그인 api--%>
+<!-- 
 <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+ -->
 
 
 <!-- //네이버 로그인 버튼 노출 영역 -->
+<!-- 
 <script type="text/javascript">
     var naver_id_login = new naver_id_login("mF0_mZLB199s6Uv8BSyM", "http://localhost:8080/auth/naver/login/callback");
     var state = naver_id_login.getUniqState();
@@ -140,3 +144,4 @@ crossorigin="anonymous"></script> -->
     naver_id_login.setPopup();
     naver_id_login.init_naver_id_login();
 </script>
+ -->

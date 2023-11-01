@@ -38,4 +38,14 @@ public class AnalyzeServiceImpl implements AnalyzeService {
 		return dao.reviewKeySelect(no, key);
 	}
 
+	@Override
+	public GameDTO gameNameSelect(int no) {
+		return dao.gameNameSelect(no);
+	}
+
+	@Override
+	public List<GameDTO> gameListSelect() {
+		return dao.gameListSelect();
+	}
+
 }
